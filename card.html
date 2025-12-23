@@ -4,64 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>診断結果プレゼント</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Yu+Mincho:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yu+Mincho:wght@700&display=swap" rel="stylesheet">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        body {
-            margin: 0; padding: 0; background-color: #111; color: #fff;
-            display: flex; flex-direction: column; align-items: center; 
-            min-height: 100vh; font-family: "Yu Mincho", serif;
-        }
+        body { margin: 0; padding: 0; background-color: #111; color: #fff; font-family: "Yu Mincho", serif; }
 
-        /* 生成用のコンテナ：ここがカードの正体 */
+        /* 【重要】カードの土台。画面には絶対に出さない */
         #source-container {
-            position: fixed; top: -9999px; left: -9999px; /* 画面外に隠す */
-            width: 1600px; height: 1200px; background-color: #000;
-            display: flex; flex-direction: row; overflow: hidden;
+            position: absolute; top: 0; left: -2000px; /* 画面の左外に配置 */
+            width: 1600px; height: 1200px; 
+            display: flex; flex-direction: row; /* 横並びを強制 */
+            background-color: #000; overflow: hidden;
         }
 
-        /* 左側：結果画像エリア */
+        /* 左側：画像エリア */
         .card-left { 
-            position: relative; width: 624px; height: 100%; 
-            flex-shrink: 0; overflow: hidden; border-right: 4px solid #04FF00; 
+            width: 624px; height: 1200px; flex-shrink: 0; 
+            position: relative; border-right: 4px solid #04FF00; 
         }
-        .wp-bg { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; z-index: 1; }
-        .wp-head { position: absolute; z-index: 4; top: 13%; left: 24%; width: 340px; transform: translate(-50%, -50%); filter: drop-shadow(0 0 30px rgba(4,255,0,0.6)); }
+        .wp-bg { width: 100%; height: 100%; object-fit: cover; }
+        .wp-head { position: absolute; top: 13%; left: 24%; width: 340px; transform: translate(-50%, -50%); z-index: 5; }
 
         /* 右側：情報エリア */
         .card-right { 
-            position: relative; flex-grow: 1; height: 100%; 
-            display: flex; flex-direction: column; padding: 40px 60px; 
-            box-sizing: border-box; background: #050505; align-items: center;
+            flex-grow: 1; height: 1200px; 
+            display: flex; flex-direction: column; align-items: center;
+            padding: 50px; background: #050505; box-sizing: border-box;
         }
-        .wp-card-title { width: 100%; text-align: center; font-size: 34px; color: #ffffff; text-shadow: 0 0 10px #04FF00; border-bottom: 2px solid #04FF00; padding-bottom: 10px; margin-bottom: 15px; }
-        .wp-combi-name { width: 100%; text-align: center; font-size: 48px; font-weight: bold; color: #ffffff; text-shadow: 0 0 20px #04FF00; margin-bottom: 10px; white-space: pre-wrap; line-height: 1.2; }
+        .wp-card-title { font-size: 34px; color: #fff; border-bottom: 2px solid #04FF00; width: 100%; text-align: center; padding-bottom: 10px; margin-bottom: 20px; }
+        .wp-combi-name { font-size: 50px; color: #fff; text-shadow: 0 0 20px #04FF00; text-align: center; margin-bottom: 20px; white-space: pre-wrap; }
         
-        /* グラフを中央に配置するための枠 */
-        .wp-chart-container { 
-            width: 90%; height: 450px; margin: 0 auto 20px auto; 
-            display: flex; justify-content: center; align-items: center;
-        }
-        #cardRadarChart { width: 100% !important; height: 100% !important; }
+        /* グラフが横に伸びないよう、コンテナを正方形に近い形に固定 */
+    .wp-chart-container { 
+        width: 600px;  /* 横幅を少し絞る */
+        height: 550px; /* 高さをしっかり確保 */
+        margin: 0 auto 30px auto; 
+        display: block; 
+        position: relative;
+    }
+        /* コメントが見切れないよう、高さを自動(min-height)にする */
+    .wp-comment-container { 
+        width: 100%; 
+        min-height: 320px; /* 最低限の高さ */
+        height: auto;      /* 内容に合わせて伸びるようにする */
+        border: 4px solid #04FF00; 
+        border-radius: 20px;
+        padding: 40px; 
+        background: rgba(0,0,0,0.8); 
+        font-size: 32px; 
+        line-height: 1.6;
+        display: flex; 
+        align-items: center; 
+        box-sizing: border-box; /* パディングを含めたサイズ計算 */
+    }
+    
+        /* 日付 */
+        .wp-date { width: 100%; text-align: right; font-size: 26px; margin-top: 20px; }
 
-        /* コメントエリア */
-        .wp-comment-container { 
-            width: 100%; flex-grow: 1; border: 3px solid #04FF00; padding: 30px; 
-            border-radius: 15px; background: rgba(0, 0, 0, 0.85); 
-            font-size: 28px; display: flex; align-items: center; position: relative; 
-            line-height: 1.5;
-        }
-        #comment-text { position: relative; z-index: 20; color: #ffffff; }
-        .wp-date { width: 100%; font-size: 24px; color: #ffffff; margin-top: 15px; text-align: right; }
+        /* グラフのキャンバス自体のサイズが暴れないように固定 */
+    #cardRadarChart {
+        width: 600px !important;
+        height: 550px !important;
+    }
 
-        /* 画面表示用 */
-        .display-area { width: 100%; text-align: center; padding: 40px 20px; box-sizing: border-box; }
-        #final-image { width: 90%; max-width: 800px; border: 3px solid #04FF00; border-radius: 15px; display: none; margin: 0 auto; }
-        #status-msg { color: #04FF00; font-size: 18px; margin-top: 20px; }
+        /* 実際にスマホ画面に見えるエリア */
+        .display-area { width: 100vw; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        #final-image { width: 100%; max-width: 600px; border: 2px solid #04FF00; border-radius: 10px; display: none; }
+        #status-msg { color: #04FF00; text-align: center; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -75,7 +86,7 @@
             <div class="wp-card-title">山形ツッコミオーディション 結果証明カード</div>
             <div id="wp-combi-name" class="wp-combi-name"></div>
             <div class="wp-chart-container">
-                <canvas id="cardRadarChart"></canvas>
+                <canvas id="cardRadarChart" width="600" height="550"></canvas>
             </div>
             <div id="wp-comment" class="wp-comment-container">
                 <span id="comment-text"></span>
@@ -85,88 +96,97 @@
     </div>
 
     <div class="display-area">
-        <img id="final-image">
-        <p id="status-msg">カードを作成しています...<br>そのままお待ちください</p>
+        <img id="final-image" alt="結果証明カード">
+        <p id="status-msg">カードを生成中...<br>（10秒ほどかかる場合があります）</p>
     </div>
 
     <script>
     window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
         
-        // パラメータ取得
+        // データの流し込み
+        document.getElementById('wp-combi-name').innerText = urlParams.get('name') || '未知数の新コンビ';
+        document.getElementById('comment-text').innerText = urlParams.get('comment') || '';
+        
         const point = parseInt(urlParams.get('point') || '0', 10);
         const pref = urlParams.get('pref') || 'niigata';
-        const combiName = urlParams.get('name') || '未知数の新コンビ';
-        const comment = urlParams.get('comment') || '';
         
-        // グラフ用数値
-        const kire = parseInt(urlParams.get('p') || '0', 10);
-        const time = parseInt(urlParams.get('t') || '0', 10);
-        const voca = parseInt(urlParams.get('v') || '0', 10);
-        const aikyo = parseInt(urlParams.get('b') || '0', 10);
-        const love = parseInt(urlParams.get('d') || '0', 10);
-
-        // テキスト反映
-        document.getElementById('wp-combi-name').innerText = decodeURIComponent(combiName);
-        document.getElementById('comment-text').innerText = decodeURIComponent(comment);
-
-        // グラフ描画（結果画面の設定を完全コピー）
-        const ctx = document.getElementById('cardRadarChart').getContext('2d');
+        // グラフ描画
+        const ctx = document.getElementById('cardRadarChart');
         new Chart(ctx, {
             type: 'radar',
             data: {
                 labels: ['爆発力', ['阿吽の', '呼吸'], '包容力', ['ガチの', '絆'], '運命'],
                 datasets: [{
-                    data: [kire, time, voca, aikyo, love],
-                    backgroundColor: 'rgba(4, 255, 0, 0.2)', 
-                    borderColor: '#04FF00',
-                    borderWidth: 2,
-                    pointRadius: 4
+                    data: [
+                        urlParams.get('p') || 0, urlParams.get('t') || 0, urlParams.get('v') || 0,
+                        urlParams.get('b') || 0, urlParams.get('d') || 0
+                    ],
+                    backgroundColor: 'rgba(4, 255, 0, 0.2)',
+                    borderColor: '#04FF00', borderWidth: 3, pointRadius: 5
                 }]
             },
             options: {
-                responsive: false, // 固定サイズで描画
-                maintainAspectRatio: false,
-                scales: {
-                    r: {
-                        min: 0, max: 40,
-                        ticks: { display: false },
-                        grid: { color: 'rgba(4, 255, 0, 0.3)' },
-                        angleLines: { color: 'rgba(4, 255, 0, 0.3)' },
-                        pointLabels: {
-                            font: { size: 22, weight: 'bold' },
-                            color: '#04FF00'
-                        }
+            responsive: false,
+            maintainAspectRatio: true, // これをtrueにすると歪まなくなります
+            devicePixelRatio: 2,       // 解像度を上げてグラフをハッキリさせる
+            scales: {
+                r: {
+                    min: 0, 
+                    max: 40,
+                    // グラフが小さすぎる場合は、ここを調整
+                    // pointLabelsのpadding（文字とグラフの距離）を小さくするとグラフが広がります
+                    pointLabels: { 
+                        font: { size: 26, weight: 'bold' }, 
+                        color: '#04FF00',
+                        padding: 10 
                     }
-                },
-                plugins: { legend: { display: false } }
-            }
-        });
+                }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
 
-        // 背景設定
+        // 画像の読み込み完了を待ってから合成
+        const bgImg = document.getElementById('wp-bg-img');
+        const headImg = document.getElementById('wp-head-img');
+        
+        let bgLoaded = false; let headLoaded = false;
+        const checkReady = () => {
+            if(bgLoaded && headLoaded) {
+                setTimeout(() => {
+        html2canvas(document.getElementById('source-container'), { 
+            scale: 1, 
+            useCORS: true,
+            width: 1600,
+            height: 1200,
+            scrollY: 0,
+            scrollX: 0,
+            windowWidth: 1600,
+            windowHeight: 1200
+        }).then(canvas => {
+                        const final = document.getElementById('final-image');
+                        final.src = canvas.toDataURL("image/png");
+                        final.style.display = 'block';
+                        document.getElementById('status-msg').innerHTML = "カードが完成しました！<br>長押しして保存してください";
+                    });
+                }, 2000);
+            }
+        };
+
+        bgImg.onload = () => { bgLoaded = true; checkReady(); };
+        headImg.onload = () => { headLoaded = true; checkReady(); };
+
+        // 画像パス設定
         let bgSrc = 'images/result_c.png';
         if (point >= 9) bgSrc = 'images/result_s.png';
         else if (point >= 6) bgSrc = 'images/result_a.png';
         else if (point >= 3) bgSrc = 'images/result_b.png';
-        document.getElementById('wp-bg-img').src = bgSrc;
-        document.getElementById('wp-head-img').src = `images/${pref}-head.png`;
+        bgImg.src = bgSrc;
+        headImg.src = `images/${pref}-head.png`;
         
         const now = new Date();
         document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMonth()+1}.${now.getDate()}`;
-
-        // 画像生成（少し待ってから実行）
-        setTimeout(() => {
-            html2canvas(document.getElementById('source-container'), { 
-                scale: 1, 
-                useCORS: true,
-                logging: false
-            }).then(canvas => {
-                const finalImg = document.getElementById('final-image');
-                finalImg.src = canvas.toDataURL("image/png");
-                finalImg.style.display = 'block';
-                document.getElementById('status-msg').innerHTML = "カードが完成しました！<br>画像を長押しして保存してください";
-            });
-        }, 1800);
     };
     </script>
 </body>
