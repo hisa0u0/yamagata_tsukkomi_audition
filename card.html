@@ -25,7 +25,27 @@
         }
 
         /* カードの左側・右側の設定（そのまま維持） */
-        .card-left { position: relative; width: 624px; height: 100%; flex-shrink: 0; overflow: hidden; border-right: 4px solid #04FF00; }
+        /* --- card.html の style 部分を修正 --- */
+
+.card-right {
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 80px;
+    box-sizing: border-box;
+    background: #050505;
+    /* 追加: 子要素をすべて左右中央に配置 */
+    align-items: center; 
+}
+
+.wp-chart-container {
+    width: 80%;       /* 幅を少し絞ることで、左右の余白を作ります */
+    height: 480px;    /* 高さを固定して比率を安定させます */
+    margin: 0 auto 20px auto; 
+    display: block;   /* Chart.jsが正しくサイズ計算できるようにします */
+}
         .wp-bg { width: 100%; height: calc(100% + 15px); object-fit: cover; position: absolute; top: 0; z-index: 1; }
         .wp-head { position: absolute; z-index: 4; top: 13%; left: 24%; width: 340px; transform: translate(-50%, -50%); filter: drop-shadow(0 0 30px rgba(4,255,0,0.6)); }
         .card-right { position: relative; flex-grow: 1; height: 100%; display: flex; flex-direction: column; padding: 60px; box-sizing: border-box; background: #050505; }
@@ -110,22 +130,43 @@ if (commentEl) {
 
         // グラフ描画
         const ctx = document.getElementById('cardRadarChart');
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: ['爆発力', ['阿吽の', '呼吸'], '包容力', ['ガチの', '絆'], '運命'],
-                datasets: [{
-                    data: [kire, time, voca, aikyo, love],
-                    backgroundColor: 'rgba(4, 255, 0, 0.2)', 
-                    borderColor: '#04FF00', borderWidth: 6,
-                    pointBackgroundColor: '#ffffff', pointRadius: 8
-                }]
-            },
-            options: {
-                scales: { r: { grid: { color: 'rgba(4, 255, 0, 0.3)' }, pointLabels: { font: { size: 28, weight: 'bold' }, color: '#04FF00' }, min: 0, max: 40, ticks: { display: false } } },
-                plugins: { legend: { display: false } }
+        // --- card.html の Chart 設定部分を差し替え ---
+new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: ['爆発力', ['阿吽の', '呼吸'], '包容力', ['ガチの', '絆'], '運命'],
+        datasets: [{
+            data: [kire, time, voca, aikyo, love],
+            backgroundColor: 'rgba(4, 255, 0, 0.2)', // 結果画面と同じ透過度
+            borderColor: '#04FF00',
+            borderWidth: 2,         // 線を太くせず、結果画面と同じ「2」にする
+            pointRadius: 3          // 点の大きさも結果画面に合わせる
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            r: {
+                min: 0,
+                max: 40,            // 最大値を結果画面と同じ 40 に
+                ticks: { display: false },
+                grid: { color: 'rgba(4, 255, 0, 0.3)' }, // 網目の色
+                angleLines: { color: 'rgba(4, 255, 0, 0.3)' }, // 放射状の線の色
+                pointLabels: {
+                    font: {
+                        size: 24,   // カードは全体が大きいのでフォントだけ少し調整
+                        weight: 'bold'
+                    },
+                    color: '#04FF00'
+                }
             }
-        });
+        },
+        plugins: {
+            legend: { display: false }
+        }
+    }
+});
 
         // 背景と日付
         let bgSrc = 'images/result_c.png';

@@ -81,10 +81,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (commentBox) {
         let commentHtml = "";
-        if (simpleRank === 'S') commentHtml = `<div class="comment-head">最高の相性です！</div><div class="comment-body">山形県が繰り出す狂気のスパイラルを、完璧に捌き切りました。もはや二人にしか通じない高度なテレパシーです。</div>`;
-        else if (simpleRank === 'A') commentHtml = `<div class="comment-head">良好な関係です。</div><div class="comment-body">暴走を適切に処理できており、機能性は高いです。</div>`;
-        else if (simpleRank === 'B') commentHtml = `<div class="comment-head">少しピントがズレています。</div><div class="comment-body">ボケを正論で返していませんか？会話のドッジボールが続いています。</div>`;
-        else commentHtml = `<div class="comment-head">絶望的な相性です。</div><div class="comment-body">共通言語が存在しません。お互いに不幸になるだけの関係です。</div>`;
+        if (simpleRank === 'S') commentHtml = 
+        `<div class="comment-head">最高の相性です！</div>
+        <div class="comment-body">山形県が繰り出す狂気のスパイラルを、あなたは「待ってました」と言わんばかりに完璧に捌き切りました。<br><br>もはや漫才というより、二人にしか通じない高度なテレパシー通信を見せられている気分です。<br><br>この二人なら、どんな過疎地に行っても笑いを生み出せるでしょう。</div>`;
+        else if (simpleRank === 'A') commentHtml = 
+        `<div class="comment-head">良好な関係です。</div>
+        <div class="comment-body">山形県の暴走をあなたが適切に処理できているため、コンビとしての機能性は非常に高いです。<br><br>ただ、たまに事務的というか、少し「置きにいった」対応が見え隠れします。<br><br>心の底から通じ合っているというよりは、「仕事ができる同僚」止まりの相性かもしれません。</div>`;
+        else if (simpleRank === 'B') commentHtml = 
+        `<div class="comment-head">少しピントがズレています。</div>
+        <div class="comment-body">山形県は「ボケて」いるのに、あなたはそれを「間違い」として正そうとしたり、全く違う角度から返したりしていませんか？<br><br>悪気はないものの、会話のドッジボールが続いています。<br><br>「性格の不一致」で解散するカップルのような、微妙な空気が流れています。</div>`;
+        else commentHtml = 
+        `<div class="comment-head">絶望的な相性です。</div>
+        <div class="comment-body">山形県が必死に投げたボケを、あなたは全て見逃しているか、怖がって避けてしまっています。<br><br>共通言語が存在しないため、意思疎通が図れていません。<br><br>これ以上一緒にいると、お互いに不幸になるだけの関係です。早急な解散をお勧めします。</div>`;
         commentBox.innerHTML = commentHtml;
     }
 
@@ -92,9 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. ボタン機能の設定
     // ==========================================
     if (shareButton) {
-        const text = `【山形ツッコミオーディション】\n私の診断結果は…\nランク：${simpleRank}\nコンビ名：${typeName}\n\n#山形ツッコミオーディション`;
-        shareButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
-    }
+    // 改行をきれいに整え、診断テキストを含める
+    const shareText = `【山形ツッコミオーディション】\n私の相性は…\nランク：${simpleRank}\n称号：${typeName.replace(/\n/g, "")}\n\n`;
+    
+    // シェアするURLを自分のリポジトリのトップページ（公開URL）に固定する
+    const shareUrl = "https://hisa0u0.github.io/yamagata_tsukkomi_audition/";
+    
+    // ハッシュタグも追加
+    const hashtags = "山形ツッコミオーディション";
+
+    shareButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(hashtags)}`;
+}
 
     if (qrBtn && resultPage) {
         qrBtn.onclick = (e) => {
