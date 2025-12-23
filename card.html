@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>診断結果プレゼント</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Yu+Mincho:wght@700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            margin: 0; padding: 0; background-color: #111; color: #fff;
+            display: flex; flex-direction: column; align-items: center; 
+            min-height: 100vh; font-family: "Yu Mincho", serif;
+        }
+
+        /* 生成用の隠しコンテナ */
+        #source-container {
+            position: fixed; top: -9999px; left: -9999px;
+            width: 1600px; height: 1200px; background-color: #000;
+            display: flex; overflow: hidden;
+        }
+
+        /* カードの左側・右側の設定（そのまま維持） */
+        .card-left { position: relative; width: 624px; height: 100%; flex-shrink: 0; overflow: hidden; border-right: 4px solid #04FF00; }
+        .wp-bg { width: 100%; height: calc(100% + 15px); object-fit: cover; position: absolute; top: 0; z-index: 1; }
+        .wp-head { position: absolute; z-index: 4; top: 13%; left: 24%; width: 340px; transform: translate(-50%, -50%); filter: drop-shadow(0 0 30px rgba(4,255,0,0.6)); }
+        .card-right { position: relative; flex-grow: 1; height: 100%; display: flex; flex-direction: column; padding: 60px; box-sizing: border-box; background: #050505; }
+        .wp-card-title { width: 100%; text-align: center; font-size: 38px; color: #ffffff; text-shadow: 0 0 10px #04FF00; border-bottom: 2px solid #04FF00; padding-bottom: 15px; margin-bottom: 20px; }
+        .wp-combi-name { width: 100%; text-align: center; font-size: 44px; font-weight: bold; color: #ffffff; text-shadow: 0 0 20px #04FF00; margin-bottom: 10px; white-space: pre-wrap; }
+        .wp-chart-container { width: 100%; height: 520px; margin-bottom: 30px; }
+        .wp-comment-container { width: 100%; flex-grow: 1; border: 3px solid #04FF00; padding: 40px; border-radius: 15px; background: rgba(0, 0, 0, 0.85); font-size: 30px; display: flex; align-items: center; position: relative; }
+        .wp-comment-bg-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; opacity: 0.15; z-index: -1; }
+        #comment-text { position: relative; z-index: 20; color: #ffffff; text-shadow: 0 0 10px #04FF00; }
+        .wp-date { width: 100%; font-size: 26px; color: #ffffff; text-shadow: 0 0 10px #04FF00; margin-top: 15px; text-align: right; }
+
+        /* メインの表示エリア */
+        .display-area {
+            width: 100%; text-align: center; padding: 40px 20px; box-sizing: border-box;
+        }
+        #final-image {
+            width: 90%; max-width: 800px; height: auto;
+            border: 3px solid #04FF00; border-radius: 15px;
+            display: none; margin: 0 auto; box-shadow: 0 0 40px rgba(4,255,0,0.4);
+        }
+        #status-msg {
+            color: #04FF00; font-size: 18px; font-weight: bold; margin-top: 20px; line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="source-container">
+        <div class="card-left">
+            <img id="wp-bg-img" class="wp-bg">
+            <img id="wp-head-img" class="wp-head">
+        </div>
+        <div class="card-right">
+            <div class="wp-card-title">山形ツッコミオーディション 結果証明カード</div>
+            <div id="wp-combi-name" class="wp-combi-name"></div>
+            <div class="wp-chart-container"><canvas id="cardRadarChart"></canvas></div>
+            <div id="wp-comment" class="wp-comment-container">
+                <img src="images/title-logo.png" class="wp-comment-bg-logo">
+                <span id="comment-text"></span>
+            </div>
+            <div id="wp-date" class="wp-date"></div>
+        </div>
+    </div>
+
+    <div class="display-area">
+        <img id="final-image" alt="結果証明カード">
+        <p id="status-msg">カードを作成しています...<br>そのままお待ちください</p>
+    </div>
+
+    <script>
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const point = parseInt(urlParams.get('point') || '0', 10);
+        const pref = urlParams.get('pref') || 'niigata';
+        const kire = urlParams.get('p') || '0';
+        const time = urlParams.get('t') || '0';
+        const voca = urlParams.get('v') || '0';
+        const aikyo = urlParams.get('b') || '0';
+        const love = urlParams.get('d') || '0';
+        const comment = urlParams.get('comment') || '';
+        const combiName = urlParams.get('name') || '未知数の新コンビ';
+
+        // 値のセット
+        document.getElementById('wp-combi-name').innerText = decodeURIComponent(combiName);
+        if(comment) {
+    // もし comment-text というIDの要素に中身を入れるなら
+    const commentEl = document.getElementById('comment-text');
+    if (commentEl) {
+        commentEl.innerText = decodeURIComponent(comment);
+    }
+}
+
+        // グラフ描画
+        const ctx = document.getElementById('cardRadarChart');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['爆発力', ['阿吽の', '呼吸'], '包容力', ['ガチの', '絆'], '運命'],
+                datasets: [{
+                    data: [kire, time, voca, aikyo, love],
+                    backgroundColor: 'rgba(4, 255, 0, 0.2)', 
+                    borderColor: '#04FF00', borderWidth: 6,
+                    pointBackgroundColor: '#ffffff', pointRadius: 8
+                }]
+            },
+            options: {
+                scales: { r: { grid: { color: 'rgba(4, 255, 0, 0.3)' }, pointLabels: { font: { size: 28, weight: 'bold' }, color: '#04FF00' }, min: 0, max: 40, ticks: { display: false } } },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // 背景と日付
+        let bgSrc = 'images/result_c.png';
+        if (point >= 9) bgSrc = 'images/result_s.png';
+        else if (point >= 6) bgSrc = 'images/result_a.png';
+        else if (point >= 3) bgSrc = 'images/result_b.png';
+        document.getElementById('wp-bg-img').src = bgSrc;
+        document.getElementById('wp-head-img').src = `images/${pref}-head.png`;
+        const now = new Date();
+        document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMonth()+1}.${now.getDate()}`;
+
+        // 画像生成実行
+        setTimeout(() => {
+            html2canvas(document.getElementById('source-container'), { scale: 1, useCORS: true }).then(canvas => {
+                const finalImg = document.getElementById('final-image');
+                finalImg.src = canvas.toDataURL("image/png");
+                finalImg.style.display = 'block';
+                document.getElementById('status-msg').innerHTML = "カードが完成しました！<br>画像を長押しして保存してください";
+            });
+        }, 1500);
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>山形ツッコミオーディション - 漫才中</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scrolling-bg"></div>
+
+    <div class="game-wrapper">
+        <div id="manzai-page">
+
+            <div id="character-area">
+                <div id="player-container" class="character-container">
+                    <img src="images/common-body.png" class="char-body" alt="体">
+                    <img id="player-head" src="" class="char-head" alt="頭">
+                </div>
+                <div id="yamagata-container" class="character-container">
+                    <img src="images/yamagata-body.png" class="char-body" alt="体">
+                    <img id="yamagata-head" src="images/yamagata-head.png" class="char-head" alt="頭">
+                </div>
+            </div>
+
+            <div id="tsukkome-cutin">
+                <img src="images/tsukkome_cutin.png" alt="ツッコめ！">
+            </div>
+
+            <div id="manzai-ui">
+                <div id="serifu-box">
+                    <span id="speaker-name"></span>
+                    <p id="serifu-text"></p>
+                    <div id="tap-icon">▼</div>
+                </div>
+            </div>
+
+            <div id="tsukkomi-options" style="display: none;">
+    
+    <img class="tsukkome-logo" src="images/tsukkome_logo.png" alt="ツッコめ！">
+
+    <div class="speaker-icon">
+        <img src="images/yamagata_face_icon.png" alt="山形アイコン">
+    </div>
+
+    <div class="prompt-serifu-box">
+        <p id="prompt-serifu-text">（ここにボケが表示されます）</p>
+    </div>
+
+    <div class="prompt-buttons">
+        <button class="tsukkomi-btn">選択肢A</button>
+        <button class="tsukkomi-btn">選択肢B</button>
+        <button class="tsukkomi-btn">選択肢C</button>
+    </div>
+
+</div>
+    </div>
+
+        <div id="audio-permission">
+            <p>音声（BGM、読み上げなど）を<br>再生しますか？</p>
+            <div class="audio-buttons">
+                <button id="audio-yes">はい</button>
+                <button id="audio-no">いいえ</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgm" src="audio/bgm.mp3" loop preload="auto"></audio>
+    <audio id="se-click" src="audio/click.wav" preload="auto"></audio>
+    <audio id="se-select" src="audio/select.wav" preload="auto"></audio>
+    <audio id="se-clap" src="audio/clap.wav" preload="auto"></audio>
+    <audio id="se-tsukkome" src="audio/tsukkome-se.wav" preload="auto"></audio>
+    <audio id="se-correct" src="audio/correct.wav" preload="auto"></audio>
+    <audio id="se-normal" src="audio/normal.wav" preload="auto"></audio>
+    <audio id="se-miss" src="audio/miss.wav" preload="auto"></audio>
+
+    <script src="script_manzai.js"></script>
+</body>
+</html>

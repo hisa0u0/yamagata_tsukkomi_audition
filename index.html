@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>山形ツッコミオーディション</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scrolling-bg"></div>
+
+    <div class="game-wrapper">
+        <div class="index-scroll-container">
+
+            <div class="story-area">
+                <div class="story-section">
+                    47都道府県。<br>
+                    それぞれの地に、<br>
+                    それぞれの「笑い」がある。<br>
+                    だが、東北の地に、<br>
+                    ひときわ異彩を放つ<br>
+                    「怪物」が潜んでいることを、<br>
+                    君達はまだ知らない。
+                </div>
+
+                <div class="story-section" id="yamagata-section">
+        <span class="story-highlight">−山形県。</span>
+    </div>
+
+                <div class="story-section">
+                    一見穏やかなこの地に息づく、<br>
+                    理解不能な奇習。<br>
+                    常識を覆す、愛ゆえの暴走。<br>
+                    それは計算された「ボケ」か。<br>
+                    それとも、純粋な「狂気」か。
+                </div>
+
+                <div class="story-section">
+                    今宵、全国から腕に覚えのある<br>
+                    ツッコミたちが集う。<br>
+                    試されるのは、知識ではない。<br>
+                    その場の空気を読み、<br>
+                    違和感を瞬時に言語化する<br>
+                    「魂の叫び」だ。
+                </div>
+
+                <div class="story-section">
+                    君のツッコミで、<br>
+                    この予測不能なボケを<br>
+                    爆笑に変えられるか。<br>
+                    目指すは、ただ一組の頂点。<br>
+                    山形県が認める、<br>
+                    「最高の相方」の座。
+                </div>
+
+                <div class="story-section story-climax">
+                    さあ、覚悟はいいか。<br>
+                    見たことのない漫才の幕が、<br>
+                    今、上がる。
+                </div>
+            </div> 
+
+            <div class="stage-area">
+                
+                <img src="images/title-logo.png" alt="タイトルロゴ" class="stage-logo" fetchpriority="high" decoding="sync">
+                <select id="pref-select">
+                    <option value="" selected disabled>都道府県を選択してください</option>
+
+                    <optgroup label="北海道・東北">
+                        <option value="hokkaido" disabled>北海道 (準備中)</option>
+                        <option value="aomori" disabled>青森県 (準備中)</option>
+                        <option value="iwate" disabled>岩手県 (準備中)</option>
+                        <option value="miyagi" disabled>宮城県 (準備中)</option>
+                        <option value="akita" disabled>秋田県 (準備中)</option>
+                        <option value="yamagata" disabled>山形県 (準備中)</option>
+                        <option value="fukushima" disabled>福島県 (準備中)</option>
+                    </optgroup>
+
+                    <optgroup label="関東">
+                        <option value="ibaraki" disabled>茨城県 (準備中)</option>
+                        <option value="tochigi" disabled>栃木県 (準備中)</option>
+                        <option value="gunma" disabled>群馬県 (準備中)</option>
+                        <option value="saitama" disabled>埼玉県 (準備中)</option>
+                        <option value="chiba" disabled>千葉県 (準備中)</option>
+                        <option value="tokyo">東京都</option>
+                        <option value="kanagawa" disabled>神奈川県 (準備中)</option>
+                    </optgroup>
+
+                    <optgroup label="中部">
+                        <option value="niigata">新潟県</option>
+                        <option value="toyama" disabled>富山県 (準備中)</option>
+                        <option value="ishikawa" disabled>石川県 (準備中)</option>
+                        <option value="fukui" disabled>福井県 (準備中)</option>
+                        <option value="yamanashi" disabled>山梨県 (準備中)</option>
+                        <option value="nagano" disabled>長野県 (準備中)</option>
+                        <option value="gifu" disabled>岐阜県 (準備中)</option>
+                        <option value="shizuoka" disabled>静岡県 (準備中)</option>
+                        <option value="aichi" disabled>愛知県 (準備中)</option>
+                    </optgroup>
+
+                    <optgroup label="近畿">
+                        <option value="mie" disabled>三重県 (準備中)</option>
+                        <option value="shiga" disabled>滋賀県 (準備中)</option>
+                        <option value="kyoto" disabled>京都府 (準備中)</option>
+                        <option value="osaka">大阪府</option>
+                        <option value="hyogo" disabled>兵庫県 (準備中)</option>
+                        <option value="nara" disabled>奈良県 (準備中)</option>
+                        <option value="wakayama" disabled>和歌山県 (準備中)</option>
+                    </optgroup>
+
+                    <optgroup label="中国">
+                        <option value="tottori" disabled>鳥取県 (準備中)</option>
+                        <option value="shimane" disabled>島根県 (準備中)</option>
+                        <option value="okayama" disabled>岡山県 (準備中)</option>
+                        <option value="hiroshima" disabled>広島県 (準備中)</option>
+                        <option value="yamaguchi" disabled>山口県 (準備中)</option>
+                    </optgroup>
+
+                    <optgroup label="四国">
+                        <option value="tokushima" disabled>徳島県 (準備中)</option>
+                        <option value="kagawa" disabled>香川県 (準備中)</option>
+                        <option value="ehime" disabled>愛媛県 (準備中)</option>
+                        <option value="kochi" disabled>高知県 (準備中)</option>
+                    </optgroup>
+
+                    <optgroup label="九州・沖縄">
+                        <option value="fukuoka" disabled>福岡県 (準備中)</option>
+                        <option value="saga" disabled>佐賀県 (準備中)</option>
+                        <option value="nagasaki" disabled>長崎県 (準備中)</option>
+                        <option value="kumamoto" disabled>熊本県 (準備中)</option>
+                        <option value="oita" disabled>大分県 (準備中)</option>
+                        <option value="miyazaki" disabled>宮崎県 (準備中)</option>
+                        <option value="kagoshima" disabled>鹿児島県 (準備中)</option>
+                        <option value="okinawa" disabled>沖縄県 (準備中)</option>
+                    </optgroup>
+                </select>
+
+                <img src="images/start-btn.png" id="start-button" alt="診断スタート！">
+
+            </div>
+        </div> 
+    </div>
+        
+    <script src="script_index.js"></script>
+</body>
+</html>

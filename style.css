@@ -1,0 +1,917 @@
+/* style.css (修正版：Sランク演出固定対応) */
+
+/* ======== 1. 基本設定 ======== */
+body {
+    /*background-image: url('images/pc-bg.jpg');*/
+    /*background-size: cover;*/
+    /*background-position: center center;*/
+    /*background-attachment: fixed;*/
+    margin: 0;
+    padding: 0;
+    font-family: "Zen Maru Gothic", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #222;
+}
+
+/* ======== 1.5 背景ループアニメーション（完全整列Ver） ======== */
+.scrolling-bg {
+    position: fixed;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    z-index: -1; 
+
+    background-color: #222;
+    
+    background-image: url('images/bg-logo.png'), url('images/bg-logo.png');
+    background-repeat: repeat, repeat;
+    
+    /* ▼ ここが重要！「幅400px 高さ250px」の枠を強制的に作ります */
+    /* ※ロゴが伸び縮みして見える場合は、ここの「250px」を変えて調整します */
+    background-size: 400px 250px, 400px 250px;
+
+    opacity: 0.15;
+    transform: rotate(-15deg);
+
+    animation: flow-perfect-brick 20s linear infinite;
+}
+
+@keyframes flow-perfect-brick {
+    /* ▼ 変更点：0%と100%の数値を入れ替えました ▼ */
+    
+    0% {
+        /* 元の100%の数値をここに持ってきます（スタート地点をマイナス側にする） */
+        background-position: -400px 0px, -200px 125px;
+    }
+    100% {
+        /* 元の0%の数値をここに持ってきます（ゴール地点をゼロにする） */
+        background-position: 0px 0px, 200px 125px;
+    }
+}
+
+
+/* ======== 2. スマホ画面の「枠」 ======== */
+.game-wrapper {
+    aspect-ratio: 390 / 750;
+    width: min(100vw, 100vh * (390 / 750));
+    /* height は固定せず、最大でも画面内に収まるようにしつつ、
+       中身が溢れたらスクロールできるように設定を確実にします */
+    height: min(100vh, 100vw * (750 / 390));
+    margin: auto;
+    position: relative;
+    overflow-y: auto; /* 枠の中でスクロールさせる */
+    overflow-x: hidden;
+    background-color: #000;
+}
+
+/* ======== 3. (旧)トップページ用設定 ======== */
+#top-page {
+    width: 100%; height: 100%;
+    background-image: url('images/top-bg.png');
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: local; 
+    overflow-y: auto; overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    display: flex; flex-direction: column;
+    justify-content: flex-start; align-items: center;
+    padding: 60px 20px 40px 20px; box-sizing: border-box;
+}
+#top-page::after { content: ""; display: block; width: 100%; padding-top: 550%; flex-shrink: 0; }
+#top-page h1 {
+    font-size: 28px; margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+}
+#top-page select {
+    width: 90%; padding: 12px; font-size: 16px; margin: 20px auto;
+    border-radius: 8px; border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#top-page button {
+    width: 90%; padding: 15px; font-size: 18px; font-weight: bold;
+    color: white; background-color: #007bff; border: none;
+    border-radius: 8px; cursor: pointer; margin: 20px auto;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+#top-page button:hover { background-color: #0056b3; }
+
+
+/* ======== 4. 漫才ページ用 (`manzai.html`) ======== */
+#manzai-page {
+    width: 100%; height: 100%;
+    background-image: url('images/manzai-bg.jpg');
+    background-size: cover; background-position: center 90%;
+    transition: filter 0.3s ease-out;
+    display: flex; flex-direction: column; justify-content: flex-end;
+}
+
+/* キャラクターの入れ物（サイズ・位置を％指定に変更） */
+.character-container {
+    position: absolute;
+    
+    /* 下からどれくらいの位置か（90px → 12% に変更） */
+    bottom: 12%; 
+    
+    /* 幅と高さも画面に対する％に変更 */
+    width: 42%;    /* 元の約160px相当 */
+    height: 75%;   /* 元の約550px相当 */
+    
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+#player-container {
+    left: 3%; /* 端からの距離も％に */
+}
+
+#yamagata-container {
+    right: 2%; /* 端からの距離も％に */
+}
+
+/* 体の画像 */
+.char-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    height: 100%;       /* 親要素(character-container)いっぱいに広げる */
+    width: auto;        /* 幅はなりゆき */
+    max-width: 100%;    /* はみ出し防止 */
+    
+    object-fit: contain;
+}
+
+/* 頭の画像 */
+.char-head {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+    
+    /* 頭の位置とサイズも％で指定し直す */
+    bottom: 72%;  /* 体の上に乗る位置 */
+    height: 33%;  /* 頭のサイズ */
+    
+    object-fit: contain;
+}
+#yamagata-head {
+    transform: translateX(-50%) scale(0.9); transform-origin: center bottom;
+}
+
+@keyframes headShake {
+  0%, 100% { transform: translateX(-50%) rotate(0deg) scale(0.9); }
+  25% { transform: translateX(-50%) rotate(4deg) scale(0.9); }
+  75% { transform: translateX(-50%) rotate(-3deg) scale(0.9); }
+}
+@keyframes niigataHeadShake {
+    0%, 100% { transform: translateX(-50%) rotate(0deg) scale(1); }
+    25% { transform: translateX(-50%) rotate(4deg) scale(1); }
+    75% { transform: translateX(-50%) rotate(-3deg) scale(1); }
+}
+#player-head.speaking { animation: niigataHeadShake 0.15s linear infinite alternate; }
+#yamagata-head.speaking { animation: headShake 0.15s linear infinite alternate; }
+
+#manzai-ui {
+    display: none; width: 100%; z-index: 10;
+    transition: opacity 0.3s ease-out;
+}
+#serifu-box {
+    width: 95%; min-height: 150px; margin: 0 auto 10px auto;
+    background-image: url('images/fukidashi_default.png');
+    background-size: 100% 100%; background-repeat: no-repeat;
+    padding: 20px 25px; box-sizing: border-box; cursor: pointer; position: relative;
+}
+#serifu-box.yamagata { background-image: url('images/fukidashi_yamagata.png'); }
+#serifu-box.both { 
+    background-image: url('images/fukidashi_both.png');
+    
+    min-height: 120px;  /* 高さを大きくする（標準は150px） */
+    width: 95%;         /* 幅を広げる（標準は95%） */
+}
+
+#speaker-name {
+    display: inline-block; font-size: 16px; padding: 5px 10px;
+    border-radius: 20px; margin-bottom: 5px; font-weight: 700;
+    font-family: "Zen Maru Gothic", sans-serif; color: white;
+    position: relative; top: -10px; left: -8px;
+}
+#serifu-box.both #speaker-name { display: none; }
+#speaker-name.niigata-name-bg { background-color: #FF3F3F; }
+#speaker-name.yamagata-name-bg { background-color: #80D34A; }
+
+#serifu-text {
+    font-size: 17px; margin: 0; line-height: 1.5; font-weight: 700;
+    font-family: "Zen Maru Gothic", sans-serif; color: #333;
+}
+#serifu-box.both #serifu-text { color: #171717; }
+#serifu-text.niigata-text { color: #461212; }
+#serifu-text.yamagata-text { color: #20410A; }
+
+#tap-icon {
+    position: absolute; bottom: 10px; right: 15px;
+    font-size: 20px; color: #333; animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+#serifu-box.both #tap-icon { 
+    display: none; 
+}
+
+
+/* ======== 4.5 漫才演出用（ツッコミ選択画面）======== */
+#tsukkome-cutin {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-150%, -40%); z-index: 100; opacity: 0; display: none;
+}
+#tsukkome-cutin img { width: 380px; }
+@keyframes slideInFromLeft { 0% { transform: translate(-150%, -40%); opacity: 0; } 100% { transform: translate(-50%, -50%); opacity: 1; } }
+@keyframes shake { 0% { transform: translate(-50%, -50%) rotate(0deg); } 25% { transform: translate(-52%, -48%) rotate(1deg); } 50% { transform: translate(-48%, -52%) rotate(-1deg); } 75% { transform: translate(-52%, -48%) rotate(1deg); } 100% { transform: translate(-50%, -50%) rotate(0deg); } }
+#tsukkome-cutin.show { display: block; animation: slideInFromLeft 0.1s ease-out forwards, shake 0.1s linear 0.1s 10 alternate; }
+
+#tsukkomi-options {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); z-index: 20; padding-top: 50px;
+    box-sizing: border-box; display: none; transition: opacity 0.3s ease-out;
+    flex-direction: column; align-items: center;
+}
+.speaker-icon {
+    margin-top: 10px; width: 90px; height: 90px;
+    background-color: transparent; border-radius: 0; box-shadow: none;
+    display: none; justify-content: center; align-items: center;
+    position: relative; z-index: 1;
+}
+.speaker-icon img { width: 100%; height: 100%; object-fit: contain; filter: none; }
+.tsukkome-logo {
+    display: block; margin: 0 auto; width: 95%;
+    position: relative; z-index: 2; margin-bottom: 0;
+}
+.prompt-serifu-box {
+    width: 95%; background-image: url('images/prompt_fukidashi.png');
+    background-size: 100% 100%; background-repeat: no-repeat;
+    border-radius: 0; margin: 15px auto 20px auto;
+    padding: 40px 30px 20px 30px; box-sizing: border-box; text-align: center;
+    min-height: 120px; display: flex; justify-content: center; align-items: center;
+}
+#prompt-serifu-text {
+    font-size: 15px; color: #20410A; margin: 0; line-height: 1.5;
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 700;
+}
+.prompt-buttons { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.tsukkomi-btn {
+    display: flex; justify-content: center; align-items: center;
+    width: 86.5%; height: 74px; margin: 5px auto; padding: 0 15px;
+    box-sizing: border-box; font-size: 18px; line-height: 1.3;
+    text-align: center; font-family: "Reggae One", cursive; font-weight: normal;
+    background-color: transparent; border: none; border-radius: 0;
+    background-size: 100% 100%; background-repeat: no-repeat;
+    cursor: pointer; color: #000000; animation: pulse-button 1.5s infinite ease-in-out;
+}
+.tsukkomi-btn:active { transform: scale(0.98); }
+.tsukkomi-btn:nth-child(1) { background-image: url('images/tsukkomi_btn_pink.png'); }
+.tsukkomi-btn:nth-child(2) { background-image: url('images/tsukkomi_btn_blue.png'); }
+.tsukkomi-btn:nth-child(3) { background-image: url('images/tsukkomi_btn_yellow.png'); }
+
+
+/* ======== 5. 結果ページ用 (`result.html`) ======== */
+#result-page {
+    width: 100%; height: 100%; background-color: black;
+    display: block; position: relative; overflow-y: auto; overflow-x: hidden;
+/* ▼▼▼ 追加：ページ全体をふわっと表示するアニメーション ▼▼▼ */
+    animation: fadeInPage 1.5s ease-out forwards;
+}
+
+/* フェードインの動き */
+@keyframes fadeInPage {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#result-image-container {
+    width: 100%; height: auto; position: relative; display: block;
+}
+#result-background-image {
+    width: 100%; height: auto; object-fit: contain; display: block;
+}
+#selected-pref-head {
+    position: absolute; left: -3.3%; bottom: 74%; width: 55%; height: auto; z-index: 10;
+}
+#result-button-container {
+    position: relative; z-index: 20; width: 80%; max-width: 250px;
+    margin: 20px auto; 
+    /* 縦並びにする設定（既にありましたが念のため確認） */
+    display: flex; flex-direction: column; gap: 15px;
+}
+
+/* ▼ 変更点：aタグだけでなく buttonタグ にも同じ基本スタイルを適用 */
+#result-button-container a,
+#result-button-container button {
+    display: block; width: 100%; box-sizing: border-box; padding: 15px;
+    font-size: 18px; font-weight: bold; color: white; border-radius: 8px;
+    text-decoration: none; text-align: center;
+    transition: background-color 0.2s, transform 0.1s;
+    
+    /* buttonタグ特有の初期値をリセット */
+    font-family: "Zen Maru Gothic", sans-serif;
+    border: none;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+/* クリック時のへこみ動作 */
+#result-button-container a:active,
+#result-button-container button:active { 
+    transform: scale(0.98); 
+}
+
+/* --- 各ボタンの色設定 --- */
+
+/* 1. Xシェアボタン（既存のまま：黒） */
+#share-button {
+    background-color: #000000; border: 2px solid #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+#share-button:hover { background-color: #333333; }
+
+/* 2. 【新規】画像保存ボタン（目立つピンク） */
+#qr-button {
+    background-color: #04FF00 !important; /* 強制的にネオングリーン */
+    color: #000000 !important;            /* 強制的に黒文字 */
+    border: 2px solid #04FF00 !important;
+    
+    font-weight: 800; /* 極太文字 */
+    box-shadow: 0 0 15px rgba(4, 255, 0, 0.6); 
+    
+    /* 念のためポインターカーソルを表示 */
+    cursor: pointer;
+}
+
+#qr-button:hover {
+    background-color: #33ff33 !important;
+    box-shadow: 0 0 30px rgba(4, 255, 0, 0.9);
+    transform: scale(1.05);
+}
+
+/* 3. もう一度遊ぶボタン（既存のまま：赤・少し離す） */
+#play-again-button {
+    background-color: #f44336; border: 2px solid #f44336;
+    margin-top: 10px; /* 少し隙間を調整 */
+    margin-bottom: 60px; /* 下の余白 */
+}
+#play-again-button:hover {
+    background-color: #ff5252; border-color: #ff5252;
+    box-shadow: 0 0 15px rgba(255, 82, 82, 0.8);
+}
+
+@keyframes pulse-button { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+
+/* 音声確認UI */
+#audio-permission {
+    display: none; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); width: 80%; max-width: 300px;
+    background-color: #FFE5B9; color: #333; padding: 15px 30px;
+    border-radius: 10px; text-align: center; z-index: 200;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); font-family: "Zen Maru Gothic", sans-serif;
+    border: 3px solid #FF3F3F;
+}
+#audio-permission p { font-size: 18px; line-height: 1.6; margin-bottom: 25px; font-weight: bold; }
+#audio-permission .audio-buttons { display: flex; justify-content: space-around; }
+#audio-permission button {
+    padding: 12px 25px; font-size: 16px; font-weight: bold;
+    border: none; border-radius: 5px; cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    min-width: 80px; font-family: inherit;
+}
+#audio-permission button:active { transform: scale(0.95); }
+#audio-permission #audio-yes { background-color: #f44336; color: white; }
+#audio-permission #audio-no { background-color: #45a049; color: white; }
+
+/* ======== Sランク演出 (完成版：黒→白→巨大化発光) ======== */
+
+/* 1. 入れ物（背景担当） */
+#s-rank-trophy-container {
+    position: absolute; /* これでスクロールしても画面から離れません */
+    
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* 初期状態：真っ黒 */
+    background-color: #000000;
+    /* ▼▼▼ 追加：透明度の変化をなめらかにする設定 ▼▼▼ */
+    transition: opacity 1.5s ease-out;
+    opacity: 1; /* 最初は不透明 */
+}
+
+#s-rank-trophy-container.fade-out {
+    opacity: 0;
+}
+
+/* ▼ 重要な追加点：第2段階に入ったら背景を「白」で固定する！ */
+#s-rank-trophy-container.end-trophy-anim {
+    background-color: #ffffff !important;
+}
+
+
+/* 2. 背景が「黒 → 白」になるアニメーション（第1段階用） */
+@keyframes black-to-white-bg {
+    0%   { background-color: #000000; }
+    60%  { background-color: #000000; } /* 溜め */
+    100% { background-color: #ffffff; }
+}
+
+#s-rank-trophy-container.start-trophy-anim {
+    animation: black-to-white-bg 3.0s ease-in-out forwards;
+}
+
+
+/* 3. トロフィー画像本体 */
+#s-rank-trophy-container img {
+    width: 65%;
+    max-width: 280px;
+    height: auto;
+    
+    transform: translateY(-80vh) scale(0.3); 
+    opacity: 0;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1.0));
+}
+
+/* 4. 第1段階：降臨アニメーション */
+@keyframes trophy-god-descend {
+    0%   { transform: translateY(-80vh) scale(0.3); opacity: 0; }
+    20%  { opacity: 1; }
+    100% { transform: translateY(0) scale(1.0); opacity: 1; }
+}
+
+.start-trophy-anim img {
+    animation: trophy-god-descend 3.0s ease-out forwards;
+}
+
+
+/* 5. 第2段階：巨大化発光アニメーション（白飛びして消える） */
+@keyframes trophy-huge-whiteout {
+    0% {
+        transform: scale(1.0);
+        opacity: 1;
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1.0)) brightness(1);
+    }
+    60% {
+        opacity: 1;
+        filter: drop-shadow(0 0 50px rgba(255, 255, 255, 1.0)) brightness(10);
+    }
+    100% {
+        transform: scale(20.0);
+        opacity: 0;
+        filter: brightness(20);
+    }
+}
+
+/* JavaScriptでこのクラスに切り替わると発動 */
+.end-trophy-anim img {
+    animation: trophy-huge-whiteout 1.0s ease-in-out forwards;
+    
+    animation-name: trophy-huge-whiteout !important;
+    animation-duration: 1.0s !important;
+    animation-timing-function: ease-in-out !important;
+}
+
+/* 結果画面の各パーツ（初期状態は透明にしておくためのクラス） */
+.result-hidden {
+    opacity: 0;
+    transition: opacity 1.0s ease-in; /* 1秒かけてふわっと出る */
+}
+.result-visible {
+    opacity: 1;
+}
+
+/* ======== 6. 新・トップページ (index.html) 専用スタイル ======== */
+
+.index-scroll-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;       
+    overflow-x: hidden;     
+    background-color: #000; 
+    scroll-behavior: smooth;
+}
+
+/* ストーリーエリア全体 */
+.story-area {
+    position: relative;
+    z-index: 10;
+    padding-top: 50vh; 
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Yu Mincho", "YuMincho", serif;
+    text-shadow: 0 0 10px #04FF00, 0 0 20px rgba(4, 255, 0, 0.5);
+}
+
+/* 各文章のブロック */
+.story-section {
+    /* ▼ 距離を詰めました（40vh → 15vh） */
+    margin-bottom: 15vh;
+    
+    /* ▼ 読みやすく大きく */
+    font-size: 1.2rem;   
+    line-height: 2.8;   
+    font-weight: 500;
+    
+    /* ▼ 初期状態：透明にして少し下にずらす */
+    opacity: 0;
+    transform: translateY(40px);
+    
+    /* 通常の文章は1.5秒かけて出る */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* ▼▼▼ 重要：ここがないと文字が出ません！ ▼▼▼ */
+/* JSで .is-visible または .visible がついたら表示 */
+.story-section.is-visible, 
+.story-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ▼▼▼ 特別演出：山形県セクション ▼▼▼ */
+#yamagata-section {
+    margin-top: 10vh;
+    margin-bottom: 10vh; 
+}
+
+/* 山形県だけは、クラスがついた時に「ものすごくゆっくり」出す */
+#yamagata-section.is-visible,
+#yamagata-section.visible {
+    /* 3.5秒かけて、じわ〜〜っと出す */
+    transition: opacity 3.5s ease-out, transform 3.5s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 「−山形県。」の文字デザイン */
+.story-highlight {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 0.3em; 
+    margin: 20px 0;
+    text-shadow: 0 0 15px #04FF00, 0 0 40px #04FF00; 
+}
+
+
+/* 最後の「さあ、覚悟はいいか」 */
+.story-climax {
+    font-size: 1.4rem; 
+    font-weight: bold; 
+    /* ロゴとの距離 */
+    margin-bottom: 10vh; 
+}
+
+
+/* 以下、ステージエリア */
+.stage-area {
+    margin-top: -50vh;  
+    padding-top: 50vh;
+    position: relative; z-index: 1;         
+    background-image: 
+        linear-gradient(to bottom, #000000 0%, rgba(0,0,0,0) 70%),
+        url('images/top-bg.jpg'); 
+    background-size: cover; background-position: center bottom; 
+    background-repeat: no-repeat;
+    width: 100%; min-height: 80vh; 
+    padding-right: 20px; padding-bottom: 150px; padding-left: 20px;
+    box-sizing: border-box;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+    overflow: hidden;
+}
+
+/* index.html 専用のフォーム部品 */
+.stage-area select {
+    padding: 12px; font-size: 16px; margin-bottom: 30px;
+    width: 80%; border-radius: 5px; border: 2px solid #333; color: #000;
+}
+#start-button {
+    width: 70%;        /* スマホで見やすい幅に */
+    max-width: 300px;  /* PCで大きくなりすぎないように制限 */
+    height: auto;      /* 高さは自動 */
+    
+    cursor: pointer;   /* カーソルを指の形に */
+    display: block;    /* ブロック要素にして安定させる */
+    
+    /* アニメーション用 */
+    transition: transform 0.1s;
+    
+    /* 影をつけて浮いてる感を出す（お好みで削除OK） */
+    filter: drop-shadow(0 4px 5px rgba(0,0,0,0.5));
+}
+
+/* ホバー時（マウスを乗せた時）に少し大きく */
+#start-button:hover {
+    transform: scale(1.05);
+}
+
+/* クリックした瞬間に少し凹ませる（押した感） */
+#start-button:active {
+    transform: scale(0.95);
+}
+
+
+/* ======== ロゴ画像とアニメーション設定 (整理版) ======== */
+
+.stage-logo {
+    width: 110%;        /* 90%から100%にして最大化 */
+    max-width: 450px;   /* PCなどで大きくなりすぎないように制限しつつデカく */
+    height: auto;
+    
+    margin-top: 50px;    
+    margin-bottom: 50px;  /* 下のメニューとの隙間も少し広げて存在感を出す */
+
+    margin-bottom: 120px;
+
+    /* --- 初期状態 --- */
+    opacity: 0; 
+    transform: scale(3.0); /* 手前（巨大）に隠しておく */
+    
+    will-change: opacity, transform;
+}
+
+/* --------------------------------------------------
+   アニメーション定義 (keyframes)
+-------------------------------------------------- */
+
+/* 1. バンッ！と叩きつける（直線的） */
+@keyframes anime-stamp {
+    0% { opacity: 0; transform: scale(3.0); }
+    100% { opacity: 1; transform: scale(1.0); }
+}
+
+/* 2. 衝撃で震える (ガガガッ) */
+@keyframes anime-impact-shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: translate(-3px, -2px) rotate(-2deg); }
+    20%, 40%, 60%, 80% { transform: translate(3px, 2px) rotate(2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* 3. 鼓動 (ドクンドクン) 傾きプラスVer */
+@keyframes anime-heartbeat {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    
+    /* 1回目：小さく「ド」（右に2度傾く） */
+    5% {
+        transform: scale(1.04) rotate(-1deg); 
+    }
+    10% {
+        transform: scale(1) rotate(0deg);
+    }
+    
+    /* 2回目：大きく「クン！」（左に3度グイッと傾く） */
+    20% {
+        transform: scale(1.1) rotate(2deg); 
+    }
+    35% {
+        transform: scale(1) rotate(0deg);
+    }
+    
+    /* 溜めの時間（静止） */
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+/* --------------------------------------------------
+   フェーズごとのクラス設定
+-------------------------------------------------- */
+
+/* ▼ Phase 1：バンッ！ (0.5秒) ▼ */
+.stage-logo.show-phase1 {
+    opacity: 1;
+    animation: anime-stamp 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* ▼ Phase Shake：震え (0.5秒) ▼ */
+.stage-logo.show-phase-shake {
+    opacity: 1;
+    transform: scale(1.0);
+    animation: anime-impact-shake 0.5s linear forwards;
+}
+
+/* ▼ Phase Static：静止 (1.0秒) ▼ */
+.stage-logo.show-phase-static {
+    opacity: 1;
+    transform: scale(1.0);
+    animation: none; /* 何もしない（静止） */
+}
+
+/* ▼ Phase 2：鼓動 (無限) ▼ */
+.stage-logo.show-phase2 {
+    opacity: 1;
+    transform: scale(1.0);
+    
+    /* ▼ 変更点：ここを「2.5s」から「1.2s」に変更！ */
+    /* 数字を小さくするほど、心拍数が上がって速くなります */
+    animation: anime-heartbeat 2.0s ease-in-out infinite;
+}
+
+
+/* =========================================
+   7. 展示・キオスクモード専用設定 (仕上げ)
+   ========================================= */
+
+/* 右側のスクロールバーを完全に消す（Chrome/Safari/Edge用） */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* 画面全体の調整 */
+body {
+    /* スクロールバーのスペースを消す */
+    scrollbar-width: none;  /* Firefox用 */
+    -ms-overflow-style: none;  /* IE/Edge用 */
+
+    /* 文字や画像を長押ししても「青く選択」されないようにする */
+    user-select: none;
+    -webkit-user-select: none;
+    
+    /* タッチした時の「ハイライト（グレーの枠）」を消す */
+    -webkit-tap-highlight-color: transparent;
+    
+    /* タッチ操作の反応を良くする（ダブルタップ拡大の無効化） */
+    touch-action: manipulation;
+    
+    /* マウスカーソルを消す（タッチ専用にするなら） */
+    /* ※設定作業中は不便になるので、本番直前に有効にするのがおすすめ */
+    /* cursor: none; */
+}
+
+/* リンクやボタンを押した時の枠線を消す */
+button:focus, a:focus, select:focus {
+    outline: none;
+}
+
+/* ======== 結果ページ：診断・グラフエリア（サイズ固定版） ======== */
+#analysis-container {
+    position: relative; z-index: 20; 
+    width: 90%;
+    max-width: 500px; /* ← PCで横に伸びすぎないように制限を追加 */
+    margin: 50px auto; 
+    
+    /* 背景と枠線 */
+    background: linear-gradient(135deg, rgba(0, 30, 0, 0.9), rgba(0, 10, 0, 0.95));
+    border: 1px solid rgba(4, 255, 0, 0.5);
+    border-radius: 15px; 
+    padding: 20px; 
+    box-sizing: border-box;
+    
+    /* 発光 */
+    box-shadow: 0 0 20px rgba(4, 255, 0, 0.4), inset 0 0 30px rgba(4, 255, 0, 0.2);
+    
+    text-align: center;
+    backdrop-filter: blur(5px);
+
+    /* 最初から表示 */
+    opacity: 1; 
+    transition: none; 
+}
+
+/* ツッコミ分析（見出し） */
+.diagnosis-title {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-weight: bold;       /* 太字に戻す */
+    
+    font-size: 20px;         /* 14pxだと小さすぎたので、20pxにアップ */
+    color: #04FF00;          /* グレーをやめて、テーマカラーの緑に戻す */
+    
+    margin: 0 auto 10px auto; /* 中央揃え */
+    display: inline-block;    /* 文字の幅に合わせて下線を引く */
+    
+    border-bottom: 2px solid rgba(4, 255, 0, 0.6); /* 下線を復活 */
+    padding-bottom: 3px;
+    
+    /* ほんのり光らせる（下の結果よりは弱めに） */
+    text-shadow: 0 0 10px rgba(4, 255, 0, 0.4); 
+}
+
+/* 診断結果（コンビ名） */
+#diagnosis-text {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    
+    /* ▼▼▼ px指定でサイズを固定・大きく ▼▼▼ */
+    font-size: 28px; 
+    font-weight: bold; 
+    color: #ffffff;
+    
+    /* 緑の光彩 */
+    text-shadow: 0 0 10px #04FF00, 0 0 20px rgba(4, 255, 0, 0.8);
+    
+    margin: 0 0 15px 0; 
+    line-height: 1.4;
+}
+
+/* グラフの入れ物 */
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 0.8; /* 横：縦 の比率で高さを決める */
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myRadarChart {
+    filter: drop-shadow(0 0 10px rgba(4, 255, 0, 0.8));
+}
+
+/* ======== 結果ページ：評価コメントエリア（行間ゆったり版） ======== */
+#result-comment {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    color: #ffffff;
+    text-shadow: 0 0 10px #04FF00, 0 0 20px rgba(4, 255, 0, 0.6);
+    
+    text-align: left;
+    width: 85%;
+    max-width: 600px;
+    margin: 10px auto 30px auto; /* 下のグラフとの距離も少し広げました */
+}
+
+/* ▼ 見出し（太く・大きく） */
+.comment-head {
+    font-size: 22px;
+    font-weight: bold;
+    
+    /* ▼▼▼ ここを変更：見出しと本文の間を広げる ▼▼▼ */
+    margin-bottom: 15px; 
+    
+    display: block;
+    text-shadow: 0 0 15px #04FF00; 
+}
+
+/* ▼ 本文（細く・小さく・ゆったり） */
+.comment-body {
+    font-size: 15px;
+    font-weight: normal;
+    
+    /* ▼▼▼ ここを変更：行間をかなり広めに設定 (1.7 -> 2.2) ▼▼▼ */
+    line-height: 2.2; 
+    
+    opacity: 0.95;
+}
+
+/* スマホ用調整 */
+@media (max-width: 400px) {
+    .comment-head { font-size: 18px; margin-bottom: 10px; }
+    .comment-body { font-size: 14px; line-height: 2.0; } /* スマホでも少し広めに */
+}
+
+/* ======== 8. QRコード表示モーダル用（新規追加） ======== */
+/* JSで生成されるQRモーダルのデザイン */
+
+#qr-modal {
+    /* フェードインアニメーション */
+    animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* QRコードが入る白い箱の微調整 */
+#qrcode-display img {
+    display: block; /* 画像の下の隙間を消す */
+    margin: 0 auto;
+}
+
+/* 閉じるボタンのホバー効果 */
+#close-qr {
+    background-color: #04FF00 !important;
+    color: #000000 !important; /* ここも文字は黒 */
+    font-weight: bold !important;
+}
+#close-qr:hover {
+    box-shadow: 0 0 15px #04FF00;
+}
