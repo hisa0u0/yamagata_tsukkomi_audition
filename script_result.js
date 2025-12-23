@@ -184,13 +184,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 結果証明カード発行ボタンを押した時の処理
+// 結果証明カード発行ボタンを押した時の処理（修正版）
 const qrButton = document.getElementById('qr-button');
 if (qrButton) {
     qrButton.addEventListener('click', () => {
-        // 今のURL（?point=...など）をそのまま取得
-        const currentParams = window.location.search;
-        // card.html にそのデータを付け足して移動する
-        window.location.href = `card.html${currentParams}`;
+        // 現在のURLパラメータ（point, p, t, v など）を取得
+        const currentParams = new URLSearchParams(window.location.search);
+        
+        // 画面に表示されている「コンビ名」と「コメント」を取得
+        const typeName = document.getElementById('diagnosis-text')?.innerText || "";
+        const commentText = document.getElementById('result-comment')?.innerText || "";
+
+        // パラメータに追加
+        currentParams.set('name', typeName);
+        currentParams.set('comment', commentText);
+
+        // card.html に移動（すべてのデータを持っていく）
+        window.location.href = `card.html?${currentParams.toString()}`;
     });
 }

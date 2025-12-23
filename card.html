@@ -85,8 +85,18 @@
         const voca = urlParams.get('v') || '0';
         const aikyo = urlParams.get('b') || '0';
         const love = urlParams.get('d') || '0';
-        const comment = urlParams.get('comment') || '';
+        // --- card.html 内の該当箇所を以下に修正 ---
         const combiName = urlParams.get('name') || '未知数の新コンビ';
+        const comment = urlParams.get('comment') || '';
+
+// コンビ名の表示（改行コードを維持）
+document.getElementById('wp-combi-name').innerText = combiName;
+
+// コメントの表示
+const commentEl = document.getElementById('comment-text');
+if (commentEl) {
+    commentEl.innerText = comment;
+}
 
         // 値のセット
         document.getElementById('wp-combi-name').innerText = decodeURIComponent(combiName);
