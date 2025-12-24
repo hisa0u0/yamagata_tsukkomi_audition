@@ -181,9 +181,9 @@ const manzaiData = {
             // --- 導入：東京の閉塞感 vs スケールの話 ---
             { type: 'dialogue', speaker: '東京', text: 'はいどうもー！<br>東京都と〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
-            { type: 'dialogue', speaker: '東京', text: 'いや〜、東京は土地が狭くて<br>せせこましいですよ' },
-            { type: 'dialogue', speaker: '山形', text: 'そうなの？' },
-            { type: 'dialogue', speaker: '東京', text: 'ええ。だからもっとこう、<br>「スケールのデカい」企画が見たいんですよね' },
+            { type: 'dialogue', speaker: '東京', text: 'いや〜、東京は土地が狭くて<br>窮屈ですね' },
+            { type: 'dialogue', speaker: '山形', text: '人が多いからなあ' },
+            { type: 'dialogue', speaker: '東京', text: '山形は広そうですね' },
 
             // --- ネタ1：人間将棋（規模の履き違え） ---
             { type: 'dialogue', speaker: '山形', text: 'スケールなら山形だよ。<br>将棋を「大規模」にしたお祭りがあるから' },
