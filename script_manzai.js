@@ -473,7 +473,12 @@ function speakText(textToSpeak, speaker, isEnding = false) {
 
      utterance.onend = () => {
          stopSpeakingAnimation();
-         if (!isTyping && tapIcon) { tapIcon.style.display = 'block'; }
+         if ((!synth || !synth.speaking || !audioEnabled) && tapIcon) {
+    const currentStepData = currentScenario[step];
+    if (currentStepData && currentStepData.speaker !== 'both') {
+        tapIcon.style.display = 'block';
+    }
+}
          if (isEnding && audioEnabled && seClapAudio) {
              seClapAudio.currentTime = 0; seClapAudio.volume = 0.5;
              seClapAudio.play().catch(e => {});
@@ -510,24 +515,45 @@ function stopSpeakingAnimation() {
 function typeCharacter(fullText, index, isEnding = false) {
     const displayText = fullText;
     if (index >= displayText.length) {
-        isTyping = false; typingTimer = null;
-        if ((!synth || !synth.speaking || !audioEnabled) && tapIcon) { tapIcon.style.display = 'block'; }
+        isTyping = false; 
+        typingTimer = null;
+
+        // ★ここから修正：現在の話者が both かどうかを正しく判定する
+        const currentStepData = currentScenario[step];
+        const isBoth = (currentStepData && currentStepData.speaker === 'both');
+
+        // ★ !isBoth (二人同時じゃない時) という条件を追加
+        if ((!synth || !synth.speaking || !audioEnabled) && tapIcon && !isBoth) { 
+            tapIcon.style.display = 'block'; 
+        }
+        // ★ここまで
+
         if (isEnding && !audioEnabled && seClapAudio) {
              seClapAudio.currentTime = 0; seClapAudio.volume = 0.5;
              seClapAudio.play().catch(e => {});
              setTimeout(() => {
                  if (currentScenario && step + 1 >= currentScenario.length && totalPoint !== undefined) {
-                      goToResult(); // ★修正：共通関数を使用
+                      goToResult(); 
                  }
              }, 500);
         }
         return;
     }
-     let char = displayText.charAt(index); let nextIndex = index + 1; if (char === '<') { const closingTagIndex = displayText.indexOf('>', index); if (closingTagIndex !== -1 && displayText.substring(index, closingTagIndex + 1).toLowerCase() === '<br>') { char = '<br>'; nextIndex = closingTagIndex + 1; } else { char = ''; nextIndex = index + 1; } }
-     if(serifuText) serifuText.innerHTML += char;
+    let char = displayText.charAt(index); 
+    let nextIndex = index + 1; 
+    if (char === '<') { 
+        const closingTagIndex = displayText.indexOf('>', index); 
+        if (closingTagIndex !== -1 && displayText.substring(index, closingTagIndex + 1).toLowerCase() === '<br>') { 
+            char = '<br>'; 
+            nextIndex = closingTagIndex + 1; 
+        } else { 
+            char = ''; 
+            nextIndex = index + 1; 
+        } 
+    }
+    if(serifuText) serifuText.innerHTML += char;
     typingTimer = setTimeout(() => { typeCharacter(fullText, nextIndex, isEnding); }, typeSpeed);
 }
-
 
 // -------- メイン進行関数 --------
 function runStep() {
