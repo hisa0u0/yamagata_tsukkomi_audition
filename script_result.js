@@ -112,41 +112,50 @@ document.addEventListener('DOMContentLoaded', () => {
     shareButton.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(hashtags)}`;
 }
 
-    if (qrBtn && resultPage) {
+    if (qrBtn) {
         qrBtn.onclick = (e) => {
             e.preventDefault();
             
+            // 既にモーダルがある場合は削除
             const exist = document.getElementById('qr-modal');
             if(exist) exist.remove();
 
-            // position を fixed にし、width をスマホ枠と同じ min(...) の式にします
+            // 1. モーダルのHTML構造
             const modalHtml = `
-            <div id="qr-modal" style="position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:min(100vw, 100vh * (390 / 750)); height:min(100vh, 100vw * (750 / 390)); background:rgba(0,0,0,0.8); z-index:10001; display:flex; justify-content:center; align-items:center; flex-direction:column; backdrop-filter:blur(5px); border-radius:inherit; box-sizing:border-box;">
+            <div id="qr-modal" style="position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:min(100vw, 100vh * (390 / 750)); height:min(100vh, 100vw * (750 / 390)); background:rgba(0,0,0,0.8); z-index:10001; display:flex; justify-content:center; align-items:center; flex-direction:column; backdrop-filter:blur(5px); box-sizing:border-box;">
                 <div style="background:#111; border:2px solid #04FF00; padding:20px; border-radius:15px; text-align:center; box-shadow:0 0 30px rgba(4,255,0,0.5); width:85%; box-sizing:border-box;">
                     <p style="color:#04FF00; font-weight:bold; font-size:18px; margin:0 0 10px 0;">診断結果カード発行</p>
-                    <div id="qrcode-display" style="background:white; padding:10px; margin:0 auto; border-radius:8px; display:inline-block;"></div>
+                    <div id="qrcode-target" style="background:white; padding:10px; margin:0 auto; border-radius:8px; display:inline-block; min-width:160px; min-height:160px;"></div>
                     <div id="mobile-link-container"></div>
-                    <button id="close-qr" style="margin-top:20px; padding:12px 30px; cursor:pointer; background:transparent; color:#04FF00; border:1px solid #04FF00; border-radius:20px; font-size:14px; width:100%; font-weight:bold;">閉じる</button>
+                    <button id="close-qr" style="margin-top:20px; padding:12px 30px; cursor:pointer; background:#04FF00; color:#000; border:none; border-radius:20px; font-size:14px; width:100%; font-weight:bold;">閉じる</button>
                 </div>
             </div>`;
             
-            // body直下にいれることで、スクロール位置に関係なく画面中央に出します
+            // 2. 画面にHTMLを追加
             document.body.insertAdjacentHTML('beforeend', modalHtml);
 
-            // 閉じる処理
-            document.getElementById('close-qr').onclick = () => document.getElementById('qr-modal').remove();
+            // 3. 【ここが最重要】描画先の要素を「ID名」ではなく「要素そのもの」で取得
+            const qrElement = document.getElementById('qrcode-target');
 
-            // QR生成（以下同じ）
-            if (typeof QRCode !== 'undefined') {
+            if (qrElement && typeof QRCode !== 'undefined') {
                 const baseUrl = window.location.href.split('?')[0].replace('result.html', 'card.html');
                 const safeName = typeName.replace(/\n/g, "");
                 const qrUrl = `${baseUrl}?point=${point}&pref=${selectedPref}&name=${encodeURIComponent(safeName)}&p=${graphP}&t=${graphT}&v=${graphV}&b=${bondScore}&d=${destinyScore}`;
                 
-                new QRCode(document.getElementById('qrcode-display'), { text: qrUrl, width: 160, height: 160 });
+                // 第一引数に「ID文字列」ではなく「取得した要素」を渡すことで確実性を高める
+                new QRCode(qrElement, {
+                    text: qrUrl,
+                    width: 160,
+                    height: 160,
+                    correctLevel: QRCode.CorrectLevel.H
+                });
 
                 document.getElementById('mobile-link-container').innerHTML = 
                     `<a href="${qrUrl}" style="display:block; margin-top:15px; padding:12px; background:#04FF00; color:#000; text-decoration:none; border-radius:8px; font-weight:bold; font-size:15px;">この端末で直接開く ➡</a>`;
             }
+
+            // 閉じる処理
+            document.getElementById('close-qr').onclick = () => document.getElementById('qr-modal').remove();
         };
     }
 
