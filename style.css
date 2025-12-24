@@ -635,6 +635,16 @@ body {
     transform: scale(0.95);
 }
 
+/* 都道府県選択のラベルテキスト */
+.select-label {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px; /* 下のボックスとの隙間 */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 1.0); /* 背景と被っても読みやすく */
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
 
 /* ======== ロゴ画像とアニメーション設定 (整理版) ======== */
 
@@ -915,3 +925,5 @@ button:focus, a:focus, select:focus {
 #close-qr:hover {
     box-shadow: 0 0 15px #04FF00;
 }
+
+
