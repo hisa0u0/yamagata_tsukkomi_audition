@@ -35,9 +35,23 @@
         /* 3. 称号・コンビ名（台紙の右側に配置） */
         .wp-combi-name { 
             position: absolute;
-            top: 160px; right: 100px; width: 800px;
-            font-size: 55px; color: #fff; text-shadow: 0 0 20px #04FF00;
-            text-align: center; z-index: 10;
+    /* エリアの「中心線」を意識した位置設定 */
+    top: 100px;      /* 少し高めに枠をスタートさせる */
+    left: 700px; 
+    right: 100px;
+    height: 200px;   /* 2行分が余裕で入る「箱」の高さを確保 */
+    
+    /* 箱の中での上下左右中央揃え設定 */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* これで1行でも2行でも箱の真ん中に来る */
+    
+    font-size: 45px; 
+    line-height: 1.2;
+    color: #fff; 
+    text-shadow: 0 0 20px #04FF00;
+    text-align: center; 
+    z-index: 10;
         }
         
         /* 4. グラフエリア（台紙の右側中央に配置） */
@@ -51,6 +65,17 @@
     justify-content: center; 
     align-items: center;
     z-index: 10;
+}
+
+.wp-date {
+    position: absolute;
+    bottom: 20px; /* 下から50pxの位置 */
+    right: 60px; /* 右から100pxの位置 */
+    font-size: 28px;
+    color: #fff;
+    z-index: 10;
+    text-align: right;
+    letter-spacing: 2px; /* 少し文字間を広げると証明書っぽくなります */
 }
 
         /* 実際にスマホで見えるエリア */
@@ -68,6 +93,7 @@
         <div class="wp-chart-container">
             <canvas id="cardRadarChart" width="500" height="450"></canvas>
         </div>
+        <div id="wp-date" class="wp-date"></div>
     </div>
 
     <div class="display-area">
@@ -80,6 +106,9 @@
         const urlParams = new URLSearchParams(window.location.search);
         const point = parseInt(urlParams.get('point') || '0', 10);
         const pref = urlParams.get('pref') || 'niigata';
+        // 日付の設定
+const now = new Date();
+document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMonth()+1}.${now.getDate()}`;
         
         // 1. 画像とテキストの設定
         document.getElementById('wp-combi-name').innerText = urlParams.get('name') || '未知数の新コンビ';
