@@ -31,7 +31,8 @@ const manzaiData = {
             },
             { type: 'dialogue', speaker: '新潟', text: 'でも秋になると、さすがに温かいものが恋しくなるよな？' },
             { type: 'dialogue', speaker: '新潟', text: '新潟は新米シーズンで、<br>美味しいおにぎりが食べたくなるな〜' },
-            { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび最高だぞ〜<br>山形は秋、何食べるの？' },
+            { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高だぞ〜' },
+            { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？' },
             { type: 'dialogue', speaker: '山形', text: '秋か〜' },
             { type: 'dialogue', speaker: '山形', text: '秋なら芋煮会かな<br>日本一の芋煮会をするんだよ' },
             { type: 'dialogue', speaker: '新潟', text: '日本一の芋煮会？<br>それは日本一美味しいってこと？' },
@@ -116,7 +117,7 @@ const manzaiData = {
                     { text: "巨人用の<br>将棋かな？", 
                         point: 0, 
                         type: ['t'],
-                        reaction: '東京「進撃の巨人の<br>世界観ですか？」' }
+                        reaction: '東京「空から見るんですかね」' }
                 ]
             },
             { type: 'dialogue', speaker: '東京', text: 'なんか発想が単純ですね...。<br>ただでさえ東京はヒートアイランドで蒸し暑いのに' },
@@ -332,7 +333,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '愛媛', text: '日本一？<br>最高の味を追求したん？' },
             { type: 'dialogue', speaker: '山形', text: '味というか・・・' },
             {
-                type: 'prompt', speaker: '山形', text: '6mの大鍋に具材を入れて<br>バックホーで調理する芋煮会だよ',
+                type: 'prompt', speaker: '山形', text: '直径6.5mの大鍋に具材を入れて<br>バックホーで調理する芋煮会だよ',
                 tsukkomi: [
                     { text: "工事現場<br>やろが！", 
                         point: 1, 
