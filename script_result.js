@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let tScore = parseInt(urlParams.get('t') || '0', 10);
     let vScore = parseInt(urlParams.get('v') || '0', 10);
 
-    const ogImageEl = document.getElementById('og-image');
-    const twitterImageEl = document.getElementById('twitter-image');
+    const ogImageEl = document.getElementById('og-image-meta');
+const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用も同じタグを指すならこれでOK
     const baseUrl = "https://hisa0u0.github.io/yamagata_tsukkomi_audition/"; // あなたのサイトのベースURL
 
     let ogImageUrl = baseUrl + 'images/ogp_default.png'; // デフォルト画像
