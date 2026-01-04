@@ -2,7 +2,99 @@
 
 // -------- 漫才データ（台本） --------
 const manzaiData = {
-    // -------- 新潟 --------
+
+ // -------- 東京 -----------------------------------------------------------------------------------------------------
+'tokyo': {
+        scenario: [
+            { type: 'dialogue', speaker: '東京', text: 'はいどうもー！<br>東京都と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '東京', text: 'いや〜、東京は土地が狭くて<br>窮屈ですね' },
+            { type: 'dialogue', speaker: '山形', text: '東京は人が多いからなあ' },
+            { type: 'dialogue', speaker: '東京', text: '山形は広そうですね' },
+            { type: 'dialogue', speaker: '山形', text: '山形は大きいから<br>いろんな大きいイベントが開催されるよ' },
+            { type: 'dialogue', speaker: '山形', text: 'たとえば、将棋のイベントとか' },
+            { type: 'dialogue', speaker: '東京', text: 'おっ、いいですね。<br>何万人も集まる世界大会とかですか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや<br>“人間将棋”って言って' },
+            { type: 'dialogue', speaker: '山形', text: '将棋盤を巨大にして、<br>人間を「駒」として配置するんだ' },
+            { type: 'dialogue', speaker: '東京', text: '・・・はい？' },
+            {
+                type: 'prompt', speaker: '山形', text: '甲冑を着た人間が<br>巨大な盤の上を練り歩くんだよ',
+                tsukkomi: [
+                    { text: "将棋を巨大に<br>しただけじゃないですか！", 
+                        point: 3, 
+                        type: ['t', 'p','v'],
+                        reaction: '東京「物理的にデカくして<br>どうすんですか！」' },
+                    { text: "土地の<br>無駄遣いですね", 
+                        point: 1, 
+                        type: ['t','v'],
+                        reaction: '東京「そのスペースあれば<br>タワマン建ちますよ」' },
+                    { text: "巨人用の<br>将棋かな？", 
+                        point: 0, 
+                        type: ['p','v'],
+                        reaction: '東京「空から見るんですかね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '東京', text: 'まったく...' },
+            { type: 'dialogue', speaker: '東京', text: 'もっとこう、東京みたいに<br>“映える”ものはないんですか？' },
+            { type: 'dialogue', speaker: '東京', text: '若者が行列を作るような、<br>オシャレな流行りものとか' },
+            { type: 'dialogue', speaker: '山形', text: 'あるよ<br>“山形のタピオカ”が' },
+            { type: 'dialogue', speaker: '東京', text: 'へぇ！ あるんですね！<br>じゃあ一つお願いします' },
+            { type: 'dialogue', speaker: '東京', text: '・・・ってこれ、割り箸に刺さった“玉こんにゃく”ですよね？' },
+            {
+                type: 'prompt', speaker: '山形', text: '黒くて丸くてモチモチしてるから<br>実質タピオカだよ',
+                tsukkomi: [
+                    { text: "確かに原材料は<br>芋だけど！", 
+                        point: 3, 
+                        type: ['t', 'p', 'v'],
+                        reaction: '東京「植物学的な分類でゴリ押ししないでくださいよ！」' },
+                    { text: "醤油の匂い<br>すごい", 
+                        point: 0, 
+                        type: ['v'],
+                        reaction: '東京「美味しそう<br>流行るんじゃないですか？」' },
+                    { text: "全然<br>映えないよ！", 
+                        point: 1, 
+                        type: ['p',"v"],
+                        reaction: '東京「渋すぎでしょ！<br>原宿で持ってたら浮きますよ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '東京', text: 'タピオカだと思って食べたら・・・<br>出汁が染みてて美味しいですけど' },
+            { type: 'dialogue', speaker: '東京', text: 'こんにゃくがこれだけ美味しいなら、<br>鍋料理とかも絶品なんじゃないですか？' },
+            { type: 'dialogue', speaker: '山形', text: 'おっ、鋭いね！<br>山形といえば「芋煮」だよ' },
+            { type: 'dialogue', speaker: '東京', text: 'やっぱり！' },
+            { type: 'dialogue', speaker: '東京', text: 'みんなで鍋を囲んで温まるのって最高ですよね' },
+            { type: 'dialogue', speaker: '山形', text: '毎年、日本一の芋煮会をやってるよ' },
+            { type: 'dialogue', speaker: '東京', text: '日本一の芋煮会？<br>最高の食材を使ってるんですか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや、日本一の規模の芋煮会なんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5mの鍋で作るから<br>バックホーでかき混ぜるんだ',
+                tsukkomi: [
+                    { text: "給食<br>センターかな", 
+                        point: 1, 
+                        type: ['t', 'v'],
+                        reaction: '東京「何人分作る気ですか・・・」' },
+                    { text: "調理器具が<br>おかしい！", 
+                        point: 0, 
+                        type: ['v', 'p'],
+                        reaction: '東京「出汁じゃなくて鉄の味がしそうですね」' },
+                    { text: "日本一の<br>“大きさ”なの！？", 
+                        point: 3, 
+                        type: ['p'],
+                        reaction: '東京「デカけりゃいいってもんですか！？」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '東京', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '東京', text: 'ツッコミどころが多いということは<br>よくわかりました' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '東京', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '東京', text: 'それでいいんですか！？' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 新潟 --------------------------------------------------------------------------------------------------------
     'niigata': {
         scenario: [
             { type: 'dialogue', speaker: '新潟', text: 'はいどうも〜！<br>新潟県と〜' },
@@ -86,94 +178,12 @@ const manzaiData = {
             { type: 'dialogue', speaker: '新潟', text: '・・・・・・' },
             { type: 'dialogue', speaker: '新潟', text: 'それでいいのかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
-        ]
-    },
 
-    // -------- 東京 --------
-'tokyo': {
-        scenario: [
-            { type: 'dialogue', speaker: '東京', text: 'はいどうもー！<br>東京都と〜' },
-            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
-            { type: 'dialogue', speaker: '東京', text: 'いや〜、東京は土地が狭くて<br>窮屈ですね' },
-            { type: 'dialogue', speaker: '山形', text: '東京は人が多いからなあ' },
-            { type: 'dialogue', speaker: '東京', text: '山形は広そうですね' },
-            { type: 'dialogue', speaker: '山形', text: '山形は大きいから<br>いろんな大きいイベントが開催されるよ' },
-            { type: 'dialogue', speaker: '山形', text: 'たとえば、将棋のイベントとか' },
-            { type: 'dialogue', speaker: '東京', text: 'おっ、いいですね。<br>何万人も集まる世界大会とかですか？' },
-            { type: 'dialogue', speaker: '山形', text: 'いや<br>“人間将棋”って言って' },
-            { type: 'dialogue', speaker: '山形', text: '将棋盤を巨大にして、<br>人間を「駒」として配置するんだ' },
-            { type: 'dialogue', speaker: '東京', text: '・・・はい？' },
-            {
-                type: 'prompt', speaker: '山形', text: '甲冑を着た人間が<br>巨大な盤の上を練り歩くんだよ',
-                tsukkomi: [
-                    { text: "将棋を巨大に<br>しただけじゃないですか！", 
-                        point: 3, 
-                        type: ['t', 'p','v'],
-                        reaction: '東京「物理的にデカくして<br>どうすんですか！」' },
-                    { text: "土地の<br>無駄遣いですね", 
-                        point: 1, 
-                        type: ['t'],
-                        reaction: '東京「そのスペースあれば<br>タワマン建ちますよ」' },
-                    { text: "巨人用の<br>将棋かな？", 
-                        point: 0, 
-                        type: ['t'],
-                        reaction: '東京「空から見るんですかね」' }
                 ]
-            },
-            { type: 'dialogue', speaker: '東京', text: 'なんか発想が単純ですね...。<br>ただでさえ東京はヒートアイランドで蒸し暑いのに' },
-            { type: 'dialogue', speaker: '東京', text: 'もっとこう、クーラーの効いた部屋で<br>スマートに涼みたいですよ' },
-            { type: 'dialogue', speaker: '山形', text: '涼みたいなら任せてよ。<br>山形は何でも冷やすから' }, // ←前フリ
-            { type: 'dialogue', speaker: '山形', text: '冷やしラーメンに、冷やしシャンプー、<br>冷やしマスクもあるよ' }, // ←羅列して異常性を出す
-            { type: 'dialogue', speaker: '東京', text: '・・・シャンプーまで？<br>冷蔵庫に入れてるってことですか？' },
-            {
-                type: 'prompt', speaker: '山形', text: 'うん。とにかく冷やせば<br>みんな喜ぶからね',
-                tsukkomi: [
-                    { text: "なんでもかんでも<br>冷やせばいいと思うな！", 
-                        point: 3, 
-                        ttype: ['t', 'p','v'],
-                        reaction: '東京「解決策が<br>安直すぎませんか！」' }, // 核心：とりあえず冷やす精神へのツッコミ
-                    { text: "冷房<br>つければいいじゃん", 
-                        point: 1, 
-                        type: ['t'],
-                        reaction: '東京「文明の利器（エアコン）を<br>使ってくださいよ」' }, // 東京的解決：エアコン
-                    { text: "お腹<br>壊しますよ", 
-                        point: 0, 
-                        type: ['t'],
-                        reaction: '東京「体冷やしすぎは<br>健康に悪いですよ」' }
-                ]
-            },
-            { type: 'dialogue', speaker: '東京', text: 'ストイックすぎるなぁ...。<br>もう疲れました。原宿のカフェで可愛い動物でも見たいです' },
-            { type: 'dialogue', speaker: '山形', text: '癒やしならあるよ。<br>加茂水族館の「ケサランパサラン」' },
-            { type: 'dialogue', speaker: '東京', text: 'ケサランパサラン？<br>なんか聞いたことはあるけど...' },
-            { type: 'dialogue', speaker: '山形', text: '白い毛玉みたいな謎の生物だよ。<br>水族館の桐箱の中で飼ってるんだ' },
-            {
-                type: 'prompt', speaker: '山形', text: 'エサは「おしろい（白粉）」だよ。<br>見てると幸せになれるんだって',
-                tsukkomi: [
-                    { text: "正体不明の生物<br>展示するなよ！", 
-                        point: 3, 
-                        type: ['t', 'p','v'],
-                        reaction: '東京「水族館なのに<br>魚じゃないんですか！」' },
-                    { text: "おしろいを食う？<br>コスパ悪くない？", 
-                        point: 1, 
-                        type: ['t'],
-                        reaction: '東京「化粧品食べるペットとか<br>東京の家賃より高いですよ...」' },
-                    { text: "ただの<br>ホコリじゃない？", 
-                        point: 0, 
-                        type: ['t'],
-                        reaction: '東京「掃除してないだけ<br>なんじゃないですか？」' }
-                ]
-            },
-            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
-            { type: 'dialogue', speaker: '東京', text: 'そうですね...<br>とりあえず...' },
-            { type: 'dialogue', speaker: '東京', text: '価値観が合わないってことは<br>よく分かりました' },
-            { type: 'dialogue', speaker: '山形', text: 'そう？ 残念だな' },
-            { type: 'dialogue', speaker: '東京', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '東京', text: '山手線乗って帰ります' },
-            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜' },
-        ]
-    },
 
-    // -------- 大阪 --------
+        },
+
+    // -------- 大阪 -----------------------------------------------------------------------------------------------------
     'osaka': {
         scenario: [
             { type: 'dialogue', speaker: '大阪', text: 'はいどうもー！！<br>大阪府でーす！！ 元気ですかー！！' },
@@ -265,11 +275,12 @@ const manzaiData = {
     },
 
 
-    // -------- 愛媛 --------
+    // -------- 愛媛 ---------------------------------------------------------------------------------------------------------
     'ehime': {
         scenario: [
             { type: 'dialogue', speaker: '愛媛', text: 'はいどうもー、愛媛県よ〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
             { type: 'dialogue', speaker: '愛媛', text: '愛媛には「道後温泉」っていう<br>日本最古の温泉があるんよ' },
             { type: 'dialogue', speaker: '愛媛', text: '山形さんも温泉多いけど' },
             { type: 'dialogue', speaker: '愛媛', text: 'やっぱお風呂はポカポカして<br>癒やされるんがええよね' },
@@ -342,7 +353,7 @@ const manzaiData = {
                     { text: "それって<br>衛生的にどうなん？", 
                         point: 0, 
                         type: ['t', 'v'], 
-                        reaction: '山形「新品の重機を買って<br>潤滑油にバターを塗ってるから大丈夫だよ」' },
+                        reaction: '山形「新品の重機を買って潤滑油にバターを塗ってるから大丈夫だよ」' },
                     { text: "日本一の<br>“デカさ”かい！", 
                         point: 3, 
                         type: ['t', 'p', 'v'], 
