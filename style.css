@@ -59,8 +59,8 @@ body {
 
 /* ======== 2. スマホ画面の「枠」 ======== */
 .game-wrapper {
-    aspect-ratio: 390 / 750;
-    width: min(100vw, 100vh * (390 / 750));
+    aspect-ratio: 390 / 650;
+    width: min(100vw, 100vh * (390 / 650));
     /* height は固定せず、最大でも画面内に収まるようにしつつ、
        中身が溢れたらスクロールできるように設定を確実にします */
     height: min(100vh, 100vw * (750 / 390));
@@ -160,7 +160,7 @@ body {
     transform-origin: center bottom;
     
     /* 頭の位置とサイズも％で指定し直す */
-    bottom: 72%;  /* 体の上に乗る位置 */
+    bottom: 74%;  /* 体の上に乗る位置 */
     height: 33%;  /* 頭のサイズ */
     
     object-fit: contain;
