@@ -2,19 +2,22 @@
 
 /* ======== 1. 基本設定 ======== */
 body {
-    /*background-image: url('images/pc-bg.jpg');*/
-    /*background-size: cover;*/
-    /*background-position: center center;*/
-    /*background-attachment: fixed;*/
     margin: 0;
     padding: 0;
     font-family: "Zen Maru Gothic", sans-serif;
+    
+    /* ▼ 真ん中に寄せるための設定 */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center; /* 左右中央 */
+    align-items: center;     /* 上下中央 */
+    
+    /* ▼ 重要：高さを「今見えている範囲」に固定する */
+    height: 100dvh; 
     width: 100vw;
-    overflow-x: hidden;
+    
+    /* 枠からはみ出た背景などは見せない */
+    overflow: hidden; 
+    
     box-sizing: border-box;
     background-color: #222;
 }
@@ -59,16 +62,20 @@ body {
 
 /* ======== 2. スマホ画面の「枠」 ======== */
 .game-wrapper {
-    aspect-ratio: 390 / 660;
-    width: min(100vw, 100vh * (390 / 660));
-    /* height は固定せず、最大でも画面内に収まるようにしつつ、
-       中身が溢れたらスクロールできるように設定を確実にします */
-    height: min(100vh, 100vw * (660 / 390));
-    margin: auto;
+    aspect-ratio: 390 / 660; 
+    width: min(100vw, 100dvh * (390 / 660));
+    height: min(100dvh, 100vw * (660 / 390));
+    
+    /* ▼ 追加：これを入れることで、bodyの中央に確実に鎮座します */
+    flex-shrink: 0; 
+    
+    margin: auto; /*念のため*/
     position: relative;
-    overflow-y: auto; /* 枠の中でスクロールさせる */
-    overflow-x: hidden;
     background-color: #000;
+    
+    /* トップページなどはスクロールしたいので y は auto */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .game-wrapper.no-scroll {
@@ -518,10 +525,10 @@ body {
 .story-area {
     position: relative;
     z-index: 10;
-    padding-top: 50vh; 
+    padding-top: 45dvh;
     padding-right: 20px;
     padding-left: 20px;
-    padding-bottom: 0;
+    padding-bottom: 50px;
     text-align: center;
     color: #ffffff;
     font-family: "Yu Mincho", "YuMincho", serif;
