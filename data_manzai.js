@@ -1,10 +1,98 @@
-// script_manzai.js (大阪表示・アニメーション完全修正版)
-
 // -------- 漫才データ（台本） --------
 const manzaiData = {
 
- // -------- 東京 -----------------------------------------------------------------------------------------------------
-'tokyo': {
+
+
+    // -------- 北海道 -----------------------------------------------------------------------------------------------------
+    'hokkaido': {
+    scenario: [
+            { type: 'dialogue', speaker: '北海道', text: 'はいどうも〜！<br>北海道と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '北海道', text: '北海道といえば、やっぱでかいよな' },
+            { type: 'dialogue', speaker: '北海道', text: '土地も、イベントも<br>スケール感が売りだべ' },
+            { type: 'dialogue', speaker: '山形', text: '“でっかいどう”ってやつだね' },
+            { type: 'dialogue', speaker: '山形', text: '大規模イベントなら<br>山形にもあるよ' },
+            { type: 'dialogue', speaker: '北海道', text: 'ほう<br>たとえば？' },
+            { type: 'dialogue', speaker: '山形', text: 'たとえば、“人間将棋”' },
+            { type: 'dialogue', speaker: '山形', text: '巨大な将棋盤の上を<br>人が駒となって動くんだ' },
+            { type: 'dialogue', speaker: '北海道', text: '...ほう<br>他には？' },
+            { type: 'dialogue', speaker: '山形', text: 'あと、日本一の<br>芋煮会フェスティバル' },
+            {
+             type: 'prompt', speaker: '山形',text: '直径6.5メートルの鍋と<br>バックホーを使って芋煮を作るんだ',
+             promptText: '人が駒となって動く人間将棋と<br>巨大鍋とバックホーを使う芋煮会だよ',
+                tsukkomi: [
+                { text: "巨大化させた<br>だけかよ！", 
+                    point: 3, type: ['t','p','v'],
+                  reaction: '北海道「発想が小学生みたいだな！」' },
+                { text: "重機使って<br>芋煮会！？", 
+                    point: 1, type: ['v'],
+                  reaction: '北海道「衛生面だけ気になるんだけど・・・」' },
+                { text: "雪まつりと<br>戦えそう", 
+                    point: 0, type: ['p','v'],
+                  reaction: '北海道「盛り上がりそうだな！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '北海道', text: '・・・まあ<br>スケールの話はさておき' },
+            { type: 'dialogue', speaker: '北海道', text: '山形も一応、雪国だよな？' },
+            { type: 'dialogue', speaker: '北海道', text: 'でも雪国って言ったら<br>やっぱ北海道だべ' },
+            { type: 'dialogue', speaker: '北海道', text: '夏でも涼しいし' },
+            { type: 'dialogue', speaker: '北海道', text: '正直<br>暑さ対策で困ることは少ないな' },
+            { type: 'dialogue', speaker: '山形', text: 'それは羨ましいなあ' },
+            { type: 'dialogue', speaker: '山形', text: '山形の夏はすごく暑いから<br>暑さ対策は頑張ってるよ' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」<br>とか' },
+            { type: 'dialogue', speaker: '北海道', text: 'おっ！やっぱ夏といえば<br>冷やし中華だよな〜' },
+            { type: 'dialogue', speaker: '山形', text: '中華だけじゃなく・・・' },
+            {
+             type: 'prompt', speaker: '山形',text: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
+                tsukkomi: [
+                { text: "めっちゃ暑さに<br>弱いじゃん", 
+                    point: 0, type: ['v'],
+                  reaction: '北海道「もっと頑張れよ〜」' },
+                { text: "冷やし中華と冷やしラーメン<br>何が違うの！？", 
+                    point: 1, type: ['p','t'],
+                  reaction: '山形「全然違うよ<br>食べてみる？」' },
+                { text: "冷やせばいいと<br>思ってる！？", 
+                    point: 3, type: ['t','p','v'],
+                  reaction: '北海道「まあ<br>それが一番の近道か・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '北海道', text: 'まあでもさ' },
+            { type: 'dialogue', speaker: '北海道', text: '自然環境で言ったら<br>北海道は強いべ' },
+            { type: 'dialogue', speaker: '北海道', text: '大地は広いし<br>空気も澄んでるし' },
+            { type: 'dialogue', speaker: '北海道', text: '山形も<br>自然は多そう' },
+            { type: 'dialogue', speaker: '山形', text: '山形も空気は綺麗なんだ<br>空気神社もあるし' },
+            { type: 'dialogue', speaker: '北海道', text: 'ほう・・・' },
+            { type: 'dialogue', speaker: '北海道', text: '・・・' },
+            { type: 'dialogue', speaker: '北海道', text: '・・・空気神社？<br>なんの話？' },
+            { type: 'dialogue', speaker: '山形', text: '空気があまりにも綺麗だから<br>感謝しようと思って' },
+            {
+                type: 'prompt',speaker: '山形',text: '空気を御神体とする神社が<br>できたんだよね',
+                tsukkomi: [
+                    { text: "北海道でも<br>やろうかな",
+                        point: 0, type: ['v'],
+                        reaction: '北海道「神社だらけになりそう」'},
+                    { text: "感謝の仕方<br>独特すぎるだろ！",
+                        point: 3, type: ['t','p','v'],
+                        reaction: '北海道「スピってる！？大丈夫！？」'},
+                    { text: "勝手に神様に<br>すんな！",
+                        point: 1, type: ['t','p'],
+                        reaction: '北海道「空気はみんなのものだろ！」'}
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '北海道', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '北海道', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '北海道', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '北海道', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+    ]
+    },
+
+
+    // -------- 東京 -----------------------------------------------------------------------------------------------------
+    'tokyo': {
         scenario: [
             { type: 'dialogue', speaker: '東京', text: 'はいどうもー！<br>東京都と〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
@@ -31,7 +119,7 @@ const manzaiData = {
                         reaction: '東京「そのスペースあれば<br>タワマン建ちますよ」' },
                     { text: "巨人用の<br>将棋かな？", 
                         point: 0, 
-                        type: ['p','v'],
+                        type: ['v'],
                         reaction: '東京「空から見るんですかね」' }
                 ]
             },
