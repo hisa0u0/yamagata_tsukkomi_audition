@@ -62,9 +62,9 @@ body {
 
 /* ======== 2. スマホ画面の「枠」 ======== */
 .game-wrapper {
-    aspect-ratio: 390 / 660; 
-    width: min(100vw, 100dvh * (390 / 660));
-    height: min(100dvh, 100vw * (660 / 390));
+    aspect-ratio: 390 / 656; 
+    width: min(100vw, 100dvh * (390 / 656));
+    height: min(100dvh, 100vw * (656 / 390));
     
     /* ▼ 追加：これを入れることで、bodyの中央に確実に鎮座します */
     flex-shrink: 0; 
