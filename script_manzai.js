@@ -180,11 +180,14 @@ function startSilentIntro() {
 
 // -------- テキスト読み上げ --------
 function speakText(textToSpeak, speaker, isEnding = false) {
-    if (!audioEnabled || !isSpeechSupported || !synth) return;
+     if (!audioEnabled || !isSpeechSupported || !synth) return;
      if (synth.speaking) { synth.cancel(); }
      stopSpeakingAnimation(); 
 
-     const utteranceText = textToSpeak.replace(/<br>/g, ' ').replace(/\s+/g, ' ').trim();
+     // ★修正箇所：すべてのHTMLタグ(<...>)を除去する正規表現に変更
+     // これで <ruby>未確認生物<rt>UMA</rt></ruby> が 「未確認生物UMA」 として読み上げられます
+     const utteranceText = textToSpeak.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
      const utterance = new SpeechSynthesisUtterance(utteranceText);
      utterance.lang = 'ja-JP';
      let selectedVoice = null; 
@@ -207,17 +210,17 @@ function speakText(textToSpeak, speaker, isEnding = false) {
      utterance.onend = () => {
          stopSpeakingAnimation();
          if ((!synth || !synth.speaking || !audioEnabled) && tapIcon) {
-    const currentStepData = currentScenario[step];
-    if (currentStepData && currentStepData.speaker !== 'both') {
-        tapIcon.style.display = 'block';
-    }
-}
+            const currentStepData = currentScenario[step];
+            if (currentStepData && currentStepData.speaker !== 'both') {
+                tapIcon.style.display = 'block';
+            }
+        }
          if (isEnding && audioEnabled && seClapAudio) {
              seClapAudio.currentTime = 0; seClapAudio.volume = 0.5;
              seClapAudio.play().catch(e => {});
              setTimeout(() => {
                  if (currentScenario && step + 1 >= currentScenario.length && totalPoint !== undefined) {
-                      goToResult(); // ★修正：共通関数を使用
+                      goToResult();
                  }
              }, 4000);
          }
@@ -261,20 +264,16 @@ function stopSpeakingAnimation() {
 // -------- タイプライター表示 --------
 function typeCharacter(fullText, index, isEnding = false) {
     const displayText = fullText;
+    
+    // --- 終了判定 ---
     if (index >= displayText.length) {
         isTyping = false; 
         typingTimer = null;
-
-        // ★ここから修正：現在の話者が both かどうかを正しく判定する
         const currentStepData = currentScenario[step];
         const isBoth = (currentStepData && currentStepData.speaker === 'both');
-
-        // ★ !isBoth (二人同時じゃない時) という条件を追加
         if ((!synth || !synth.speaking || !audioEnabled) && tapIcon && !isBoth) { 
             tapIcon.style.display = 'block'; 
         }
-        // ★ここまで
-
         if (isEnding && !audioEnabled && seClapAudio) {
              seClapAudio.currentTime = 0; seClapAudio.volume = 0.5;
              seClapAudio.play().catch(e => {});
@@ -286,19 +285,37 @@ function typeCharacter(fullText, index, isEnding = false) {
         }
         return;
     }
+
     let char = displayText.charAt(index); 
     let nextIndex = index + 1; 
+
+    // ★修正箇所：タグ処理の強化
     if (char === '<') { 
-        const closingTagIndex = displayText.indexOf('>', index); 
-        if (closingTagIndex !== -1 && displayText.substring(index, closingTagIndex + 1).toLowerCase() === '<br>') { 
-            char = '<br>'; 
-            nextIndex = closingTagIndex + 1; 
-        } else { 
-            char = ''; 
-            nextIndex = index + 1; 
-        } 
+        // もし <ruby> タグの開始だったら
+        if (displayText.substring(index).startsWith('<ruby')) {
+            // 閉じタグ </ruby> を探す
+            const closingRubyIndex = displayText.indexOf('</ruby>', index);
+            if (closingRubyIndex !== -1) {
+                // <ruby> から </ruby> までを「ひとかたまり」として取得する
+                // これでタグが分解されずにセットで画面に追加される
+                const endTagLength = '</ruby>'.length;
+                char = displayText.substring(index, closingRubyIndex + endTagLength);
+                nextIndex = closingRubyIndex + endTagLength;
+            }
+        } else {
+            // <br> などその他のタグの場合
+            const closingTagIndex = displayText.indexOf('>', index); 
+            if (closingTagIndex !== -1) {
+                char = displayText.substring(index, closingTagIndex + 1);
+                nextIndex = closingTagIndex + 1;
+            }
+        }
     }
+
+    // 画面に追加
     if(serifuText) serifuText.innerHTML += char;
+    
+    // 次の文字へ
     typingTimer = setTimeout(() => { typeCharacter(fullText, nextIndex, isEnding); }, typeSpeed);
 }
 
