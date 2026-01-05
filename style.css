@@ -328,7 +328,7 @@ position: absolute; top: 50%; left: 50%;
 transform: translate(-150%, -40%); z-index: 100; opacity: 0; display: none;
 }
 
-#tsukkome-cutin img { width: 450px; }
+#tsukkome-cutin img { width: 400px; }
 
 @keyframes slideInFromLeft { 0% { transform: translate(-150%, -40%); opacity: 0; } 100% { transform: translate(-50%, -50%); opacity: 1; } }
 
