@@ -116,3 +116,22 @@ document.addEventListener('DOMContentLoaded', () => {
         logoObserver.observe(logo);
     }
 });
+
+/* ======== スクロールガイドの表示制御 ======== */
+// 1. スクロールする入れ物（index-scroll-container）を取得
+const scrollContainer = document.querySelector('.index-scroll-container');
+// 2. ガイド本体を取得
+const scrollGuide = document.getElementById('scroll-guide');
+
+if (scrollContainer && scrollGuide) {
+    scrollContainer.addEventListener('scroll', () => {
+        // 20px（ほんの少し）でもスクロールされたら
+        if (scrollContainer.scrollTop > 20) {
+            // CSSで用意した .fade-out クラス（opacity: 0）を付与
+            scrollGuide.classList.add('fade-out');
+        } else {
+            // 一番上に戻ったら再表示
+            scrollGuide.classList.remove('fade-out');
+        }
+    });
+}

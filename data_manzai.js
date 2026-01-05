@@ -269,6 +269,84 @@ const manzaiData = {
 
     },
 
+    // -------- 長野 --------------------------------------------------------------------------------------------------------
+    'nagano': {
+        scenario: [
+            { type: 'dialogue', speaker: '長野', text: 'こんにちは<br>長野県です' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '長野', text: '長野といえば、やっぱり「山」だね<br>日本アルプスの雄大な自然が自慢だよ' },
+            { type: 'dialogue', speaker: '長野', text: '空気が美味しくて<br>深呼吸すると気持ちいいんだ' },
+            { type: 'dialogue', speaker: '山形', text: '空気なら山形も負けてないよ' },
+            { type: 'dialogue', speaker: '山形', text: 'あまりに空気が綺麗だから<br>「空気神社」を作って祀ってるんだ' },
+            { type: 'dialogue', speaker: '長野', text: 'えっ？ 空気神社？<br>学問の神様とかじゃなくて？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん、空気そのものが御神体だよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '本殿もなくて、<br>鏡に映る空気を拝むんだ',
+                tsukkomi: [
+                    { text: "哲学的すぎるよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長野「教育県でも<br>理解が追いつかないよ！」' },
+                    { text: "賽銭は<br>どうするの？", 
+                        point: 1, type: ['v'], 
+                        reaction: '山形「普通の賽銭箱があるよ<br>そこは現金だよ」' },
+                    { text: "長野にも<br>作ろうかな", 
+                        point: 0, type: ['p'], 
+                        reaction: '長野「いや、真面目な県民が<br>混乱しちゃうよ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '長野', text: '空気を祀るなんて、独創的だなぁ...' },
+            { type: 'dialogue', speaker: '長野', text: 'あと長野は海がないけど、<br>そのぶん川の水が綺麗なんだ' },
+            { type: 'dialogue', speaker: '長野', text: 'イワナとかヤマメとか<br>川魚が美味しいよ' },
+            { type: 'dialogue', speaker: '山形', text: 'お魚かぁ<br>山形は海があるから、海の生き物が豊富だよ' },
+            { type: 'dialogue', speaker: '山形', text: '加茂水族館には<br>世界一の種類の「クラゲ」がいるし' },
+            { type: 'dialogue', speaker: '長野', text: 'へぇ、世界一の展示数なんだ<br>見るだけで癒やされそうだね' },
+            { type: 'dialogue', speaker: '山形', text: 'うん、見て癒やされた後は<br>美味しくいただくんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: 'クラゲラーメンとか<br>クラゲアイスにしてね',
+                tsukkomi: [
+                    { text: "なんで<br>食べちゃうの！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長野「展示を見た直後に！？<br>情緒がないよ！」' },
+                    { text: "普通の魚<br>食べさせてよ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '山形「コリコリして<br>ナタデココみたいで最高だよ？」' },
+                    { text: "アイスに<br>入ってるの！？", 
+                        point: 0, type: ['v'], 
+                        reaction: '長野「食感の主張が<br>激しすぎるよ...」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '長野', text: 'はぁ...<br>山形の食文化は刺激的だね' },
+            { type: 'dialogue', speaker: '長野', text: '長野県民は真面目だから<br>もっとこう、質素で団結力があるのが好きかな' },
+            { type: 'dialogue', speaker: '長野', text: '県歌の「信濃の国」を<br>みんなで合唱したりね' },
+            { type: 'dialogue', speaker: '山形', text: '団結力なら、山形の「芋煮会」もすごいよ' },
+            { type: 'dialogue', speaker: '山形', text: '河原に集まって、みんなで鍋を囲むんだ' },
+            { type: 'dialogue', speaker: '長野', text: 'ああ、芋煮！<br>それなら平和でいいね' },
+            { type: 'dialogue', speaker: '山形', text: 'うん。ただ、日本一の芋煮会だと<br>3万食を作るからお玉じゃ無理なんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: 'だから工事現場のショベルカーで<br>具材をかき混ぜるんだ',
+                tsukkomi: [
+                    { text: "衛生管理<br>どうなってるの！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長野「工事現場じゃないか！<br>保健所は許可したの！？」' },
+                    { text: "調理器具<br>じゃないよ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '山形「ちゃんと新車を買って<br>バターを塗ってるから衛生的だよ」' },
+                    { text: "真面目に<br>料理して！", 
+                        point: 0, type: ['v'], 
+                        reaction: '長野「給食のおばちゃんが<br>腰抜かすよ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '長野', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '長野', text: 'ツッコミどころが多いってことは<br>学習できたよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形の魅力が伝わって嬉しいよ！' },
+            { type: 'dialogue', speaker: '長野', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '長野', text: 'ポジティブすぎるよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 大阪 -----------------------------------------------------------------------------------------------------
     'osaka': {
         scenario: [
@@ -456,7 +534,7 @@ const manzaiData = {
     },
     
     // -------- 沖縄 -----------------------------------------------------------------------------------------------------
-'okinawa': {
+    'okinawa': {
     scenario: [
         { type: 'dialogue', speaker: '沖縄', text: 'ハイサイ！<br>沖縄県さ〜' },
         { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
@@ -538,7 +616,7 @@ const manzaiData = {
         { type: 'dialogue', speaker: '沖縄', text: 'それでいいわけ！？' },
         { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
     ]
-},
+    },
 
 };
 
