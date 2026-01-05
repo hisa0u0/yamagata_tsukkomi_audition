@@ -226,19 +226,33 @@ function speakText(textToSpeak, speaker, isEnding = false) {
      setTimeout(() => { try { synth.speak(utterance); } catch (e) { stopSpeakingAnimation(); if (!isTyping && tapIcon) { tapIcon.style.display = 'block'; } } }, 50);
 }
 
-// -------- しゃべりアニメーション --------
+// -------- しゃべりアニメーション (修正版) --------
 function startSpeakingAnimation(speaker) {
+    // 1. 安全確認：画像要素がない場合は何もしない
+    if (!playerHead || !yamagataHead) return;
+
+    // 2. 一旦、全員の「しゃべっているクラス」を消す
+    playerHead.classList.remove('speaking');
+    yamagataHead.classList.remove('speaking');
+
+    // 3. 話者に応じてクラスを付与
     if (speaker === '山形') {
-        if(yamagataHead) yamagataHead.classList.add('speaking');
-        if(playerHead) playerHead.classList.remove('speaking');
+        yamagataHead.classList.add('speaking');
     } else if (speaker === 'both') {
-        if(yamagataHead) yamagataHead.classList.add('speaking');
+        yamagataHead.classList.add('speaking');
+        playerHead.classList.add('speaking');
     } else {
-        if(playerHead) playerHead.classList.add('speaking');
-        if(yamagataHead) yamagataHead.classList.remove('speaking');
+        // 都道府県（北海道、沖縄など）が話者の場合
+        playerHead.classList.add('speaking');
+        
+        // 【重要】
+        // CSS側の [src*="okinawa"].speaking というセレクタのおかげで、
+        // 画像が沖縄なら自動的に「okinawaHeadShake」が適用され、
+        // それ以外なら「niigataHeadShake」が適用されます。
     }
 }
 
+// 停止用の関数も忘れずに定義（既にある場合は上書き）
 function stopSpeakingAnimation() {
     if (playerHead) playerHead.classList.remove('speaking');
     if (yamagataHead) yamagataHead.classList.remove('speaking');

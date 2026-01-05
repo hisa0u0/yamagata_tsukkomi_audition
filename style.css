@@ -130,11 +130,13 @@ body {
     position: absolute;
     
     /* 下からどれくらいの位置か（90px → 12% に変更） */
-    bottom: 12%; 
+    bottom: 82px; 
     
     /* 幅と高さも画面に対する％に変更 */
-    width: 42%;    /* 元の約160px相当 */
-    height: 75%;   /* 元の約550px相当 */
+    width: 40%;    /* 元の約160px相当 */
+    aspect-ratio: 160 / 550; /* 元の画像比率を維持して、高さは自動計算させる */
+
+    /*height: auto; */  /* 元の約550px相当 */
     
     opacity: 0;
     transform: scale(0.8);
@@ -171,27 +173,78 @@ body {
     transform-origin: center bottom;
     
     /* 頭の位置とサイズも％で指定し直す */
-    bottom: 74%;  /* 体の上に乗る位置 */
-    height: 33%;  /* 頭のサイズ */
-    
+    /*bottom: 74%;  /* 体の上に乗る位置 */
+    /*height: 33%;  /* 頭のサイズ */
+
+    /* ▼ 修正：親の「高さ」ではなく「幅」を基準にする計算、
+       もしくは親要素の上端(top:0)からの位置で固定する */
+    top: -7%;    /* 親(container)の幅に対してこれくらい上に飛び出す、という指定 */
+    width: 118%;   /* 親(container)の幅に対する頭の大きさ */
+    height: auto; /* 高さは自動（潰れないように） */
+
     object-fit: contain;
 }
+
+/* --- 2. 沖縄の個別設定（!importantをtransformから外す） --- */
+.char-head[src*="okinawa"] {
+    top: -6% !important;   /* topからの位置で固定 */
+    width: 107% !important;  /* 横幅基準 */
+    height: auto !important; 
+    transform: translateX(-22%);
+}
+
+/* 沖縄専用の揺れ */
+@keyframes okinawaHeadShake {
+    0%, 100% { transform: translateX(-22%) rotate(0deg) scale(1); }
+    25%      { transform: translateX(-22%) rotate(4deg) scale(1); }
+    75%      { transform: translateX(-22%) rotate(-3deg) scale(1); }
+}
+/* 沖縄がしゃべる時だけ、標準を上書きして専用アニメを流す */
+#player-head[src*="okinawa"].speaking {
+    animation: okinawaHeadShake 0.15s linear infinite alternate !important;
+}
+
+/* 1. 北海道専用の揺れを定義（位置を -38% で固定したまま揺らす） */
+@keyframes hokkaidoHeadShake {
+    0%, 100% { transform: translateX(-38%) rotate(0deg) scale(1); }
+    25%      { transform: translateX(-38%) rotate(4deg) scale(1); }
+    75%      { transform: translateX(-38%) rotate(-3deg) scale(1); }
+}
+
+/* 北海道：頭の位置とサイズ */
+.char-head[src*="hokkaido"] {
+    top: -5% !important;   /* topからの位置で固定 */
+    width: 130% !important;  /* 横幅基準 */
+    height: auto !important;
+    transform: translateX(-38%);
+}
+
+/* 北海道がしゃべる時（アニメーション時）の設定 */
+#player-head[src*="hokkaido"].speaking {
+    /* 標準の niigataHeadShake ではなく、上で作った専用の hokkaidoHeadShake を使う */
+    animation: hokkaidoHeadShake 0.15s linear infinite alternate !important;
+}
+
 #yamagata-head {
     transform: translateX(-50%) scale(0.9); transform-origin: center bottom;
 }
 
-@keyframes headShake {
+@keyframes headShake { /* 山形専用 */
   0%, 100% { transform: translateX(-50%) rotate(0deg) scale(0.9); }
   25% { transform: translateX(-50%) rotate(4deg) scale(0.9); }
   75% { transform: translateX(-50%) rotate(-3deg) scale(0.9); }
 }
-@keyframes niigataHeadShake {
+#yamagata-head.speaking { animation: headShake 0.15s linear infinite alternate; }
+
+
+
+@keyframes niigataHeadShake { /* 標準（新潟など） */
     0%, 100% { transform: translateX(-50%) rotate(0deg) scale(1); }
-    25% { transform: translateX(-50%) rotate(4deg) scale(1); }
-    75% { transform: translateX(-50%) rotate(-3deg) scale(1); }
+    25%      { transform: translateX(-50%) rotate(4deg) scale(1); }
+    75%      { transform: translateX(-50%) rotate(-3deg) scale(1); }
 }
 #player-head.speaking { animation: niigataHeadShake 0.15s linear infinite alternate; }
-#yamagata-head.speaking { animation: headShake 0.15s linear infinite alternate; }
+
 
 #manzai-ui {
     display: none; width: 100%; z-index: 10;
@@ -313,9 +366,31 @@ body {
 #result-background-image {
     width: 100%; height: auto; object-fit: contain; display: block;
 }
+
+/* 頭・標準の位置（ここを基準に微調整） */
 #selected-pref-head {
-    position: absolute; left: -4.5%; bottom: 72%; width: 55%; height: auto; z-index: 10;
+    position: absolute; 
+    left: -4.5%; 
+    bottom: 72%; 
+    width: 55%; 
+    height: auto; 
+    z-index: 10;
 }
+
+/* 沖縄の場合：結果画面 */
+#selected-pref-head[src*="okinawa"] {
+    width: 47% !important;   /* 少し小さくする場合 */
+    bottom: 75.5% !important;  /* 少し下げる場合 */
+    left: 13% !important;    /* 少し右に寄せる場合 */
+}
+
+/* 北海道の場合：結果画面（★新規追加） */
+#selected-pref-head[src*="hokkaido"] {
+    width: 65% !important;   /* 少し大きくする場合 */
+    bottom: 69% !important;  /* 位置の高さ調整 */
+    left: 2% !important;    /* 左右位置の調整 */
+}
+
 #result-button-container {
     position: relative; z-index: 20; width: 80%; max-width: 250px;
     margin: 20px auto; 
@@ -353,7 +428,7 @@ body {
 }
 #share-button:hover { background-color: #333333; }
 
-/* 2. 【新規】画像保存ボタン（目立つピンク） */
+/* 2. 【新規】画像保存ボタン */
 #qr-button {
     background-color: #04FF00 !important; /* 強制的にネオングリーン */
     color: #000000 !important;            /* 強制的に黒文字 */

@@ -123,6 +123,17 @@ document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMo
         baseImg.src = baseSrc;
         headImg.src = `images/${pref}-head.png`;
 
+        // CSS（.wp-head）の値を、特定の県だけJSで「上書き」します
+        if (pref.includes('hokkaido')) {
+        headImg.style.top = '40px';   // 北海道専用
+        headImg.style.left = '50px';  // 北海道専用
+        headImg.style.width = '375px';// 北海道専用
+        } else if (pref.includes('okinawa')) {
+        headImg.style.top = '100px';  // 沖縄専用
+        headImg.style.left = '140px';  // 沖縄専用
+        headImg.style.width = '250px';// 沖縄専用
+        }
+
         // 2. グラフ描画
         const ctx = document.getElementById('cardRadarChart');
         new Chart(ctx, {

@@ -1,8 +1,6 @@
 // -------- 漫才データ（台本） --------
 const manzaiData = {
 
-
-
     // -------- 北海道 -----------------------------------------------------------------------------------------------------
     'hokkaido': {
     scenario: [
@@ -89,7 +87,6 @@ const manzaiData = {
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
     ]
     },
-
 
     // -------- 東京 -----------------------------------------------------------------------------------------------------
     'tokyo': {
@@ -233,6 +230,7 @@ const manzaiData = {
                         reaction: '山形「あ、食感のアクセントに<br>なるかもね」' }
                 ]
             },
+            { type: 'dialogue', speaker: '新潟', text: '・・・それ、誰が最初に<br>いけるって言ったんだよ'},
             { type: 'dialogue', speaker: '山形', text: 'フェスティバルと言えば・・・' },
             { type: 'dialogue', speaker: '新潟', text: 'え？<br>まだなんかあんの？'},
             { type: 'dialogue', speaker: '山形', text: 'うん<br>空気まつり' },
@@ -269,7 +267,7 @@ const manzaiData = {
 
                 ]
 
-        },
+    },
 
     // -------- 大阪 -----------------------------------------------------------------------------------------------------
     'osaka': {
@@ -361,7 +359,6 @@ const manzaiData = {
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！！' },
         ]
     },
-
 
     // -------- 愛媛 ---------------------------------------------------------------------------------------------------------
     'ehime': {
@@ -456,7 +453,64 @@ const manzaiData = {
             { type: 'dialogue', speaker: '愛媛', text: 'ほんまにそれでええんかい！！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！！' },
         ]
-    }
+    },
     
+    // -------- 沖縄 -----------------------------------------------------------------------------------------------------
+'okinawa': {
+    scenario: [
+        { type: 'dialogue', speaker: '沖縄', text: 'ハイサイ！<br>沖縄県さ〜！' },
+        { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+        { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+        { type: 'dialogue', speaker: '沖縄', text: 'それにしても暑いさ〜<br>沖縄の日差しは強烈だからね' },
+        { type: 'dialogue', speaker: '山形', text: '山形の夏も暑いよ〜<br>フェーン現象で最高気温記録したりするし' },
+        { type: 'dialogue', speaker: '沖縄', text: 'え〜？ 雪国のイメージだけど<br>夏はそんなに暑いわけ？' },
+        { type: 'dialogue', speaker: '山形', text: 'だから、体の中から冷やすために<br>「冷やしシャンプー」するんだ' },
+        { type: 'dialogue', speaker: '沖縄', text: '・・・冷やしシャンプー？' },
+        { type: 'dialogue', speaker: '山形', text: '冷蔵庫でキンキンに冷やしたシャンプーで<br>頭を洗うんだよ' },
+        { type: 'prompt', speaker: '山形', text: 'メンソールも入ってるから<br>頭がスースーして最高だよ',
+            tsukkomi: [
+                { text: "頭皮<br>いじめてんの！？", 
+                    point: 1, type: ['v', 'p'],
+                    reaction: '沖縄「かき氷食べたときみたいに<br>キーンときそうさ〜」' },
+                { text: "海入れば<br>ええさ〜！", 
+                    point: 0, type: ['v'],
+                    reaction: '沖縄「全身冷やしたほうが早いでしょ」' },
+                { text: "冷やす場所<br>限定的すぎるわ！", 
+                    point: 3, type: ['t', 'p', 'v'],
+                    reaction: '沖縄「体感温度そこまで下がらんでしょ！<br>もっと部屋冷やしなよ！」' }
+            ]
+        },
+        { type: 'dialogue', speaker: '沖縄', text: '山形ナイチャーの考えることは<br>よくわからんさ〜' },
+        { type: 'dialogue', speaker: '沖縄', text: '沖縄には「キジムナー」とか<br>不思議な精霊がいるけどね' },
+        { type: 'dialogue', speaker: '山形', text: '不思議な生き物なら山形も負けないよ' },
+        { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」って知ってる？' },
+        { type: 'dialogue', speaker: '沖縄', text: 'なにそれ？<br>新しいチャンプルーの具？' },
+        { type: 'dialogue', speaker: '山形', text: 'タンポポの綿毛みたいな未確認生物で、<br>持ってるだけで幸せになれるんだ' },
+        { type: 'dialogue', speaker: '沖縄', text: 'へえ〜、伝説の生き物ってことね<br>見てみたいさ〜' },
+        { type: 'dialogue', speaker: '山形', text: '加茂水族館に行けば展示してるよ' },
+        { type: 'prompt', speaker: '沖縄', text: '・・・水族館？<br>未確認生物なのに？',
+            promptText: '水族館で展示されてるよ<br>エサはおしろいなんだって',
+            tsukkomi: [
+                { text: "なんで<br>水族館におるん！？", 
+                    point: 3, type: ['t', 'p', 'v'],
+                    reaction: '沖縄「魚じゃないでしょ！<br>分類どうなってんの！」' },
+                { text: "お守りに<br>したいさ〜", 
+                    point: 0, type: ['v'],
+                    reaction: '山形「桐の箱に入れないと<br>逃げちゃうから気をつけてね」' },
+                { text: "未確認なのに<br>展示すな！", 
+                    point: 1, type: ['t', 'p'],
+                    reaction: '沖縄「もう確認済みってことじゃないの！？」' }
+            ]
+        },
+        { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+        { type: 'dialogue', speaker: '沖縄', text: 'う〜ん<br>とりあえず・・・' },
+        { type: 'dialogue', speaker: '沖縄', text: 'なんくるないさ〜じゃ済まないくらい<br>ツッコミどころがあるのはわかった' },
+        { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+        { type: 'dialogue', speaker: '沖縄', text: '・・・・・・' },
+        { type: 'dialogue', speaker: '沖縄', text: '強引だね〜！' },
+        { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+    ]
+},
+
 };
 
