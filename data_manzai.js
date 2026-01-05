@@ -230,7 +230,6 @@ const manzaiData = {
                         reaction: '山形「あ、食感のアクセントに<br>なるかもね」' }
                 ]
             },
-            { type: 'dialogue', speaker: '新潟', text: '・・・それ、誰が最初に<br>いけるって言ったんだよ'},
             { type: 'dialogue', speaker: '山形', text: 'フェスティバルと言えば・・・' },
             { type: 'dialogue', speaker: '新潟', text: 'え？<br>まだなんかあんの？'},
             { type: 'dialogue', speaker: '山形', text: 'うん<br>空気まつり' },
