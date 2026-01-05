@@ -7,8 +7,9 @@ const manzaiData = {
             { type: 'dialogue', speaker: '北海道', text: 'はいどうも〜！<br>北海道と〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
-            { type: 'dialogue', speaker: '北海道', text: '北海道といえば、やっぱでかいよな' },
+            { type: 'dialogue', speaker: '北海道', text: '北海道といえば<br>やっぱデカい！' },
             { type: 'dialogue', speaker: '北海道', text: '土地も、イベントも<br>スケール感が売り！' },
+            { type: 'dialogue', speaker: '北海道', text: 'さっぽろ雪まつりとかさ' },
             { type: 'dialogue', speaker: '山形', text: '“でっかいどう”ってやつだね' },
             { type: 'dialogue', speaker: '山形', text: '大規模イベントなら<br>山形にもあるよ' },
             { type: 'dialogue', speaker: '北海道', text: 'ほう<br>たとえば？' },
@@ -56,13 +57,13 @@ const manzaiData = {
                 ]
             },
             { type: 'dialogue', speaker: '北海道', text: 'まあでもさ' },
-            { type: 'dialogue', speaker: '北海道', text: '自然環境で言ったら<br>北海道は強いよ' },
-            { type: 'dialogue', speaker: '北海道', text: '大地は広いし<br>空気も澄んでるし' },
-            { type: 'dialogue', speaker: '北海道', text: '山形も<br>自然は多そう' },
-            { type: 'dialogue', speaker: '山形', text: '山形も空気は綺麗なんだ<br>空気神社もあるし' },
+            { type: 'dialogue', speaker: '北海道', text: '自然環境で言ったら<br>北海道は最強だよ' },
+            { type: 'dialogue', speaker: '北海道', text: '世界遺産の知床もあるし<br>流氷も来るし、ヒグマも出るし' },
+            { type: 'dialogue', speaker: '北海道', text: '山形も<br>そういう野生の自然、ある？' },
+            { type: 'dialogue', speaker: '山形', text: '山形は空気が綺麗なんだ<br>空気神社もあるし' },
             { type: 'dialogue', speaker: '北海道', text: 'ほう・・・' },
-            { type: 'dialogue', speaker: '北海道', text: '・・・' },
-            { type: 'dialogue', speaker: '北海道', text: '・・・空気神社？<br>なんの話？' },
+            { type: 'dialogue', speaker: '北海道', text: '・・・・・・<br>・・・・・・' },
+            { type: 'dialogue', speaker: '北海道', text: '・・・え？空気神社？<br>なんの話？' },
             { type: 'dialogue', speaker: '山形', text: '空気があまりにも綺麗だから<br>感謝しようと思って' },
             {
                 type: 'prompt',speaker: '山形',text: '空気を御神体とする神社が<br>できたんだよね',
@@ -457,7 +458,7 @@ const manzaiData = {
     // -------- 沖縄 -----------------------------------------------------------------------------------------------------
 'okinawa': {
     scenario: [
-        { type: 'dialogue', speaker: '沖縄', text: 'ハイサイ！<br>沖縄県さ〜！' },
+        { type: 'dialogue', speaker: '沖縄', text: 'ハイサイ！<br>沖縄県さ〜' },
         { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
         { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
         { type: 'dialogue', speaker: '沖縄', text: 'それにしても暑いさ〜<br>沖縄の日差しは強烈だからね' },
