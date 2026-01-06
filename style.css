@@ -129,9 +129,9 @@ display: flex; flex-direction: column; justify-content: flex-end;
 .character-container {
 position: absolute;
 /* 下からどれくらいの位置か（90px → 12% に変更） */
-bottom: 60px;
+bottom: 5px;
 /* 幅と高さも画面に対する％に変更 */
-width: 40%; /* 元の約160px相当 */
+width: 41%; /* 元の約160px相当 */
 aspect-ratio: 160 / 550; /* 元の画像比率を維持して、高さは自動計算させる */
 /*height: auto; */ /* 元の約550px相当 */
 opacity: 0;
@@ -438,7 +438,7 @@ left: 13% !important; /* 少し右に寄せる場合 */
 #selected-pref-head[src*="hokkaido"] {
 width: 65% !important; /* 少し大きくする場合 */
 bottom: 69% !important; /* 位置の高さ調整 */
-left: 2% !important; /* 左右位置の調整 */
+left: 3% !important; /* 左右位置の調整 */
 }
 
 #result-button-container {
