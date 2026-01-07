@@ -277,7 +277,8 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
             { type: 'dialogue', speaker: '新潟', text: 'このあいだ<br>長岡花火見に行ったんだよ' },
-            { type: 'dialogue', speaker: '新潟', text: '迫力すごかったな〜<br>やっぱ夏といえば花火大会だよな' },
+            { type: 'dialogue', speaker: '新潟', text: '復興祈願花火「フェニックス」<br>涙が出るほど綺麗だったなぁ' },
+            { type: 'dialogue', speaker: '新潟', text: 'やっぱ日本海の夏といえば<br>長岡の大花火だよな' },
             { type: 'dialogue', speaker: '新潟', text: '山形にはなんかある？' },
             { type: 'dialogue', speaker: '山形', text: '山形の夏といえば・・・' },
             {
@@ -297,10 +298,12 @@ const manzaiData = {
                         reaction: '新潟「へぎそばも美味いけど<br>ラーメンもいいな...」' }
                 ]
             },
-            { type: 'dialogue', speaker: '新潟', text: 'でも秋になると、さすがに温かいものが恋しくなるよな？' },
-            { type: 'dialogue', speaker: '新潟', text: '新潟は新米シーズンで、<br>美味しいおにぎりが食べたくなるな〜' },
-            { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高だぞ〜' },
-            { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？' },
+            { type: 'dialogue', speaker: '新潟', text: '体冷やしてばっかりじゃダメだって' },
+            { type: 'dialogue', speaker: '新潟', text: '秋になると<br>温かいご飯が恋しくなるだろ？' },
+            { type: 'dialogue', speaker: '新潟', text: '新潟は魚沼産コシヒカリの<br>新米シーズン！' },
+            { type: 'dialogue', speaker: '新潟', text: 'ピカピカの塩むすびなんて<br>新米シーズン！' },
+            { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高のご馳走だぞ' },
+            { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？<br>つや姫？ 雪若丸？' },
             { type: 'dialogue', speaker: '山形', text: '秋か〜' },
             { type: 'dialogue', speaker: '山形', text: '秋なら芋煮会かな<br>日本一の芋煮会をするんだよ' },
             { type: 'dialogue', speaker: '新潟', text: '日本一の芋煮会？<br>それは日本一美味しいってこと？' },
@@ -362,85 +365,84 @@ const manzaiData = {
     // -------- 長野 --------------------------------------------------------------------------------------------------------
     'nagano': {
         scenario: [
-            { type: 'dialogue', speaker: '長野', text: 'こんにちは<br>長野県です' },
+            { type: 'dialogue', speaker: '長野', text: 'はいどうも〜<br>長野県と〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
-            
-            // --- ネタ1：教育県（頭脳） → 人間将棋（物理） ---
-            { type: 'dialogue', speaker: '長野', text: '長野といえば「教育県」だからね<br>真面目に勉強したり、頭を使うことが好きなんだ' },
+            { type: 'dialogue', speaker: '長野', text: '長野といえば「教育県」だからね<br>体を動かすより、静かに頭を使うことが好きなんだ' },
+            { type: 'dialogue', speaker: '長野', text: '長野といえば「教育県」だからね<br>体を動かすより、静かに頭を使うことが好きなんだ' },
+            { type: 'dialogue', speaker: '長野', text: '図書館で読書とか、論理的なパズルとか<br>そういう「知的な静寂」こそが至高だよ' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜、頭を使うのが好きなんだ<br>それなら山形にも、ピッタリな伝統文化があるよ' },
-            { type: 'dialogue', speaker: '長野', text: 'おっ、いいね。<br>なにかのコンテストかい？' },
+            { type: 'dialogue', speaker: '長野', text: 'おっ、わかってるね<br>数学コンテストか何かかい？' },
             { type: 'dialogue', speaker: '山形', text: 'いや、「将棋」だよ' },
-            { type: 'dialogue', speaker: '長野', text: '将棋か！ 日本の伝統的な頭脳スポーツだね<br>静寂の中で読み合う、素晴らしい文化だ' },
-            { type: 'dialogue', speaker: '山形', text: 'うん、ただ山形の場合は<br>「人間将棋」なんだけど' },
-            { type: 'dialogue', speaker: '長野', text: '・・・え？<br>人間将棋？' },
+            { type: 'dialogue', speaker: '長野', text: '将棋か！ 最高だね<br>盤上の格闘技とは言うけど、実際はとても静かだ' },
+            { type: 'dialogue', speaker: '山形', text: 'うん、でも山形の場合は<br>駒が喋ったり動いたりするけどね' },
+            { type: 'dialogue', speaker: '長野', text: '・・・は？<br>駒が動く？' },
             {
-                type: 'prompt', speaker: '山形', text: '甲冑を着た人間が<br>巨大な盤の上を駒として練り歩くんだ',
+                type: 'prompt', speaker: '山形', text: '「人間将棋」って言ってね<br>甲冑を着た人間が、巨大な盤の上を練り歩くんだ',
                 tsukkomi: [
                     { text: "頭脳戦どこ<br>行ったんだよ！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '長野「見た目のインパクト重視<br>じゃないか！」' },
+                        reaction: '長野「静寂のカケラもないよ！<br>ただのコスプレ行列じゃないか！」' },
                     { text: "人間がやる<br>意味ある！？", 
                         point: 1, type: ['v', 'p'], 
-                        reaction: '長野「普通の盤でやったほうが<br>全体が見やすいだろ！」' },
-                    { text: "駒が<br>重すぎるよ", 
+                        reaction: '長野「普通の盤でやったほうが<br>盤面が見やすいだろ！」' },
+                    { text: "駒が<br>わがままだな！", 
                         point: 0, type: ['v'], 
-                        reaction: '長野「動かすほうも<br>動くほうも大変だよ！」' }
+                        reaction: '長野「『歩』役の人のシフト管理とか<br>大変そうだよ！」' }
                 ]
             },
 
-            // --- ネタ2：避暑地（自然の風） → 冷やし文化（強引な冷却） ---
-            { type: 'dialogue', speaker: '長野', text: 'はぁ・・・もっと静かに考えたいよ' },
-            { type: 'dialogue', speaker: '長野', text: '頭を冷やすために、軽井沢にでも行きたいな<br>長野の避暑地は、風が涼しくて最高なんだ' },
-            { type: 'dialogue', speaker: '長野', text: '山形も雪国だし<br>夏は涼しいイメージがあるけど？' },
-            { type: 'dialogue', speaker: '山形', text: 'いや、山形の夏は盆地だから暑いんだ<br>だから、ありとあらゆるものを冷やすよ' },
-            { type: 'dialogue', speaker: '長野', text: 'ありとあらゆるもの？<br>トマトとかキュウリとか？' },
-            { type: 'dialogue', speaker: '山形', text: 'いや、シャンプーを冷蔵庫でキンキンに冷やすんだ' },
-            { type: 'dialogue', speaker: '長野', text: 'え・・・？ シャンプー？' },
+            // --- ネタ2：アルプスの空気（癒やし） → 空気神社（崇拝） ---
+            { type: 'dialogue', speaker: '長野', text: 'はぁ・・・頭が痛くなってきた' },
+            { type: 'dialogue', speaker: '長野', text: '日本アルプスの美味しい空気を吸って<br>リフレッシュしたいよ' },
+            { type: 'dialogue', speaker: '長野', text: '長野は山に囲まれてるから<br>空気が澄んでいて美味しいのが自慢なんだ' },
+            { type: 'dialogue', speaker: '山形', text: 'わかる〜。<br>空気って大事だよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形県民も空気に感謝しすぎて<br>ついに神社を建てちゃったよ' },
+            { type: 'dialogue', speaker: '長野', text: '神社？<br>山の神様とか？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん、そのまんま「空気神社」' },
+            { type: 'dialogue', speaker: '長野', text: '・・・空気神社？<br>ご神体は何なの？' },
             {
-                type: 'prompt', speaker: '山形', text: '「冷やしシャンプー始めました」の旗を見ると<br>夏が来たなって感じるよ',
+                type: 'prompt', speaker: '山形', text: '空気だよ。<br>鏡に映った空気を拝むんだ',
                 tsukkomi: [
-                    { text: "冷やす場所<br>間違ってるよ！", 
+                    { text: "見えないよ！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '長野「頭皮を直接冷やしても<br>根本解決にならないだろ！」' },
-                    { text: "風邪ひくだろ！", 
+                        reaction: '長野「参拝客のリアクションに<br>困るだろ！」' },
+                    { text: "賽銭<br>投げにくいわ！", 
                         point: 1, type: ['v'], 
-                        reaction: '長野「高原の風みたいな<br>優しさがないよ！」' },
-                    { text: "知覚過敏には<br>きついね", 
+                        reaction: '長野「どこに向かって<br>手を合わせればいいんだよ！」' },
+                    { text: "感謝の方向性が<br>独特すぎる", 
                         point: 0, type: ['v', 'p'], 
-                        reaction: '長野「いや歯磨き粉じゃなくて<br>シャンプーの話か」' }
+                        reaction: '長野「わざわざ建物にする<br>必要あったのか！？」' }
                 ]
             },
 
-            // --- ネタ3：繊細なそば（職人技） → 重機芋煮（土木作業） ---
-            { type: 'dialogue', speaker: '長野', text: '刺激が強すぎるなぁ・・・<br>長野県民はもっとこう、繊細さを大事にするよ' },
-            { type: 'dialogue', speaker: '長野', text: '例えば「信州そば」<br>職人が手作業で打つ、繊細な味わいが自慢なんだ' },
-            { type: 'dialogue', speaker: '山形', text: '手作業かぁ。素晴らしいね<br>でも山形は逆に、文明の利器を使うよ' },
-            { type: 'dialogue', speaker: '長野', text: '文明の利器？<br>ああ、製麺機のこと？' },
-            { type: 'dialogue', speaker: '山形', text: 'ううん、バックホー' },
-            { type: 'dialogue', speaker: '長野', text: '・・・ん？ バックホーって<br>工事現場にあるショベルカーのこと？' },
-            { type: 'dialogue', speaker: '山形', text: 'そう。日本一の芋煮会では<br>3万食を作るからね' },
+            // --- ネタ3：フルーツ王国（スイーツ） → 山形のタピオカ（玉こんにゃく） ---
+            { type: 'dialogue', speaker: '長野', text: '発想が哲学的すぎるよ・・・<br>もっとこう、若者が喜ぶような甘いスイーツはないの？' },
+            { type: 'dialogue', speaker: '長野', text: '長野はフルーツ王国だからね<br>シャインマスカットとか、おしゃれな甘味が人気だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、おしゃれだね<br>山形にも、女子高生に人気の「タピオカ」があるよ' },
+            { type: 'dialogue', speaker: '長野', text: 'おっ、流行に乗ってるね！<br>黒くてモチモチしたやつだろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう。<br>丸くてモチモチしてて、串に刺さってる' },
+            { type: 'dialogue', speaker: '長野', text: '・・・串？<br>飲み物に入ってるんじゃないの？' },
             {
-                type: 'prompt', speaker: '山形', text: '直径6.5mの鍋を<br>重機を使ってかき混ぜるんだ',
+                type: 'prompt', speaker: '山形', text: '醤油味で煮込んだ<br>「玉こんにゃく」のことだけど',
                 tsukkomi: [
-                    { text: "土木工事じゃ<br>ないか！", 
+                    { text: "煮物じゃ<br>ねーか！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '長野「繊細さのカケラもないよ！<br>調理じゃなくて工事だよ！」' },
-                    { text: "衛生面<br>どうなってんの！", 
+                        reaction: '長野「タピオカに便乗するな！<br>絶対しょっぱいだろ！」' },
+                    { text: "タピオカの定義<br>ガバガバだな！", 
                         point: 1, type: ['v', 'p'], 
-                        reaction: '山形「ちゃんと新車に<br>バター塗ってるから大丈夫」' },
-                    { text: "蕎麦職人が<br>泣いてるよ", 
+                        reaction: '山形「形と色が似てるから…」<br>長野「原材料も味も全然違うよ！」' },
+                    { text: "ヘルシーだけど<br>映えないよ！", 
                         point: 0, type: ['v'], 
-                        reaction: '長野「手打ちの対極に<br>ありすぎるよ！」' }
+                        reaction: '長野「茶色い玉が団子みたいに<br>なってるだけじゃないか！」' }
                 ]
             },
 
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
             { type: 'dialogue', speaker: '長野', text: 'う〜ん<br>とりあえず・・・' },
-            { type: 'dialogue', speaker: '長野', text: '発想のスケールと方向性が<br>おかしいってことは学習できたよ' },
-            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
-            { type: 'dialogue', speaker: '長野', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '長野', text: 'それでいいのかい！' },
+            { type: 'dialogue', speaker: '長野', text: '理屈や常識が通用しない「ワンダーランド」<br>だってことは学習できたよ' },
+            { type: 'dialogue', speaker: '山形', text: 'じゃあ、空気神社にお参りしてくるね' },
+            { type: 'dialogue', speaker: '長野', text: 'そこでする深呼吸は<br>普段より美味しいのかい！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
@@ -454,8 +456,10 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'あ、ごめん<br>今、空気と一体化してた' },
             { type: 'dialogue', speaker: '大阪', text: '一体化て何やねん！<br>怖いわ！！' },
             { type: 'dialogue', speaker: '山形', text: '山形県民は空気を崇拝してるからね' },
-            { type: 'dialogue', speaker: '大阪', text: '崇拝！？ 重たいわ！<br>もっと気楽に喋らんかい！' },
-            { type: 'dialogue', speaker: '山形', text: 'でも本当に「空気神社」があるんだよ' },
+            { type: 'dialogue', speaker: '大阪', text: '崇拝て！<br>空気拝んでどうすんねん！' },
+            { type: 'dialogue', speaker: '大阪', text: 'ビリケンさんみたいに<br>足の裏撫でたら儲かるとかあるん？' },
+            { type: 'dialogue', speaker: '山形', text: 'ご利益があるかは<br>わからないけど・・・' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」はあるよ' },
             { type: 'dialogue', speaker: '大阪', text: '空気神社！？<br>嘘みたいな名前やな！' },
             { type: 'dialogue', speaker: '山形', text: '本殿もなくて、<br>5m四方の「鏡」があるだけ' },
             { type: 'prompt', speaker: '山形', text: 'ただ、<br>そこに映る空気に感謝するんだ・・・' ,
@@ -476,14 +480,16 @@ const manzaiData = {
                 ]
             },
             { type: 'dialogue', speaker: '大阪', text: 'もうええ！ <br>神社はわかった！' },
-            { type: 'dialogue', speaker: '大阪', text: 'もっとこう<br>キャッチーなヤツおらんのか！！' },
+            { type: 'dialogue', speaker: '大阪', text: 'もっとこう<br>派手で面白いヤツおらんのか！！' },
             { type: 'dialogue', speaker: '大阪', text: 'くいだおれ太郎とか<br>グリコとか！' },
+            { type: 'dialogue', speaker: '山形', text: '道頓堀の看板とか<br>おばちゃんのヒョウ柄みたいな' },
+            { type: 'dialogue', speaker: '山形', text: 'インパクトあるやつ頼むで！' },
             { type: 'dialogue', speaker: '山形', text: 'それならピンク色のウサギの<br>「桃色ウサヒ」がいるよ' },
             { type: 'dialogue', speaker: '山形', text: '朝日町の<br>非公式PRキャラクターなんだ' },
-            { type: 'dialogue', speaker: '大阪', text: 'ピンク！ ええやん！<br>派手なんは大好きやで！' },
-            { type: 'dialogue', speaker: '山形', text: 'でも目は虚ろで光がない<br>通称「備品」' },
+            { type: 'dialogue', speaker: '大阪', text: 'ピンク！ ええやん！<brド派手で人気者なんやろな？' },
+            { type: 'dialogue', speaker: '山形', text: '目は虚ろで光がない<br>通称「備品」' },
             { type: 'dialogue', speaker: '山形', text: '無個性・無軌道・無表情の<br>三拍子が揃った' },
-            { type: 'dialogue', speaker: '山形', text: '特徴がない<br>ピンク色のウサギの着ぐるみ' },
+            { type: 'dialogue', speaker: '山形', text: '特徴がない<br>ピンク色のウサギの着ぐるみだよ' },
             { type: 'dialogue', speaker: '大阪', text: 'アカンやん！！<br>三拍子そろってアカンやん！！' },
             {
                 type: 'prompt', speaker: '山形', text: 'でも儲け話は大好きなんだ<br>中の人の存在も隠さないしね',
@@ -506,7 +512,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '大阪', text: 'もっと胃に優しいもん無いん？' },
             { type: 'dialogue', speaker: '山形', text: 'じゃあ「芋煮」食べる？' },
             { type: 'dialogue', speaker: '山形', text: '芋煮会フェスティバルでは<br>3万人分の芋煮を作るよ' },
-            { type: 'dialogue', speaker: '大阪', text: '3万人！？炊き出しレベルやないか！<br>鍋なんぼほど並べる気や！' },
+            { type: 'dialogue', speaker: '大阪', text: '3万人！？商売繁盛やな！<br>鍋なんぼほど並べる気や！' },
             { type: 'dialogue', speaker: '山形', text: 'ううん、鍋は1つだよ' },
             { type: 'dialogue', speaker: '大阪', text: '...は？ 1つ？' },
             {
@@ -597,7 +603,7 @@ const manzaiData = {
                 ]
             },
             { type: 'dialogue', speaker: '愛媛', text: 'なんかしんどなってきたわ...' },
-            { type: 'dialogue', speaker: '愛媛', text: '愛媛に帰って「いもたき」でもして落ち着きたい...' },
+            { type: 'dialogue', speaker: '愛媛', text: '愛媛に帰って<br>「いもたき」でもして落ち着きたい...' },
             { type: 'dialogue', speaker: '愛媛', text: '河原で鍋囲んで食べるんよね<br>素朴でええよね〜' },
             { type: 'dialogue', speaker: '山形', text: 'あ、里芋を煮るやつ？' },
             { type: 'dialogue', speaker: '山形', text: 'それなら山形の「芋煮」も負けてないよ' },
