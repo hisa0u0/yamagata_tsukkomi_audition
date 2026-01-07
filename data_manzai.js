@@ -373,7 +373,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '長野', text: '中でも「戸隠そば」は<br>日本三大そばの一つに数えられる名門だよ' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>麺文化かぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形では<br>ラーメンとそばが人気だよ' },
-            { type: 'dialogue', speaker: '長野', text: 'ほう、山形も麺を食べるのか<br>でも「そば」へのこだわりは負けないよ' },
+            { type: 'dialogue', speaker: '長野', text: 'ほう、山形も麺を食べるのか<br>でもそばへのこだわりは負けないよ' },
             { type: 'dialogue', speaker: '山形', text: '山形はラーメン消費額も日本一だし' },
             { type: 'dialogue', speaker: '山形', text: 'そば屋でラーメンが出るくらい<br>麺だらけだよ' },
             { type: 'dialogue', speaker: '山形', text: 'それで最近、山形県の<br>新しい名前ができたんだ' },
@@ -402,7 +402,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
             { type: 'dialogue', speaker: '長野', text: '・・・<br>ラーメン県そば王国だからね' },
             {
-                type: 'prompt', speaker: '山形', text: '「冷やしラーメン」と「冷やしシャンプー」<br>も始まるね',
+                type: 'prompt', speaker: '山形', text: '“冷やしラーメン”と“冷やしシャンプー”<br>も始まるね',
                 tsukkomi: [
                     { text: "片っ端から<br>冷やしてる！", 
                         point: 3, type: ['t', 'p', 'v'], 
@@ -416,7 +416,7 @@ const manzaiData = {
                 ]
             },
             { type: 'dialogue', speaker: '長野', text: '頭を冷やすのもいいけど…' },
-            { type: 'dialogue', speaker: '長野', text: 'もっとこう<br>魂が熱くなるようなイベントはないのかい？' },
+            { type: 'dialogue', speaker: '長野', text: 'もっとこう魂が熱くなるような<br>イベントはないのかい？' },
             { type: 'dialogue', speaker: '長野', text: '長野には<br>「<ruby>御柱<rt>おんばしら</rt></ruby>祭」があるよ<br>' },
             { type: 'dialogue', speaker: '長野', text: '巨大な丸太に乗って<br>急な坂を滑り落ちるんだ' },
             { type: 'dialogue', speaker: '長野', text: '死傷者が出ることもある<br>まさに命がけの男たちの祭りさ' },
@@ -430,7 +430,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '神話でも神様でもない<br>“空気”だよ' },
             { type: 'dialogue', speaker: '長野', text: 'え・・・？' },
             {
-                type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によって建立された神社だよ',
+                type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によって建立された神社さ',
                 tsukkomi: [
                     { text: "建造の動機が<br>フワッとしてる！", 
                         point: 3, type: ['t', 'p', 'v'], 
