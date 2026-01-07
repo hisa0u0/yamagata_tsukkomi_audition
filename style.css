@@ -358,7 +358,7 @@ position: relative; z-index: 2; margin-bottom: 0;
 }
 
 .prompt-serifu-box {
-width: 95%; background-image: url('images/prompt_fukidashi.png');
+width: 90%; background-image: url('images/prompt_fukidashi.png');
 background-size: 100% 100%; background-repeat: no-repeat;
 border-radius: 0; margin: 15px auto 20px auto;
 padding: 40px 30px 20px 30px; box-sizing: border-box; text-align: center;
@@ -373,22 +373,43 @@ font-family: "Zen Maru Gothic", sans-serif; font-weight: 700;
 .prompt-buttons { width: 100%; display: flex; flex-direction: column; align-items: center; }
 
 .tsukkomi-btn {
-display: flex; justify-content: center; align-items: center;
+display: flex; 
+justify-content: center; 
+align-items: center;
 width: 86.5%; height: 74px; margin: 5px auto; padding: 0 15px;
-box-sizing: border-box; font-size: 18px; line-height: 1.3;
-text-align: center; font-family: "Reggae One", cursive; font-weight: normal;
-background-color: transparent; border: none; border-radius: 0;
-background-size: 100% 100%; background-repeat: no-repeat;
-cursor: pointer; color: #000000; animation: pulse-button 1.5s infinite ease-in-out;
+box-sizing: border-box; 
+font-size: 20px; 
+line-height: 1.3;
+text-align: center; 
+letter-spacing: -0.02em;
+font-family: "Zen Kaku Gothic New", sans-serif; 
+font-weight: 900;
+background-color: transparent; 
+border: none; 
+border-radius: 0;
+background-size: 100% 100%; 
+background-repeat: no-repeat;
+cursor: pointer; 
+color: #000000; 
+animation: pulse-button 1.5s infinite ease-in-out;
 }
 
 .tsukkomi-btn:active { transform: scale(0.98); }
 
-.tsukkomi-btn:nth-child(1) { background-image: url('images/tsukkomi_btn_pink.png'); }
+.tsukkomi-btn:nth-child(1) { 
+    background-image: url('images/tsukkomi_btn_pink.png');
+    color: #5F0F10
+}
 
-.tsukkomi-btn:nth-child(2) { background-image: url('images/tsukkomi_btn_blue.png'); }
+.tsukkomi-btn:nth-child(2) { 
+    background-image: url('images/tsukkomi_btn_blue.png');
+    color: #100C59;
+ }
 
-.tsukkomi-btn:nth-child(3) { background-image: url('images/tsukkomi_btn_yellow.png'); }
+.tsukkomi-btn:nth-child(3) { 
+    background-image: url('images/tsukkomi_btn_yellow.png'); 
+    color: #512700;
+}
 
 /* ======== 5. 結果ページ用 (`result.html`) ======== */
 
