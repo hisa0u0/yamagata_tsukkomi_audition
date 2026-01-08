@@ -109,7 +109,7 @@ const manzaiData = {
                 type: 'prompt', speaker: '山形', text: '山形ではお馴染みの<br>大規模イベントだよ',
                 promptText: '甲冑を着た人間が<br>巨大な盤の上を駒として練り歩くんだ',
                 tsukkomi: [
-                    { text: "大規模っていうか<br>巨大化じゃん！", 
+                    { text: "巨大化させた<br>だけじゃん！", 
                         point: 3, type: ['t', 'p', 'v'], 
                         reaction: '岩手「物理的にデカくして<br>どうするんだよ！」' },
                     { text: "土地の<br>無駄遣いだろ！", 
@@ -150,7 +150,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '岩手', text: 'まあ<br>実際に捕まえた人はいないけど' },
             { type: 'dialogue', speaker: '岩手', text: 'でもその「本気度」が<br>ロマンチックでしょ？' },
             { type: 'dialogue', speaker: '山形', text: '確かに' },
-            { type: 'dialogue', speaker: '山形', text: '山形には「ケサランパサラン」っていう<br>謎の生物がいるよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形には“ケサランパサラン”っていう<br>謎の生物がいるよ' },
             { type: 'dialogue', speaker: '岩手', text: 'あ、聞いたことある！<br>白い毛玉みたいなやつだよね？' },
             { type: 'dialogue', speaker: '山形', text: 'そうそう' },
             { type: 'dialogue', speaker: '山形', text: '動物か植物かも分からない<br>未確認生物なんだけど' },
@@ -175,6 +175,93 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '岩手', text: '・・・・・・' },
             { type: 'dialogue', speaker: '岩手', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+// -------- 群馬） ---------------------------------------------------------------------------------------------------------
+    'gunma': {
+        scenario: [
+            { type: 'dialogue', speaker: '群馬', text: 'はいどうもー！<br>群馬県です！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '群馬', text: '県の形を覚えるなら<br>群馬の右に出るものはいねえぜ' },
+            { type: 'dialogue', speaker: '群馬', text: '俺たちには「<ruby>上毛<rt>じょうもう</rt></ruby>かるた」があるからな！' },
+            { type: 'dialogue', speaker: '群馬', text: '「つ」は<br>「つる舞う形の群馬県！」' },
+            { type: 'dialogue', speaker: '群馬', text: '県民全員が暗記している<br>最強のカードゲームなんさ！' },
+            { type: 'dialogue', speaker: '山形', text: '県民全員が？<br>すごいね' },
+            { type: 'dialogue', speaker: '山形', text: '頭脳スポーツなら<br>山形にも有名なのがあるよ' },
+            { type: 'dialogue', speaker: '群馬', text: 'ほう、何かあるのか？<br>まさかトランプじゃねえべな' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん<br>「将棋」だよ' },
+            { type: 'dialogue', speaker: '山形', text: '天童市は将棋の駒の生産量が<br>日本一だからね' },
+            { type: 'dialogue', speaker: '群馬', text: '将棋か！<br>確かに立派な伝統文化だ' },
+            { type: 'dialogue', speaker: '群馬', text: 'でも、カルタに比べると<br>おとなしいよな？' },
+            { type: 'dialogue', speaker: '山形', text: '「人間将棋」っていう<br>BIGスケールな対局もやってるよ' },
+            { type: 'dialogue', speaker: '群馬', text: '人間将棋・・・？' },
+            {
+                type: 'prompt', speaker: '山形', text: '巨大な将棋盤の上を<br>人間が駒になって歩くんだ',
+                tsukkomi: [
+                    { text: "時間が<br>かかりすぎる！！", 
+                        point: 1, type: ['t','v'], 
+                        reaction: '一局にどんだけかかる！？<br>日が暮れるべ！' },
+                    { text: "本当に“スケール”が<br>大きいのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '群馬「将棋をそのまま<br>デカくしただけ！？」' },
+                    { text: "上毛かるたも<br>そのサイズでやろうかな", 
+                        point: 0, type: ['v'], 
+                        reaction: '群馬「借り物競走みたいに<br>なりそう」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '群馬', text: '発想が突飛だな・・・' },
+            { type: 'dialogue', speaker: '群馬', text: '俺たちは特産品のために<br>テーマパークを作ったんさ' },
+            { type: 'dialogue', speaker: '群馬', text: 'こんにゃく芋生産量日本一！<br>その名も「こんにゃくパーク」だ！' },
+            { type: 'dialogue', speaker: '群馬', text: '無料バイキングで行列ができる<br>最強のフードテーマパークだぜ' },
+            { type: 'dialogue', speaker: '山形', text: 'あ、こんにゃくなら山形も好きだよ<br>「玉こんにゃく」' },
+            { type: 'dialogue', speaker: '群馬', text: '玉こんにゃくか<br>群馬でもド定番だ' },
+            { type: 'dialogue', speaker: '山形', text: 'そろそろ玉こんブームが来ても<br>いい頃だと思うんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: 'インスタ映えする<br>「山形のタピオカ」として',
+                promptText: '玉こんブームが来てもいい頃だと思うんだ<br>「山形のタピオカ」として',
+                tsukkomi: [
+                    { text: "確かに原材料<br>芋だけど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '群馬「ちょっと無理矢理すぎねえか・・・？」' },
+                    { text: "流行語大賞<br>狙うぞ！", 
+                        point: 0, type: ['p', 'v'], 
+                        reaction: '群馬「2人で玉こんにゃくを<br>流行らせよう！」' },
+                    { text: "映えないわ！", 
+                        point: 1, type: ['p','t'], 
+                        reaction: '群馬「カラフルにしたら<br>ワンチャンあるかもだけど・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '群馬', text: '・・・もっとこう<br>王道の可愛さはねえのか？' },
+            { type: 'dialogue', speaker: '群馬', text: '群馬には「ぐんまちゃん」がいる！<br>ゆるキャラグランプリ王者だぞ！' },
+            { type: 'dialogue', speaker: '群馬', text: 'この愛くるしい見た目！<br>知名度も抜群だ！' },
+            { type: 'dialogue', speaker: '山形', text: '可愛いねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '可愛いキャラなら<br>朝日町の「桃色ウサヒ」がいるよ' },
+            { type: 'dialogue', speaker: '群馬', text: 'ほう、ウサギか<br>さぞかし可愛いんだんべな？' },
+            { type: 'dialogue', speaker: '山形', text: '無個性・無軌道・無表情<br>特徴がないピンク色のウサギの着ぐるみ' },
+            { type: 'dialogue', speaker: '群馬', text: '着ぐるみ・・・？<br>それ言っていいのか？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'キャッチフレーズは<br>「朝日が育んだ圧倒的無個性」',
+                tsukkomi: [
+                    { text: "そいつ本当に<br>人気か・・・？", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '群馬「ゆるキャラグランプリを<br>なめるな！」' },
+                    { text: "個性が無いのも<br>個性だよ", 
+                        point: 0, type: ['p'], 
+                        reaction: '群馬「尖ってて<br>いいんじゃないか？」' },
+                    { text: "ご当地キャラが無個性で<br>いいのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '群馬「地元をもっと<br>アピールしろよ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '群馬', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '群馬', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '群馬', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '群馬', text: 'それでいいのかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
@@ -709,7 +796,7 @@ const manzaiData = {
         { type: 'dialogue', speaker: '沖縄', text: '日本一・・・？<br>なんで日本一な訳？' },
         { type: 'prompt', speaker: '山形', text: '直径6.5mの鍋とバックホーで<br>3万食の芋煮を作るんだ',
             tsukkomi: [
-                { text: "日本一の<br>サイズかよ！", 
+                { text: "サイズ感が<br>日本一なのかよ！", 
                     point: 3, type: ['t', 'p', 'v'], 
                     reaction: '沖縄「芋煮会、巨大化させちゃいました<br>ってこと！？」' },
                 { text: "ジンベエザメの方が<br>大きいかも", 

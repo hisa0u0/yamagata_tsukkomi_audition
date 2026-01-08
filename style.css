@@ -250,7 +250,7 @@ transition: opacity 0.3s ease-out;
     
     /* 重要：上からの位置を固定（padding-topで調整） */
     /* 10.5vw（約40px〜）に設定。これで1行目がここから動きません */
-    padding: 60px 30px 15px 30px; 
+    padding: 55px 30px 15px 28px; 
     box-sizing: border-box;
     cursor: pointer;
     position: relative;
@@ -291,7 +291,7 @@ transition: opacity 0.3s ease-out;
 
 #serifu-text {
     /* 全画面でも小さすぎないサイズ（px固定） */
-    font-size: 17px; 
+    font-size: 16px; 
     margin: 0;
     /* 行間を固定。2行目はこの高さ分だけ下に正確に出る */
     line-height: 1.6; 
