@@ -203,7 +203,7 @@ const manzaiData = {
                 tsukkomi: [
                     { text: "時間が<br>かかりすぎる！！", 
                         point: 1, type: ['t','v'], 
-                        reaction: '一局にどんだけかかる！？<br>日が暮れるべ！' },
+                        reaction: '群馬「一局にどんだけかかる！？<br>日が暮れるべ！」' },
                     { text: "本当に“スケール”が<br>大きいのかよ！", 
                         point: 3, type: ['t', 'p', 'v'], 
                         reaction: '群馬「将棋をそのまま<br>デカくしただけ！？」' },
