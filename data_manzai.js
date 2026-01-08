@@ -179,7 +179,7 @@ const manzaiData = {
         ]
     },
 
-// -------- 群馬） ---------------------------------------------------------------------------------------------------------
+    // -------- 群馬 ---------------------------------------------------------------------------------------------------------
     'gunma': {
         scenario: [
             { type: 'dialogue', speaker: '群馬', text: 'はいどうもー！<br>群馬県です！' },
@@ -637,6 +637,92 @@ const manzaiData = {
         ]
     },
 
+    // -------- 香川 --------------------------------------------------------------------------------------------------------
+    'kagawa': {
+        scenario: [
+            { type: 'dialogue', speaker: '香川', text: 'はいどうも〜！<br>香川県です！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '香川', text: '香川といえば<br>やっぱり「うどん」！' },
+            { type: 'dialogue', speaker: '香川', text: '県内にはコンビニより<br>うどん屋の方が多いけんな' },
+            { type: 'dialogue', speaker: '香川', text: '「信号機の数よりうどん屋が多い」って<br>言われよるくらいや' },
+            { type: 'dialogue', speaker: '香川', text: 'もはや主食を超えて<br>インフラみたいなもんやな' },
+            { type: 'dialogue', speaker: '香川', text: 'やけん、県名を<br>「うどん県」に改名したんや' },
+            { type: 'dialogue', speaker: '香川', text: 'これくらい潔い名前が<br>一番わかりやすいんよ' },
+            { type: 'dialogue', speaker: '山形', text: 'おっ、改名したんだ<br>奇遇だね' },
+            { type: 'dialogue', speaker: '山形', text: '山形もラーメンとそばが有名で<br>それにちなんで新しい名前をつけたよ' },
+            { type: 'dialogue', speaker: '香川', text: 'へえ、なんて名前にしたん？' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国作っとるやん！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '香川「行政区分どうなっとん！？」' },
+                    { text: "名前が<br>長すぎるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '香川「履歴書の住所欄に<br>書ききれんやろ！」' },
+                    { text: "うどんも<br>入れようぜ", 
+                        point: 0, type: ['v'], 
+                        reaction: '香川「ラーメン県うどん市<br>そば王国でどうや？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '香川', text: '要素多すぎやろ・・・' },
+            { type: 'dialogue', speaker: '香川', text: '香川を見習って<br>もっとコンパクトにいかな' },
+            { type: 'dialogue', speaker: '香川', text: '香川は日本一面積が小さい県やけど<br>その分ギュッと詰まっとるんよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>小さいんだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形は面積が大きいから<br>イベントもビッグスケールだよ' },
+            { type: 'dialogue', speaker: '香川', text: 'ビッグスケール？<br>どんなんするん？' },
+            { type: 'dialogue', speaker: '山形', text: '人間を将棋の駒に見立てた<br>「人間将棋」とか' },
+            { type: 'dialogue', speaker: '香川', text: '人間が・・・駒に・・・？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'あと、直径6.5mの巨大鍋で<br>大規模な芋煮会をやるよ',
+                promptText: '人が駒となって動く人間将棋と<br>巨大鍋とバックホーを使う芋煮会をするよ',
+                tsukkomi: [
+                    { text: "変なイベントばっか<br>すんなや！", 
+                        point: 1, type: ['t', 'p', 'v'], 
+                        reaction: '香川「その広い土地<br>もっと有意義に使えるやろ」' },
+                    { text: "なんでもかんでも<br>巨大化させすぎや！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '香川「ビッグスケールって<br>ホンマに巨大化させただけやん！」' },
+                    { text: "そのイベントスペース<br>分けてほしいわ", 
+                        point: 0, type: ['v'], 
+                        reaction: '香川「有り余っとんのやろ？」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '香川', text: 'でも最近はやっぱ<br>「インスタ映え」スポットやな' },
+            { type: 'dialogue', speaker: '香川', text: '「<ruby>父母ヶ浜<rt>ちちぶがはま</rt></ruby>」って知っとるか？' },
+            { type: 'dialogue', speaker: '香川', text: '「日本のウユニ塩湖」って呼ばれてて<br>水面が鏡みたいになる絶景なんや！' },
+            { type: 'dialogue', speaker: '山形', text: 'へえ〜行ってみたいな<br>「日本のウユニ塩湖」ね' },
+            { type: 'dialogue', speaker: '山形', text: '山形には<br>「山形のタピオカ」があるよ' },
+            { type: 'dialogue', speaker: '香川', text: '山形のタピオカ？それは・・・<br>山形のタピオカやん' },
+            { type: 'dialogue', speaker: '香川', text: 'なんか珍しいん？<br>インスタ映えするん？' },
+            { type: 'dialogue', speaker: '山形', text: '「山形のタピオカ」は・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形のソウルフード<br>「玉こんにゃく」のことだよ',
+                tsukkomi: [
+                    { text: "確かに<br>ほぼタピオカやん", 
+                        point: 0, type: ['v'], 
+                        reaction: '香川「原材料芋やし<br>まんまるやん」' },
+                    { text: "タピオカ<br>ちゃうやん！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '香川「インスタ映えできるか？<br>こんにゃくで・・・」' },
+                    { text: "いや確かに原材料<br>芋やけど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '香川「上手いこと言いやがって・・・」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '香川', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '香川', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '香川', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '香川', text: 'それでええんか！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+    
     // -------- 愛媛 ---------------------------------------------------------------------------------------------------------
     'ehime': {
         scenario: [
