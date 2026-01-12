@@ -637,6 +637,97 @@ const manzaiData = {
         ]
     },
 
+    // -------- 山口 ---------------------------------------------------------------------------------------------------------
+    'yamaguchi': {
+        scenario: [
+            { type: 'dialogue', speaker: '山口', text: 'はいどうもー！<br>山口県です！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '山口', text: '山口といえば<br>日本の歴史を動かした県じゃ！' },
+            { type: 'dialogue', speaker: '山口', text: '伊藤博文をはじめ<br>総理大臣の輩出数は日本一！' },
+            { type: 'dialogue', speaker: '山口', text: '日本をリードする<br>「強いリーダー」が多いんよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>カリスマ性があるんだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも圧倒的な存在感を放つ<br>超重要人物がいるよ' },
+            { type: 'dialogue', speaker: '山口', text: 'ほう！維新志士のような<br>熱い志を持った人物か？' },
+            { type: 'dialogue', speaker: '山形', text: '「桃色ウサヒ」っていう<br>ピンク色のウサギなんだけど' },
+            { type: 'dialogue', speaker: '山口', text: 'ウサギ・・・？<br>まあ、見た目より中身が大事じゃけぇな' },
+            { type: 'dialogue', speaker: '山形', text: '特徴は<br>無個性・無軌道・無表情' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形県朝日町の<br>非公式PRキャラクターだよ',
+                tsukkomi: [
+                    { text: "やる気<br>あんのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '山口「日本の未来を<br>任せられんわ！」' },
+                    { text: "逆に大物<br>かもしれん", 
+                        point: 0, type: ['p','t'], 
+                        reaction: '山口「悟りを開いた<br>仙人みたいなやつじゃ」' },
+                    { text: "超重要人物<br>じゃないじゃろ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '山口「ただの着ぐるみよね・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山口', text: '個性がなさすぎるのも問題じゃな・・・' },
+            { type: 'dialogue', speaker: '山口', text: '山口県民はもっと情熱的じゃ！<br>食文化だって熱いぞ！' },
+            { type: 'dialogue', speaker: '山口', text: 'なんと言っても「瓦そば」！' },
+            { type: 'dialogue', speaker: '山口', text: '熱々に焼けた屋根瓦の上で<br>茶そばを焼いて食べるんじゃ！' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>瓦の上で！すごいね' },
+            { type: 'dialogue', speaker: '山形', text: '山形も<br>麺類はよく食べるよ' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメンの消費額が<br>日本一だったりするし' },
+            { type: 'dialogue', speaker: '山口', text: '日本一！？<br>そんなに食うんか' },
+            { type: 'dialogue', speaker: '山形', text: 'それにちなんで、山形県の<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '山口', text: '新しい名前・・・？' },
+            { type: 'dialogue', speaker: '山形', text: '山形改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国作っちょる！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '山口「行政区分<br>どうなっちょるん！？」' },
+                    { text: "名前が<br>長すぎるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '山口「履歴書の住所欄に<br>書ききれんじゃろ！」' },
+                    { text: "山形と山口って<br>似てるな", 
+                        point: 0, type: ['v'], 
+                        reaction: '山口「子音が全部一緒じゃ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山口', text: 'まあ<br>麺類はもうええわ' },
+            { type: 'dialogue', speaker: '山口', text: '山口には、もっと高級で<br>危険な大人の味があるんじゃ' },
+            { type: 'dialogue', speaker: '山口', text: '「ふぐ」じゃよ、「ふぐ」！' },
+            { type: 'dialogue', speaker: '山口', text: '本場の下関では幸福を呼ぶ魚として<br>「ふく」って呼ぶんじゃ' },
+            { type: 'dialogue', speaker: '山口', text: '毒がある危険な魚を食す・・・<br>これぞ大人の食文化じゃろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>大人の味だね' },
+            { type: 'dialogue', speaker: '山形', text: '山形でも<br>毒を持つ生き物が食べれるよ' },
+            { type: 'dialogue', speaker: '山口', text: 'ほう！<br>マムシでも食うんか？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん、「クラゲ」だよ' },
+            { type: 'dialogue', speaker: '山口', text: 'クラゲ！？<br>まあ確かに毒はあるが・・・' },
+            { type: 'dialogue', speaker: '山形', text: '世界一の展示数を誇る<br>「加茂水族館」があるんだけど' },
+            { type: 'dialogue', speaker: '山口', text: 'おお、水族館か！<br>幻想的でええな' },
+            {
+                type: 'prompt', speaker: '山形', text: '見終わった後は売店で<br>「クラゲアイス」が食られるよ',
+                tsukkomi: [
+                    { text: "眺めたあと<br>食うんか！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '山口「さっきまで幻想的じゃったのに！<br>怖いわ！」' },
+                    { text: "なんでアイスに<br>したんじゃ！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '山口「あんまスイーツに<br>クラゲ入れんじゃろ！」' },
+                    { text: "毒のレベル<br>が違うわ！", 
+                        point: 0, type: ['v'], 
+                        reaction: '山口「フグと一緒にすんな！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '山口', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '山口', text: 'ツッコミどころが多いってことは<br>ようわかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '山口', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '山口', text: 'それでええんか！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 香川 --------------------------------------------------------------------------------------------------------
     'kagawa': {
         scenario: [
