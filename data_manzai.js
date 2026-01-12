@@ -687,7 +687,7 @@ const manzaiData = {
                     { text: "名前が<br>長すぎるわ！", 
                         point: 1, type: ['t', 'p'], 
                         reaction: '山口「履歴書の住所欄に<br>書ききれんじゃろ！」' },
-                    { text: "山形と山口って<br>似てるな", 
+                    { text: "山形と山口って<br>似ちょるな", 
                         point: 0, type: ['v'], 
                         reaction: '山口「子音が全部一緒じゃ」' }
                 ]
