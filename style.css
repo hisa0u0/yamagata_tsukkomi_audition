@@ -243,7 +243,7 @@ transition: opacity 0.3s ease-out;
     width: 95%;
     /* 高さを固定して、2行目が出ても枠が伸びないようにする */
     height: 150px; 
-    margin: 0 auto 10px auto;
+    margin: 0 auto 40px auto;
     background-image: url('images/fukidashi_default.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -1250,18 +1250,29 @@ box-shadow: 0 0 15px #04FF00;
 
     /* スタートボタン */
     #start-button {
-        max-width: 40vh !important; /* 300px制限を解除 */
+        max-width: 34vh !important; /* 300px制限を解除 */
     }
 
+    /* 都道府県選択のラベルテキスト */
     .select-label {
-        font-size: 3vh !important;
+        /* 元 3vh → 2.2vh に縮小 */
+        font-size: 2.2vh !important;
+        margin-bottom: 1vh !important;
     }
     
     /* 都道府県プルダウン */
-    .stage-area select {
-        font-size: 2.5vh !important;
-        padding: 1.5vh !important;
+.stage-area select {
+        /* 元 2.5vh → 1.8vh に縮小 */
+        font-size: 2.0vh !important;
+        
+        /* 枠の内側の余白も少し減らす */
+        padding: 1.0vh !important;
+        
+        /* 枠の太さも少し細く */
         border-width: 0.5vh !important;
+        
+        /* ▼ もし「横幅」も狭くしたい場合は、ここをいじってください */
+        width: 70% !important; /* 元は82%くらい */
     }
 
     /* --- 5. (ここを追加！) スタート画面のストーリー（文字）の巨大化 --- */
