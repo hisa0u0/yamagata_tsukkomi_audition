@@ -1145,3 +1145,172 @@ font-weight: bold !important;
 #close-qr:hover {
 box-shadow: 0 0 15px #04FF00;
 }
+
+/* =========================================================
+   9. 全画面・大型モニター対応パッチ（完成版）
+   （画面の高さに合わせて、文字やボタンを自動で巨大化させる設定）
+   ========================================================= */
+
+@media screen and (min-height: 800px), screen and (min-width: 1000px) {
+    
+    /* --- 1. 漫才画面の巨大化 --- */
+
+    /* 吹き出し全体を、画面の高さの20%にする */
+    #serifu-box {
+        height: 20vh !important; 
+        /* 内部の余白も「高さ」に合わせて調整（テキスト位置ズレ防止） */
+        padding-top: 7vh !important;  
+        padding-bottom: 2vh !important;
+        padding-left: 4vh !important;
+        padding-right: 4vh !important;
+    }
+    
+    /* 2人同時吹き出しの微調整 */
+    #serifu-box.both {
+        height: 18vh !important;
+        padding-top: 5vh !important;
+    }
+
+    /* セリフの文字サイズを「画面高さの2.5%」にする */
+    #serifu-text {
+        font-size: 2.2vh !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 名前ラベルのサイズ調整 */
+    #speaker-name {
+        font-size: 2.2vh !important;
+        top: 1.5vh !important;
+        left: 3vh !important;
+        padding: 0.8vh 2vh !important;
+    }
+
+    /* --- 2. ツッコミ選択肢の巨大化 --- */
+
+    /* 選択肢ボタンの高さを画面高さの10%に */
+    .tsukkomi-btn {
+        height: 10vh !important;
+        font-size: 3vh !important; /* 文字も巨大化 */
+        width: 90% !important; /* 横幅も広げる */
+        margin: 1vh auto !important;
+    }
+
+    /* お題の吹き出し */
+    .prompt-serifu-box {
+        min-height: 15vh !important;
+        padding: 5vh 4vh 3vh 4vh !important;
+    }
+    #prompt-serifu-text {
+        font-size: 2.2vh !important;
+    }
+
+    /* --- 3. 結果画面の巨大化 --- */
+
+    /* 診断結果の文字（「破壊的コンビ」など） */
+    #diagnosis-text {
+        font-size: 4vh !important; /* かなり大きく */
+        margin-bottom: 2vh !important;
+    }
+    
+    /* 見出し（「ツッコミ分析」） */
+    .diagnosis-title {
+        font-size: 2.5vh !important;
+    }
+
+    /* コメント本文 */
+    .comment-head {
+        font-size: 3vh !important;
+    }
+    .comment-body {
+        font-size: 2.2vh !important;
+        line-height: 2.0 !important;
+    }
+
+    /* ボタンエリアの制限解除と巨大化 */
+    #result-button-container {
+        max-width: 40vh !important; /* px固定を解除して、高さ基準の幅に */
+        width: 80% !important;
+        gap: 2vh !important;
+    }
+
+    #result-button-container button,
+    #result-button-container a {
+        font-size: 2.5vh !important;
+        padding: 2vh !important;
+    }
+
+    /* --- 4. トップページの巨大化 --- */
+
+    /* タイトルロゴの制限解除 */
+    .stage-logo {
+        max-width: 60vh !important; /* 450px制限を解除 */
+        margin-top: 5vh !important;
+        margin-bottom: 15vh !important;
+    }
+
+    /* スタートボタン */
+    #start-button {
+        max-width: 40vh !important; /* 300px制限を解除 */
+    }
+
+    .select-label {
+        font-size: 3vh !important;
+    }
+    
+    /* 都道府県プルダウン */
+    .stage-area select {
+        font-size: 2.5vh !important;
+        padding: 1.5vh !important;
+        border-width: 0.5vh !important;
+    }
+
+    /* --- 5. (ここを追加！) スタート画面のストーリー（文字）の巨大化 --- */
+
+    .story-section {
+        /* 画面高さの5%：かなりデカいです */
+        font-size: 2.5vh !important; 
+        line-height: 3.8 !important;
+        margin-bottom: 15vh !important; 
+        font-weight: 900 !important; /* 太さもMAX */
+    }
+
+    /* 「ー山形県。」の強調文字 */
+    .story-highlight {
+        /* 画面高さの10%超え：超巨大 */
+        font-size: 5vh !important;
+        letter-spacing: 0.2em !important;
+        margin: 3vh 0 !important;
+        display: inline-block; 
+    }
+
+    /* 「さあ、覚悟はいいか」の文字 */
+    .story-climax {
+        font-size: 2.8vh !important;
+        margin-bottom: 4.5vh !important;
+    }
+}
+
+/* ==============================================
+   ▼▼▼ ツッコめ！画像の強制巨大化パッチ（修正版） ▼▼▼
+   ============================================== */
+
+/* PCや横長画面（幅が768px以上）のときだけ発動 */
+@media screen and (min-width: 768px) {
+    
+    #tsukkome-cutin img {
+        /* ▼ 35vw に設定（デカすぎず、小さすぎない絶妙サイズ） */
+        width: 40vw !important; 
+        
+        /* ▼ 念のため「どんなに画面が広くても800px以上にはしない」制限を追加 */
+        max-width: 800px !important; 
+        
+        height: auto !important;
+    }
+
+    /* 画像が大きくなると中心がズレやすいので、位置を再補正 */
+    #tsukkome-cutin {
+        width: auto !important;
+        /* アニメーション中の位置ズレを防ぐため、コンテナ自体のサイズ制限も解除 */
+        max-width: none !important;
+    }
+}
