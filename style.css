@@ -1314,3 +1314,27 @@ box-shadow: 0 0 15px #04FF00;
         max-width: none !important;
     }
 }
+
+/* ==============================================
+   ▼▼▼ 10. 縦型モニター専用・ツッコめ巨大化パッチ ▼▼▼
+   （15.6インチ縦置きなど、縦に長い画面用）
+   ============================================== */
+
+/* 画面が「縦長」かつ「高さが800px以上（大型）」の時だけ発動 */
+@media screen and (orientation: portrait) and (min-height: 800px) {
+    
+    #tsukkome-cutin img {
+        /* 元の400px固定を無視して、画面の横幅90%まで広げる */
+        width: 90vw !important; 
+        
+        /* 制限を解除 */
+        max-width: none !important; 
+        height: auto !important;
+    }
+    
+    /* 画像の位置ズレ補正 */
+    #tsukkome-cutin {
+        width: auto !important;
+        max-width: none !important;
+    }
+}
