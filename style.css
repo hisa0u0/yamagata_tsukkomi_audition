@@ -1338,3 +1338,34 @@ box-shadow: 0 0 15px #04FF00;
         max-width: none !important;
     }
 }
+
+/* ==============================================
+   ▼▼▼ 11. 展示用モニター・全画面強制フィットパッチ ▼▼▼
+   ============================================== */
+
+/* 条件：
+   1. 画面が縦向き (orientation: portrait)
+   2. 横幅が 600px 以上 (min-width: 600px)
+      → これにより、横幅の狭い「普通のスマホ」はこの設定を無視します。
+      → 15.6インチモニターやタブレットだけが反応します。
+*/
+@media screen and (orientation: portrait) and (min-width: 600px) {
+    
+    .game-wrapper {
+        /* スマホ比率の固定を解除 */
+        aspect-ratio: auto !important;
+        
+        /* 強制的に画面いっぱいに広げる */
+        width: 100vw !important;
+        height: 100dvh !important;
+        
+        /* 制限を解除 */
+        max-width: none !important;
+        
+        /* 中央寄せなどの余白を削除 */
+        margin: 0 !important;
+        
+        /* 念のため角丸もなくす（モニターの角に合わせる） */
+        border-radius: 0 !important;
+    }
+}
