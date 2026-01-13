@@ -62,8 +62,8 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
         if (scores.t > scores.p && scores.t > scores.v) maxKey = 't';
         if (scores.v > scores.p && scores.v > scores.t) maxKey = 'v';
         
-        if (maxKey === 'p') typeName = "「歩く放送事故」\n破壊的コンビ"; 
-        else if (maxKey === 't') typeName = "「脳みそ共有済み」\n双子コンビ"; 
+        if (maxKey === 'p') typeName = "「脳みそ共有済み」\n双子ツッコミ"; 
+        else if (maxKey === 't') typeName = "「歩く放送事故」\n破壊的ツッコミ"; 
         else typeName = "「全肯定セラピー」\n平和なコンビ"; 
         
         if (bondScore >= 35 && point < 9) typeName = "「同じDNAを持つ他人」\n運命のコンビ";
