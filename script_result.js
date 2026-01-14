@@ -53,20 +53,20 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
         if (i === 4) destinyScore = finalVal;
     });
 
-    let typeName = "「未知数の新コンビ」";
+    let typeName = "「未知数の新ツッコミ」";
     if (point >= 9) {
-        typeName = "「伝説のM-1王者」\n神コンビ";
+        typeName = "「伝説の漫才王」\n神ツッコミ";
     } else {
         const scores = { 'p': graphP, 't': graphT, 'v': graphV };
         let maxKey = 'p';
         if (scores.t > scores.p && scores.t > scores.v) maxKey = 't';
         if (scores.v > scores.p && scores.v > scores.t) maxKey = 'v';
         
-        if (maxKey === 'p') typeName = "「脳みそ共有済み」\n双子ツッコミ"; 
+        if (maxKey === 'p') typeName = "「脳みそ共有済み」\n相思相愛ツッコミ"; 
         else if (maxKey === 't') typeName = "「歩く放送事故」\n破壊的ツッコミ"; 
-        else typeName = "「全肯定セラピー」\n平和なコンビ"; 
+        else typeName = "「全肯定セラピー」\n平和なツッコミ"; 
         
-        if (bondScore >= 35 && point < 9) typeName = "「同じDNAを持つ他人」\n運命のコンビ";
+        if (bondScore >= 35 && point < 9) typeName = "「同じDNAを持つ他人」\n運命的ツッコミ";
         if (point <= 2) typeName = "「永遠の氷河期」\n解散危機";
     }
 
