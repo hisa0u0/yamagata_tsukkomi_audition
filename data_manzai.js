@@ -179,6 +179,97 @@ const manzaiData = {
         ]
     },
 
+    // -------- 秋田 ----------------------------------------------------------------------------------------------------
+    'akita': {
+        scenario: [
+            { type: 'dialogue', speaker: '秋田', text: 'はいどうも〜！<br>秋田県だす〜！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '秋田', text: '秋田って言えば、今や世界のアイドル<br>「秋田犬」がいるぞ！' },
+            { type: 'dialogue', speaker: '秋田', text: 'ザギトワ選手もメロメロになった<br>あのモフモフ！国の天然記念物だべ！' },
+            { type: 'dialogue', speaker: '秋田', text: 'あの愛くるしい毛並みは<br>日本の宝だと言っても過言でねえな' },
+            { type: 'dialogue', speaker: '山形', text: '確かに<br>モフモフは癒やされるよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>モフモフした生き物がいるよ' },
+            { type: 'dialogue', speaker: '秋田', text: '山形にモフモフ？<br>なんの動物だ？' },
+            { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」って知ってる？' },
+            { type: 'dialogue', speaker: '秋田', text: 'ケサランパサラン・・・？<br>それ未確認生物でねがった？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            { type: 'dialogue', speaker: '山形', text: '動物か植物かも分からない<br>未確認生物なんだけど' },
+            {
+                type: 'prompt', speaker: '山形', text: '水族館で展示されてるんだ',
+                promptText: '未確認生物「ケサランパサラン」が<br>水族館で展示されてるんだ',
+                tsukkomi: [
+                    { text: "未確認生物を<br>大公開すんな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '秋田「未確認じゃなくなるべ！<br>学者呼んでこい！」' },
+                    { text: "秋田犬と<br>モフモフ勝負だな", 
+                        point: 0, type: ['v'], 
+                        reaction: '秋田「いや、可愛さのベクトルが<br>違いすぎるべ！」' },
+                    { text: "なんで水族館さ<br>展示するんだ！？", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '秋田「あれ魚の仲間だったのが！？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '秋田', text: 'ほんと、謎だらけの水族館だべ・・・' },
+            { type: 'dialogue', speaker: '秋田', text: '秋田はもっとこう<br>ド迫力のエンターテイメントが自慢だ！' },
+            { type: 'dialogue', speaker: '秋田', text: '「大曲の花火」を知らねえとは<br>言わせねえぞ！' },
+            { type: 'dialogue', speaker: '秋田', text: '全国の花火師が腕を競い合う<br>日本最高峰の競技大会だ！' },
+            { type: 'dialogue', speaker: '秋田', text: '夜空を埋め尽くす光のアート！<br>あれこそ世界一のスケールだべ' },
+            { type: 'dialogue', speaker: '山形', text: 'きれいだよね〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>とてつもなく大きいイベントがあるよ' },
+            { type: 'dialogue', speaker: '秋田', text: 'ほう、山形にも<br>デカい花火大会があるのか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや<br>「日本一の芋煮会フェスティバル」だよ' },
+            { type: 'dialogue', speaker: '秋田', text: '・・・芋煮？<br>河原で鍋つっつくやつか？' },
+            { type: 'dialogue', speaker: '山形', text: '直径6.5メートルの巨大鍋で<br>3万食を作るんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '調理には新品のバックホー<br>（ショベルカー）を使うよ',
+                promptText: '調理器具として<br>バックホー（重機）を使うんだ',
+                tsukkomi: [
+                    { text: "重機使って<br>芋煮会！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '秋田「工事現場かよ！<br>スケールの方向性がおかしいべ！」' },
+                    { text: "デカくすれば<br>いいと思ってる！？", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '秋田「大味になりそうだべ！<br>繊細さが足りねえ！」' },
+                    { text: "花火より<br>盛り上がりそう", 
+                        point: 0, type: ['p'], 
+                        reaction: '秋田「いや、花火の感動には<br>勝てねえべ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '秋田', text: '重機で料理はワイルド過ぎるべ・・・' },
+            { type: 'dialogue', speaker: '秋田', text: 'やっぱ東北人は、田んぼと共に生きる<br>繊細な心が大事だ' },
+            { type: 'dialogue', speaker: '秋田', text: '秋田の「竿燈まつり」を見てみれ！<br>稲穂に見立てた提灯を、絶妙なバランスで操る' },
+            { type: 'dialogue', speaker: '秋田', text: 'あの美しい田園風景への祈りが<br>込められてるんだ' },
+            { type: 'dialogue', speaker: '山形', text: '田んぼは大事だよね<br>山形も田んぼの中の景色は独特だよ' },
+            { type: 'dialogue', speaker: '秋田', text: 'んだべ？<br>一面の緑、邪魔するものは何もない・・・' },
+            { type: 'dialogue', speaker: '山形', text: 'でも上山市の田んぼのど真ん中に<br>突き刺さるように建ってるものがあるよ' },
+            { type: 'dialogue', speaker: '秋田', text: '・・・竿燈みたいな高い柱か？' },
+            { type: 'dialogue', speaker: '山形', text: '41階建ての超高層マンション<br>「スカイタワー41」だよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '周りは全部田んぼなのに<br>ポツンとタワマンがあるんだ',
+                promptText: '見渡す限りの田んぼの中に<br>ポツンとタワマンが建ってるんだ',
+                tsukkomi: [
+                    { text: "景色台無し<br>じゃねーか！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '秋田「風情もへったくれも<br>ねえな！」' },
+                    { text: "逆に<br>住んでみたい", 
+                        point: 0, type: ['p'], 
+                        reaction: '秋田「眺めは最高だろうけども！<br>カエルの声がうるさそうだべ」' },
+                    { text: "異物感<br>ありすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '秋田「なんでそこに建てた！？<br>竿燈より目立ってどうすんだ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '秋田', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '秋田', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '秋田', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '秋田', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 群馬 ---------------------------------------------------------------------------------------------------------
     'gunma': {
         scenario: [
@@ -506,8 +597,7 @@ const manzaiData = {
             },
             { type: 'dialogue', speaker: '京都', text: '実体がないもんを拝むとは・・・<br>掴みどころがないなぁ' },
             { type: 'dialogue', speaker: '京都', text: '京都は「おもてなし」ひとつとっても<br>ちゃんと意味を持たせるで' },
-            { type: 'dialogue', speaker: '京都', text: '来客に「ぶぶ<ruby>漬<rt>づ</rt></ruby>け」を出したら<br>「早よ帰ってや」のサインやったりな' },
-            { type: 'dialogue', speaker: '京都', text: '言葉にせんでも察する<br>これが「<ruby>雅<rt>みやび</rt></ruby>」なんえ' },
+            { type: 'dialogue', speaker: '京都', text: '来客に「ぶぶ漬by>雅<rt>みやび</rt></ruby>」なんえ' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜、裏があるんだね' },
             { type: 'dialogue', speaker: '山形', text: '山形のおもてなしでは<br>素直に「ご馳走」を出すよ' },
             { type: 'dialogue', speaker: '京都', text: 'ほう、自信満々やな<br>ほな、その「ご馳走」とやらを出してみぃ' },
@@ -525,8 +615,6 @@ const manzaiData = {
                         reaction: '京都「来客のたびにそれなん！？<br>重すぎるわぁ・・・」' }
                 ]
             },
-
-            // 結び
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
             { type: 'dialogue', speaker: '京都', text: 'う〜ん<br>とりあえず・・・' },
             { type: 'dialogue', speaker: '京都', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
@@ -650,16 +738,16 @@ const manzaiData = {
                 tsukkomi: [
                     { text: "詰め込み<br>すぎやろ！", 
                         point: 1, type: ['t', 'p'], 
-                        reaction: '兵庫「キャッチコピーは<br>あんま詰め込むもんやない！」' },
-                    { text: "行政区分<br>どうなっとんねん！", 
+                        reaction: '兵庫「キャッチコピーは<br>あんま詰め込むもんちゃう！」' },
+                    { text: "行政区分<br>どないなっとんねん！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '兵庫「県の中に王国があるがな！<br>パスポート要るんかここ！？」' },
+                        reaction: '兵庫「県の中に王国があるやんけ！<br>パスポート要るんかここ！？」' },
                     { text: "欲張りさんやなぁ", 
                         point: 0, type: ['v'], 
                         reaction: '兵庫「日本の縮図より<br>カオスな状況やで・・・」' }
                 ]
             },
-            { type: 'dialogue', speaker: '兵庫', text: '名前で遊ぶのは<br>その辺にしてやな' },
+            { type: 'dialogue', speaker: '兵庫', text: '名前で遊ぶのは<br>そんくらいにしといて' },
             { type: 'dialogue', speaker: '兵庫', text: '兵庫といえば、やっぱ<br>神戸の「ハイカラ文化」やな！' },
             { type: 'dialogue', speaker: '兵庫', text: '昔から外国の文化を取り入れてきたから<br>流行りモンには敏感なんや' },
             { type: 'dialogue', speaker: '兵庫', text: '最新のスイーツとか、カフェとか' },
@@ -667,7 +755,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>流行りものかぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形にもあるよ<br>流行りそうな食べ物' },
             { type: 'dialogue', speaker: '山形', text: '「山形のタピオカ」って言うんだけど' },
-            { type: 'dialogue', speaker: '兵庫', text: 'タピオカって<br>まだ流行ってるん・・・？' },
+            { type: 'dialogue', speaker: '兵庫', text: 'タピオカって<br>まだ流行っとん・・・？' },
             { type: 'dialogue', speaker: '兵庫', text: '・・・まあええか。<br>普通のと何が違うん？' },
             { type: 'dialogue', speaker: '山形', text: '「山形のタピオカ」っていうのは・・・' },
             {
@@ -676,7 +764,7 @@ const manzaiData = {
                 tsukkomi: [
                     { text: "タピオカって<br>こんにゃくなん？", 
                         point: 0, type: ['v'], 
-                        reaction: '兵庫「・・・なんや違うん？<br>紛らわしいわ」' },
+                        reaction: '兵庫「・・・なんやちゃうんかい<br>紛らわしいわ」' },
                     { text: "インスタ映え<br>なめとんのか！", 
                         point: 1, type: ['v', 'p'], 
                         reaction: '兵庫「茶色一色やないか！<br>キラキラ感ゼロやぞ！渋すぎるわ！」' },
@@ -691,7 +779,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '白い建物なら<br>山形にもすごいのがあるよ' },
             { type: 'dialogue', speaker: '兵庫', text: 'おっ！歴史あるお城か？<br>それとも神戸ポートタワーみたいなやつか？' },
             { type: 'dialogue', speaker: '山形', text: '「スカイタワー41」っていう<br>超高層マンションだよ' },
-            { type: 'dialogue', speaker: '兵庫', text: 'タワマンか！<br>まあ都会的でええやんか' },
+            { type: 'dialogue', speaker: '兵庫', text: 'タワマンか！<br>まあ都会的でええやん' },
             {
                 type: 'prompt', speaker: '山形', text: '田園風景の中にポツンと建ってる<br>東北で最高層のマンションなんだ',
                 tsukkomi: [
@@ -700,10 +788,10 @@ const manzaiData = {
                         reaction: '兵庫「なんでそんなとこに建てたん！？<br>違和感の塊やないか！」' },
                     { text: "景色<br>最高やろなぁ", 
                         point: 0, type: ['p'], 
-                        reaction: '兵庫「360度稲穂ビューやんか」' },
+                        reaction: '兵庫「360度稲穂ビューやん」' },
                     { text: "姫路城と<br>並ぼうとすんな！", 
                         point: 1, type: ['v', 'p'], 
-                        reaction: '兵庫「白さの意味が全然違うがな！」' }
+                        reaction: '兵庫「白さの意味が全然ちゃうやろがい！」' }
                 ]
             },
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
@@ -711,7 +799,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '兵庫', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '兵庫', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '兵庫', text: 'それでええんか！' },
+            { type: 'dialogue', speaker: '兵庫', text: 'それでええんかい！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
