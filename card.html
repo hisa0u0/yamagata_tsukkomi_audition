@@ -133,6 +133,11 @@ document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMo
         headImg.style.left = '140px';  // 沖縄専用
         headImg.style.width = '250px';// 沖縄専用
         }
+        else if (pref.includes('hyogo')) {
+            headImg.style.top = '98px';    
+            headImg.style.left = '40px';   
+            headImg.style.width = '300px';
+        }
 
         // 2. グラフ描画
         const ctx = document.getElementById('cardRadarChart');

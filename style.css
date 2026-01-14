@@ -172,7 +172,7 @@ height: auto; /* 高さは自動（潰れないように） */
 object-fit: contain;
 }
 
-/* --- 2. 沖縄の個別設定（!importantをtransformから外す） --- */
+/* 沖縄の個別設定（!importantをtransformから外す） --- */
 
 .char-head[src*="okinawa"] {
 top: -6% !important; /* topからの位置で固定 */
@@ -191,6 +191,27 @@ transform: translateX(-22%);
 /* 沖縄がしゃべる時だけ、標準を上書きして専用アニメを流す */
 #player-head[src*="okinawa"].speaking {
 animation: okinawaHeadShake 0.15s linear infinite alternate !important;
+}
+
+/* 兵庫の個別設定 --- */
+
+.char-head[src*="hyogo"] {
+top: -0.5% !important; /* topからの位置で固定 */
+width: 107% !important; /* 横幅基準 */
+height: auto !important;
+transform: translateX(-50%);
+}
+
+/* 兵庫専用の揺れ */
+@keyframes hyogoHeadShake {
+0%, 100% { transform: translateX(-50%) rotate(0deg) scale(1); }
+25% { transform: translateX(-50%) rotate(4deg) scale(1); }
+75% { transform: translateX(-50%) rotate(-3deg) scale(1); }
+}
+
+/* 兵庫がしゃべる時だけ、標準を上書きして専用アニメを流す */
+#player-head[src*="hyogo"].speaking {
+animation: hyogoHeadShake 0.15s linear infinite alternate !important;
 }
 
 /* 1. 北海道専用の揺れを定義（位置を -38% で固定したまま揺らす） */
@@ -460,6 +481,12 @@ left: 13% !important; /* 少し右に寄せる場合 */
 width: 65% !important; /* 少し大きくする場合 */
 bottom: 69% !important; /* 位置の高さ調整 */
 left: 3% !important; /* 左右位置の調整 */
+}
+
+/* 兵庫の場合：結果画面（★新規追加） */
+
+#selected-pref-head[src*="hyogo"] {
+bottom: 69.5% !important; /* 位置の高さ調整 */
 }
 
 #result-button-container {
