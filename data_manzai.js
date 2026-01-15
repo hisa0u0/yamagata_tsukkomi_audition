@@ -362,6 +362,97 @@ const manzaiData = {
         ]
     },
 
+    // -------- 福島 -----------------------------------------------------------------------------------------------------
+    'fukushima': {
+        scenario: [
+            { type: 'dialogue', speaker: '福島', text: 'はいどうもー！<br>福島県です〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '福島', text: '福島といえば日本三大ラーメンの一つ<br>「喜多方ラーメン」！' },
+            { type: 'dialogue', speaker: '福島', text: '朝からラーメン食べる<br>「朝ラー」文化もあるしね' },
+            { type: 'dialogue', speaker: '山形', text: '朝からラーメンかあ・・・<br>それもいいね' },
+            { type: 'dialogue', speaker: '山形', text: '山形もラーメン大好きで<br>ラーメン消費額日本一なんだよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形ではラーメンは<br>最高のご馳走なんだ' },
+            { type: 'dialogue', speaker: '福島', text: 'ご馳走？お祝い事があったら<br>ラーメン食べるとか？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん、おもてなしだよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形では来客があったら<br>ラーメンの出前をとるんだ',
+                tsukkomi: [
+                    { text: "ラーメンの階級<br>高すぎるだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福島「県民みんなそのレベルで<br>ラーメン愛してんの！？」' },
+                    { text: "おもてなしにしては<br>こってりしすぎだろ！", 
+                        point: 1, type: ['v', 't'], 
+                        reaction: '福島「もっとすぐ食べ終わるもの<br>出した方がいいだろ・・・」' },
+                    { text: "ラーメン出てきたら<br>嬉しいね", 
+                        point: 0, type: ['v'], 
+                        reaction: '福島「最高の食べ物だからね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福島', text: 'ラーメン愛すごいな・・・' },
+            { type: 'dialogue', speaker: '福島', text: '福島はもっとこう、ダイナミックな<br>祭りやイベントが自慢だよ' },
+            { type: 'dialogue', speaker: '福島', text: '「わらじまつり」なんて<br>長さ12メートルの巨大わらじを担ぐんだ！' },
+            { type: 'dialogue', speaker: '福島', text: 'どう？<br>このスケール感！' },
+            { type: 'dialogue', speaker: '山形', text: '大きいのはいいことだね<br>山形にも大きいイベントがあるよ' },
+            { type: 'dialogue', speaker: '福島', text: 'おっ、いいね<br>どんな？' },
+            { type: 'dialogue', speaker: '山形', text: '直径6.5mの大鍋とバックホーで<br>3万食分の芋煮を作る' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」<br>とか' },
+            { type: 'dialogue', speaker: '福島', text: '確かに大きいな・・・' },
+            { type: 'dialogue', speaker: '山形', text: '巨大な将棋盤の上を<br>人間が駒となって歩く' },
+            {
+                type: 'prompt', speaker: '山形', text: '「人間将棋」とかがあるよ',
+                promptText: '日本一の芋煮会フェスティバルとか<br>人間将棋があるよ',
+                tsukkomi: [
+                    { text: "重機を<br>調理器具にすんな！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '福島「工事現場すぎるわ！」' },
+                    { text: "なんでもかんでも<br>デカくしすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福島「こだわるところ<br>もっとあっただろ！」' },
+                    { text: "迫力が<br>すごいね", 
+                        point: 0, type: ['p'], 
+                        reaction: '福島「でも巨大わらじの方が<br>鍋の直径より大きいよ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福島', text: 'やっぱり規格外だなぁ' },
+            { type: 'dialogue', speaker: '福島', text: 'でも、めんこいものなら負けないよ' },
+            { type: 'dialogue', speaker: '福島', text: '福島には「赤べこ」がいるからね' },
+            { type: 'dialogue', speaker: '福島', text: 'あの首をゆらゆら振る姿は<br>見てるだけで癒やされるんだよ' },
+            { type: 'dialogue', speaker: '福島', text: 'やっぱりマスコットは<br>めんこくないとね' },
+            { type: 'dialogue', speaker: '山形', text: '赤べこは<br>ゆるくてかわいいよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>脱力系のキャラクターがいるよ' },
+            { type: 'dialogue', speaker: '福島', text: 'お、脱力系か！<br>どんなの？' },
+            { type: 'dialogue', speaker: '山形', text: 'ウサギがモチーフの<br>「桃色ウサヒ」だよ' },
+            { type: 'dialogue', speaker: '福島', text: 'へえ、ウサギかあ<br>めんこいキャラクターだね' },
+            { type: 'dialogue', speaker: '山形', text: '朝日町の<br>非公式PRキャラクターなんだ' },
+            { type: 'dialogue', speaker: '福島', text: 'え、非公式・・・？<br>まあ最近はそういうのも多いか' },
+            { type: 'dialogue', speaker: '山形', text: '無個性・無軌道・無表情の<br>3拍子が揃った' },
+            {
+                type: 'prompt', speaker: '山形', text: '目が虚とした<br>無個性なキャラクターだよ',
+                promptText: '無個性・無軌道・無表情<br>目が虚とした無個性なキャラクターだよ',
+                tsukkomi: [
+                    { text: "脱力系にも<br>程があるだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福島「もっとやる気出せよ！<br>PRキャラクターなんだろ！？」' },
+                    { text: "ゆるくて<br>めんこいね", 
+                        point: 0, type: ['p'], 
+                        reaction: '福島「みてるこっちまで<br>脱力しちまう」' },
+                    { text: "“山形感”が<br>皆無！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '福島「もっと山形らしさ<br>出さないと！」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '福島', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '福島', text: 'ツッコミどころが多いってことは<br>わかったよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '福島', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '福島', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 群馬 ---------------------------------------------------------------------------------------------------------
     'gunma': {
         scenario: [
