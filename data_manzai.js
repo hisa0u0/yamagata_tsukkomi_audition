@@ -179,6 +179,96 @@ const manzaiData = {
         ]
     },
 
+    // -------- 宮城 ---------------------------------------------------------------------------------------
+    'miyagi': {
+        scenario: [
+            { type: 'dialogue', speaker: '宮城', text: 'はいどうもー！<br>宮城県でーす' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '宮城', text: '宮城といえば、やっぱり<br>「伊達政宗公」だよね' },
+            { type: 'dialogue', speaker: '宮城', text: '独眼竜の三日月兜！<br>あのとことん粋でカッコいい生き様！' },
+            { type: 'dialogue', speaker: '宮城', text: '仙台駅前にも騎馬像があるけど<br>まさに宮城のシンボルだよ' },
+            { type: 'dialogue', speaker: '宮城', text: 'そしてその心を受け継いでるのが<br>観光PRキャラの「むすび丸」！' },
+            { type: 'dialogue', speaker: '宮城', text: 'おにぎりの顔に、三日月の兜！<br>凛々しくて可愛いでしょ？' },
+            { type: 'dialogue', speaker: '山形', text: '甲冑を着たキャラかぁ<br>強そうでいいね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも地元を盛り上げてくれる<br>キャラクターがいるよ' },
+            { type: 'dialogue', speaker: '宮城', text: 'おっ、政宗公の宿敵<br>最上義光公のキャラとか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや<br>朝日町の「桃色ウサヒ」' },
+            { type: 'dialogue', speaker: '宮城', text: '・・・桃色ウサヒ？' },
+            { type: 'dialogue', speaker: '山形', text: 'ピンク色のウサギの着ぐるみで<br>無個性・無軌道・無表情' },
+            {
+                type: 'prompt', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」だよ',
+                promptText: '無個性・無軌道・無表情<br>「圧倒的無個性」なウサギだよ',
+                tsukkomi: [
+                    { text: "盛り上げる気<br>あんのか！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '宮城「超やる気なさそうじゃん！<br>むすび丸を見習え！」' },
+                    { text: "逆に<br>哲学的だな", 
+                        point: 0, type: ['p'], 
+                        reaction: '宮城「無の境地ってこと・・・？」' },
+                    { text: "山形<br>関係ないじゃん！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '宮城「ご当地キャラって<br>そんな感じでいいの！？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '宮城', text: '宮城はもっとこう<br>王道のグルメで勝負するよ' },
+            { type: 'dialogue', speaker: '宮城', text: 'やっぱり仙台名物「牛タン」だね！' },
+            { type: 'dialogue', speaker: '宮城', text: '炭火で焼いた厚切りの牛タン・・・<br>これぞ宮城を代表する味だよ' },
+            { type: 'dialogue', speaker: '山形', text: '牛タンは美味しいよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形名物なら<br>ラーメンとそばかな' },
+            { type: 'dialogue', speaker: '宮城', text: '山形市って<br>ラーメン消費額日本一なんでしょ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうだよ<br>ラーメン愛は県民の誇りなんだ' },
+            { type: 'dialogue', speaker: '山形', text: 'だからそれをアピールするために<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '宮城', text: '・・・え？<br>新しい名前？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                promptText: '山形県改め<br>「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "なんで県の中に<br>王国作ってるんだよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '宮城「せめて逆だろ！<br>逆だとしても独立国家になってるし！」' },
+                    { text: "いろいろ<br>詰め込みすぎだろ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '宮城「キャッチコピーの割に<br>まとまり無いな！」' },
+                    { text: "一度に両方<br>楽しめるね", 
+                        point: 0, type: ['p'], 
+                        reaction: '宮城「麺好きにはたまらない<br>パラダイスってことか・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '宮城', text: '麺への執着心が怖いな・・・' },
+            { type: 'dialogue', speaker: '宮城', text: '麺料理といえば、宮城は<br>「冷やし中華発祥の地」だからね！' },
+            { type: 'dialogue', speaker: '宮城', text: '暑い夏に、冷たい麺をすする・・・<br>あのスタイルを作ったのは宮城なんだよ' },
+            { type: 'dialogue', speaker: '山形', text: 'じゃあ宮城さんには<br>すごくお世話になってるんだなあ' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」<br>ってやつ、山形もやるよ' },
+            { type: 'dialogue', speaker: '宮城', text: 'やっぱりそうだよね<br>夏といえば冷やし中華！' },
+            { type: 'dialogue', speaker: '山形', text: 'あと<br>「冷やしラーメンはじめました」とか' },
+            { type: 'dialogue', speaker: '宮城', text: 'やっぱり山形名物は<br>ラーメンだね' },
+            {
+                type: 'prompt', speaker: '山形', text: '「冷やしシャンプーはじめました」<br>ってのもあるよ',
+                tsukkomi: [
+                    { text: "変な方向に<br>派生してる！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '宮城「冷やし中華パロディ！？<br>ラーメンでギリでしょ・・・」' },
+                    { text: "気持ち<br>よさそうだね", 
+                        point: 0, type: ['p'], 
+                        reaction: '宮城「やっぱり頭皮は<br>さっぱりさせたいよね」' },
+                    { text: "なんでもかんでも<br>冷やしすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '宮城「冷やし中華だけで<br>十分涼しげだろ！」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '宮城', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '宮城', text: 'ツッコミどころが多いってことは<br>わかったよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '宮城', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '宮城', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 秋田 ----------------------------------------------------------------------------------------------------
     'akita': {
         scenario: [
