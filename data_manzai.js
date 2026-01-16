@@ -154,7 +154,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '青森', text: '花笠まづり・・・<br>は結構賑やがだし' },
             { type: 'dialogue', speaker: '山形', text: '「空気まつり」だよ' },
             { type: 'dialogue', speaker: '青森', text: '・・・空気まづり？' },
-            { type: 'dialogue', speaker: '山形', text: '空気に感謝して建立された<br>「空気神社」お祭りなんだけど' },
+            { type: 'dialogue', speaker: '山形', text: '空気に感謝して建立された<br>「空気神社」のお祭りなんだけど' },
             { type: 'dialogue', speaker: '山形', text: '本殿がステンレスの鏡でできてて<br>空気が御神体なんだ' },
             {
                 type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>巫女さんが空気に向かって舞うよ',
