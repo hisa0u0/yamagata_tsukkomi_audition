@@ -89,6 +89,98 @@ const manzaiData = {
     ]
     },
 
+    // -------- 青森 --------------------------------------------------------------------------------------------------------
+    'aomori': {
+        scenario: [
+            { type: 'dialogue', speaker: '青森', text: 'はいどうもー！<br>青森県だ！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '青森', text: '青森どいえば<br>やっぱしリンゴだ！' },
+            { type: 'dialogue', speaker: '青森', text: '生産量日本一！<br>一づのものを極めるのが青森の県民性よ' },
+            { type: 'dialogue', speaker: '青森', text: '山形はさくらんぼの生産量が<br>日本一だよな？' },
+            { type: 'dialogue', speaker: '山形', text: 'うん、あとラーメンの消費額も<br>日本一だよ' },
+            { type: 'dialogue', speaker: '青森', text: 'ああ、山形は<br>ラーメン大好ぎだもんな' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンと<br>そばが美味しいんだ' },
+            { type: 'dialogue', speaker: '山形', text: 'それをアピールしようと思って<br>新しい名前がついたんだよね' },
+            { type: 'dialogue', speaker: '青森', text: '新しい名前？<br>キャッチコピーみだいな？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中さ王国<br>でぎでらんだげど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '青森「行政区分どうなってんだ！<br>めちゃくちゃすぎる！」' },
+                    { text: "名前<br>長すぎだべ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '青森「住所書ぐどぎ大変すぎる！」' },
+                    { text: "わがりやすくて<br>いいね", 
+                        point: 0, type: ['v'], 
+                        reaction: '青森「名物がひと目でわがる」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '青森', text: '手広ぐやりすぎだ・・・' },
+            { type: 'dialogue', speaker: '青森', text: '青森は気候が厳しいからな<br>冬の寒さは半端でねじゃ' },
+            { type: 'dialogue', speaker: '青森', text: 'だからこそ「<ruby>酸ヶ湯<rt>すかゆ</rt></ruby>温泉」みたいな<br>体の芯がらぬぐだまる温泉が最高なんだ' },
+            { type: 'dialogue', speaker: '山形', text: 'あったかそうだねぇ' },
+            { type: 'dialogue', speaker: '青森', text: 'けど、夏は他の地域さ比べて<br>涼しくて過ごしやすいんだ' },
+            { type: 'dialogue', speaker: '山形', text: 'それは羨ましいなあ' },
+            { type: 'dialogue', speaker: '山形', text: '山形の夏はすごく暑いから<br>暑さ対策は頑張ってるよ' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」<br>とか' },
+            { type: 'dialogue', speaker: '青森', text: 'おっ！やっぱ夏どいえば<br>冷やし中華だよな〜' },
+            { type: 'dialogue', speaker: '山形', text: '冷やし中華だけじゃなく・・・' },
+            {
+             type: 'prompt', speaker: '山形',text: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
+             promptText: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
+                tsukkomi: [
+                { text: "シャンプーまで冷やさねんで<br>いいだろ！", 
+                    point: 1, type: ['p','t'],
+                  reaction: '青森「冷やさねんでも<br>ぬぐぐはねんだ！」' },
+                { text: "なんでもかんでも冷やせば<br>いいど思ってるのがよ！", 
+                    point: 3, type: ['t','p','v'],
+                  reaction: '青森「そのうぢ<br>温泉まで冷やしそうだな！」' },
+                { text: "クーラーの使用頻度<br>下がるな", 
+                    point: 0, type: ['p'],
+                  reaction: '青森「エコでいいな」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '青森', text: '涼み方のクセが強えな・・・' },
+            { type: 'dialogue', speaker: '青森', text: 'でもな、冷やしてばかりじゃダメだ<br>青森の夏は短ぇんだぞ！' },
+            { type: 'dialogue', speaker: '青森', text: 'その一瞬さ全での情熱賭げる！<br>それが「ねぶた祭」だ！' },
+            { type: 'dialogue', speaker: '青森', text: '闇さ浮がぶ巨大な灯籠！<br>響ぎ渡るラッセラーの声！' },
+            { type: 'dialogue', speaker: '青森', text: 'あの爆発的なエネルギーこそが<br>青森県民の魂なんだ！' },
+            { type: 'dialogue', speaker: '山形', text: 'すごい迫力だよねぇ' },
+            { type: 'dialogue', speaker: '山形', text: 'でも山形には<br>もっと静かなお祭りがあるよ' },
+            { type: 'dialogue', speaker: '青森', text: 'すんずがな祭り？' },
+            { type: 'dialogue', speaker: '青森', text: '花笠まづり・・・<br>は結構賑やがだし' },
+            { type: 'dialogue', speaker: '山形', text: '「空気まつり」だよ' },
+            { type: 'dialogue', speaker: '青森', text: '・・・空気まづり？' },
+            { type: 'dialogue', speaker: '山形', text: '空気に感謝して建立された<br>「空気神社」お祭りなんだけど' },
+            { type: 'dialogue', speaker: '山形', text: '本殿がステンレスの鏡でできてて<br>空気が御神体なんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>巫女さんが空気に向かって舞うよ',
+                promptText: '空気の恩恵に感謝して<br>巫女さんが空気に向かって舞うよ',
+                tsukkomi: [
+                    { text: "いぱだだ祭りだな！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '青森「見えねものに向がって<br>舞うってなんだ！」' },
+                    { text: "感謝の仕方<br>独特すぎる！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '青森「なんぼ空気が綺麗でも<br>崇め奉るのはやりすぎだ・・・」' },
+                    { text: "ある意味<br>一番大事だな", 
+                        point: 0, type: ['p'], 
+                        reaction: '青森「確がに空気がねど<br>ラッセラーもしゃべれねもんな・・・」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '青森', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '青森', text: 'ツッコミどごろが多いってごどは<br>わがった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '青森', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '青森', text: 'それでいいのがよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 岩手 -----------------------------------------------------------------------------------------------------
     'iwate': {
         scenario: [
