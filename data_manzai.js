@@ -815,6 +815,98 @@ const manzaiData = {
 
     },
 
+    // -------- 長野 --------------------------------------------------------------------------------------------------------
+    'nagano': {
+        scenario: [
+            { type: 'dialogue', speaker: '長野', text: 'どうも、長野県です' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '長野', text: 'さあ<br>ずく出していきましょう' },
+            { type: 'dialogue', speaker: '長野', text: '長野といえば<br>やはり「信州そば」だね' },
+            { type: 'dialogue', speaker: '長野', text: '戸隠、開田、更科…<br>地域ごとに歴史と格式があるんだ' },
+            { type: 'dialogue', speaker: '長野', text: 'イチオシは「戸隠そば」！' },
+            { type: 'dialogue', speaker: '長野', text: '日本三大そばの一つに数えられる<br>名門だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>麺文化かぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形では<br>ラーメンとそばが人気だよ' },
+            { type: 'dialogue', speaker: '長野', text: 'ほう、山形も麺を食べるのか<br>でもそばへのこだわりは負けないよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメン消費額も日本一だし' },
+            { type: 'dialogue', speaker: '山形', text: 'そば屋でラーメンが出るくらい<br>麺だらけだよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それで最近、山形県の<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '長野', text: '新しい名前・・・？<br>「信州」のようなブランド名かい？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "麺類が渋滞<br>しすぎだろ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '長野「ラーメン！？そば！？<br>どっちがメインなんだよ！」' },
+                    { text: "行政区分<br>どうなってんだ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長野「県の中に王国建国してる！<br>二重行政にも程があるだろ！」' },
+                    { text: "うどんもあれば<br>完璧だった", 
+                        point: 0, type: ['v'], 
+                        reaction: '長野「ラーン県うどん市<br>そば王国とか」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '長野', text: 'もっとこう<br>洗練された涼しい話題はないのかい？' },
+            { type: 'dialogue', speaker: '長野', text: '長野には「軽井沢」という<br>世界的な避暑地があるよ' },
+            { type: 'dialogue', speaker: '長野', text: '高原の爽やかな風と、木漏れ日・・・<br>これぞ「涼」を楽しむ大人の文化さ' },
+            { type: 'dialogue', speaker: '山形', text: 'あ〜<br>涼しいのは大事だよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形の夏は暑いから<br>軽井沢行きたいな' },
+            { type: 'dialogue', speaker: '長野', text: '何か暑さ対策<br>してないのかい？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
+            { type: 'dialogue', speaker: '長野', text: '・・・<br>ラーメン県そば王国だからね' },
+            {
+                type: 'prompt', speaker: '山形', text: '“冷やしラーメン”と“冷やしシャンプー”<br>も始まるね',
+                tsukkomi: [
+                    { text: "片っ端から<br>冷やしてる！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長野「なんでもかんでも<br>冷やせばいいと思ってるだろ！」' },
+                    { text: "山形県民は<br>暑がりなんだね", 
+                        point: 0, type: ['p'], 
+                        reaction: '長野「夏は軽井沢に<br>来るといいよ」' },
+                    { text: "知覚過敏に<br>なるだろ！", 
+                        point: 1, type:  ['v', 'p'], 
+                        reaction: '長野「冷やしすぎるのも<br>良くないんじゃ・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '長野', text: '頭を冷やすのもいいけど…' },
+            { type: 'dialogue', speaker: '長野', text: 'もっとこう魂が熱くなるような<br>イベントはないのかい？' },
+            { type: 'dialogue', speaker: '長野', text: '長野には<br>「<ruby>御柱<rt>おんばしら</rt></ruby>祭」があるよ<br>' },
+            { type: 'dialogue', speaker: '長野', text: '巨大な丸太に乗って<br>急な坂を滑り落ちるんだ' },
+            { type: 'dialogue', speaker: '長野', text: '死傷者が出ることもある<br>まさに命がけの男たちの祭りさ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>ワイルドだね' },
+            { type: 'dialogue', speaker: '山形', text: 'あ、そういえば山形にも<br>まつりがあるよ' },
+            { type: 'dialogue', speaker: '長野', text: 'ほう、やはり勇壮な神輿や<br>厳格な儀式があるのかい？' },
+            { type: 'dialogue', speaker: '山形', text: '「空気まつり」っていうんだ' },
+            { type: 'dialogue', speaker: '長野', text: '・・・<br>空気まつり・・・？' },
+            { type: 'dialogue', speaker: '山形', text: '空気神社のまつりだよ' },
+            { type: 'dialogue', speaker: '長野', text: '空気神社・・・？<br>どこの神話の神様だい？' },
+            { type: 'dialogue', speaker: '山形', text: '神話でも神様でもない<br>“空気”だよ' },
+            { type: 'dialogue', speaker: '長野', text: 'え・・・？' },
+            {
+                type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によって建立された神社さ',
+                tsukkomi: [
+                    { text: "建造の動機が<br>フワッとしてる！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長野「空気だけに！<br>・・・歴史的背景とかないのかよ！」' },
+                    { text: "神様がいないのに<br>神社！？", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '長野「そんなのアリ！？」' },
+                    { text: "環境意識が<br>高くて素敵だね", 
+                        point: 0, type: ['p'], 
+                        reaction: '長野「SDGsの先駆けだね<br>見習いたいよ」' } 
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '長野', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '長野', text: 'ツッコミどころが多いってことは<br>わかったよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '長野', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '長野', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 京都 --------------------------------------------------------------------------------------------------------
     'kyoto': {
         scenario: [
