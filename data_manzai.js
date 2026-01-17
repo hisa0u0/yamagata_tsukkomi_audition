@@ -96,31 +96,31 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
             { type: 'dialogue', speaker: '青森', text: '青森どいえば<br>やっぱしリンゴだ！' },
-            { type: 'dialogue', speaker: '青森', text: '生産量日本一！<br>一づのものを極めるのが青森の県民性よ' },
-            { type: 'dialogue', speaker: '青森', text: '山形はさくらんぼの生産量が<br>日本一だよな？' },
+            { type: 'dialogue', speaker: '青森', text: '生産量日本一！<br>一づのものば極めるのが青森の県民性だ' },
+            { type: 'dialogue', speaker: '青森', text: '山形はさぐらんぼの生産量<br>日本一だよな？' },
             { type: 'dialogue', speaker: '山形', text: 'うん、あとラーメンの消費額も<br>日本一だよ' },
             { type: 'dialogue', speaker: '青森', text: 'ああ、山形は<br>ラーメン大好ぎだもんな' },
             { type: 'dialogue', speaker: '山形', text: '山形はラーメンと<br>そばが美味しいんだ' },
             { type: 'dialogue', speaker: '山形', text: 'それをアピールしようと思って<br>新しい名前がついたんだよね' },
-            { type: 'dialogue', speaker: '青森', text: '新しい名前？<br>キャッチコピーみだいな？' },
+            { type: 'dialogue', speaker: '青森', text: '新しい名前？<br>キャッチコピーみでなやつか？' },
             { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
             {
                 type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
                 tsukkomi: [
                     { text: "県の中さ王国<br>でぎでらんだげど！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '青森「行政区分どうなってんだ！<br>めちゃくちゃすぎる！」' },
+                        reaction: '青森「行政区分どうなってんだ！<br>めちゃくちゃだ！」' },
                     { text: "名前<br>長すぎだべ！", 
                         point: 1, type: ['v', 'p'], 
-                        reaction: '青森「住所書ぐどぎ大変すぎる！」' },
-                    { text: "わがりやすくて<br>いいね", 
+                        reaction: '青森「住所書ぐどぎ手間だ！」' },
+                    { text: "わがりやすくて<br>いいの", 
                         point: 0, type: ['v'], 
-                        reaction: '青森「名物がひと目でわがる」' }
+                        reaction: '青森「名物がひと目でわがるな」' }
                 ]
             },
             { type: 'dialogue', speaker: '青森', text: '手広ぐやりすぎだ・・・' },
-            { type: 'dialogue', speaker: '青森', text: '青森は気候が厳しいからな<br>冬の寒さは半端でねじゃ' },
-            { type: 'dialogue', speaker: '青森', text: 'だからこそ「<ruby>酸ヶ湯<rt>すかゆ</rt></ruby>温泉」みたいな<br>体の芯がらぬぐだまる温泉が最高なんだ' },
+            { type: 'dialogue', speaker: '青森', text: '青森は気候が厳しいからな<br>冬の寒さは半端でねえぞ' },
+            { type: 'dialogue', speaker: '青森', text: 'だからこそ「<ruby>酸ヶ湯<rt>すかゆ</rt></ruby>温泉」みでな<br>体の芯がらぬぐだまる温泉が最高だ！' },
             { type: 'dialogue', speaker: '山形', text: 'あったかそうだねぇ' },
             { type: 'dialogue', speaker: '青森', text: 'けど、夏は他の地域さ比べて<br>涼しくて過ごしやすいんだ' },
             { type: 'dialogue', speaker: '山形', text: 'それは羨ましいなあ' },
@@ -132,7 +132,7 @@ const manzaiData = {
              type: 'prompt', speaker: '山形',text: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
              promptText: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
                 tsukkomi: [
-                { text: "シャンプーまで冷やさねんで<br>いいだろ！", 
+                { text: "シャンプーまで冷やさねんで<br>いいべさ！", 
                     point: 1, type: ['p','t'],
                   reaction: '青森「冷やさねんでも<br>ぬぐぐはねんだ！」' },
                 { text: "なんでもかんでも冷やせば<br>いいど思ってるのがよ！", 
@@ -147,7 +147,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '青森', text: 'でもな、冷やしてばかりじゃダメだ<br>青森の夏は短ぇんだぞ！' },
             { type: 'dialogue', speaker: '青森', text: 'その一瞬さ全での情熱賭げる！<br>それが「ねぶた祭」だ！' },
             { type: 'dialogue', speaker: '青森', text: '闇さ浮がぶ巨大な灯籠！<br>響ぎ渡るラッセラーの声！' },
-            { type: 'dialogue', speaker: '青森', text: 'あの爆発的なエネルギーこそが<br>青森県民の魂なんだ！' },
+            { type: 'dialogue', speaker: '青森', text: 'あの爆発的なエネルギーこそが<br>青森県民の魂だ！' },
             { type: 'dialogue', speaker: '山形', text: 'すごい迫力だよねぇ' },
             { type: 'dialogue', speaker: '山形', text: 'でも山形には<br>もっと静かなお祭りがあるよ' },
             { type: 'dialogue', speaker: '青森', text: 'すんずがな祭り？' },
@@ -813,6 +813,96 @@ const manzaiData = {
 
                 ]
 
+    },
+
+    // -------- 山梨 ---------------------------------------------------------------------------------------------------------
+    'yamanashi': {
+        scenario: [
+            { type: 'dialogue', speaker: '山梨', text: 'はいどうもー！<br>山梨県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '山梨', text: '山梨といえば、日本一の山！<br>そう、富士山！' },
+            { type: 'dialogue', speaker: '山梨', text: '3776メートル、日本一の高さ！' },
+            { type: 'dialogue', speaker: '山梨', text: 'あの圧倒的なスケール感は<br>他の追随を許さんぜ' },
+            { type: 'dialogue', speaker: '山形', text: '富士山かぁ<br>一度は登ってみたいな' },
+            { type: 'dialogue', speaker: '山形', text: '日本一のスケールなら<br>山形にもあるよ' },
+            { type: 'dialogue', speaker: '山梨', text: '山形に富士山クラスの<br>デカいものがあるのか？' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」<br>だよ' },
+            { type: 'dialogue', speaker: '山梨', text: '芋煮会？<br>河原でやる鍋パーティーずら？' },
+            { type: 'dialogue', speaker: '山梨', text: '日本一って<br>どんな芋煮会なんだ？' },
+            { type: 'dialogue', speaker: '山形', text: '日本一の芋煮会は・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋で<br>重機を使って芋煮を作るんだよ',
+                tsukkomi: [
+                    { text: "芋煮会なのに<br>大きさで競ってんの！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '山梨「味とかで競えし！」' },
+                    { text: "富士山より<br>迫力あるかも", 
+                        point: 0, type: ['p'], 
+                        reaction: '山梨「鍋をデカくする発想は<br>なかったわ・・・」' },
+                    { text: "重機使って<br>芋煮作っちょし！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '山梨「重機で調理とか<br>ワイルドすぎるずら！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山梨', text: 'デカさが正義だと<br>思ってるのか・・・？' },
+            { type: 'dialogue', speaker: '山梨', text: 'まあでも、涼しくなった秋の河原で<br>温けー芋煮を食うなあ最高だよね' },
+            { type: 'dialogue', speaker: '山梨', text: '問題は、その前の「夏」じゃんね' },
+            { type: 'dialogue', speaker: '山梨', text: '山形も山梨もお互い盆地だから<br>夏は蒸し風呂みてーに暑いじゃんね' },
+            { type: 'dialogue', speaker: '山梨', text: '山梨なんか<br>最高気温の常連じゃん？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうだね<br>山形の夏もすごく暑いよ' },
+            { type: 'dialogue', speaker: '山形', text: 'だから、暑さ対策は頑張ってるよ' },
+            { type: 'dialogue', speaker: '山梨', text: '暑さ対策？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」とか' },
+            { type: 'dialogue', speaker: '山梨', text: 'それなら山梨も<br>やってるけど・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '冷やしラーメン、冷やしシャンプー<br>冷やしマスクとかね',
+                tsukkomi: [
+                    { text: "お腹壊すわ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '山梨「体の中からも外からも<br>冷やしすぎずら！」' },
+                    { text: "なんでも冷やしゃあ<br>いいと思ってるずら！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '山梨「安直すぎるら！<br>思考回路が単純か！」' },
+                    { text: "山梨も<br>見習わっかな", 
+                        point: 0, type: ['p'], 
+                        reaction: '山梨「冷房使わなくなって<br>節電になるかな」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山梨', text: '頭冷やすなあ気持ちよさそうで<br>いいけど・・・' },
+            { type: 'dialogue', speaker: '山梨', text: 'やっぱりふーふー言いながら<br>熱いものを食うのが好きだな' },
+            { type: 'dialogue', speaker: '山梨', text: '山梨のソウルフードといえば<br>やっぱり「ほうとう」じゃん！' },
+            { type: 'dialogue', speaker: '山梨', text: '野菜たっぷりで栄養満点だし<br>信玄公も愛した最強のメシだ！' },
+            { type: 'dialogue', speaker: '山形', text: 'ソウルフードかぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形のソウルフードなら<br>「玉こんにゃく」かな' },
+            { type: 'dialogue', speaker: '山梨', text: 'おー、玉こんか！<br>ありゃあ美味いよな' },
+            { type: 'dialogue', speaker: '山形', text: 'そろそろ玉こんブームが<br>来ると思うんだよね' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーをつけて<br>頑張ってるから' },
+            { type: 'dialogue', speaker: '山梨', text: 'キャッチコピー？' },
+            { type: 'dialogue', speaker: '山形', text: '玉こんにゃくは・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「山形のタピオカ」って<br>呼ばれてるんだ',
+                promptText: '玉こんにゃくは「山形のタピオカ」<br>って呼ばれてるんだ',
+                tsukkomi: [
+                    { text: "こんにゃくがタピオカは<br>無理あるら！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '山梨「確かに原材料芋だけど！<br>渋すぎる！」' },
+                    { text: "ミルクティーに<br>入れんのか！？", 
+                        point: 1, type: ['v', 't'], 
+                        reaction: '山梨「醤油味が染み出ちゃうら！<br>大惨事じゃん！」' },
+                    { text: "インスタ映え<br>間違いなしじゃん", 
+                        point: 0, type: ['p'], 
+                        reaction: '山梨「カラフルにしてみるとか？<br>原宿系玉こんにゃくみてえな」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '山梨', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '山梨', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '山梨', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '山梨', text: 'ほれでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
     },
 
     // -------- 長野 --------------------------------------------------------------------------------------------------------
