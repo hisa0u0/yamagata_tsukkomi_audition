@@ -997,7 +997,7 @@ const manzaiData = {
         ]
     },
 
-    // -------- 岐阜（指定ネタ構成Ver.） -----------------------------------------------------------------------------------------------------
+    // -------- 岐阜 -----------------------------------------------------------------------------------------------------
     'gifu': {
         scenario: [
             { type: 'dialogue', speaker: '岐阜', text: 'はいどうもー！<br>岐阜県と〜' },
@@ -1626,6 +1626,96 @@ const manzaiData = {
             { type: 'dialogue', speaker: '愛媛', text: '・・・・・・' },
             { type: 'dialogue', speaker: '愛媛', text: 'ほんまにそれでええんかい！！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！！' },
+        ]
+    },
+
+    // -------- 福岡 --------------------------------------------------------------------------------------------------------
+    'fukuoka': {
+        scenario: [
+            { type: 'dialogue', speaker: '福岡', text: 'はいどーもー！<br>福岡県ばい！' }, 
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '福岡', text: 'いやぁ、福岡といやあやっぱ<br>グルメが最強やろ！' },
+            { type: 'dialogue', speaker: '福岡', text: '豚骨ラーメンに、ぷりっぷりんもつ鍋！<br>水炊きに、白飯が進む明太子！' },
+            { type: 'dialogue', speaker: '福岡', text: 'さらにデザートは「あまおう」！<br>朝から晩まで美味かもん尽くしっちゃん！' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、ごちそうだねぇ' },
+            { type: 'dialogue', speaker: '福岡', text: 'そうたい！<br>食の都・福岡には勝てんばい！' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンが美味しいよ<br>ラーメン消費額日本一だし' },
+            { type: 'dialogue', speaker: '福岡', text: '数字とかよか！ラーメン言うたら<br>やっぱ「博多豚骨」んブランドが最強やろ！' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンが好きすぎて<br>県の名前にラーメンがついたんだ' },
+            { type: 'dialogue', speaker: '福岡', text: '県の名前に・・・！？' },
+            { type: 'dialogue', speaker: '福岡', text: '・・・ラーメンに県の名前ば<br>つけるんやなくて？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "なんで県の中に<br>国作りよーっちゃん！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福岡「せめて逆やろ！<br>王国ん方が上やんか！」' },
+                    { text: "県名<br>長すぎるやろ！", 
+                        point: 1, type: ['v'], 
+                        reaction: '福岡「履歴書ん住所欄に<br>入りきらんばい！」' },
+                    { text: "うどんはなかと？", 
+                        point: 0, type: ['p'], 
+                        reaction: '福岡「福岡はうどん発祥ん地<br>って言われとーけんね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福岡', text: '王国て・・・<br>どんだけ麺に支配されとーと' },
+            { type: 'dialogue', speaker: '福岡', text: 'ま、飯だけやなかばい<br>福岡は都会としての格も違うけんね！' },
+            { type: 'dialogue', speaker: '福岡', text: '「福岡タワー」見たことある？<br>海沿いにキラキラ輝くランドマークばい！' },
+            { type: 'dialogue', speaker: '山形', text: 'タワーかぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>とびきり高いマンションがあるよ' },
+            { type: 'dialogue', speaker: '山形', text: '東北では一番高い<br>タワマンなんだ' },
+            { type: 'dialogue', speaker: '福岡', text: 'おっ！タワマン？<br>やっぱ夜景が綺麗かんやろうねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '「スカイタワー41」って言うんだ' },
+            { type: 'dialogue', speaker: '福岡', text: '名前は強そうやね<br>周りはビル群かな？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん<br>周りは全部田んぼだよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '田んぼの真ん中に<br>41階建てのマンションが一本だけあるんだ',
+                tsukkomi: [
+                    { text: "異物感<br>強すぎるばい！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福岡「異世界転生してきた建物か！<br>違和感が仕事しすぎばい！」' },
+                    { text: "景色は良さそう", 
+                        point: 0, type: ['v'], 
+                        reaction: '福岡「まあ、見渡す限り緑やろうけど<br>夜は真っ暗やなか？」' },
+                    { text: "なんでそげんとこに<br>建てたと！？", 
+                        point: 1, type: ['p', 't'], 
+                        reaction: '福岡「都市計画どうなっとーと！？<br>ポツンとしすぎやろ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福岡', text: '田んぼにタワーマンション・・・<br>山形ん風景、カオスすぎん？' },
+            { type: 'dialogue', speaker: '福岡', text: 'もっとこう<br>歴史とか伝統ば大事にせな！' },
+            { type: 'dialogue', speaker: '福岡', text: '福岡には<br>「太宰府天満宮」があるったい' },
+            { type: 'dialogue', speaker: '福岡', text: '学問の神様・菅原道真公がおるけん<br>全国から参拝客が来る由緒正しか場所たい' },
+            { type: 'dialogue', speaker: '山形', text: '学問の神様かぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形には<br>もっと身近なものを祀る神社があるよ' },
+            { type: 'dialogue', speaker: '福岡', text: '身近なもん？<br>ご先祖様とかか？' },
+            { type: 'dialogue', speaker: '山形', text: '「空気」だよ' },
+            { type: 'dialogue', speaker: '福岡', text: '・・・はい？<br>空気？' },
+            { type: 'dialogue', speaker: '山形', text: '空気の恩恵に感謝して<br>「空気神社」ができたんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '本殿もなくて<br>鏡に映った空気を拝むんだよ',
+                promptText: '空気の恩恵に感謝して<br>「空気神社」ができたんだ',
+                tsukkomi: [
+                    { text: "山形県民は<br>心がきれかな・・・", 
+                        point: 0, type: ['p'], 
+                        reaction: '福岡「空気にも<br>感謝ん心ば忘れん・・・」' },
+                    { text: "感謝ん仕方<br>壮大すぎるやろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福岡「確かに空気は大事ばってん！<br>拝むか！？普通！」' },
+                    { text: "フワフワしとーな！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '福岡「空気だけに！<br>・・・ってやかましかばい！」' }
+                    
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '福岡', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '福岡', text: 'ツッコミどころが多かってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '福岡', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '福岡', text: 'それでいいとかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
     

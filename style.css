@@ -312,7 +312,7 @@ transition: opacity 0.3s ease-out;
 
 #serifu-text {
     /* 全画面でも小さすぎないサイズ（px固定） */
-    font-size: 16px; 
+    font-size: 14.5px; 
     margin: 0;
     /* 行間を固定。2行目はこの高さ分だけ下に正確に出る */
     line-height: 1.6; 
