@@ -1665,7 +1665,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'タワーかぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形にも<br>とびきり高いマンションがあるよ' },
             { type: 'dialogue', speaker: '山形', text: '東北では一番高い<br>タワマンなんだ' },
-            { type: 'dialogue', speaker: '福岡', text: 'おっ！タワマン？<br>やっぱ夜景が綺麗かんやろうねぇ' },
+            { type: 'dialogue', speaker: '福岡', text: 'おっ！タワマン？<br>やっぱ夜景が綺麗なんやろうねぇ' },
             { type: 'dialogue', speaker: '山形', text: '「スカイタワー41」って言うんだ' },
             { type: 'dialogue', speaker: '福岡', text: '名前は強そうやね<br>周りはビル群かな？' },
             { type: 'dialogue', speaker: '山形', text: 'ううん<br>周りは全部田んぼだよ' },
@@ -1678,7 +1678,7 @@ const manzaiData = {
                     { text: "景色は良さそう", 
                         point: 0, type: ['v'], 
                         reaction: '福岡「まあ、見渡す限り緑やろうけど<br>夜は真っ暗やなか？」' },
-                    { text: "なんでそげんとこに<br>建てたと！？", 
+                    { text: "なしでそげんとこに<br>建てたと！？", 
                         point: 1, type: ['p', 't'], 
                         reaction: '福岡「都市計画どうなっとーと！？<br>ポツンとしすぎやろ！」' }
                 ]
@@ -1697,7 +1697,7 @@ const manzaiData = {
                 type: 'prompt', speaker: '山形', text: '本殿もなくて<br>鏡に映った空気を拝むんだよ',
                 promptText: '空気の恩恵に感謝して<br>「空気神社」ができたんだ',
                 tsukkomi: [
-                    { text: "山形県民は<br>心がきれかな・・・", 
+                    { text: "山形県民は<br>心が綺麗かな・・・", 
                         point: 0, type: ['p'], 
                         reaction: '福岡「空気にも<br>感謝ん心ば忘れん・・・」' },
                     { text: "感謝ん仕方<br>壮大すぎるやろ！", 
