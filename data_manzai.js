@@ -997,6 +997,102 @@ const manzaiData = {
         ]
     },
 
+    // -------- 岐阜（指定ネタ構成Ver.） -----------------------------------------------------------------------------------------------------
+    'gifu': {
+        scenario: [
+            { type: 'dialogue', speaker: '岐阜', text: 'はいどうもー！<br>岐阜県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '岐阜', text: '岐阜は「ものづくり」が<br>自慢なんだ' },
+            { type: 'dialogue', speaker: '岐阜', text: '関市の刃物に、多治見のタイル<br>郡上の食品サンプル！' },
+            { type: 'dialogue', speaker: '岐阜', text: 'どれも生産量日本一の<br>素晴らしい技術なんやぞ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>日本一がたくさんあるんだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形の日本一は<br>さくらんぼとか将棋駒とか' },
+            { type: 'dialogue', speaker: '山形', text: 'あと、ラーメン消費額かな' },
+            { type: 'dialogue', speaker: '岐阜', text: 'ラーメン消費額？<br>ラーメン好きなんやな' },
+            { type: 'dialogue', speaker: '山形', text: 'そうだよ<br>山形といえば「ラーメン」と「そば」' },
+            { type: 'dialogue', speaker: '山形', text: 'だからそれにちなんで<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '岐阜', text: '新しい名前？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国作っとる！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '岐阜「行政区分どうなっとるんだ！<br>せめて逆やろ！」' },
+                    { text: "うどんも<br>入れようぜ", 
+                        point: 0, type: ['p'], 
+                        reaction: '岐阜「そこまで来たら<br>麺類コンプリートしよよ」' },
+                    { text: "名前が長いわ！", 
+                        point: 1, type: ['v', 't'], 
+                        reaction: '岐阜「履歴書に書くとき<br>枠からはみ出るやろ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '岐阜', text: '・・・まあ<br>地元愛が強いのはええことやな' },
+            { type: 'dialogue', speaker: '岐阜', text: '岐阜には昔から愛されとる<br>「さるぼぼ」ってお守りがあるんや' },
+            { type: 'dialogue', speaker: '岐阜', text: '赤い人形でな<br>顔が描かれとらんのが特徴なんやお' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>顔がないんだ' },
+            { type: 'dialogue', speaker: '山形', text: '表情がないキャラなら<br>山形にも「桃色ウサヒ」がいるよ' },
+            { type: 'dialogue', speaker: '山形', text: '朝日町の<br>PRキャラクターなんだ' },
+            { type: 'dialogue', speaker: '岐阜', text: 'お、さるぼぼみたいに<br>持ち主の心を映す深いキャラなんか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや、ただただ無表情で<br>無個性なピンク色のウサギだよ' },
+            { type: 'dialogue', speaker: '岐阜', text: '・・・ん？' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
+            {
+                type: 'prompt', speaker: '山形', text: '特徴がない<br>ウサギの着ぐるみだよ',
+                promptText: '「朝日が育んだ圧倒的無個性」<br>特徴がないウサギの着ぐるみだよ',
+                tsukkomi: [
+                    { text: "やる気<br>あんのか！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '岐阜「個性出してけよ！<br>PRする気ないやろ！」' },
+                    { text: "ミステリアス<br>すぎるやろ！", 
+                        point: 1, type: ['p','t'], 
+                        reaction: '岐阜「逆に気になってきたわ！<br>戦略勝ちやな！」' },
+                    { text: "さるぼぼと<br>コラボしよ", 
+                        point: 0, type: ['v'], 
+                        reaction: '岐阜「無表情コンビで<br>シュールな絵面になりそうやろ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '岐阜', text: 'まあ<br>キャラの好みは人それぞれやな…' },
+            { type: 'dialogue', speaker: '岐阜', text: 'でも<br>そんなマニアックなウサギと違って' },
+            { type: 'dialogue', speaker: '岐阜', text: '万人に愛される癒やしが<br>岐阜にはあるんや！' },
+            { type: 'dialogue', speaker: '岐阜', text: 'それが「温泉」やて！' },
+            { type: 'dialogue', speaker: '岐阜', text: '大自然の「<ruby>奥飛騨<rt>おくひだ</rt></ruby>温泉郷」に<br>信長ゆかりの「<ruby>長良川<rt>ながらがわ</rt></ruby>温泉」！' },
+            { type: 'dialogue', speaker: '岐阜', text: 'ほんで何と言っても<br>日本三名泉の「<ruby>下呂<rt>げろ</rt></ruby>温泉」や！' },
+            { type: 'dialogue', speaker: '山形', text: 'そうだね<br>山形も冬は寒いし' },
+            { type: 'dialogue', speaker: '山形', text: 'でも夏は暑いから<br>温泉よりも「冷やしシャンプー」かな' },
+            { type: 'dialogue', speaker: '岐阜', text: '冷やしシャンプー・・・？' },
+            { type: 'dialogue', speaker: '山形', text: '床屋さんでやってもらうんだ' },
+            { type: 'dialogue', speaker: '岐阜', text: '頭が凍ってしまいそうやな・・・' },
+            { type: 'dialogue', speaker: '山形', text: '暑い夏には最高だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'あと、ラーメン屋さんが<br>冷やしラーメンを始めたり' },
+            { type: 'dialogue', speaker: '岐阜', text: 'はあ？<br>冷やしラーメン・・・？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」<br>みたいな感じで' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形の夏は<br>いろんなものが冷えてるよ',
+                promptText: '冷やし中華始めましたみたいな感じで<br>山形の夏はいろんなものが冷えてるよ',
+                tsukkomi: [
+                    { text: "暑がりすぎやろ！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '岐阜「山形の夏は<br>そんなに過酷やの！？」' },
+                    { text: "なんでもかんでも冷やしゃええと<br>思っとるのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '岐阜「そのうち温泉も冷やすんやないか！？」' },
+                    { text: "お腹<br>壊さんようにね", 
+                        point: 0, type: ['p'], 
+                        reaction: '岐阜「冷やしすぎもあかんよ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '岐阜', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '岐阜', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '岐阜', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '岐阜', text: 'それでええのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 京都 --------------------------------------------------------------------------------------------------------
     'kyoto': {
         scenario: [
