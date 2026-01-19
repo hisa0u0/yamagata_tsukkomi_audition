@@ -1056,7 +1056,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '岐阜', text: 'まあ<br>キャラの好みは人それぞれやな…' },
             { type: 'dialogue', speaker: '岐阜', text: 'でも<br>そんなマニアックなウサギと違って' },
             { type: 'dialogue', speaker: '岐阜', text: '万人に愛される癒やしが<br>岐阜にはあるんや！' },
-            { type: 'dialogue', speaker: '岐阜', text: 'それが「温泉」やて！' },
+            { type: 'dialogue', speaker: '岐阜', text: 'それが「温泉」やで！' },
             { type: 'dialogue', speaker: '岐阜', text: '大自然の「<ruby>奥飛騨<rt>おくひだ</rt></ruby>温泉郷」に<br>信長ゆかりの「<ruby>長良川<rt>ながらがわ</rt></ruby>温泉」！' },
             { type: 'dialogue', speaker: '岐阜', text: 'ほんで何と言っても<br>日本三名泉の「<ruby>下呂<rt>げろ</rt></ruby>温泉」や！' },
             { type: 'dialogue', speaker: '山形', text: 'そうだね<br>山形も冬は寒いし' },
