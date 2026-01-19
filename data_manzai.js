@@ -1363,7 +1363,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '鳥取', text: 'はいどーもー！<br>鳥取県と〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
-            { type: 'dialogue', speaker: '鳥取', text: '鳥取といやあ<br>「鳥取砂丘」だら！' },
+            { type: 'dialogue', speaker: '鳥取', text: '鳥取といやあ<br>「鳥取砂丘」だで！' },
             { type: 'dialogue', speaker: '鳥取', text: '日本最大級の砂の丘！<br>見渡す限り、砂、砂、砂！' },
             { type: 'dialogue', speaker: '鳥取', text: '圧倒的なスケール感が<br>鳥取の自慢だけぇな' },
             { type: 'dialogue', speaker: '山形', text: 'スケールが大きいのはいいね' },
@@ -1391,17 +1391,17 @@ const manzaiData = {
             { type: 'dialogue', speaker: '鳥取', text: '大きさで勝負するのもええけど<br>鳥取には「文化」もあるけぇ' },
             { type: 'dialogue', speaker: '鳥取', text: 'なんと言っても<br>「まんが王国とっとり」だ！' },
             { type: 'dialogue', speaker: '鳥取', text: '水木しげるロードには<br>妖怪のブロンズ像がようけあるしな' },
-            { type: 'dialogue', speaker: '鳥取', text: '不思議な妖怪たちに会えるのが<br>魅力なんだ' },
+            { type: 'dialogue', speaker: '鳥取', text: '不思議な妖怪たちに会えるのが<br>魅力なんだで' },
             { type: 'dialogue', speaker: '山形', text: '不思議な生き物かぁ<br>山形にもいるよ' },
             { type: 'dialogue', speaker: '鳥取', text: 'え？<br>山形にも妖怪がおるの？' },
             { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」だよ' },
-            { type: 'dialogue', speaker: '鳥取', text: 'ああ、あの白い毛玉みたいな！<br>何かわからんやつだな？' },
+            { type: 'dialogue', speaker: '鳥取', text: 'ああ、あの白い毛玉みたいな！<br>何かわからんやつだでな？' },
             { type: 'dialogue', speaker: '山形', text: 'そう、正体不明の<br>未確認生物なんだけど' },
             {
                 type: 'prompt', speaker: '山形', text: '水族館で<br>普通に展示されてるんだ',
                 tsukkomi: [
                     
-                    { text: "なんで水族館に<br>展示しとるんだよ！", 
+                    { text: "なんで水族館に<br>展示しとるだいや！", 
                         point: 1, type: ['p', 'v'], 
                         reaction: '鳥取「海の生き物じゃないだら！」' },
                     { text: "鳥取にも<br>呼びたいな", 
@@ -1409,16 +1409,16 @@ const manzaiData = {
                         reaction: '鳥取「水木しげるロードの<br>仲間に入れるか」' },
                     { text: "未確認生物を<br>展示すんな！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '鳥取「展示したら<br>未確認じゃなあなるだら！」' }
+                        reaction: '鳥取「展示したら<br>未確認じゃなあなるが！」' }
                 ]
             },
             { type: 'dialogue', speaker: '鳥取', text: '未確認生物を展示するとは<br>山形は奥が深いな・・・' },
-            { type: 'dialogue', speaker: '鳥取', text: 'でも<br>名前の美しさなら負けんよ' },
+            { type: 'dialogue', speaker: '鳥取', text: 'でも<br>名前の美しさなら負けんで' },
             { type: 'dialogue', speaker: '鳥取', text: '鳥取は夜空が綺麗すぎて<br>「<ruby>星取<rt>ほしとり</rt></ruby>県」って名乗ってるでぇ' },
             { type: 'dialogue', speaker: '鳥取', text: 'ロマンチックだら？<br>このネーミングセンス' },
             { type: 'dialogue', speaker: '山形', text: 'おー、改名したんだ' },
             { type: 'dialogue', speaker: '山形', text: '山形も、愛するものをアピールするために<br>新しい名前を作ったんだ' },
-            { type: 'dialogue', speaker: '鳥取', text: 'へぇ、山形は何県になったんだ？<br>「さくらんぼ県」とかか？' },
+            { type: 'dialogue', speaker: '鳥取', text: 'へぇ、山形は何県になっただ？<br>「さくらんぼ県」とかか？' },
             { type: 'dialogue', speaker: '山形', text: '山形県民はラーメン大好きで<br>ラーメン消費額日本一だからさ' },
             { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
             {
@@ -1426,13 +1426,13 @@ const manzaiData = {
                 tsukkomi: [
                     { text: "県の中に<br>国作られんで！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '鳥取「なんで県の中に王国があるんだよ！<br>行政区分がめちゃくちゃすぎる！」' },
+                        reaction: '鳥取「なんで県の中に王国があるだいや！<br>行政区分がめちゃくちゃすぎる！」' },
                     { text: "星取県のほうが<br>センスあるな", 
                         point: 0, type: ['v'], 
                         reaction: '鳥取「山形はちいと<br>胃もたれしそうな名前だわ」' },
-                    { text: "詰め込みすぎ<br>だら！", 
+                    { text: "詰め込みすぎ<br>だわいな！", 
                         point: 1, type: ['t', 'p'], 
-                        reaction: '鳥取「ラーメンかそばか<br>どっちかに絞れなんだのかよ！」' }
+                        reaction: '鳥取「ラーメンかそばか<br>どっちかに絞れんだかいや！」' }
                 ]
             },
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
@@ -1441,6 +1441,94 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '鳥取', text: '・・・・・・' },
             { type: 'dialogue', speaker: '鳥取', text: 'それでええんか！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 広島 ---------------------------------------------------------------------------------------------------------
+    'hiroshima': {
+        scenario: [
+            { type: 'dialogue', speaker: '広島', text: 'はいどーもー！<br>広島県じゃ！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '広島', text: '広島といやあ<br>「カープ愛」じゃろ！' },
+            { type: 'dialogue', speaker: '広島', text: '試合がある日は街中が赤う染まるんじゃ<br>この情熱はどこにも負けんでぇ！' },
+            { type: 'dialogue', speaker: '広島', text: 'どの県にも負けん「愛」が<br>ここにゃあるけぇな！' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、すごい愛だね' },
+            { type: 'dialogue', speaker: '山形', text: '山形だったら・・・<br>ラーメン愛かな' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメン消費額が<br>日本一なんだ' },
+            { type: 'dialogue', speaker: '広島', text: '三度の飯より<br>ラーメンが好きなんじゃのぉ！' },
+            { type: 'dialogue', speaker: '山形', text: '愛が強すぎて<br>県の名前を変えたんだよ' },
+            { type: 'dialogue', speaker: '広島', text: 'ほう、改名までさせる愛か！<br>なんて名前なんじゃ？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "麺への愛が<br>重すぎるわ！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '広島「麺類詰め込みすぎて<br>ようわからんようなっとる！」' },
+                    { text: "県の中に<br>国作りなさんな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '広島「行政区分がめちゃくちゃすぎる！<br>なんで県の中に王国があるんじゃ！」' },
+                    { text: "お好み焼き県も<br>作りたいのぉ", 
+                        point: 0, type: ['v'], 
+                        reaction: '広島「広島も負けてられんな」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '広島', text: '食い意地が張りすぎじゃろ・・・' },
+            { type: 'dialogue', speaker: '広島', text: 'もっとこう<br>厳かな場所はないんか？' },
+            { type: 'dialogue', speaker: '広島', text: '広島にゃあ世界遺産<br>「厳島神社」があるけぇな' },
+            { type: 'dialogue', speaker: '広島', text: '海に浮かぶ大鳥居！<br>あの神々しさが自慢なんじゃ' },
+            { type: 'dialogue', speaker: '山形', text: '神様への感謝は大事だよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>神々しい神社があるよ' },
+            { type: 'dialogue', speaker: '広島', text: 'ほう、何て神社？' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」だよ' },
+            { type: 'dialogue', speaker: '広島', text: '・・・ん？<br>空気？' },
+            { type: 'dialogue', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によって作られた神社なんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '本殿は無くて<br>空気を御神体として祀ってるんだよ',
+                tsukkomi: [
+                    { text: "感謝の仕方<br>独特すぎじゃろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '広島「発想がスピリチュアル<br>すぎるんじゃ！」' },
+                    { text: "何も見えん<br>じゃないか！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '広島「参拝しても<br>実感が湧かんわ！」' },
+                    { text: "心が洗われそう<br>じゃのぉ", 
+                        point: 0, type: ['p'], 
+                        reaction: '広島「山形県民は<br>心が綺麗なんだな・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '広島', text: '実体がないものを祀るたぁ・・・<br>山形は不思議なとこじゃのぉ' },
+            { type: 'dialogue', speaker: '広島', text: 'でもやっぱ、旅の醍醐味いうたら<br>「グルメ」じゃろ！' },
+            { type: 'dialogue', speaker: '広島', text: 'お好み焼きに牡蠣！<br>広島はうまいもんの宝庫じゃ' },
+            { type: 'dialogue', speaker: '山形', text: 'グルメかぁ<br>美味しそうだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも大人気の<br>ソウルフードがあるよ' },
+            { type: 'dialogue', speaker: '広島', text: 'ソウルフード？<br>なんじゃ、さくらんぼか？' },
+            { type: 'dialogue', speaker: '山形', text: '「山形のタピオカ」<br>って呼ばれてるんだ' },
+            { type: 'dialogue', speaker: '広島', text: 'タピオカ？<br>ほう、おしゃれなもんがあるんじゃのぉ' },
+            { type: 'dialogue', speaker: '山形', text: '醤油味の丸いこんにゃく<br>「玉こんにゃく」のことなんだけどね' },
+            {
+                type: 'prompt', speaker: '山形', text: '見た目も食感も似てるから<br>実質タピオカだね',
+                promptText: '山形のソウルフード「玉こんにゃく」<br>実質タピオカだね',
+                tsukkomi: [
+                    { text: "ヘルシーで<br>ぶちええじゃん", 
+                        point: 0, type: ['p'], 
+                        reaction: '広島「ダイエット中にゃあ<br>最高じゃのぉ」' },
+                    { text: "確かにどっちも<br>芋でできてるけど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '広島「上手いこと言わんでええ！」' },
+                    { text: "ミルクティーに<br>入れたら事故じゃ！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '広島「醤油味が<br>邪魔すぎるわ！」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '広島', text: 'う〜ん<br>たちまち・・・' },
+            { type: 'dialogue', speaker: '広島', text: 'ツッコミどころが多いってこたぁ<br>ようわかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '広島', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '広島', text: 'ほいでええんか！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },

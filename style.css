@@ -1337,7 +1337,7 @@ box-shadow: 0 0 15px #04FF00;
     
     #tsukkome-cutin img {
         /* ▼ 35vw に設定（デカすぎず、小さすぎない絶妙サイズ） */
-        width: 40vw !important; 
+        width: 35vw !important; 
         
         /* ▼ 念のため「どんなに画面が広くても800px以上にはしない」制限を追加 */
         max-width: 800px !important; 
