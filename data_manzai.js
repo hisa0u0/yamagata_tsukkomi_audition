@@ -1648,7 +1648,7 @@ const manzaiData = {
             {
                 type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
                 tsukkomi: [
-                    { text: "なんで県の中に<br>国作りよーっちゃん！", 
+                    { text: "なんで県の中に<br>国作りよると！？", 
                         point: 3, type: ['t', 'p', 'v'], 
                         reaction: '福岡「せめて逆やろ！<br>王国ん方が上やんか！」' },
                     { text: "県名<br>長すぎるやろ！", 
@@ -1714,7 +1714,179 @@ const manzaiData = {
             { type: 'dialogue', speaker: '福岡', text: 'ツッコミどころが多かってことは<br>わかった' },
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '福岡', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '福岡', text: 'それでいいとかよ！' },
+            { type: 'dialogue', speaker: '福岡', text: 'それでよかと！？' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 長崎 --------------------------------------------------------------------------------------------------------
+    'nagasaki': {
+        scenario: [
+            { type: 'dialogue', speaker: '長崎', text: 'はいどうも〜！<br>長崎県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '長崎', text: '長崎といえば<br>やっぱ「ちゃんぽん」じゃろ！' },
+            { type: 'dialogue', speaker: '長崎', text: '豚肉、魚介、野菜！<br>いろんな具材ば混ぜ合わせるのが長崎流！' },
+            { type: 'dialogue', speaker: '長崎', text: '異文化が混ざり合う<br>長崎らしいグルメやろ？' },
+            { type: 'dialogue', speaker: '山形', text: '麺料理かぁ、いいよねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形もラーメン消費額日本一になるくらい<br>麺が大好きなんだ' },
+            { type: 'dialogue', speaker: '長崎', text: 'ほう！日本一か！<br>そりゃ相当好きなんやなあ' },
+            { type: 'dialogue', speaker: '山形', text: 'だからその愛をアピールするために<br>新しい名前を作ったんだ' },
+            { type: 'dialogue', speaker: '長崎', text: '新しか名前？<br>「ラーメン県」とかそがんの？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "欲張りすぎや<br>なかか！？", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '長崎「ちゃんぽんより<br>ごちゃごちゃしとーばい！」' },
+                    { text: "おいしそうな<br>名前ばい", 
+                        point: 0, type: ['v'], 
+                        reaction: '長崎「今度食べに行くけんね！」' },
+                        { text: "県の中に<br>国あるたい！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長崎「せめて逆じゃろ！<br>王国の方が上やろ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '長崎', text: '麺への執着心がすごかね・・・' },
+            { type: 'dialogue', speaker: '長崎', text: '長崎はもっとこう<br>精神的な豊かさがある街ばい' },
+            { type: 'dialogue', speaker: '長崎', text: '「祈りの街」って言われとって' },
+            { type: 'dialogue', speaker: '長崎', text: '世界遺産の<ruby>大浦天主堂<rt>おおうらてんしゅどう</rt></ruby>とか<br>教会がようけあるったい' },
+            { type: 'dialogue', speaker: '長崎', text: '神聖な気持ちになるる場所が<br>自慢たい' },
+            { type: 'dialogue', speaker: '山形', text: 'お祈りかぁ、大事だよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、自然の恵みに感謝するための<br>神社があるよ' },
+            { type: 'dialogue', speaker: '長崎', text: 'おっ、気が合うね！<br>どがん神社があると？' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」だよ' },
+            { type: 'dialogue', speaker: '長崎', text: '・・・はい？<br>空気・・・神社・・・？' },
+            { type: 'dialogue', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によって建立されたんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '空気がご神体の<br>世界に一つだけの神社だよ',
+                tsukkomi: [
+                    { text: "感謝の仕方<br>独特すぎるじゃろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長崎「空気がありがたかとはわかるばってん！<br>信心深すぎるじゃろ！」' },
+                    { text: "どがんして<br>拝むっさ！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '長崎「深呼吸して終わりやなかよね？」' },
+                    { text: "ロマンチック<br>やなぁ", 
+                        point: 0, type: ['v'], 
+                        reaction: '長崎「長崎の教会と<br>コラボしたかね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '長崎', text: '空気に対して神社ば建てるとは・・・<br>山形県民はピュアすぎるばい' },
+            { type: 'dialogue', speaker: '長崎', text: 'そがんピュアな山形県民の<br>「おもてなし」も気になってきたばい' },
+            { type: 'dialogue', speaker: '長崎', text: '長崎には「<ruby>卓袱<rt>しっぽく</rt></ruby>料理」があるけんね' },
+            { type: 'dialogue', speaker: '長崎', text: '円卓ば囲んで<br>豪華な料理ばみんなで食べるったい' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、みんなで食べるんだ' },
+            { type: 'dialogue', speaker: '山形', text: '山形でも、お客さんが来たら<br>みんなで“あのご馳走”を食べるよ' },
+            { type: 'dialogue', speaker: '長崎', text: 'おっ！なんや？<br>米沢牛のすき焼きとかか？' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメンだよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '来客があったら<br>ラーメンの出前を取るんだ',
+                tsukkomi: [
+                    { text: "ちゃんぽんも<br>頼める？", 
+                        point: 0, type: ['v'], 
+                        reaction: '長崎「出前なら<br>メニューも豊富じゃろうしね」' },
+                    { text: "ラーメン<br>好きすぎじゃろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '長崎「ラーメンが一番のご馳走と！？<br>ブレんねぇ〜！！」' },
+                    { text: "手料理じゃ<br>なかとかよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '長崎「せっかくなら<br>郷土料理ば出さんね！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '長崎', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '長崎', text: 'ツッコミどころが多かってことは<br>ようわかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '長崎', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '長崎', text: 'それでよかか！？' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 熊本 --------------------------------------------------------------------------------------------------------
+    'kumamoto': {
+        scenario: [
+            { type: 'dialogue', speaker: '熊本', text: 'はいどーも！<br>熊本県ばい！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '熊本', text: '覚えてもらうなら、やっぱ<br>キャラん濃さが大事や！' },
+            { type: 'dialogue', speaker: '熊本', text: '熊本には世界んスーパースター<br>「くまモン」がおるけんね！' },
+            { type: 'dialogue', speaker: '熊本', text: 'あの愛くるしかフォルム！赤かほっぺ！<br>今や日本を代表するキャラたい！' },
+            { type: 'dialogue', speaker: '山形', text: 'くまモンかぁ<br>可愛いよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形には<br>ウサギのキャラクターがいるんだ' },
+            { type: 'dialogue', speaker: '熊本', text: 'おっ、ウサギか！<br>さぞかしむぞらしゅうて個性的なんやろ？' },
+            { type: 'dialogue', speaker: '山形', text: '朝日町のPRキャラクター<br>「桃色ウサヒ」っていう' },
+            { type: 'dialogue', speaker: '山形', text: '個性・無軌道・無表情で<br>瞳が虚なウサギの着ぐるみだよ' },
+            { type: 'dialogue', speaker: '熊本', text: '・・・はい？<br>無個性？虚？' },
+            {
+                type: 'prompt', speaker: '山形', text: '特徴がないことが特徴の<br>「圧倒的無個性」なキャラなんだ',
+                tsukkomi: [
+                    { text: "やる気あんのか！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '熊本「熊本県民の情熱ば<br>ちったあ分けちゃりたか！」' },
+                    { text: "逆に<br>気になるわ！", 
+                        point: 1, type: ['p','t'], 
+                        reaction: '熊本「グッズとか売れとっと？<br>心配になってきた・・・」' },
+                    { text: "“無個性”ちゅう<br>“個性”か・・・", 
+                        point: 0, type: ['t' ], 
+                        reaction: '熊本「哲学的なキャラクターばい」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '熊本', text: 'まあ、キャラんクセは置いといて・・・<br>大事なんな中身のスケールたい！' },
+            { type: 'dialogue', speaker: '熊本', text: '熊本には世界最大級んカルデラ<br>「阿蘇山」があるったい！' },
+            { type: 'dialogue', speaker: '熊本', text: 'あの大自然！噴煙上げる火口！<br>地球ん息吹ば感ずるスケール感！' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>ビッグスケールなんだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>日本一大きいイベントがあるよ' },
+            { type: 'dialogue', speaker: '熊本', text: 'ほう？<br>阿蘇山に対抗できるサイズと？' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」<br>だよ' },
+            { type: 'dialogue', speaker: '熊本', text: '芋煮会って<br>河原で鍋するやつばいね？' },
+            { type: 'dialogue', speaker: '熊本', text: '日本一大きかって<br>どぎゃんこと？' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋で<br>重機を使って調理するんだ',
+                tsukkomi: [
+                    { text: "工事現場や<br>なか！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '熊本「ヘルメットかぶって<br>食ぶる気か！？」' },
+                    { text: "鍋ごと巨大化<br>させとっと！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '熊本「会場ん規模だけじゃなくて！？<br>発想が豪快すぎるやろ！」' },
+                    { text: "阿蘇ん火口で<br>煮込んでみる？", 
+                        point: 0, type: ['p', 'v'], 
+                        reaction: '熊本「それこそマグマのような<br>熱々ん芋煮がでくるばい」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '熊本', text: '重機で料理て・・・<br>山形ん食文化、ワイルドすぎん？' },
+            { type: 'dialogue', speaker: '熊本', text: 'やっぱ県の象徴は「城」に限るたい！' },
+            { type: 'dialogue', speaker: '熊本', text: '熊本といえば「熊本城」！<br>難攻不落の武者返し！これぞ熊本ん魂や！' },
+            { type: 'dialogue', speaker: '山形', text: 'お城かぁ、かっこいいねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形の象徴は・・・<br>やっぱりラーメンかな' },
+            { type: 'dialogue', speaker: '熊本', text: 'ラーメン？<br>美味かばってん象徴まではいかんやろ' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメン消費額日本一で<br>麺好きが多いんだ' },
+            { type: 'dialogue', speaker: '山形', text: '象徴だから<br>県の名前にしたんだよ' },
+            { type: 'dialogue', speaker: '熊本', text: 'は？ 名前にした？<br>「ラーメン県」に？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国まで作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '熊本「ラーメン県までで<br>充分伝わるやろ！」' },
+                    { text: "わかりやすうて<br>よかね", 
+                        point: 0, type: ['v'], 
+                        reaction: '熊本「わかりやすかことは<br>よかことや」' },
+                    { text: "住所書くとき<br>どぎゃんすっと！？", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '熊本「年賀状ん宛名書きで<br>手が腱鞘炎になるばい！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '熊本', text: 'う〜ん<br>さしより・・・' },
+            { type: 'dialogue', speaker: '熊本', text: 'ツッコミどころが多かってことは<br>ようわかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '熊本', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '熊本', text: 'それでよかかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
