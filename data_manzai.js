@@ -545,6 +545,274 @@ const manzaiData = {
         ]
     },
 
+    // -------- 新潟 --------------------------------------------------------------------------------------------------------
+    'niigata': {
+        scenario: [
+            { type: 'dialogue', speaker: '新潟', text: 'はいどうも〜！<br>新潟県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '新潟', text: 'このあいだ<br>長岡花火見に行ったんだよ' },
+            { type: 'dialogue', speaker: '新潟', text: '復興祈願花火「フェニックス」<br>涙が出るほど綺麗だったなぁ' },
+            { type: 'dialogue', speaker: '新潟', text: 'やっぱ日本海の夏といえば<br>長岡の大花火だよな' },
+            { type: 'dialogue', speaker: '新潟', text: '山形にはなんかある？' },
+            { type: 'dialogue', speaker: '山形', text: '山形の夏といえば・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '冷やしラーメン、冷やしシャンプー<br>・・・あとは冷やしマスクとか？',
+                tsukkomi: [
+                    { text: "冷やしシャンプー！？<br>風邪ひくだろ！", 
+                        point: 1, 
+                        type: ['p', 'v'], 
+                        reaction: '新潟「冬の寒さで<br>冷たさは十分だろ...」' },
+                    { text: "なんでもかんでも<br>冷やしすぎだろ！", 
+                        point: 3, 
+                        type: ['t', 'p','v'],
+                        reaction: '新潟「雪国なんだから<br>夏くらい温まれよ！」' },
+                    { text: "冷やしラーメン<br>美味そうだなぁ", 
+                        point: 0, 
+                        type: ['v'], 
+                        reaction: '新潟「へぎそばも美味いけど<br>ラーメンもいいな...」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '新潟', text: '体冷やしてばっかりじゃダメだって' },
+            { type: 'dialogue', speaker: '新潟', text: '秋になると<br>温かいご飯が恋しくなるだろ？' },
+            { type: 'dialogue', speaker: '新潟', text: '新潟は魚沼産コシヒカリの<br>新米シーズン！' },
+            { type: 'dialogue', speaker: '新潟', text: 'ピカピカの塩むすびなんて<br>新米シーズン！' },
+            { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高のご馳走だぞ' },
+            { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？<br>つや姫？ 雪若丸？' },
+            { type: 'dialogue', speaker: '山形', text: '秋か〜' },
+            { type: 'dialogue', speaker: '山形', text: '秋なら芋煮会かな<br>日本一の芋煮会をするんだよ' },
+            { type: 'dialogue', speaker: '新潟', text: '日本一の芋煮会？<br>それは日本一美味しいってこと？' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5mの大鍋と、重機で作る<br>日本一の芋煮会フェスティバルだよ',
+                tsukkomi: [
+                    { text: "日本一って<br>デカさの話かよ！", 
+                        point: 3, 
+                        type: ['t', 'p','v'],
+                        reaction: '山形「いいだろ別に<br>デカさでも」' },
+                    { text: "重機！？<br>食べ物なのに！？", 
+                        point: 1, 
+                        type: ['p'],
+                        reaction: '新潟「・・・まあ流石に<br>綺麗なの使ってるだろうけど」' },
+                    { text: "柿の種<br>入れたら美味そう", 
+                        point: 0, 
+                        type: ['p', 'v'],
+                        reaction: '山形「あ、食感のアクセントに<br>なるかもね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'フェスティバルと言えば・・・' },
+            { type: 'dialogue', speaker: '新潟', text: 'え？<br>まだなんかあんの？'},
+            { type: 'dialogue', speaker: '山形', text: 'うん<br>空気まつり' },
+            { type: 'dialogue', speaker: '新潟', text: '・・・<br>空気まつり・・・？'},
+            { type: 'dialogue', speaker: '山形', text: '空気神社のまつりだよ' },
+            { type: 'dialogue', speaker: '新潟', text: '空気神社・・・？'},
+            { type: 'dialogue', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によってつくられた神社だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'やっぱ空気には<br>感謝しないと' },
+            {
+                type: 'prompt', speaker: '新潟', text: '空気に・・・感謝・・・？',
+                promptText: '空気の恩恵に感謝して<br>有志によってつくられた神社だよ',
+                tsukkomi: [
+                    { text: "山形県民は<br>心が綺麗だなあ", 
+                        point: 0, 
+                        type: ['v'],
+                        reaction: '新潟「感動したわ」' },
+                    { text: "なんでそれで<br>神社になるんだよ！", 
+                        point: 3, 
+                        type: ['t', 'p','v'],
+                        reaction: '新潟「発想と行動力が<br>突飛すぎるだろ...」' },
+                    { text: "空気の神様って<br>なんだよ！", 
+                        point: 1, 
+                        type: ['v', 'p'],
+                        reaction: '山形「いやいや<br>空気神社に神様いないから」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '新潟', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '新潟', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '新潟', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '新潟', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+
+                ]
+
+    },
+
+    // -------- 富山 ---------------------------------------------------------------------------------------------------------
+    'toyama': {
+        scenario: [
+            { type: 'dialogue', speaker: '富山', text: 'はいどうもー！<br>富山県や！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '富山', text: '富山といや、やっぱ<br>「富山ブラックラーメン」やの' },
+            { type: 'dialogue', speaker: '富山', text: '真っ黒いスープに粗挽き胡椒！<br>あの塩辛さが労働後の体に染みるんだ' },
+            { type: 'dialogue', speaker: '富山', text: '白飯と一緒に食べるのが<br>富山流の正義やさかいね' },
+            { type: 'dialogue', speaker: '山形', text: 'ご飯のおかずにするんだ<br>ラーメン愛が深いね' },
+            { type: 'dialogue', speaker: '山形', text: '山形もラーメンは大人気だよ<br>消費額日本一になるくらいだからね' },
+            { type: 'dialogue', speaker: '富山', text: 'ほう、日本一とは大したもんや<br>山形県民の誇りってわけか' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            { type: 'dialogue', speaker: '山形', text: 'その愛が高じて<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '富山', text: '新しい名前？<br>「ラーメン県」とでも名乗るが？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "ごちゃごちゃ<br>しとるな！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '富山「欲張りすぎやろ！<br>一つに絞らっしゃい！」' },
+                    { text: "県の中に<br>国があるが！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '富山「せめて逆やろ！<br>行政区分が破綻しとるぞ！」' },
+                    { text: "麺類への愛が<br>感じられるな・・・", 
+                        point: 0, type: ['v'], 
+                        reaction: '富山「富山も見習おうかな」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '富山', text: '・・・ちょっこしスケールが<br>大きすぎんか？' },
+            { type: 'dialogue', speaker: '富山', text: 'スケールで言や<br>富山には「黒部ダム」があるぞ！' },
+            { type: 'dialogue', speaker: '富山', text: '高さ186メートル！<br>日本一の高さを誇る巨大ダムや' },
+            { type: 'dialogue', speaker: '富山', text: '毎秒10トン以上の放水は<br>まさに圧巻の一言やな' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>やっぱりデカいものはいいねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>スケール日本一のイベントがあるよ' },
+            { type: 'dialogue', speaker: '富山', text: 'ほう、ダムに対抗できるイベントけ？<br>何をするんだ？' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」だよ' },
+            { type: 'dialogue', speaker: '富山', text: '芋煮・・・？<br>河原で鍋をするあれか？' },
+            { type: 'dialogue', speaker: '富山', text: 'スケール日本一って<br>どういうことなんや？' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋を使って<br>バックホーで調理するんだ',
+    
+                tsukkomi: [
+                    { text: "料理に重機<br>使われんちゃ！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '富山「工事現場かよ！<br>危なすぎる！」' },
+                    { text: "一度に何人分<br>作れるんだ・・・", 
+                        point: 0, type: ['p'], 
+                        reaction: '富山「・・・約3万食！？<br>炊き出しのレベルを超えとるな」' },
+                    { text: "鍋のサイズごと<br>デカくしとるが！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '富山「発想が脳筋すぎるやろ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '富山', text: 'やることが豪快すぎるな・・・' },
+            { type: 'dialogue', speaker: '富山', text: 'もっとこう<br>繊細な神秘さはないが？' },
+            { type: 'dialogue', speaker: '富山', text: '富山の魚津市では<br>「蜃気楼」が見られるんだ' },
+            { type: 'dialogue', speaker: '富山', text: '景色が反転したり伸びたり・・・<br>自然が生み出す幻想的な光景なんや' },
+            { type: 'dialogue', speaker: '山形', text: '蜃気楼？<br>不思議だねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも不思議な生き物がいるよ' },
+            { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」<br>って言うんだけど' },
+            { type: 'dialogue', speaker: '富山', text: 'ああ、あの白い綿毛みたいな？<br>幸せを呼ぶって噂の' },
+            { type: 'dialogue', speaker: '富山', text: 'でもあれって<br>未確認生物やろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'うん、でも・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '普通に水族館に展示されてるよ',
+                promptText: '「ケサランパサラン」が<br>普通に水族館に展示されてるよ',
+                tsukkomi: [
+                    { text: "見たら<br>幸せになれそう", 
+                        point: 0, type: ['v'], 
+                        reaction: '富山「まあ、縁起物としてなら<br>ありなのかな・・・」' },
+                    { text: "未確認生物を<br>展示すんな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '富山「未確認じゃのうなるやろ！<br>学術的に解明せっしゃい！」' },
+                    { text: "なんで水族館に<br>いるがやちゃ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '富山「あれ魚の仲間やったのか！？<br>謎が深まるばっかりだ・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '富山', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '富山', text: 'ツッコミどころが多いってことは<br>ようわかったよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '富山', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '富山', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 茨城 ---------------------------------------------------------------------------------------------------------
+    'ibaraki': {
+        scenario: [
+            { type: 'dialogue', speaker: '茨城', text: 'はいどうもー！<br>茨城県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '茨城', text: '形を覚える前に<br>名前覚えでもらわなぐぢゃな！' },
+            { type: 'dialogue', speaker: '茨城', text: 'いいか<br>みんなよく間違えるけど' },
+            { type: 'dialogue', speaker: '茨城', text: '「いばら“ぎ”」じゃなぐて<br>「いばら“き”」だかんな！' },
+            { type: 'dialogue', speaker: '茨城', text: '濁らねえんだよ！<br>俺だぢのプライドなんだ！' },
+            { type: 'dialogue', speaker: '山形', text: '名前へのこだわりは大事だねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形県も名前にこだわってて<br>新しい名前を名乗り始めたんだ' },
+            { type: 'dialogue', speaker: '茨城', text: 'あ？新しい名前？<br>まさがおめらも「濁点」取ったのが？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '茨城「県知事の上に<br>国王がいんのがよ！？」' },
+                    { text: "名前が<br>なげーよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '茨城「履歴書の住所欄に<br>入りぎんねえよ！」' },
+                    { text: "最強の称号だっぺ！", 
+                        point: 0, type: ['v'], 
+                        reaction: '茨城「天下統一も<br>夢じゃねえな！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '茨城', text: '名前のスケールがデカすぎる・・・' },
+            { type: 'dialogue', speaker: '茨城', text: 'でもよ、デケぇど言えば<br>茨城には「牛久大仏」があっかんな！' },
+            { type: 'dialogue', speaker: '茨城', text: '高さ120メートル！<br>青銅製立像どしては世界最大級！' },
+            { type: 'dialogue', speaker: '茨城', text: 'ギネス認定だっぺ！' },
+            { type: 'dialogue', speaker: '茨城', text: '奈良の大仏が手のひらに<br>乗っちまうサイズなんだぞ！' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>やっぱり大きいことはいいことだねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>日本一のデカいイベントがあるよ' },
+            { type: 'dialogue', speaker: '茨城', text: 'お、大仏に対抗しようってのか？<br>どんなイベントだよ' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」だよ' },
+            { type: 'dialogue', speaker: '茨城', text: '芋煮・・・？<br>河原で鍋作るあれが？' },
+            { type: 'dialogue', speaker: '茨城', text: '何がどうデケぇんだよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋を使って<br>バックホーで調理するんだ',
+                tsukkomi: [
+                    { text: "俺も操縦<br>してえなあ", 
+                        point: 0, type: ['p'], 
+                        reaction: '茨城「免許持ってっから<br>手伝うが？」' },
+                    { text: "料理に重機使って<br>いいのがよ！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '茨城「ちゃんと洗ったんが！？<br>潤滑油とか気になるわ！」' },
+                    { text: "そんな巨大化の仕方<br>アリかよ！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '茨城「鍋ごどデカくするタイプの<br>ビッグイベントなの！？」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '茨城', text: 'ま、デケぇのもいいけんどさ<br>茨城どいえば「納豆」だっぺ！' },
+            { type: 'dialogue', speaker: '茨城', text: '小粒で粘り強ぐで栄養満点！<br>これが日本の朝の顔だよな' },
+            { type: 'dialogue', speaker: '山形', text: '丸くてコロコロした食べ物は<br>可愛いよねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、丸くて可愛い<br>ソウルフードがあるよ' },
+            { type: 'dialogue', speaker: '茨城', text: 'ほう、なんだ？<br>団子どが？' },
+            { type: 'dialogue', speaker: '山形', text: '「玉こんにゃく」だよ<br>串に刺して醤油で煮るんだ' },
+            { type: 'dialogue', speaker: '茨城', text: 'ああ、祭りの屋台どがにあるな<br>美味ぇよなあれ' },
+            { type: 'dialogue', speaker: '山形', text: 'でも最近は<br>別の名前で売り出してるんだ' },
+            { type: 'dialogue', speaker: '茨城', text: '別の名前？' },
+            {
+                type: 'prompt', speaker: '山形', text: '「山形のタピオカ」としてね',
+                tsukkomi: [
+                    { text: "確かにちょっと<br>似でるけんど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '茨城「うめえごど言わねでいい！<br>こんにゃくはこんにゃくだっぺ！」' },
+                        { text: "インスタ映え<br>すっがもな", 
+                        point: 0, type: ['v'], 
+                        reaction: '茨城「醤油色が<br>逆に新しいがもしんねえ・・・」' },
+                    { text: "全然<br>可愛ぐねーべ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '茨城「渋すぎるわ！<br>煮物だっぺ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '茨城', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '茨城', text: 'ツッコミどごろが多いってごどは<br>よぐわがった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '茨城', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '茨城', text: 'それでいいのがよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 群馬 ---------------------------------------------------------------------------------------------------------
     'gunma': {
         scenario: [
@@ -721,98 +989,6 @@ const manzaiData = {
             { type: 'dialogue', speaker: '東京', text: 'それでいいんですか！？' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
-    },
-
-    // -------- 新潟 --------------------------------------------------------------------------------------------------------
-    'niigata': {
-        scenario: [
-            { type: 'dialogue', speaker: '新潟', text: 'はいどうも〜！<br>新潟県と〜' },
-            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
-            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
-            { type: 'dialogue', speaker: '新潟', text: 'このあいだ<br>長岡花火見に行ったんだよ' },
-            { type: 'dialogue', speaker: '新潟', text: '復興祈願花火「フェニックス」<br>涙が出るほど綺麗だったなぁ' },
-            { type: 'dialogue', speaker: '新潟', text: 'やっぱ日本海の夏といえば<br>長岡の大花火だよな' },
-            { type: 'dialogue', speaker: '新潟', text: '山形にはなんかある？' },
-            { type: 'dialogue', speaker: '山形', text: '山形の夏といえば・・・' },
-            {
-                type: 'prompt', speaker: '山形', text: '冷やしラーメン、冷やしシャンプー<br>・・・あとは冷やしマスクとか？',
-                tsukkomi: [
-                    { text: "冷やしシャンプー！？<br>風邪ひくだろ！", 
-                        point: 1, 
-                        type: ['p', 'v'], 
-                        reaction: '新潟「冬の寒さで<br>冷たさは十分だろ...」' },
-                    { text: "なんでもかんでも<br>冷やしすぎだろ！", 
-                        point: 3, 
-                        type: ['t', 'p','v'],
-                        reaction: '新潟「雪国なんだから<br>夏くらい温まれよ！」' },
-                    { text: "冷やしラーメン<br>美味そうだなぁ", 
-                        point: 0, 
-                        type: ['v'], 
-                        reaction: '新潟「へぎそばも美味いけど<br>ラーメンもいいな...」' }
-                ]
-            },
-            { type: 'dialogue', speaker: '新潟', text: '体冷やしてばっかりじゃダメだって' },
-            { type: 'dialogue', speaker: '新潟', text: '秋になると<br>温かいご飯が恋しくなるだろ？' },
-            { type: 'dialogue', speaker: '新潟', text: '新潟は魚沼産コシヒカリの<br>新米シーズン！' },
-            { type: 'dialogue', speaker: '新潟', text: 'ピカピカの塩むすびなんて<br>新米シーズン！' },
-            { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高のご馳走だぞ' },
-            { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？<br>つや姫？ 雪若丸？' },
-            { type: 'dialogue', speaker: '山形', text: '秋か〜' },
-            { type: 'dialogue', speaker: '山形', text: '秋なら芋煮会かな<br>日本一の芋煮会をするんだよ' },
-            { type: 'dialogue', speaker: '新潟', text: '日本一の芋煮会？<br>それは日本一美味しいってこと？' },
-            {
-                type: 'prompt', speaker: '山形', text: '直径6.5mの大鍋と、重機で作る<br>日本一の芋煮会フェスティバルだよ',
-                tsukkomi: [
-                    { text: "日本一って<br>デカさの話かよ！", 
-                        point: 3, 
-                        type: ['t', 'p','v'],
-                        reaction: '山形「いいだろ別に<br>デカさでも」' },
-                    { text: "重機！？<br>食べ物なのに！？", 
-                        point: 1, 
-                        type: ['p'],
-                        reaction: '新潟「・・・まあ流石に<br>綺麗なの使ってるだろうけど」' },
-                    { text: "柿の種<br>入れたら美味そう", 
-                        point: 0, 
-                        type: ['p', 'v'],
-                        reaction: '山形「あ、食感のアクセントに<br>なるかもね」' }
-                ]
-            },
-            { type: 'dialogue', speaker: '山形', text: 'フェスティバルと言えば・・・' },
-            { type: 'dialogue', speaker: '新潟', text: 'え？<br>まだなんかあんの？'},
-            { type: 'dialogue', speaker: '山形', text: 'うん<br>空気まつり' },
-            { type: 'dialogue', speaker: '新潟', text: '・・・<br>空気まつり・・・？'},
-            { type: 'dialogue', speaker: '山形', text: '空気神社のまつりだよ' },
-            { type: 'dialogue', speaker: '新潟', text: '空気神社・・・？'},
-            { type: 'dialogue', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によってつくられた神社だよ' },
-            { type: 'dialogue', speaker: '山形', text: 'やっぱ空気には<br>感謝しないと' },
-            {
-                type: 'prompt', speaker: '新潟', text: '空気に・・・感謝・・・？',
-                promptText: '空気の恩恵に感謝して<br>有志によってつくられた神社だよ',
-                tsukkomi: [
-                    { text: "山形県民は<br>心が綺麗だなあ", 
-                        point: 0, 
-                        type: ['v'],
-                        reaction: '新潟「感動したわ」' },
-                    { text: "なんでそれで<br>神社になるんだよ！", 
-                        point: 3, 
-                        type: ['t', 'p','v'],
-                        reaction: '新潟「発想と行動力が<br>突飛すぎるだろ...」' },
-                    { text: "空気の神様って<br>なんだよ！", 
-                        point: 1, 
-                        type: ['v', 'p'],
-                        reaction: '山形「いやいや<br>空気神社に神様いないから」' }
-                ]
-            },
-            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
-            { type: 'dialogue', speaker: '新潟', text: 'う〜ん<br>とりあえず・・・' },
-            { type: 'dialogue', speaker: '新潟', text: 'ツッコミどころが多いってことは<br>わかった' },
-            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
-            { type: 'dialogue', speaker: '新潟', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '新潟', text: 'それでいいのかよ！' },
-            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
-
-                ]
-
     },
 
     // -------- 山梨 ---------------------------------------------------------------------------------------------------------
