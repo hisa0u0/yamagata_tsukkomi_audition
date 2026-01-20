@@ -900,6 +900,96 @@ const manzaiData = {
         ]
     },
 
+    // -------- 埼玉 ---------------------------------------------------------------------------------------------------------
+    'saitama': {
+        scenario: [
+            { type: 'dialogue', speaker: '埼玉', text: 'はいどうもー！<br>埼玉県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '埼玉', text: '埼玉といえば、やっぱり<br>「暑さ」への耐性が違うんだよね' },
+            { type: 'dialogue', speaker: '埼玉', text: '熊谷とか、日本最高気温を争う<br>激戦区だからさ' },
+            { type: 'dialogue', speaker: '埼玉', text: '県民は暑さに強いし<br>対策もプロ級なんだよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>暑いのは大変だねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形も夏は<br>ジメジメしてすごく暑いんだ' },
+            { type: 'dialogue', speaker: '埼玉', text: 'おっ、同志か？<br>どうやって乗り切ってるんだ？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
+            { type: 'dialogue', speaker: '埼玉', text: 'まあ、冷やし中華は<br>夏の定番だからな' },
+            { type: 'dialogue', speaker: '山形', text: 'あと<br>「冷やしシャンプー始めました」とか' },
+            { type: 'dialogue', speaker: '埼玉', text: '・・・え？<br>シャンプー？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'あと、氷を浮かべた<br>「冷やしラーメン」も始まるね',
+                promptText: '「冷やしシャンプー」とか<br>「冷やしラーメン」も始まるね',
+                tsukkomi: [
+                    { text: "シャンプーまで冷やさなくて<br>いいだろ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '埼玉「食べ物はまだわかるけど！<br>シャンプーはいいだろ！」' },
+                    { text: "徹底してて<br>涼しそうだな", 
+                        point: 0, type: ['v'], 
+                        reaction: '埼玉「そこまでやれば<br>夏も怖くないな」' },
+                        { text: "なんでもかんでも冷やせば<br>いいと思ってるのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '埼玉「思考停止してない！？<br>とりあえず冷やしとけ感がすごいぞ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '埼玉', text: '・・・まあ<br>文化の違いは面白いけどさ' },
+            { type: 'dialogue', speaker: '埼玉', text: '埼玉の魅力はなんといっても<br>「都会と自然のバランス」だよ' },
+            { type: 'dialogue', speaker: '埼玉', text: '東京の隣だし、駅前には<br>立派なタワーマンションも多いからね' },
+            { type: 'dialogue', speaker: '埼玉', text: 'いわゆる「都会的な暮らし」<br>ってやつ？' },
+            { type: 'dialogue', speaker: '山形', text: 'タワーマンションかぁ<br>景色が良くていいよねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、41階建ての<br>超高層タワーマンションがあるよ' },
+            { type: 'dialogue', speaker: '埼玉', text: 'えっ！？山形に！？<br>41階って相当デカいぞ！' },
+            { type: 'dialogue', speaker: '山形', text: '東北では一番なんだ' },
+            { type: 'dialogue', speaker: '埼玉', text: 'なんだ、山形も結構<br>都会なんじゃないか〜' },
+            { type: 'dialogue', speaker: '山形', text: '「スカイタワー41」<br>っていうんだけど' },
+            {
+                type: 'prompt', speaker: '山形', text: '周りは全部田んぼで<br>ポツンと建ってるよ',
+                tsukkomi: [
+                    { text: "なんでそこに<br>建てたんだよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '埼玉「わざわざそんなところに<br>建てる必要あったか！？」' },
+                    { text: "異物感<br>ありすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '埼玉「合成写真かよ！<br>風景とのギャップで脳がバグるわ！」' },
+                    { text: "日当たりは<br>最高だな", 
+                        point: 0, type: ['v'], 
+                        reaction: '埼玉「遮るものが何もないからな<br>眺めは良さそうだ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '埼玉', text: '田んぼにタワマンって…<br>個性が強すぎるな' },
+            { type: 'dialogue', speaker: '埼玉', text: 'PRするなら、もっとこう<br>親しみやすいキャラクターとかいないの？' },
+            { type: 'dialogue', speaker: '埼玉', text: '埼玉には「コバトン」がいるぞ！' },
+            { type: 'dialogue', speaker: '埼玉', text: '県内のイベントには必ず現れるし<br>働き者で県民のアイドルだ！' },
+            { type: 'dialogue', speaker: '山形', text: 'キャラクターは大事だよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形の朝日町にも<br>非公認キャラクターがいるよ' },
+            { type: 'dialogue', speaker: '埼玉', text: 'おっ、コバトンみたいに<br>愛嬌振りまいてるのか？' },
+            { type: 'dialogue', speaker: '山形', text: '「桃色ウサヒ」っていうんだけど<br>ピンク色のウサギでね' },
+            { type: 'dialogue', speaker: '山形', text: '無個性・無軌道・無表情の<br>3拍子が揃ってて' },
+            { type: 'dialogue', speaker: '埼玉', text: '・・・え？<br>無表情？' },
+            { type: 'dialogue', speaker: '山形', text: '目はどこか虚で・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」だよ',
+                tsukkomi: [
+                    { text: "もっと<br>頑張れよ！！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '埼玉「特徴がないのが特徴って！<br>職務放棄じゃないか！？」' },
+                    { text: "コバトンを<br>見習え！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '埼玉「マスコットとしての<br>プライドはないのかよ！」' },
+                    { text: "逆に<br>個性的だな・・・", 
+                        point: 0, type: ['p'], 
+                        reaction: '埼玉「何を考えてるか分からない<br>ミステリアスさが売りなのか？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '埼玉', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '埼玉', text: 'ツッコミどころが多いってことは<br>よくわかったよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '埼玉', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '埼玉', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 千葉 ---------------------------------------------------------------------------------------------------------
     'chiba': {
         scenario: [
