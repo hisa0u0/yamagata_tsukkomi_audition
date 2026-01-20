@@ -900,6 +900,100 @@ const manzaiData = {
         ]
     },
 
+    // -------- 千葉 ---------------------------------------------------------------------------------------------------------
+    'chiba': {
+        scenario: [
+            { type: 'dialogue', speaker: '千葉', text: 'はいどうもー！<br>千葉県です！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '千葉', text: '千葉といえば<br>県民の血となり肉となっている' },
+            { type: 'dialogue', speaker: '千葉', text: '最強のソウルフード<br>「落花生」があるぞ！' },
+            { type: 'dialogue', speaker: '千葉', text: '生産量はダントツ日本一！' },
+            { type: 'dialogue', speaker: '千葉', text: '給食には「みそピー」が出るし<br>今の時期は「ゆで落花生」だ！' },
+            { type: 'dialogue', speaker: '千葉', text: '掘りたてを塩ゆですると<br>ホックホクで最高なんだよ！' },
+            { type: 'dialogue', speaker: '山形', text: '地元で愛されるソウルフードは<br>大事だよねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、みんなが大好きな<br>ソウルフードがあるよ' },
+            { type: 'dialogue', speaker: '千葉', text: 'おっ、なんだ？<br>さくらんぼか？' },
+            { type: 'dialogue', speaker: '山形', text: '「玉こんにゃく」だよ<br>串に刺して醤油で煮るんだ' },
+            { type: 'dialogue', speaker: '千葉', text: 'ああ<br>祭りの屋台とか観光地にあるな！' },
+            { type: 'dialogue', speaker: '千葉', text: '味が染みてて確かに美味い！' },
+            { type: 'dialogue', speaker: '山形', text: 'でも最近は、若者向けに<br>「映え」や「流行」も意識してるんだ' },
+            { type: 'dialogue', speaker: '千葉', text: 'へぇ、こんにゃくで映え？<br>どうやってるんだ？' },
+            {
+                type: 'prompt', speaker: '山形', text: '「山形のタピオカ」ってキャッチコピーで<br>売り出してるよ',
+                tsukkomi: [
+                    { text: "全然<br>甘くねーよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '千葉「ミルクティーに入れたら<br>醤油味になっちゃうよ！」' },
+                    { text: "確かに原材料も<br>見た目も似てるけど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '千葉「こんにゃくはこんにゃくだろ！」' },
+                    { text: "山形ではこんにゃくが<br>タピオカなんだ", 
+                        point: 0, type: ['v'], 
+                        reaction: '千葉「・・・それってアリ？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '千葉', text: '・・・<br>ちょっと無理があるんじゃないか？' },
+            { type: 'dialogue', speaker: '千葉', text: 'もっとこう、キャラクターの力で<br>正々堂々と盛り上げるとかさ！' },
+            { type: 'dialogue', speaker: '千葉', text: '千葉にはあの「ふなっしー」がいるぞ！' },
+            { type: 'dialogue', speaker: '千葉', text: '非公認だけど<br>あの「梨汁ブシャー！」の破壊力！' },
+            { type: 'dialogue', speaker: '千葉', text: '俊敏な動きとトーク力で<br>今や国民的スターだ！' },
+            { type: 'dialogue', speaker: '千葉', text: 'やっぱキャラはあれくらい<br>インパクトがないとなぁ！' },
+            { type: 'dialogue', speaker: '山形', text: '元気がいいのはいいねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形の朝日町にも<br>非公認キャラクターがいるよ' },
+            { type: 'dialogue', speaker: '千葉', text: 'おっ、ライバル登場か？<br>ふなっしーみたいに暴れるのか？' },
+            { type: 'dialogue', speaker: '山形', text: '「桃色ウサヒ」っていうんだけど' },
+            { type: 'dialogue', speaker: '山形', text: '無個性・無軌道・無表情の<br>3拍子が揃ったピンクのうさぎで' },
+            { type: 'dialogue', speaker: '千葉', text: '・・・え？<br>無個性？無表情？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」だよ',
+                tsukkomi: [
+                    { text: "やる気<br>ないだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '千葉「盛り上げる気ある！？<br>ふなっしー見習え！」' },
+                    { text: "シュールすぎるわ！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '千葉「ちょっと攻めすぎ！」' },
+                    { text: "逆に<br>個性的だな", 
+                        point: 0, type: ['p'], 
+                        reaction: '千葉「ミステリアスな魅力が<br>あるのかもしれない」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '千葉', text: '圧倒的無個性って…<br>よくそれでやっていけるな' },
+            { type: 'dialogue', speaker: '千葉', text: 'やっぱPRには<br>「名前のインパクト」が大事だぞ！' },
+            { type: 'dialogue', speaker: '千葉', text: '千葉を見てみろ！' },
+            { type: 'dialogue', speaker: '千葉', text: '「東京ディズニーランド」に<br>「東京ドイツ村」！' },
+            { type: 'dialogue', speaker: '千葉', text: '住所は千葉だけど<br>世界に通用する「東京」を使う！' },
+            { type: 'dialogue', speaker: '千葉', text: 'このしたたかな戦略こそが<br>千葉の賢さなんだよ！' },
+            { type: 'dialogue', speaker: '山形', text: '名前へのこだわりは大事だねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形県も名前にこだわってて<br>インパクトある名前にしたんだ' },
+            { type: 'dialogue', speaker: '千葉', text: 'インパクト？<br>仙台って付けるとか？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "最強の<br>称号だな！", 
+                        point: 0, type: ['v'], 
+                        reaction: '千葉「パスポートなしで<br>入国できるなら行ってみたいな」' },
+                    { text: "県の中に<br>国作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '千葉「せめて逆だろ！<br>王国の中に県があるなら分かるけど！」' },
+                    { text: "名前が<br>なげーよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '千葉「東京ドイツ村より<br>長いじゃないか！」' }
+                    
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '千葉', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '千葉', text: 'ツッコミどころが多いってことは<br>よくわかったよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '千葉', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '千葉', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 東京 -----------------------------------------------------------------------------------------------------
     'tokyo': {
         scenario: [
