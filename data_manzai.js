@@ -813,6 +813,96 @@ const manzaiData = {
         ]
     },
 
+    // -------- 栃木 ---------------------------------------------------------------------------------------------------------
+    'tochigi': {
+        scenario: [
+            { type: 'dialogue', speaker: '栃木', text: 'はいどうもー！<br>栃木県です！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '栃木', text: '栃木といえば、なんといっても<br>「いちご王国」だよね' },
+            { type: 'dialogue', speaker: '栃木', text: '「とちおとめ」に「スカイベリー」！' },
+            { type: 'dialogue', speaker: '栃木', text: '半世紀以上<br>生産量日本一の座は譲んねよ' },
+            { type: 'dialogue', speaker: '栃木', text: 'かわいくって甘くって<br>インスタ映えもバッチリだしね' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>映えるのはいいよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、インスタ映えする<br>名物があるよ' },
+            { type: 'dialogue', speaker: '山形', text: '「山形のタピオカ」って<br>呼ばれてる' },
+            { type: 'dialogue', speaker: '栃木', text: 'おっ、タピオカ？<br>やっぱり流行りには敏感なんだな' },
+            { type: 'dialogue', speaker: '栃木', text: 'で、どんなタピオカなん？' },
+            { type: 'dialogue', speaker: '山形', text: '串に刺さってて<br>醤油味が染み込んでるよ' },
+            { type: 'dialogue', speaker: '栃木', text: '・・・え？<br>醤油味？' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形名物の「玉こんにゃく」を<br>「山形のタピオカ」って呼んでるんだ',
+                tsukkomi: [
+                    { text: "確かに原材料も<br>見た目も似てるけど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '栃木「どっちも元は芋だけどさ！<br>女子高生が並んで買うか！？」' },
+                    { text: "絶対に<br>流行んねえだんべ！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '栃木「おしゃれなカフェで<br>玉こんにゃく出てきたら泣くよ？」' },
+                    { text: "ヘルシーで<br>いいかもね", 
+                        point: 0, type: ['v'], 
+                        reaction: '栃木「若い女子に人気出そう」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '栃木', text: 'ちょっくら<br>無理やりすぎるよ・・・' },
+            { type: 'dialogue', speaker: '栃木', text: 'もっとこう、食に対しては<br>真剣に向き合わねえと！' },
+            { type: 'dialogue', speaker: '栃木', text: '栃木は<br>「宇都宮餃子」が有名だけど' },
+            { type: 'dialogue', speaker: '栃木', text: '毎年<br>消費額日本一をかけて戦ってんだ' },
+            { type: 'dialogue', speaker: '栃木', text: '浜松市や宮崎市と<br>まさに意地とプライドをかけた戦いだよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>ランキング争いは燃えるよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形県民もラーメンが大好きで<br>消費額日本一だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'だから、その本気度を示すために<br>県の名前を変えることにしたんだ' },
+            { type: 'dialogue', speaker: '栃木', text: 'は？県の名前を変える？<br>まさか「ラーメン県」とか？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国作んな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '栃木「せめて逆だろ！<br>国の中に県！」' },
+                    { text: "餃子も<br>入れてよ！", 
+                        point: 0, type: ['p', 'v'], 
+                        reaction: '栃木「ラーメン県餃子市とかさ<br>いいコンビになれると思うよ」' },
+                    { text: "ごちゃごちゃ<br>しすぎだろ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '栃木「もうちょっくらシンプルな<br>名前にしたら！？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '栃木', text: 'ラーメンへの情熱が<br>重すぎるよ・・・' },
+            { type: 'dialogue', speaker: '栃木', text: '栃木はもっとこう、厳かで<br>歴史のある場所も自慢なんだ' },
+            { type: 'dialogue', speaker: '栃木', text: '世界遺産の「日光東照宮」！' },
+            { type: 'dialogue', speaker: '栃木', text: '徳川家康公をお祀りする<br>豪華絢爛な神社だよ' },
+            { type: 'dialogue', speaker: '山形', text: '立派だねぇ<br>感謝の気持ちは大事だよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、みんなで感謝するために<br>建てられた神社があるよ' },
+            { type: 'dialogue', speaker: '栃木', text: 'おっ、誰を祀ってんの？<br>戦国武将？それとも神話の神様？' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」って言うんだけど' },
+            { type: 'dialogue', speaker: '栃木', text: '・・・空気神社？' },
+            { type: 'dialogue', speaker: '山形', text: '空気の恩恵に感謝するために<br>建立された' },
+            {
+                type: 'prompt', speaker: '山形', text: '空気を祀る神社だよ',
+                tsukkomi: [
+                    { text: "感謝の仕方<br>独特すぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '栃木「見えねえものを祀るって！<br>レベルが高すぎるよ！」' },
+                    { text: "シンプルすぎる<br>神社だな！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '栃木「東照宮と真逆だな！<br>こっちは金ピカだぞ！」' },
+                    { text: "俺も空気に<br>感謝してくるわ", 
+                        point: 0, type: ['p'], 
+                        reaction: '栃木「生きるのに<br>一番大事なもんだかんね」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '栃木', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '栃木', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '栃木', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '栃木', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 群馬 ---------------------------------------------------------------------------------------------------------
     'gunma': {
         scenario: [
@@ -1171,6 +1261,95 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '東京', text: '・・・・・・' },
             { type: 'dialogue', speaker: '東京', text: 'それでいいんですか！？' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 神奈川 ---------------------------------------------------------------------------------------------------------
+    'kanagawa': {
+        scenario: [
+            { type: 'dialogue', speaker: '神奈川', text: 'はいどうもー！<br>神奈川県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '神奈川', text: '神奈川といえば、やっぱり<br>「みなとみらい」の夜景だよね' },
+            { type: 'dialogue', speaker: '神奈川', text: 'ランドマークタワーに<br>立ち並ぶタワマン…' },
+            { type: 'dialogue', speaker: '神奈川', text: 'このスカイラインこそが<br>都会の証さ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>高い建物がいっぱいあるんだね' },
+            { type: 'dialogue', speaker: '山形', text: 'タワーマンションなら<br>山形にも41階建てのがあるよ' },
+            { type: 'dialogue', speaker: '神奈川', text: 'えっ？山形に？<br>41階って相当な高さだぞ？' },
+            { type: 'dialogue', speaker: '山形', text: '東北では一番なんだ' },
+            { type: 'dialogue', speaker: '神奈川', text: '意外とやるじゃん<br>駅前の再開発エリアかなんか？' },
+            { type: 'dialogue', speaker: '山形', text: '「スカイタワー41」<br>っていうんだけど' },
+            {
+                type: 'prompt', speaker: '山形', text: '周りは全部田んぼで<br>ポツンと建ってるよ',
+                tsukkomi: [
+                    { text: "異物感<br>ありすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '神奈川「合成写真かよ！<br>景色から浮きすぎだろ！」' },
+                        { text: "最上階からの<br>景色が見たい", 
+                        point: 0, type: ['v'], 
+                        reaction: '神奈川「一面のグリーンビュー<br>だろうな・・・」' },
+                    { text: "なんでそこに<br>建てたんだよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '神奈川「もっといい場所あっただろ！<br>日当たりは良さそうだけどさ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '神奈川', text: 'まあ<br>住環境は人それぞれとして・・・' },
+            { type: 'dialogue', speaker: '神奈川', text: 'やっぱ「食」の流行は<br>神奈川からだよ' },
+            { type: 'dialogue', speaker: '神奈川', text: '横浜中華街の食べ歩きスイーツなんて<br>インスタでも大人気だしね' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>オシャレだねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形でも、水族館に行けば<br>インスタ映えするアイスが食べれるよ' },
+            { type: 'dialogue', speaker: '神奈川', text: 'おっ、水族館？<br>「えのすい」みたいでいいじゃん' },
+            { type: 'dialogue', speaker: '神奈川', text: 'で、どんなアイスなの？' },
+            { type: 'dialogue', speaker: '山形', text: 'クラゲの展示数世界一の<br>水族館なんだけど' },
+            { type: 'dialogue', speaker: '山形', text: '展示を見終わった後は、売店で<br>「クラゲアイス」が食べられるよ' },
+            { type: 'dialogue', speaker: '神奈川', text: 'おっ！クラゲの形をした<br>かわいいアイスかな？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'ううん、アイスの中に<br>刻んだクラゲが入ってるよ',
+                tsukkomi: [
+                    { text: "コラーゲン<br>たっぷりでいいね", 
+                        point: 0, type: ['v'], 
+                        reaction: '神奈川「美容意識高いね」' },
+                    { text: "さっき眺めてたやつ<br>食うのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '神奈川「さっきまで『綺麗だね』とか<br>言ってたのに！」' },
+                    { text: "アイスにクラゲは<br>合わないだろ！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '神奈川「アイスに海鮮系は<br>変だろ・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '神奈川', text: '食材への探究心が独特すぎるよ…' },
+            { type: 'dialogue', speaker: '神奈川', text: 'もっとこう<br>王道のグルメはないの？' },
+            { type: 'dialogue', speaker: '神奈川', text: '神奈川なら<br>「家系ラーメン」！' },
+            { type: 'dialogue', speaker: '神奈川', text: '濃厚な豚骨醤油！<br>全国にファンがいる最強ブランドだよ' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメンかぁ<br>山形県民もラーメンは大好きだよ' },
+            { type: 'dialogue', speaker: '山形', text: '消費額日本一だし' },
+            { type: 'dialogue', speaker: '神奈川', text: 'まあ量はすごいけどさ' },
+            { type: 'dialogue', speaker: '神奈川', text: '「家系」みたいなインパクトが<br>必要なんじゃない？' },
+            { type: 'dialogue', speaker: '山形', text: 'うん、だから<br>県の名前を変えたんだ' },
+            { type: 'dialogue', speaker: '神奈川', text: 'は？県の名前を変えた？<br>まさか「ラーメン県」とか？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」',
+                tsukkomi: [
+                    { text: "要素<br>詰め込みすぎだろ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '神奈川「シンプルイズベストを<br>知らないのか！？」' },
+                    { text: "パスポート<br>必要？", 
+                        point: 0, type: ['v'], 
+                        reaction: '神奈川「入国審査が<br>厳しそうだね」' },
+                        { text: "県の中に<br>国作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '神奈川「せめて逆だろ！<br>行政区分どうなってんだ！」' }
+                ]
+            },
+
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '神奈川', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '神奈川', text: 'ツッコミどころが多いってことは<br>よくわかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '神奈川', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '神奈川', text: 'それでいいのかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
