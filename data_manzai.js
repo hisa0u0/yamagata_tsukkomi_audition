@@ -1896,6 +1896,97 @@ const manzaiData = {
         ]
     },
 
+    // -------- 奈良 ---------------------------------------------------------------------------------------------------------
+    'nara': {
+        scenario: [
+            { type: 'dialogue', speaker: '奈良', text: 'はいどうも〜<br>奈良県です〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '奈良', text: '奈良ちゅうたら<br>やっぱ「鹿」やな' },
+            { type: 'dialogue', speaker: '奈良', text: '奈良公園に行くと<br>ほんまにぎょうさんおるさかいな' },
+            { type: 'dialogue', speaker: '奈良', text: '国の天然記念物やけど<br>普通に街中を歩いてるんやで' },
+            { type: 'dialogue', speaker: '山形', text: '動物がのびのびしてるのは<br>いいことだよね' },
+            { type: 'dialogue', speaker: '山形', text: '動物といえば、山形には<br>ちょっと変わった生き物がいるよ' },
+            { type: 'dialogue', speaker: '奈良', text: 'おっ、なんや？<br>天然記念物か？' },
+            { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」って<br>言うんだけど' },
+            { type: 'dialogue', speaker: '奈良', text: '・・・え？<br>あの綿毛みたいな未確認生物の？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            { type: 'dialogue', speaker: '山形', text: '正体不明の未確認生物なんだけど' },
+            {
+                type: 'prompt', speaker: '山形', text: '水族館で<br>普通に展示されてるよ',
+                promptText: '「ケサランパサラン」<br>水族館で普通に展示されてるよ',
+                tsukkomi: [
+                    { text: "なんで水族館に<br>展示してんねん！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '奈良「ケサランパサランって<br>海の生き物なん！？」' },
+                    { text: "未確認生物を<br>展示すんな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '奈良「水族館におる時点で<br>もう確認済みやんけ！」' },
+                    { text: "飼育員さん<br>すごいな", 
+                        point: 0, type: ['v'], 
+                        reaction: '奈良「エサやらどないしてんのやろう<br>謎やなぁ」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '奈良', text: '不思議な生き物もおるもんやな・・・' },
+            { type: 'dialogue', speaker: '奈良', text: 'せやけど奈良はもっとこう<br>ドシッとしたもんが自慢やで' },
+            { type: 'dialogue', speaker: '奈良', text: '東大寺の大仏様！' },
+            { type: 'dialogue', speaker: '奈良', text: 'あの圧倒的なスケール感は<br>歴史の重みを感じるやろ？' },
+            { type: 'dialogue', speaker: '山形', text: '大きいものは感動するよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、ビッグスケールな<br>イベントがあるよ' },
+            { type: 'dialogue', speaker: '奈良', text: 'ほう<br>なんかデカいもん作るんか？' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」だよ' },
+            { type: 'dialogue', speaker: '奈良', text: '芋煮会って<br>河川敷で鍋つつくやつやん？' },
+            { type: 'dialogue', speaker: '奈良', text: '何がどうビッグなん？' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋を使ってて<br>バックホーで調理するんだ',
+                tsukkomi: [
+                    { text: "大仏様も<br>びっくりやな", 
+                        point: 0, type: ['p'], 
+                        reaction: '奈良「まあ、一度は<br>食べてみたいけどな」' },
+                    { text: "鍋ごとビッグに<br>するんかいな！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '奈良「会場の大きさやのうて！？<br>発想、大雑把すぎるわ！」' },
+                    { text: "重機で料理って<br>いけるん！？", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '奈良「工事現場やんけ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '奈良', text: '・・・豪快すぎるわ' },
+            { type: 'dialogue', speaker: '奈良', text: '奈良はもっとこう<br>キャラのインパクトも大事にしてるわ' },
+            { type: 'dialogue', speaker: '奈良', text: 'ご存知「せんとくん」！' },
+            { type: 'dialogue', speaker: '奈良', text: '最初は「可愛ない」やら言われたけど<br>今や大人気やさかいな' },
+            { type: 'dialogue', speaker: '山形', text: '個性があるのはいいことだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にはピンク色の<br>ウサギのキャラがいるよ' },
+            { type: 'dialogue', speaker: '奈良', text: 'ウサギ？せんとくん並みの<br>インパクトがあるんか？' },
+            { type: 'dialogue', speaker: '山形', text: '朝日町の「桃色ウサヒ」って言うんだけど' },
+            { type: 'dialogue', speaker: '奈良', text: '可愛い名前やな' },
+            { type: 'dialogue', speaker: '山形', text: '特徴は<br>無個性・無軌道・無表情' },
+            { type: 'dialogue', speaker: '奈良', text: '・・・え？' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは' },
+            {
+                type: 'prompt', speaker: '山形', text: '「朝日が育んだ圧倒的無個性」だよ',
+                tsukkomi: [
+                    { text: "やる気<br>あるんか！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '奈良「キャラ作り放棄してるやんけ！<br>もっと自分を持ちや！」' },
+                    { text: "逆に<br>気になるな", 
+                        point: 1, type: ['p'], 
+                        reaction: '奈良「無個性ちゅう<br>個性もアリやな」' },
+                    { text: "せんとくんと<br>コラボしよ", 
+                        point: 0, type: ['v'], 
+                        reaction: '奈良「濃い顔と無表情で<br>バランス取れるかもしれへんな」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '奈良', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '奈良', text: 'ツッコミどころが多いってことは<br>ようわかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '奈良', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '奈良', text: 'それでええんかいな！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 鳥取 --------------------------------------------------------------------------------------------------------
     'tottori': {
         scenario: [
