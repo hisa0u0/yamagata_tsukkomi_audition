@@ -82,6 +82,26 @@
         .display-area { width: 100vw; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
         #final-image { width: 100%; max-width: 600px; border: 2px solid #04FF00; border-radius: 10px; display: none; }
         #status-msg { color: #04FF00; text-align: center; margin-top: 20px; }
+#back-btn {
+            margin-top: 30px;       /* 上の文字との隙間 */
+            padding: 12px 40px;     /* ボタンの大きさ */
+            background-color: transparent; /* 背景は透明 */
+            border: 2px solid #04FF00;     /* 枠線を緑に */
+            color: #04FF00;         /* 文字色を緑に */
+            font-size: 18px;        /* 文字サイズ */
+            font-weight: bold;
+            border-radius: 30px;    /* 丸っこくする */
+            cursor: pointer;
+            font-family: "Yu Mincho", serif; /* フォント合わせ */
+            transition: all 0.3s;   /* 押した時のアニメーション用 */
+        }
+
+        #back-btn:active {
+            background-color: #04FF00;
+            color: #000;
+        }
+
+
     </style>
 </head>
 <body>
@@ -99,6 +119,9 @@
     <div class="display-area">
         <img id="final-image" alt="結果証明カード">
         <p id="status-msg">カードを生成中...<br>（10秒ほどかかる場合があります）</p>
+        <button id="back-btn" onclick="window.history.back()">
+            前のページに戻る
+        </button>
     </div>
 
     <script>
