@@ -1909,7 +1909,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '動物といえば、山形には<br>ちょっと変わった生き物がいるよ' },
             { type: 'dialogue', speaker: '奈良', text: 'おっ、なんや？<br>天然記念物か？' },
             { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」って<br>言うんだけど' },
-            { type: 'dialogue', speaker: '奈良', text: '・・・え？<br>あの綿毛みたいな未確認生物の？' },
+            { type: 'dialogue', speaker: '奈良', text: '・・・え？あの綿毛みたいな？<br>未確認生物やろ？' },
             { type: 'dialogue', speaker: '山形', text: 'そうそう' },
             { type: 'dialogue', speaker: '山形', text: '正体不明の未確認生物なんだけど' },
             {
@@ -1935,7 +1935,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: '山形にも、ビッグスケールな<br>イベントがあるよ' },
             { type: 'dialogue', speaker: '奈良', text: 'ほう<br>なんかデカいもん作るんか？' },
             { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」だよ' },
-            { type: 'dialogue', speaker: '奈良', text: '芋煮会って<br>河川敷で鍋つつくやつやん？' },
+            { type: 'dialogue', speaker: '奈良', text: '芋煮会って<br>河川敷で鍋つつくやつやろ？' },
             { type: 'dialogue', speaker: '奈良', text: '何がどうビッグなん？' },
             {
                 type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋を使ってて<br>バックホーで調理するんだ',
