@@ -640,15 +640,15 @@ const manzaiData = {
     // -------- 富山 ---------------------------------------------------------------------------------------------------------
     'toyama': {
         scenario: [
-            { type: 'dialogue', speaker: '富山', text: 'はいどうもー！<br>富山県や！' },
+            { type: 'dialogue', speaker: '富山', text: 'はいどうもー！<br>富山県やちゃ！' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
-            { type: 'dialogue', speaker: '富山', text: '富山といや、やっぱ<br>「富山ブラックラーメン」やの' },
-            { type: 'dialogue', speaker: '富山', text: '真っ黒いスープに粗挽き胡椒！<br>あの塩辛さが労働後の体に染みるんだ' },
-            { type: 'dialogue', speaker: '富山', text: '白飯と一緒に食べるのが<br>富山流の正義やさかいね' },
+            { type: 'dialogue', speaker: '富山', text: '富山といや、やっぱ<br>「富山ブラックラーメン」け？' },
+            { type: 'dialogue', speaker: '富山', text: '真っ黒いスープに粗挽き胡椒！<br>あの塩辛さが労働後の体に染みるがやよね〜' },
+            { type: 'dialogue', speaker: '富山', text: '白飯と一緒に食べるのが<br>富山流ながやちゃ' },
             { type: 'dialogue', speaker: '山形', text: 'ご飯のおかずにするんだ<br>ラーメン愛が深いね' },
             { type: 'dialogue', speaker: '山形', text: '山形もラーメンは大人気だよ<br>消費額日本一になるくらいだからね' },
-            { type: 'dialogue', speaker: '富山', text: 'ほう、日本一とは大したもんや<br>山形県民の誇りってわけか' },
+            { type: 'dialogue', speaker: '富山', text: 'ほう、日本一とは大したもんや<br>山形県民の誇りってことけ？' },
             { type: 'dialogue', speaker: '山形', text: 'そうそう' },
             { type: 'dialogue', speaker: '山形', text: 'その愛が高じて<br>新しい名前ができたんだ' },
             { type: 'dialogue', speaker: '富山', text: '新しい名前？<br>「ラーメン県」とでも名乗るが？' },
@@ -658,71 +658,71 @@ const manzaiData = {
                 tsukkomi: [
                     { text: "ごちゃごちゃ<br>しとるな！", 
                         point: 1, type: ['t', 'p'], 
-                        reaction: '富山「欲張りすぎやろ！<br>一つに絞らっしゃい！」' },
+                        reaction: '富山「欲張りすぎやろ！<br>一つに絞られま！」' },
                     { text: "県の中に<br>国があるが！？", 
                         point: 3, type: ['t', 'p', 'v'], 
                         reaction: '富山「せめて逆やろ！<br>行政区分が破綻しとるぞ！」' },
                     { text: "麺類への愛が<br>感じられるな・・・", 
                         point: 0, type: ['v'], 
-                        reaction: '富山「富山も見習おうかな」' }
+                        reaction: '富山「富山も見習わんとね」' }
                 ]
             },
-            { type: 'dialogue', speaker: '富山', text: '・・・ちょっこしスケールが<br>大きすぎんか？' },
+            { type: 'dialogue', speaker: '富山', text: '・・・ちょっこしスケールが<br>大きすぎんけ？' },
             { type: 'dialogue', speaker: '富山', text: 'スケールで言や<br>富山には「黒部ダム」があるぞ！' },
             { type: 'dialogue', speaker: '富山', text: '高さ186メートル！<br>日本一の高さを誇る巨大ダムや' },
             { type: 'dialogue', speaker: '富山', text: '毎秒10トン以上の放水は<br>まさに圧巻の一言やな' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>やっぱりデカいものはいいねぇ' },
             { type: 'dialogue', speaker: '山形', text: '山形にも<br>スケール日本一のイベントがあるよ' },
-            { type: 'dialogue', speaker: '富山', text: 'ほう、ダムに対抗できるイベントけ？<br>何をするんだ？' },
+            { type: 'dialogue', speaker: '富山', text: 'ほう、ダムに対抗できるイベントけ？<br>なんするが？' },
             { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」だよ' },
-            { type: 'dialogue', speaker: '富山', text: '芋煮・・・？<br>河原で鍋をするあれか？' },
-            { type: 'dialogue', speaker: '富山', text: 'スケール日本一って<br>どういうことなんや？' },
+            { type: 'dialogue', speaker: '富山', text: '芋煮・・・？<br>河原で鍋をするあれけ？' },
+            { type: 'dialogue', speaker: '富山', text: 'スケール日本一ちゃ<br>どういうことながけ？' },
             {
                 type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋を使って<br>バックホーで調理するんだ',
     
                 tsukkomi: [
                     { text: "料理に重機<br>使われんちゃ！", 
                         point: 1, type: ['t', 'v'], 
-                        reaction: '富山「工事現場かよ！<br>危なすぎる！」' },
-                    { text: "一度に何人分<br>作れるんだ・・・", 
+                        reaction: '富山「工事現場け！<br>危なすぎるぜ！」' },
+                    { text: "一度に何人分<br>作るがよ！", 
                         point: 0, type: ['p'], 
-                        reaction: '富山「・・・約3万食！？<br>炊き出しのレベルを超えとるな」' },
+                        reaction: '富山「・・・約3万食け！？<br>炊き出しのレベルを超えとるやろ」' },
                     { text: "鍋のサイズごと<br>デカくしとるが！？", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '富山「発想が脳筋すぎるやろ！」' }
+                        reaction: '富山「発想が脳筋すぎるちゃよ！」' }
                 ]
             },
-            { type: 'dialogue', speaker: '富山', text: 'やることが豪快すぎるな・・・' },
+            { type: 'dialogue', speaker: '富山', text: 'やること豪快すぎんけ・・・' },
             { type: 'dialogue', speaker: '富山', text: 'もっとこう<br>繊細な神秘さはないが？' },
-            { type: 'dialogue', speaker: '富山', text: '富山の魚津市では<br>「蜃気楼」が見られるんだ' },
-            { type: 'dialogue', speaker: '富山', text: '景色が反転したり伸びたり・・・<br>自然が生み出す幻想的な光景なんや' },
+            { type: 'dialogue', speaker: '富山', text: '富山の魚津市やと<br>「蜃気楼」が見られるがいぜ' },
+            { type: 'dialogue', speaker: '富山', text: '景色が反転したり伸びたり・・・<br>自然が生み出す幻想的な光景なんよ' },
             { type: 'dialogue', speaker: '山形', text: '蜃気楼？<br>不思議だねぇ' },
             { type: 'dialogue', speaker: '山形', text: '山形にも不思議な生き物がいるよ' },
             { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」<br>って言うんだけど' },
-            { type: 'dialogue', speaker: '富山', text: 'ああ、あの白い綿毛みたいな？<br>幸せを呼ぶって噂の' },
+            { type: 'dialogue', speaker: '富山', text: 'ああ、あの白い綿毛みたいなやつけ？<br>幸せを呼ぶって噂の' },
             { type: 'dialogue', speaker: '富山', text: 'でもあれって<br>未確認生物やろ？' },
             { type: 'dialogue', speaker: '山形', text: 'うん、でも・・・' },
             {
                 type: 'prompt', speaker: '山形', text: '普通に水族館に展示されてるよ',
                 promptText: '「ケサランパサラン」が<br>普通に水族館に展示されてるよ',
                 tsukkomi: [
-                    { text: "見たら<br>幸せになれそう", 
+                    { text: "見たら<br>幸せになれそうやね", 
                         point: 0, type: ['v'], 
-                        reaction: '富山「まあ、縁起物としてなら<br>ありなのかな・・・」' },
-                    { text: "未確認生物を<br>展示すんな！", 
+                        reaction: '富山「まあ、縁起物としてなら<br>ありなんかな・・・」' },
+                    { text: "未確認生物を<br>展示せんが！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '富山「未確認じゃのうなるやろ！<br>学術的に解明せっしゃい！」' },
-                    { text: "なんで水族館に<br>いるがやちゃ！", 
+                        reaction: '富山「未確認じゃなくなるやろ！<br>学術的に解明しられま！」' },
+                    { text: "なんで水族館に<br>おるがけ！", 
                         point: 1, type: ['t', 'p'], 
-                        reaction: '富山「あれ魚の仲間やったのか！？<br>謎が深まるばっかりだ・・・」' }
+                        reaction: '富山「あれ魚の仲間やったが！？<br>謎が深まるばっかりやね・・・」' }
                 ]
             },
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
             { type: 'dialogue', speaker: '富山', text: 'う〜ん<br>とりあえず・・・' },
-            { type: 'dialogue', speaker: '富山', text: 'ツッコミどころが多いってことは<br>ようわかったよ' },
+            { type: 'dialogue', speaker: '富山', text: 'ツッコミどころが多いってことは<br>ようわかったちゃ' },
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '富山', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '富山', text: 'それでいいのかよ！' },
+            { type: 'dialogue', speaker: '富山', text: 'それでいいがけ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
@@ -2254,6 +2254,92 @@ const manzaiData = {
         ]
     },
 
+    // -------- 徳島 -----------------------------------------------------------------------------------------------------
+    'tokushima': {
+        scenario: [
+            { type: 'dialogue', speaker: '徳島', text: 'はいどうも〜！<br>徳島県ですじょ〜！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '徳島', text: '徳島といえば、やっぱり<br>世界に誇る「阿波おどり」だ！' },
+            { type: 'dialogue', speaker: '徳島', text: '「ヤットサー！」の掛け声で<br>街中が踊り狂う！' },
+            { type: 'dialogue', speaker: '徳島', text: 'あの熱気！あの空気感！<br>たまらんのよ〜' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、空気感がすごいんだ' },
+            { type: 'dialogue', speaker: '山形', text: '「空気」といえば、山形には<br>「空気まつり」があるよ' },
+            { type: 'dialogue', speaker: '徳島', text: '・・・え？<br>阿波おどりの話してたんやけど' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」のお祭りだね' },
+            { type: 'dialogue', speaker: '徳島', text: '空気神社？<br>なにを祀っとるん？' },
+            { type: 'dialogue', speaker: '山形', text: '空気だよ' },
+            { type: 'dialogue', speaker: '山形', text: '空気が綺麗だから<br>その恩恵に感謝して建てたんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '本殿のブナ林の空気を<br>拝むんだよ',
+                promptText: '空気の恩恵に感謝して<br>空気神社を建てたんだ',
+                tsukkomi: [
+                    { text: "感謝の仕方<br>独特すぎだろ！", 
+                        point: 3, type: ['t','p','v'], 
+                        reaction: '徳島「感謝どころか<br>崇拝してないか・・・？」' },
+                    { text: "地味すぎる！", 
+                        point: 0, type: ['p','v'], 
+                        reaction: '徳島「一緒に踊ったほうが<br>ええ運動になるじょ」' },
+                    { text: "綺麗な空気<br>ええなぁ", 
+                        point: 1, type: ['v'], 
+                        reaction: '徳島「深呼吸したら<br>気持ちよさそうやな・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '徳島', text: 'まあ、真面目なんはええことやけど<br>もっとこう、生活の知恵みたいなもんはないんか？' },
+            { type: 'dialogue', speaker: '徳島', text: '徳島県民はな、なんでもかんでも<br>「すだち」をかけるんよ' },
+            { type: 'dialogue', speaker: '徳島', text: '焼き魚、刺身はもちろん<br>味噌汁や酒にもギュッと絞る！' },
+            { type: 'dialogue', speaker: '徳島', text: 'なんでも爽やかにするのが<br>徳島流なんよ' },
+            { type: 'dialogue', speaker: '山形', text: '「なんでも」なら<br>山形も負けてないよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形県民は<br>なんでもかんでも冷やすからね' },
+            { type: 'dialogue', speaker: '徳島', text: '冷やす？<br>どういうこと？' },
+            { type: 'dialogue', speaker: '山形', text: '夏は暑いからね<br>「冷やしラーメン」に「冷やしシャンプー」' },
+            {
+                type: 'prompt', speaker: '山形', text: '冷やし中華みたいに<br>いろいろ冷やし始めるよ',
+                tsukkomi: [
+                    { text: "お腹壊すわ！", 
+                        point: 1, type: ['v','p'], 
+                        reaction: '徳島「体冷やしすぎも<br>ようないでよ？」' },
+                    { text: "なんでもかんでも冷やせば<br>いいと思ってるのかよ！", 
+                        point: 3, type: ['t','p','v'], 
+                        reaction: '徳島「解決策が<br>安直すぎるだろ！」' },
+                    { text: "すだちも<br>冷やしてみるか", 
+                        point: 0, type: ['p'], 
+                        reaction: '徳島「冷えたすだち・・・<br>まあ悪くはないか」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '徳島', text: '暑さ対策に必死すぎるやろ・・・' },
+            { type: 'dialogue', speaker: '徳島', text: 'やっぱ観光には<br>「ド迫力」が必要だと思うんよ' },
+            { type: 'dialogue', speaker: '徳島', text: '徳島には「鳴門の渦潮」があるじょ！' },
+            { type: 'dialogue', speaker: '徳島', text: '世界最大級の渦！<br>あのスケール感は圧巻やで〜' },
+            { type: 'dialogue', speaker: '山形', text: 'スケール感なら<br>山形の芋煮会もすごいよ' },
+            { type: 'dialogue', speaker: '徳島', text: '芋煮会？<br>河原で鍋囲むやつやろ？' },
+            { type: 'dialogue', speaker: '徳島', text: '渦潮と比べたら<br>ちっぽけなもんちゃうんか？' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」は<br>直径6.5メートルの鍋で作るんだ' },
+            { type: 'dialogue', speaker: '山形', text: '具材を入れるのにも<br>工事現場のバックホー（重機）を使うよ' },
+            {
+                type: 'prompt', speaker: '山形', text: 'クレーンみたいな重機ですくって<br>芋煮を配るんだ',
+                tsukkomi: [
+                    { text: "デカくすれば<br>いいと思ってる！？", 
+                        point: 3, type: ['t','p','v'], 
+                        reaction: '徳島「サイズ感がおかしいわ！<br>工事現場かよ！」' },
+                    { text: "衛生面<br>大丈夫なんか！？", 
+                        point: 1, type: ['v'], 
+                        reaction: '徳島「重機で料理て！<br>ちゃんと洗うとるんか？」' },
+                    { text: "渦潮で<br>芋煮作りたいわ", 
+                        point: 0, type: ['p','v'], 
+                        reaction: '徳島「目が回って<br>食べられへんわ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '徳島', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '徳島', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '徳島', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '徳島', text: 'それでええんか！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 香川 --------------------------------------------------------------------------------------------------------
     'kagawa': {
         scenario: [
@@ -2484,7 +2570,7 @@ const manzaiData = {
                     { text: "景色は良さそう", 
                         point: 0, type: ['v'], 
                         reaction: '福岡「まあ、見渡す限り緑やろうけど<br>夜は真っ暗やなか？」' },
-                    { text: "なしでそげんとこに<br>建てたと！？", 
+                    { text: "なしてそげんとこに<br>建てたと！？", 
                         point: 1, type: ['p', 't'], 
                         reaction: '福岡「都市計画どうなっとーと！？<br>ポツンとしすぎやろ！」' }
                 ]
