@@ -161,6 +161,11 @@ document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMo
             headImg.style.left = '40px';   
             headImg.style.width = '300px';
         }
+        else if (pref.includes('mie')) {
+            headImg.style.top = '96px';    
+            headImg.style.left = '22px';   
+            headImg.style.width = '320px';
+        }
 
         // 2. グラフ描画
         const ctx = document.getElementById('cardRadarChart');
