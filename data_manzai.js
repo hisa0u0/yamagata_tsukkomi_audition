@@ -2960,6 +2960,98 @@ const manzaiData = {
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
+
+    // -------- 宮崎 -----------------------------------------------------------------------------------------------------
+    'miyazaki': {
+        scenario: [
+            { type: 'dialogue', speaker: '宮崎', text: 'はいどうも〜！<br>宮崎県やじ〜！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '宮崎', text: 'お、山形くんの形<br>人の横顔に見えるねぇ' },
+            { type: 'dialogue', speaker: '宮崎', text: 'そのどっしり構えた顔・・・<br>なんか「モアイ像」に見えてきたじ' },
+            { type: 'dialogue', speaker: '山形', text: 'モアイ像？' },
+            { type: 'dialogue', speaker: '宮崎', text: '宮崎には「サンメッセ日南」っちゅう<br>モアイ像が並んでる名所があるっちゃ' },
+            { type: 'dialogue', speaker: '宮崎', text: 'イースター島公認のモアイが7体！<br>海を背に並ぶ姿は圧巻やじ〜' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>海沿いに巨大な石像かぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形には、田んぼの真ん中に<br>立ってるやつがあるよ' },
+            { type: 'dialogue', speaker: '宮崎', text: 'お、山形にもモアイあるとか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや・・・<br>スカイタワー41っていって' },
+            {
+                type: 'prompt', speaker: '山形', text: '田んぼのど真ん中に<br>ポツンとタワマンが建ってるんだ',
+                tsukkomi: [
+                    { text: "異物感が<br>ありすぎるわ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '宮崎「合成写真かと思ったじ！」' },
+                    { text: "なんでそんなとこ<br>建てたと！？", 
+                        point: 1, type: ['p'], 
+                        reaction: '宮崎「他にも土地あったやろ！」' },
+                    { text: "モアイと<br>コラボしよう", 
+                        point: 0, type: ['v'], 
+                        reaction: '宮崎「シュールな絵面に<br>なりそうやわ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '宮崎', text: '不思議な風景があるもんやね〜' },
+            { type: 'dialogue', speaker: '宮崎', text: 'まあ、宮崎といえば<br>「日本のひなた」やかいね' },
+            { type: 'dialogue', speaker: '宮崎', text: '南国ムード満点で、気候も温暖！<br>冬でもポカポカして最高やっちゃ' },
+            { type: 'dialogue', speaker: '山形', text: 'いいなぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形も<br>夏はすごく暑いんだ' },
+            { type: 'dialogue', speaker: '山形', text: '最高気温の記録も<br>出したことあるし・・・' },
+            { type: 'dialogue', speaker: '宮崎', text: 'うわぁ、それはてげ大変やね<br>なんか対策しちょると？' },
+            { type: 'dialogue', speaker: '山形', text: '少しでも涼しくなるように<br>いろいろやってるよ' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
+            { type: 'dialogue', speaker: '宮崎', text: 'やっぱ夏といえば<br>冷やし中華だよね' },
+            { type: 'dialogue', speaker: '山形', text: 'あと、冷やしラーメン' },
+            { type: 'dialogue', speaker: '宮崎', text: 'ラーメンも！？' },
+            {
+                type: 'prompt', speaker: '山形', text: '冷やしシャンプーも<br>始まるよ',
+                promptText: '冷やしラーメンと<br>冷やしシャンプーも始まるよ',
+                tsukkomi: [   
+                    { text: "宮崎も<br>冷や汁があるよ", 
+                        point: 0, type: ['p'], 
+                        reaction: '宮崎「冷たい味噌汁みたいな郷土料理ね<br>美味しいよ〜」' },
+                    { text: "なんでもかんでも<br>冷やせばいいと思っちょる！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '宮崎「冷やすことに<br>執念燃やしすぎやろ！」' },
+                    { text: "お腹壊すわ！", 
+                        point: 1, type: ['t', 'v'], 
+                        reaction: '宮崎「温かいもんも食わんと<br>胃腸がびっくりするじ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '宮崎', text: 'まあ、暑いときは冷たいのが一番か' },
+            { type: 'dialogue', speaker: '宮崎', text: 'でも宮崎の魅力は南国だけじゃないじ<br>「神話の里」でもあるっちゃ' },
+            { type: 'dialogue', speaker: '宮崎', text: '高千穂とか、神々が降り立った伝説の地が<br>たくさんあるとよ' },
+            { type: 'dialogue', speaker: '宮崎', text: '神秘的で<br>厳かな空気が流れちょる・・・' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>伝説や伝承かぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>不思議な生き物の伝承があるよ' },
+            { type: 'dialogue', speaker: '宮崎', text: 'お、妖怪とか？' },
+            { type: 'dialogue', speaker: '山形', text: '「ケサランパサラン」って言うんだけど' },
+            { type: 'dialogue', speaker: '宮崎', text: 'あー！あの白い毛玉みたいな？<br>幸せを呼ぶとかいう都市伝説の？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう<br>動物か植物かも分からない未確認生物' },
+            { type: 'dialogue', speaker: '宮崎', text: 'ツチノコみたいなもんやね' },
+            {
+                type: 'prompt', speaker: '山形', text: 'でも水族館に<br>普通に展示されてるよ',
+                promptText: 'ケサランパサランは<br>水族館に普通に展示されてるよ',
+                tsukkomi: [
+                    { text: "なんで<br>水族館にと！？", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '宮崎「あれ海の生き物やったと！？<br>魚の仲間ね！？」' },
+                    { text: "エサは<br>なんなん？", 
+                        point: 0, type: ['v'], 
+                        reaction: '宮崎「おしろい食べるって聞くけど<br>本当なんかな・・・」' },
+                         { text: "未確認生物を<br>展示すんな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '宮崎「未確認じゃなくなっちょる！<br>堂々と公開するな！」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '宮崎', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '宮崎', text: 'ツッコミどころが多いってことは<br>てげわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '宮崎', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '宮崎', text: 'それでいいっちゃ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
     
     // -------- 沖縄 -----------------------------------------------------------------------------------------------------
     'okinawa': {
