@@ -1632,6 +1632,94 @@ const manzaiData = {
         ]
     },
 
+    // -------- 愛知 -----------------------------------------------------------------------------------------------------
+    'aichi': {
+        scenario: [
+            { type: 'dialogue', speaker: '愛知', text: 'はいどうも〜！<br>愛知県と〜！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '愛知', text: '愛知といえば、やっぱり<br>「なごやめし」だがね！' },
+            { type: 'dialogue', speaker: '愛知', text: '味噌カツ、手羽先、ひつまぶし！<br>味が濃くてうみゃあもんばかりだわ' },
+            { type: 'dialogue', speaker: '愛知', text: '特に「味噌煮込みうどん」！<br>きしめんと並ぶ麺文化の王様だわな' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、麺文化かぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形も、麺類は人気だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメンの消費額は<br>日本一だし' },
+            { type: 'dialogue', speaker: '愛知', text: 'ほう、山形も麺好きか<br>気が合うかもしれんね' },
+            { type: 'dialogue', speaker: '山形', text: 'あまりにも好きすぎて<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '愛知', text: '新しい名前？<br>「うどん県」みたいなもんか？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "名前<br>長すぎるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '愛知「履歴書に書くとき<br>枠からはみ出るわ！」' },
+                        { text: "なんで県の中に<br>国があるんだよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '愛知「せめて逆だろ！<br>行政区分がめちゃくちゃだがね！」' },
+                    { text: "きしめんも<br>入れよう", 
+                        point: 0, type: ['v'], 
+                        reaction: '愛知「愛知のきしめんも<br>仲間に入れてちょ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '愛知', text: '王国て・・・<br>ちょっとスケールが大きすぎんか？' },
+            { type: 'dialogue', speaker: '愛知', text: 'スケールの大きさなら<br>愛知の「名古屋駅」を見てみやあ' },
+            { type: 'dialogue', speaker: '愛知', text: '超高層ビルが立ち並ぶ<br>大都会の摩天楼だわ！' },
+            { type: 'dialogue', speaker: '愛知', text: '夜景も綺麗で、圧倒されるでよ' },
+            { type: 'dialogue', speaker: '山形', text: '高い建物っていいよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>41階建ての高層マンションがあるよ' },
+            { type: 'dialogue', speaker: '山形', text: 'スカイタワー41っていうんだ' },
+            { type: 'dialogue', speaker: '愛知', text: 'おっ、山形にもタワマンあるのか<br>駅前の一等地か？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん<br>周りは全部田んぼだよ' },
+            { type: 'dialogue', speaker: '愛知', text: '・・・はい？<br>田んぼ？' },
+            {
+                type: 'prompt', speaker: '山形', text: '田んぼのど真ん中に<br>ポツンとタワマンが建ってるよ',
+                tsukkomi: [
+                    { text: "見晴らしは<br>最高だろうけど！", 
+                        point: 1, type: ['p'], 
+                        reaction: '愛知「遮るものが何もないから<br>遠くまで見えそうだけど・・・」' },
+                    { text: "異物感が<br>ありすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '愛知「合成写真かと思ったわ！<br>なんでそこに建てたんだがね！」' },
+                    { text: "秘密基地<br>みたいだね", 
+                        point: 0, type: ['v'], 
+                        reaction: '愛知「ロボットとか<br>発進しそうだわ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '愛知', text: '景観のクセがすごいな・・・' },
+            { type: 'dialogue', speaker: '愛知', text: 'まあ、愛知のすごさは<br>建物だけじゃないでよ' },
+            { type: 'dialogue', speaker: '愛知', text: '「おもてなし」の心も一流だわ' },
+            { type: 'dialogue', speaker: '愛知', text: '喫茶店の「モーニング」知っとるか？' },
+            { type: 'dialogue', speaker: '愛知', text: 'コーヒー頼んだだけで<br>トーストや卵がタダで付いてくるんだわ！' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜、サービス精神だね' },
+            { type: 'dialogue', speaker: '山形', text: '山形も、家に来たお客さんへの<br>おもてなしは大切にしてるよ' },
+            { type: 'dialogue', speaker: '愛知', text: 'おっ、何が出てくるんだ？<br>さくらんぼか？' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメンの出前をとるよ' },
+            { type: 'dialogue', speaker: '愛知', text: '・・・は？<br>ラーメン？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'お客様への最高のご馳走として<br>ラーメンを振る舞うんだ',
+                tsukkomi: [
+                    { text: "ラーメン<br>好きすぎるだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '愛知「さっきの王国といい<br>ラーメンへの執着が怖いわ！」' },
+                    { text: "手作り<br>じゃないのかよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '愛知「そこは手料理<br>振る舞ったれよ！」' },
+                    { text: "モーニングにも<br>ラーメン付けよう", 
+                        point: 0, type: ['v'], 
+                        reaction: '愛知「朝ラーってやつか<br>意外とアリかもしれん・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '愛知', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '愛知', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '愛知', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '愛知', text: 'それでいいんだがや！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 三重 ---------------------------------------------------------------------------------------------------------
     'mie': {
         scenario: [
@@ -1845,7 +1933,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'インパクトあるやつ頼むで！' },
             { type: 'dialogue', speaker: '山形', text: 'それならピンク色のウサギの<br>「桃色ウサヒ」がいるよ' },
             { type: 'dialogue', speaker: '山形', text: '朝日町の<br>非公式PRキャラクターなんだ' },
-            { type: 'dialogue', speaker: '大阪', text: 'ピンク！ ええやん！<brド派手で人気者なんやろな？' },
+            { type: 'dialogue', speaker: '大阪', text: 'ピンク！ ええやん！<br>ド派手で人気者なんやろな？' },
             { type: 'dialogue', speaker: '山形', text: '目は虚ろで光がない<br>通称「備品」' },
             { type: 'dialogue', speaker: '山形', text: '無個性・無軌道・無表情の<br>三拍子が揃った' },
             { type: 'dialogue', speaker: '山形', text: '特徴がない<br>ピンク色のウサギの着ぐるみだよ' },
