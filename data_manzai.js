@@ -2346,12 +2346,12 @@ const manzaiData = {
     // -------- 徳島 -----------------------------------------------------------------------------------------------------
     'tokushima': {
         scenario: [
-            { type: 'dialogue', speaker: '徳島', text: 'はいどうも〜！<br>徳島県だじょ！' },
+            { type: 'dialogue', speaker: '徳島', text: 'はいどうも〜！<br>徳島県でよ！' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
             { type: 'dialogue', speaker: '徳島', text: '徳島の夏といえば<br>やっぱ「阿波おどり」！' },
             { type: 'dialogue', speaker: '徳島', text: '「ヤットサー！ヤットサー！」<br>この掛け声を聞くと血が騒ぐんじょ！' },
-            { type: 'dialogue', speaker: '徳島', text: '街中が踊り一色になって<br>とんでもない熱気に包まれるんよ' },
+            { type: 'dialogue', speaker: '徳島', text: '街中が踊り一色になって<br>とんでもない熱気に包まれるけんな' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>だいぶ熱そうだね' },
             { type: 'dialogue', speaker: '山形', text: '山形の夏といえば・・・' },
             { type: 'dialogue', speaker: '山形', text: 'すごく暑いから<br>暑さ対策に力を入れてるよ' },
@@ -2362,21 +2362,21 @@ const manzaiData = {
              type: 'prompt', speaker: '山形',text: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
              promptText: '中華だけじゃなく・・・<br>冷やしシャンプーとか冷やしラーメンも始まるね',
                 tsukkomi: [
-                { text: "なんでもかんでも冷やせば<br>いいと思ってるのかよ！", 
+                { text: "なんでもかんでも冷やせば<br>いいと思とるんか！", 
                     point: 3, type: ['t','p','v'],
                   reaction: '徳島「お腹冷えてまうわ！<br>加減を知らんのか！」' },
-                { text: "シャンプーって<br>冷やしていいんか！？", 
+                { text: "シャンプーって<br>冷やしてええん！？", 
                     point: 1, type: ['v'],
-                  reaction: '徳島「成分が分離しそうで<br>心配だじょ・・・」' },
+                  reaction: '徳島「成分が分離しそうで<br>心配じゃわ・・・」' },
                 { text: "頭がスッキリ<br>しそうじゃな", 
                     point: 0, type: ['p'],
-                  reaction: '徳島「踊った後に<br>使ってみたいわ」' }
+                  reaction: '徳島「踊った後に<br>使こてみたいわ」' }
                 ]
             },
-            { type: 'dialogue', speaker: '徳島', text: '発想が極端だじょ・・・' },
+            { type: 'dialogue', speaker: '徳島', text: '発想が極端じゃ・・・' },
             { type: 'dialogue', speaker: '徳島', text: '徳島といえば食へのこだわりも<br>負けてないんよ' },
-            { type: 'dialogue', speaker: '徳島', text: '名物の「すだち」は<br>何にでもかける万能調味料だじょ' },
-            { type: 'dialogue', speaker: '徳島', text: '味噌汁にも刺身にも！<br>徳島はまさに「すだち王国」なんよ' },
+            { type: 'dialogue', speaker: '徳島', text: '名物の「すだち」は<br>何にでもかける万能調味料じゃわ' },
+            { type: 'dialogue', speaker: '徳島', text: '味噌汁にも刺身にも！<br>徳島はまさに「すだち王国」じょ' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>王国かぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形も麺類が大好きで<br>ラーメンとそばが有名なんだけど' },
             { type: 'dialogue', speaker: '山形', text: '好きすぎて<br>新しい名前を作っちゃったんだ' },
@@ -2394,13 +2394,13 @@ const manzaiData = {
                         reaction: '徳島「履歴書に<br>書ききれんじょ！」' },
                     { text: "すだち王国と<br>同盟組もうや", 
                         point: 0, type: ['v'], 
-                        reaction: '徳島「麺にはすだちが合うけん<br>仲良くできそうじょ」' }
+                        reaction: '徳島「麺にはすだちが合うけん<br>仲良くできそうじゃ」' }
                 ]
             },
             { type: 'dialogue', speaker: '徳島', text: '建国しとるとは思わんかったわ・・・' },
             { type: 'dialogue', speaker: '徳島', text: '徳島はもっとこう<br>自然のスケールもデカいんでよ' },
-            { type: 'dialogue', speaker: '徳島', text: '鳴門海峡の「渦潮」！<br>あの激しい渦の大きさは圧巻だじょ！' },
-            { type: 'dialogue', speaker: '徳島', text: '世界最大級の<br>自然のドラマなんよ' },
+            { type: 'dialogue', speaker: '徳島', text: '鳴門海峡の「渦潮」！<br>あの激しい渦の大きさは圧巻じゃ！' },
+            { type: 'dialogue', speaker: '徳島', text: '世界最大級の<br>自然のドラマやけんな' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>渦巻くスケール感かぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形にも<br>スケールの大きなイベントがあるよ' },
             { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」<br>っていうんだけど' },
@@ -2408,10 +2408,10 @@ const manzaiData = {
             {
                 type: 'prompt', speaker: '山形', text: '直径6.5メートルの巨大鍋と<br>重機を使って芋を煮るんだ',
                 tsukkomi: [
-                    { text: "鍋ごとデカうして<br>どないすんじょ！", 
+                    { text: "鍋ごとデカうして<br>どないすんじゃ！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '徳島「工事現場かよ！<br>繊細さのかけらもないじょ！」' },
-                    { text: "工事現場<br>やないか！", 
+                        reaction: '徳島「工事現場かよ！<br>繊細さのかけらもないわ！」' },
+                    { text: "工事現場<br>でないか！", 
                         point: 1, type: ['t','v'], 
                         reaction: '徳島「重機油とか<br>大丈夫なん！？」' },
                     { text: "渦潮より<br>迫力ありそう", 
@@ -2421,7 +2421,7 @@ const manzaiData = {
             },
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
             { type: 'dialogue', speaker: '徳島', text: 'う〜ん<br>とりあえず・・・' },
-            { type: 'dialogue', speaker: '徳島', text: 'ツッコミどころが多いってことは<br>ようわかったじょ' },
+            { type: 'dialogue', speaker: '徳島', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '徳島', text: '・・・・・・' },
             { type: 'dialogue', speaker: '徳島', text: 'それでええんか！' },
