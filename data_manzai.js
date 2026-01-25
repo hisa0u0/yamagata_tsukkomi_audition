@@ -3052,13 +3052,13 @@ const manzaiData = {
     // -------- 宮崎 -----------------------------------------------------------------------------------------------------
     'miyazaki': {
         scenario: [
-            { type: 'dialogue', speaker: '宮崎', text: 'はいどうも〜！<br>宮崎県やじ〜！' },
+            { type: 'dialogue', speaker: '宮崎', text: 'はいどうも〜！<br>宮崎県と〜' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
             { type: 'dialogue', speaker: '宮崎', text: 'お、山形くんの形<br>人の横顔に見えるねぇ' },
             { type: 'dialogue', speaker: '宮崎', text: 'そのどっしり構えた顔・・・<br>なんか「モアイ像」に見えてきたじ' },
             { type: 'dialogue', speaker: '山形', text: 'モアイ像？' },
-            { type: 'dialogue', speaker: '宮崎', text: '宮崎には「サンメッセ日南」っちゅう<br>モアイ像が並んでる名所があるっちゃ' },
+            { type: 'dialogue', speaker: '宮崎', text: '宮崎には「サンメッセ日南」っちゅう<br>モアイ像が並んでる名所があるっちゃわ' },
             { type: 'dialogue', speaker: '宮崎', text: 'イースター島公認のモアイが7体！<br>海を背に並ぶ姿は圧巻やじ〜' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>海沿いに巨大な石像かぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形には、田んぼの真ん中に<br>立ってるやつがあるよ' },
@@ -3080,11 +3080,11 @@ const manzaiData = {
             },
             { type: 'dialogue', speaker: '宮崎', text: '不思議な風景があるもんやね〜' },
             { type: 'dialogue', speaker: '宮崎', text: 'まあ、宮崎といえば<br>「日本のひなた」やかいね' },
-            { type: 'dialogue', speaker: '宮崎', text: '南国ムード満点で、気候も温暖！<br>冬でもポカポカして最高やっちゃ' },
+            { type: 'dialogue', speaker: '宮崎', text: '南国ムード満点で、気候も温暖！<br>冬でもポカポカして最高やっちゃわ' },
             { type: 'dialogue', speaker: '山形', text: 'いいなぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形も<br>夏はすごく暑いんだ' },
             { type: 'dialogue', speaker: '山形', text: '最高気温の記録も<br>出したことあるし・・・' },
-            { type: 'dialogue', speaker: '宮崎', text: 'うわぁ、それはてげ大変やね<br>なんか対策しちょると？' },
+            { type: 'dialogue', speaker: '宮崎', text: 'うわぁ、それはてげ大変やね<br>なんか対策しちょるん？' },
             { type: 'dialogue', speaker: '山形', text: '少しでも涼しくなるように<br>いろいろやってるよ' },
             { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
             { type: 'dialogue', speaker: '宮崎', text: 'やっぱ夏といえば<br>冷やし中華だよね' },
@@ -3120,7 +3120,7 @@ const manzaiData = {
                 type: 'prompt', speaker: '山形', text: 'でも水族館に<br>普通に展示されてるよ',
                 promptText: 'ケサランパサランは<br>水族館に普通に展示されてるよ',
                 tsukkomi: [
-                    { text: "なんで<br>水族館にと！？", 
+                    { text: "なんで水族館に<br>展示しちょるの！？", 
                         point: 1, type: ['t', 'p'], 
                         reaction: '宮崎「あれ海の生き物やったと！？<br>魚の仲間ね！？」' },
                     { text: "エサは<br>なんなん？", 
@@ -3136,7 +3136,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '宮崎', text: 'ツッコミどころが多いってことは<br>てげわかったわ' },
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '宮崎', text: '・・・・・・' },
-            { type: 'dialogue', speaker: '宮崎', text: 'それでいいっちゃ！' },
+            { type: 'dialogue', speaker: '宮崎', text: 'それでいいと！？' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
