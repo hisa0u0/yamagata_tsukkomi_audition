@@ -576,7 +576,6 @@ const manzaiData = {
             { type: 'dialogue', speaker: '新潟', text: '体冷やしてばっかりじゃダメだって' },
             { type: 'dialogue', speaker: '新潟', text: '秋になると<br>温かいご飯が恋しくなるだろ？' },
             { type: 'dialogue', speaker: '新潟', text: '新潟は魚沼産コシヒカリの<br>新米シーズン！' },
-            { type: 'dialogue', speaker: '新潟', text: 'ピカピカの塩むすびなんて<br>新米シーズン！' },
             { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高のご馳走だぞ' },
             { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？<br>つや姫？ 雪若丸？' },
             { type: 'dialogue', speaker: '山形', text: '秋か〜' },
@@ -817,6 +816,91 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '石川', text: '・・・・・・' },
             { type: 'dialogue', speaker: '石川', text: 'それでええんけ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 福井 -----------------------------------------------------------------------------------------------------
+    'fukui': {
+        scenario: [
+            { type: 'dialogue', speaker: '福井', text: 'はいどうも〜！<br>福井県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '福井', text: '福井県といえば<br>やっぱり・・・' },
+            { type: 'dialogue', speaker: '福井', text: '全47都道府県<br>幸福度ランキング 1位！' },
+            { type: 'dialogue', speaker: '福井', text: '生活の満足度が高い<br>日本一幸せな県なんやざ' },
+            { type: 'dialogue', speaker: '山形', text: 'それはいいなぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンの消費額が<br>日本一なんだ' },
+            { type: 'dialogue', speaker: '山形', text: 'だからラーメンがあれば<br>幸せだよ' },
+            { type: 'dialogue', speaker: '福井', text: 'まあ、食文化が豊かなんはええことやの' },
+            { type: 'dialogue', speaker: '福井', text: '福井は「共働き」とか「教育」とか<br>社会の仕組みで日本一を支えとるんやわ' },
+            { type: 'dialogue', speaker: '山形', text: '山形も、麺文化を支えるために<br>新しい名前を名乗ることにしたんだ' },
+            { type: 'dialogue', speaker: '福井', text: '新しい名前？<br>「ラーメン県」とか？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に<br>国作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福井「せめて逆だろ！<br>行政区分がめちゃくちゃやざ！」' },
+                    { text: "麺類に<br>全振りしすぎだろ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '福井「もう『麺県』でええやん！<br>欲張りすぎやわ！」' },
+                    { text: "美味しそうな<br>名前だね", 
+                        point: 0, type: ['v'], 
+                        reaction: '福井「お腹空いてくる名前やの。<br>一回食べてみたいわ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福井', text: '・・・まあ、「王国」っていうなら<br>福井も負けてへんよ' },
+            { type: 'dialogue', speaker: '福井', text: '福井は「恐竜王国」！<br>国内で見つかる化石の多くが福井産なんや' },
+            { type: 'dialogue', speaker: '福井', text: '駅前にも動く恐竜がおるし、まさに王国の風景やね' },
+            { type: 'dialogue', speaker: '山形', text: '恐竜、ロマンがあるね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも“ケサランパサラン”っていう<br>不思議な生物がいるよ' },
+            { type: 'dialogue', speaker: '福井', text: 'ケサランパサラン？<br>あの白い毛玉みたいな未確認生物やろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            { type: 'dialogue', speaker: '山形', text: '山形では昔からよく見つかるから<br>水族館で普通に展示されてるんだ' },
+            {
+                type: 'prompt', speaker: '山形', text: '未確認生物だけど<br>特産品みたいな扱いで見られるよ',
+                tsukkomi: [
+                    { text: "未確認生物を展示すんな！<br>未確認じゃなくなるだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福井「水族館におる時点で『確認済み』やろ！<br>UMAの定義を考え直せ！」' },
+                    { text: "水族館に<br>毛玉がいるの！？", 
+                        point: 1, type: ['v'], 
+                        reaction: '福井「魚でもないのに！？<br>飼育員さんは何を餌にあげとるんや・・・」' },
+                    { text: "実物を見てみたいわ", 
+                        point: 0, type: ['p'], 
+                        reaction: '福井「福井の恐竜博物館と<br>はしごして見に行こうかの」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福井', text: '山形は、希少なもんへの扱いが軽いんやな' },
+            { type: 'dialogue', speaker: '福井', text: '福井は恐竜を盛り上げるために<br>「日本一の高さ」の恐竜モニュメントを作ったんや' },
+            { type: 'dialogue', speaker: '福井', text: 'やっぱりシンボルは、デカければデカいほど<br>みんなに伝わるし、かっこええやろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形の日本一のイベントも<br>とにかくサイズが自慢だよ' },
+            { type: 'dialogue', speaker: '福井', text: 'ほう、山形にもデカいもんがあるんか' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」だね' },
+            { type: 'dialogue', speaker: '山形', text: '直径6.5メートルの鍋を使って<br>一度に3万食くらい作るんだ' },
+            { type: 'dialogue', speaker: '福井', text: '鍋が6.5メートル！？<br>どうやって混ぜるんや、そんなもん' },
+            {
+                type: 'prompt', speaker: '山形', text: '工事現場で使う<br>バックホーを使って調理するんだよ',
+                tsukkomi: [
+                    { text: "デカくすればいいと<br>思ってる！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '福井「発想が大味すぎんか！？<br>もっと繊細に料理してま！」' },
+                    { text: "重機を調理器具に<br>するなよ！", 
+                        point: 1, type: ['p', 't'], 
+                        reaction: '福井「それ専用の工事現場やん！<br>衛生面とか大丈夫なんか！？」' },
+                    { text: "迫力がすごそうやの", 
+                        point: 0, type: ['v'], 
+                        reaction: '福井「一度に3万食も作れるなら<br>みんなお腹いっぱいになれるの」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '福井', text: 'まあでもさ' },
+            { type: 'dialogue', speaker: '福井', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '福井', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '福井', text: 'それでいいのかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
