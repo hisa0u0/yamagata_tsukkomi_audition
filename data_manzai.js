@@ -727,6 +727,100 @@ const manzaiData = {
         ]
     },
 
+    // -------- 石川 ---------------------------------------------------------------------------------------------------------
+    'ishikawa': {
+        scenario: [
+            { type: 'dialogue', speaker: '石川', text: 'はいどうもー<br>石川県です' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '石川', text: '石川といえば、やっぱり「金箔」やじ<br>国内生産量の99％を占めとるがや' },
+            { type: 'dialogue', speaker: '石川', text: '加賀百万石の歴史が詰まった<br>豪華絢爛な伝統工芸が自慢なんやちゃ' },
+            { type: 'dialogue', speaker: '石川', text: 'まさに「日本一」の輝きやわいね' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>日本一かぁ' },
+            { type: 'dialogue', speaker: '山形', text: 'それなら山形にも<br>日本一があるよ' },
+            { type: 'dialogue', speaker: '石川', text: 'ああ、さくらんぼやろ？<br>あれも赤い宝石言うて、綺麗やしな' },
+            { type: 'dialogue', speaker: '山形', text: 'それもだけど・・・<br>「ラーメン」だよ' },
+            { type: 'dialogue', speaker: '石川', text: '・・・ラーメンけ？' },
+            { type: 'dialogue', speaker: '山形', text: 'ラーメン消費額日本一なんだ<br>みんな麺類が大好きだからね' },
+            { type: 'dialogue', speaker: '山形', text: 'それにちなんで、山形県の<br>新しい名前ができたんだ' },
+            { type: 'dialogue', speaker: '石川', text: '新しい名前？<br>加賀百万石みたいな二つ名け？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "なんで県の中に<br>国があるんだよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '石川「せめて逆やろがい！<br>行政区分がめちゃくちゃやじ！」' },
+                    { text: "名前<br>長すぎるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '石川「履歴書に書ききれんげんて！」' },
+                    { text: "欲張りやなぁ", 
+                        point: 0, type: ['v'], 
+                        reaction: '石川「まあ、美味しいもんは<br>なんぼあってもいいしね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '石川', text: 'まあ、食文化も大事やけど<br>石川は「アート」も盛んなんやざ' },
+            { type: 'dialogue', speaker: '石川', text: '「金沢21世紀美術館」なんかは<br>世界的にも有名やし' },
+            { type: 'dialogue', speaker: '石川', text: 'プールの中に人がいるような作品とか<br>幻想的な現代アートがいっぱいやじ' },
+            { type: 'dialogue', speaker: '山形', text: '幻想的なアートなら<br>山形にもあるよ' },
+            { type: 'dialogue', speaker: '石川', text: 'おっ、山形にも幻想的な<br>美術館があるんけ？' },
+            { type: 'dialogue', speaker: '山形', text: '「加茂水族館」だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'クラゲの展示種類数で<br>ギネス世界記録を持ってるんだ' },
+            { type: 'dialogue', speaker: '石川', text: 'ああ、クラゲか！<br>水の中をフワフワ漂って・・・' },
+            { type: 'dialogue', speaker: '石川', text: 'ライトアップされたら<br>まさに生きたアートやわいね' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            { type: 'dialogue', speaker: '山形', text: '水槽いっぱいのクラゲを見て<br>癒やされたあと・・・' },
+            { type: 'dialogue', speaker: '山形', text: 'その足ですぐ売店に行って<br>アレを食べるのが最高なんだ' },
+            { type: 'dialogue', speaker: '石川', text: 'アレ？' },
+            {
+                type: 'prompt', speaker: '山形', text: '刻んだクラゲが入った「クラゲアイス」',
+                promptText: 'クラゲを見て癒されたあと<br>「クラゲアイス」を食べるのが最高なんだ',
+                tsukkomi: [
+                    { text: "命を<br>いただくんやな・・・", 
+                        point: 0, type: ['t'], 
+                        reaction: '石川「感謝して食べんなんな」' },
+                    { text: "さっき見たやつ<br>食うんけ！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '石川「感動台無しじゃねーけ！<br>サイコパスけ！？」' },
+                    { text: "アイスに入れんな！", 
+                        point: 1, type: ['v'], 
+                        reaction: '石川「よりによってアイスけ！？<br>コリコリして合わんげんて！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '石川', text: 'はぁ・・・<br>「花より団子」にも程があるじ' },
+            { type: 'dialogue', speaker: '石川', text: '気候への備えはどうしとるんだ？' },
+            { type: 'dialogue', speaker: '石川', text: '石川には「弁当忘れても傘忘れるな」<br>っていう言葉があるげん' },
+            { type: 'dialogue', speaker: '石川', text: '雨や雪が多いからこそ<br>準備を怠らん、慎み深い県民性なんやちゃ' },
+            { type: 'dialogue', speaker: '山形', text: 'それは大事だねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形は夏がすごく暑いから<br>暑さ対策を頑張ってるよ' },
+            { type: 'dialogue', speaker: '石川', text: 'ほう、盆地やから暑いらしいね<br>打ち水とか、風鈴とかけ？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
+            { type: 'dialogue', speaker: '石川', text: 'まあ、夏といえば<br>冷やし中華やな・・・' },
+            { type: 'dialogue', speaker: '山形', text: '中華だけじゃなく・・・' },
+            {
+                type: 'prompt', speaker: '山形',text: '冷やしシャンプーとか<br>冷やしラーメンも始まるね',
+                tsukkomi: [
+                { text: "冷やせばいいと<br>思っとるんけ！？", 
+                    point: 3, type: ['t','p','v'], 
+                    reaction: '石川「なんでもかんでも冷やして！<br>もっと情緒のある対策はないんけ！」' },
+                { text: "合理的やなぁ", 
+                    point: 0, type: ['p','v'], 
+                    reaction: '石川「まあ、直接冷やすのが<br>一番早いげんけど・・・」' },
+                { text: "頭キーンて<br>なるわ！", 
+                    point: 1, type: ['v'], 
+                    reaction: '石川「ラーメン食べてシャンプーして<br>体冷え冷えやがい！」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '石川', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '石川', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '石川', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '石川', text: 'それでええんけ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 茨城 ---------------------------------------------------------------------------------------------------------
     'ibaraki': {
         scenario: [
