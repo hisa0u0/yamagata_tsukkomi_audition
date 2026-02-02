@@ -363,6 +363,169 @@ font-size: 20px; color: #333; animation: pulse 1.5s infinite;
 display: none !important;
 }
 
+
+/* =========================================
+   ポーズボタン & メニュー画面（修正版）
+   ========================================= */
+
+/* 右上のポーズボタン */
+/* 右上のポーズボタン（CSSでアイコン描画版） */
+#pause-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    
+    width: 44px;
+    height: 44px;
+    border-radius: 10px; /* 角丸正方形 */
+    
+    background: #00b300; 
+    border: 2px solid #ffffff; /* 白枠 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+
+    /* ▼ ここからが図形を描くための設定 ▼ */
+    
+    /* 中の線を中央揃えにする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* 2本の線の間隔を設定 */
+    gap: 6px; /* 線の間隔（お好みで調整） */
+}
+
+/* ▼ 2本の線を「疑似要素」で作る設定 ▼ */
+#pause-btn::before,
+#pause-btn::after {
+    content: ""; /* おまじない（必須） */
+    display: block;
+    
+    /* ▼ 太さと長さはここで調整します！ ▼ */
+    width: 6px;   /* 線の太さ（太くした） */
+    height: 18px; /* 線の縦の長さ（短めにした） */
+    
+    background-color: #ffffff; /* 線の色（白） */
+    border-radius: 2px; /* 線の角を少しだけ丸くして柔らかく */
+}
+
+/* メニュー画面背景 */
+#pause-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+/* メニューの中身 */
+.pause-content {
+    width: 85%;
+    max-width: 320px;
+    
+    /* クリーム色×赤枠 */
+    background-color: #FFE5B9; 
+    border: 3px solid #FF3F3F; 
+    border-radius: 12px;
+    
+    /* タイトルを消したので上側の余白を少し調整 */
+    padding: 25px 15px 20px 15px;
+    
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/* h2の設定は削除しました（HTMLからも消すため） */
+
+/* 会話ログエリア */
+#log-container {
+    height: 220px; /* タイトルがなくなった分、少し広くしました */
+    
+    background: #ffffff; 
+    border: 2px solid #FF3F3F; 
+    border-radius: 8px;
+    
+    overflow-y: auto;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 1つの発言ごとの設定 */
+#log-list li {
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    
+    color: #333; 
+    font-size: 14px; /* 文字サイズを少しアップ */
+    
+    /* ▼▼▼ 太さをセリフと統一 ▼▼▼ */
+    font-weight: 700; /* 太文字にする */
+    
+    line-height: 1.6;
+}
+
+/* 名前アイコンの設定 */
+.log-name {
+    display: table;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #ffffff !important;
+    margin-bottom: 6px;
+}
+
+/* アイコンの色 */
+.log-name.yamagata { background-color: #80D34A; } 
+.log-name.player { background-color: #FF3F3F; }
+
+/* ▼ ボタンエリア ▼ */
+.pause-buttons {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center;    /* 中央揃え */
+    gap: 15px;              /* ボタン同士の隙間 */
+    margin-top: 10px;
+}
+
+.p-btn {
+    width: 90%;             /* 横幅広め */
+    padding: 12px 0;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: "Zen Maru Gothic", sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 再開ボタン：緑背景に白文字 */
+#resume-btn {
+    background: #00b300; /* 白文字が読みやすい、濃いめの鮮やかな緑 */
+    color: #fff;
+}
+
+/* 漫才をやめるボタン：赤背景に白文字 */
+#quit-btn {
+    background: #FF3F3F; /* テーマカラーの赤 */
+    border: none;        /* 前回の枠線を消して塗りつぶしに */
+    color: #fff;
+}
 /* ======== 4.5 漫才演出用（ツッコミ選択画面）======== */
 
 #tsukkome-cutin {
@@ -1268,7 +1431,7 @@ box-shadow: 0 0 15px #04FF00;
     
     /* 見出し（「ツッコミ分析」） */
     .diagnosis-title {
-        font-size: 2.5vh !important;
+        font-size: 2.0vh !important;
     }
 
     /* コメント本文 */

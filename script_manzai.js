@@ -1,5 +1,3 @@
-
-
 // -------- グローバル変数 --------
 let currentScenario, currentPrefKey;
 let step = 0, totalPoint = 0;
@@ -10,6 +8,9 @@ let scoreVibe = 0;      // ノリ・優しさ (v)
 let waitingForTsukkomi = false;
 let audioEnabled = false;
 let manzaiStarted = false;
+
+// ★追加：ポーズ機能用の変数
+let isPaused = false;
 
 // --- タイプライター用 ---
 let isTyping = false, typingTimer = null;
@@ -50,6 +51,14 @@ const audioPermissionUI = document.getElementById('audio-permission');
 const audioYesButton = document.getElementById('audio-yes');
 const audioNoButton = document.getElementById('audio-no');
 
+// ★追加：ポーズ画面・ログ画面用の要素
+const pauseBtn = document.getElementById('pause-btn');
+const pauseModal = document.getElementById('pause-modal');
+const resumeBtn = document.getElementById('resume-btn');
+const quitBtn = document.getElementById('quit-btn');
+const logList = document.getElementById('log-list');
+const logContainer = document.getElementById('log-container');
+
 
 // -------- 利用可能な声を取得 --------
 function loadVoices() {
@@ -60,9 +69,8 @@ function loadVoices() {
     else { playerVoice = yamagataVoice; }
 }
 
-// -------- 結果画面へ遷移する関数（★新規追加：URL生成を共通化） --------
+// -------- 結果画面へ遷移する関数 --------
 function goToResult() {
-    // ここで p, t, v もURLに含める
     const url = `result.html?point=${totalPoint}&pref=${currentPrefKey}&p=${scorePassion}&t=${scoreTechnique}&v=${scoreVibe}`;
     window.location.href = url;
 }
@@ -77,7 +85,6 @@ window.addEventListener('DOMContentLoaded', () => {
         currentScenario = manzaiData[pref].scenario;
         step = 0; 
         totalPoint = 0; 
-        // ★初期化
         scorePassion = 0; scoreTechnique = 0; scoreVibe = 0;
         waitingForTsukkomi = false; manzaiStarted = false;
         
@@ -98,6 +105,10 @@ window.addEventListener('DOMContentLoaded', () => {
         } else {
             audioEnabled = false; isSpeechSupported = false; startSilentIntro();
         }
+        
+        // ★追加：ログ関連の初期化（再読み込み時にログをクリア）
+        if (logList) logList.innerHTML = '';
+        
     } else {
         alert('エラー：都道府県データがありません。'); window.location.href = 'index.html';
     }
@@ -184,8 +195,6 @@ function speakText(textToSpeak, speaker, isEnding = false) {
      if (synth.speaking) { synth.cancel(); }
      stopSpeakingAnimation(); 
 
-     // ★修正箇所：すべてのHTMLタグ(<...>)を除去する正規表現に変更
-     // これで <ruby>未確認生物<rt>UMA</rt></ruby> が 「未確認生物UMA」 として読み上げられます
      const utteranceText = textToSpeak.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
      const utterance = new SpeechSynthesisUtterance(utteranceText);
@@ -229,33 +238,22 @@ function speakText(textToSpeak, speaker, isEnding = false) {
      setTimeout(() => { try { synth.speak(utterance); } catch (e) { stopSpeakingAnimation(); if (!isTyping && tapIcon) { tapIcon.style.display = 'block'; } } }, 50);
 }
 
-// -------- しゃべりアニメーション (修正版) --------
+// -------- しゃべりアニメーション --------
 function startSpeakingAnimation(speaker) {
-    // 1. 安全確認：画像要素がない場合は何もしない
     if (!playerHead || !yamagataHead) return;
-
-    // 2. 一旦、全員の「しゃべっているクラス」を消す
     playerHead.classList.remove('speaking');
     yamagataHead.classList.remove('speaking');
 
-    // 3. 話者に応じてクラスを付与
     if (speaker === '山形') {
         yamagataHead.classList.add('speaking');
     } else if (speaker === 'both') {
         yamagataHead.classList.add('speaking');
         playerHead.classList.add('speaking');
     } else {
-        // 都道府県（北海道、沖縄など）が話者の場合
         playerHead.classList.add('speaking');
-        
-        // 【重要】
-        // CSS側の [src*="okinawa"].speaking というセレクタのおかげで、
-        // 画像が沖縄なら自動的に「okinawaHeadShake」が適用され、
-        // それ以外なら「niigataHeadShake」が適用されます。
     }
 }
 
-// 停止用の関数も忘れずに定義（既にある場合は上書き）
 function stopSpeakingAnimation() {
     if (playerHead) playerHead.classList.remove('speaking');
     if (yamagataHead) yamagataHead.classList.remove('speaking');
@@ -265,7 +263,6 @@ function stopSpeakingAnimation() {
 function typeCharacter(fullText, index, isEnding = false) {
     const displayText = fullText;
     
-    // --- 終了判定 ---
     if (index >= displayText.length) {
         isTyping = false; 
         typingTimer = null;
@@ -289,21 +286,15 @@ function typeCharacter(fullText, index, isEnding = false) {
     let char = displayText.charAt(index); 
     let nextIndex = index + 1; 
 
-    // ★修正箇所：タグ処理の強化
     if (char === '<') { 
-        // もし <ruby> タグの開始だったら
         if (displayText.substring(index).startsWith('<ruby')) {
-            // 閉じタグ </ruby> を探す
             const closingRubyIndex = displayText.indexOf('</ruby>', index);
             if (closingRubyIndex !== -1) {
-                // <ruby> から </ruby> までを「ひとかたまり」として取得する
-                // これでタグが分解されずにセットで画面に追加される
                 const endTagLength = '</ruby>'.length;
                 char = displayText.substring(index, closingRubyIndex + endTagLength);
                 nextIndex = closingRubyIndex + endTagLength;
             }
         } else {
-            // <br> などその他のタグの場合
             const closingTagIndex = displayText.indexOf('>', index); 
             if (closingTagIndex !== -1) {
                 char = displayText.substring(index, closingTagIndex + 1);
@@ -312,10 +303,7 @@ function typeCharacter(fullText, index, isEnding = false) {
         }
     }
 
-    // 画面に追加
     if(serifuText) serifuText.innerHTML += char;
-    
-    // 次の文字へ
     typingTimer = setTimeout(() => { typeCharacter(fullText, nextIndex, isEnding); }, typeSpeed);
 }
 
@@ -342,6 +330,9 @@ function runStep() {
 
         const fullText = currentStepData.text || "";
         const isEnding = (currentStepData.type === 'ending');
+
+        // ★追加：ここで会話ログに記録する
+        addLog(currentStepData.speaker, fullText);
 
         speakText(fullText, currentStepData.speaker, isEnding);
 
@@ -377,7 +368,6 @@ function runStep() {
                         tsukkomiButtons[i].innerHTML = tsukkomi.text || ""; 
                         tsukkomiButtons[i].dataset.point = tsukkomi.point || 0; 
                         
-                        // ★修正：配列情報を文字列としてdata属性にセット (例: "p,v")
                         const types = tsukkomi.type || [];
                         tsukkomiButtons[i].dataset.type = Array.isArray(types) ? types.join(',') : types;
                         
@@ -403,7 +393,13 @@ function displayCharacters(currentSpeaker) {
 
 // -------- 会話進行タップ処理 --------
 manzaiPage.addEventListener('click', (event) => {
+    // ★追加：ポーズ中はクリックを無視する
+    if (isPaused) return;
+
     const targetElement = event.target;
+    // ポーズボタンが押された場合も進行させない（stopPropagationだけでは不安な場合）
+    if (targetElement.closest('#pause-btn')) return;
+
     if (targetElement.closest('.tsukkomi-btn') || targetElement.closest('#audio-permission button')) { return; }
     if (audioEnabled && seClickAudio) { seClickAudio.currentTime = 0; seClickAudio.play(); }
     if (currentScenario && step < currentScenario.length && currentScenario[step].type === 'ending') { return; }
@@ -435,12 +431,11 @@ function runTsukkomeCutin() {
 }
 
 
-// -------- ツッコミ選択ボタン処理 (★ここが重要) --------
+// -------- ツッコミ選択ボタン処理 --------
 tsukkomiButtons.forEach(button => {
     button.addEventListener('click', (event) => {
         const point = Number(event.currentTarget.dataset.point);
         
-        // ★修正：タイプ別スコアの計算
         const typeStr = event.currentTarget.dataset.type || "";
         if (typeStr) {
             const types = typeStr.split(',');
@@ -506,3 +501,65 @@ tsukkomiButtons.forEach(button => {
         }, 300);
     });
 });
+
+// ==========================================
+// ▼ 追加機能：ポーズ＆ログシステム
+// ==========================================
+
+// 1. ポーズボタン（右上）を押した時
+if(pauseBtn && pauseModal) {
+    pauseBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // 親へのクリック伝播を止める
+        isPaused = true;
+        pauseModal.style.display = 'flex';
+        // BGMを一時停止したければ以下をコメントアウト解除
+        // if(bgmAudio && !bgmAudio.paused) bgmAudio.pause();
+    });
+}
+
+// 2. 再開ボタンを押した時
+if(resumeBtn && pauseModal) {
+    resumeBtn.addEventListener('click', () => {
+        isPaused = false;
+        pauseModal.style.display = 'none';
+        // BGM再開
+        // if(bgmAudio && bgmAudio.paused) bgmAudio.play();
+    });
+}
+
+// 3. 「トップへ戻る」ボタン
+if(quitBtn) {
+    quitBtn.addEventListener('click', () => {
+        if(confirm('トップページに戻りますか？\n（今のプレイデータは失われます）')) {
+            window.location.href = 'index.html';
+        }
+    });
+}
+
+// 4. ログに追加する関数
+function addLog(name, text) {
+    if(!logList) return;
+    if(!text) return; // 空のテキストは無視
+
+    // HTMLタグ（ルビなど）を除去してきれいなテキストにする
+    const cleanText = text.replace(/<[^>]+>/g, '');
+
+    const li = document.createElement('li');
+    
+    // 名前のクラス分け（色を変えるため）
+    let nameClass = 'log-name';
+    if (name === '山形') {
+        nameClass += ' yamagata';
+    } else {
+        nameClass += ' player';
+    }
+
+    li.innerHTML = `<span class="${nameClass}">${name}</span>${cleanText}`;
+    logList.appendChild(li);
+    
+    // 常に一番下にスクロール
+    if(logContainer) {
+        logContainer.scrollTop = logContainer.scrollHeight;
+    }
+}
+// ==========================================
