@@ -2081,6 +2081,95 @@ const manzaiData = {
         ]
     },
 
+    // -------- 滋賀 -----------------------------------------------------------------------------------------------------
+    'shiga': {
+        scenario: [
+            { type: 'dialogue', speaker: '滋賀', text: 'はいどうも〜！<br>滋賀県です〜！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '滋賀', text: '滋賀といえばやっぱり「琵琶湖」やね<br>なんせ日本一の湖やから' },
+            { type: 'dialogue', speaker: '滋賀', text: '県面積の6分の1が湖でな<br>滋賀県民は琵琶湖の水で命繋いでるんよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>やっぱりデカいんだね' },
+            { type: 'dialogue', speaker: '山形', text: 'それなら、山形の大規模イベントも<br>気に入ってもらえるかも' },
+            { type: 'dialogue', speaker: '滋賀', text: '大規模イベント？<br>鳥人間コンテストみたいなやつ？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや<br>「人間将棋」だよ' },
+            { type: 'dialogue', speaker: '滋賀', text: '・・・え？<br>人間将棋？なんやそれ' },
+            { type: 'dialogue', speaker: '山形', text: '巨大な将棋盤の上を<br>人間が駒となって動くんだ' },
+            { type: 'dialogue', speaker: '滋賀', text: 'スケール感の出し方<br>独特やな・・・' },
+            { type: 'dialogue', speaker: '山形', text: 'あとは、日本一の<br>芋煮会フェスティバル' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの鍋と<br>バックホーを使って芋煮を作るんだ',
+                promptText: '人が駒となって動く人間将棋と<br>巨大鍋とバックホーを使う芋煮会だよ',
+                tsukkomi: [
+                    { text: "琵琶湖で<br>作ってみいひん？", 
+                        point: 0, type: ['p','v'],
+                        reaction: '滋賀「ええ出汁出るかもしれんよ」' },
+                    { text: "工事現場<br>みたいやな！", 
+                        point: 1, type: ['v'],
+                        reaction: '滋賀「ショベルカーで料理するのは<br>滋賀でも見んわ・・・」' },
+                        { text: "デカくすればいいと<br>思ってる！？", 
+                        point: 3, type: ['t','p','v'],
+                        reaction: '滋賀「発想が小学生やん！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '滋賀', text: 'まあ<br>大きさだけが自慢やないしな' },
+            { type: 'dialogue', speaker: '滋賀', text: '琵琶湖には「ビワッシー」っていう<br>首長竜の目撃情報もあるんよ' },
+            { type: 'dialogue', speaker: '滋賀', text: '未確認生物のロマン・・・<br>これこそ滋賀のミステリーや' },
+            { type: 'dialogue', speaker: '山形', text: 'ロマンだねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも“ケサランパサラン”っていう<br>未確認生物がいるよ' },
+            { type: 'dialogue', speaker: '滋賀', text: 'あ、知ってる！<br>幸運を呼ぶ白い毛玉やろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            { type: 'dialogue', speaker: '滋賀', text: '山形で目撃情報があるん？' },
+            { type: 'dialogue', speaker: '山形', text: '目撃情報っていうか・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '普通に水族館で展示されてるよ',
+                tsukkomi: [
+                    { text: "未確認生物を<br>展示すんな！", 
+                        point: 3, type: ['t', 'p', 'v'],
+                        reaction: '滋賀「展示した時点で<br>もう確認済みやろ！」' },
+                        { text: "ビワッシーも<br>展示してほしい", 
+                        point: 0, type: ['p'], 
+                        reaction: '山形「まずは捕まえるところから<br>始めないとだね」' },
+                    { text: "絶対展示場所<br>水族館やないやろ！", 
+                        point: 1, type: ['t','v'], 
+                        reaction: '滋賀「魚ちゃうやん！<br>どっちかっていうと毛玉やん！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '滋賀', text: '山形、なんか必死すぎて怖いわ・・・' },
+            { type: 'dialogue', speaker: '滋賀', text: 'もっと癒やしのキャラとかおらんの？' },
+            { type: 'dialogue', speaker: '滋賀', text: '滋賀にはゆるキャラ界のレジェンド<br>「ひこにゃん」がおるんやで' },
+            { type: 'dialogue', speaker: '滋賀', text: 'このゆるさ、可愛さ<br>圧倒的なスター性！' },
+            { type: 'dialogue', speaker: '滋賀', text: '赤い兜がトレードマークの<br>まさに滋賀の顔なんよ' },
+            { type: 'dialogue', speaker: '山形', text: '可愛いねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形には朝日町のキャラクター<br>「桃色ウサヒ」がいるよ' },
+            { type: 'dialogue', speaker: '滋賀', text: 'お、ウサギか' },
+            { type: 'dialogue', speaker: '滋賀', text: 'ひこにゃん並みに<br>個性爆発してるんやろな？' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
+            { type: 'dialogue', speaker: '滋賀', text: '・・・はい？<br>圧倒的無個性？' },
+            {
+                type: 'prompt', speaker: '山形', text: '無個性・無軌道・無表情で<br>瞳が虚なウサギだよ',
+                tsukkomi: [
+                    { text: "逆に目立つわ！", 
+                        point: 1, type: ['p','t'], 
+                        reaction: '滋賀「虚無すぎるやろ！<br>見てるこっちの元気吸い取られるわ！」' },
+                    { text: "PRする気<br>無いやろ！！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '滋賀「ひこにゃんの爪の垢<br>煎じて飲ませたいわ！」' },
+                    { text: "無個性が個性<br>ってことかいな？", 
+                        point: 0, type: ['t' ], 
+                        reaction: '滋賀「深いな・・・<br>一周回っておしゃれに見えてきた」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '滋賀', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '滋賀', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '滋賀', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '滋賀', text: 'それでええのかいな！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' }
+        ]
+    },
+
     // -------- 京都 --------------------------------------------------------------------------------------------------------
     'kyoto': {
         scenario: [
