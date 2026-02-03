@@ -166,6 +166,11 @@ document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMo
             headImg.style.left = '22px';   
             headImg.style.width = '320px';
         }
+        else if (pref.includes('kagoshima')) {
+            headImg.style.top = '160px';    
+            headImg.style.left = '20px';   
+            headImg.style.width = '325px';
+        }
 
         // 2. グラフ描画
         const ctx = document.getElementById('cardRadarChart');

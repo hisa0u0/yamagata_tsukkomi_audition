@@ -244,16 +244,32 @@ height: auto !important;
 transform: translateX(-50%);
 }
 
-/* 兵庫専用の揺れ */
 @keyframes mieHeadShake {
 0%, 100% { transform: translateX(-50%) rotate(0deg) scale(1); }
 25% { transform: translateX(-50%) rotate(4deg) scale(1); }
 75% { transform: translateX(-50%) rotate(-3deg) scale(1); }
 }
 
-/* 兵庫がしゃべる時だけ、標準を上書きして専用アニメを流す */
 #player-head[src*="mie"].speaking {
 animation: mieHeadShake 0.15s linear infinite alternate !important;
+}
+
+/* 鹿児島の個別設定 --- */
+.char-head[src*="kagoshima"] {
+top: 3.3% !important; /* topからの位置で固定 */
+width: 130% !important; /* 横幅基準 */
+height: auto !important;
+transform: translateX(-55%);
+}
+
+@keyframes kagoshimaHeadShake {
+0%, 100% { transform: translateX(-55%) rotate(0deg) scale(1); }
+25% { transform: translateX(-55%) rotate(4deg) scale(1); }
+75% { transform: translateX(-55%) rotate(-3deg) scale(1); }
+}
+
+#player-head[src*="kagoshima"].speaking {
+animation: kagoshimaHeadShake 0.15s linear infinite alternate !important;
 }
 
 #yamagata-head {
@@ -664,7 +680,6 @@ z-index: 10;
 }
 
 /* 沖縄の場合：結果画面 */
-
 #selected-pref-head[src*="okinawa"] {
 width: 47% !important; /* 少し小さくする場合 */
 bottom: 75.5% !important; /* 少し下げる場合 */
@@ -672,7 +687,6 @@ left: 13% !important; /* 少し右に寄せる場合 */
 }
 
 /* 北海道の場合：結果画面（★新規追加） */
-
 #selected-pref-head[src*="hokkaido"] {
 width: 65% !important; /* 少し大きくする場合 */
 bottom: 69% !important; /* 位置の高さ調整 */
@@ -680,15 +694,20 @@ left: 3% !important; /* 左右位置の調整 */
 }
 
 /* 兵庫の場合：結果画面（★新規追加） */
-
 #selected-pref-head[src*="hyogo"] {
 bottom: 70.3% !important; /* 位置の高さ調整 */
 }
 
 /* 三重の場合：結果画面（★新規追加） */
-
 #selected-pref-head[src*="mie"] {
 bottom: 69.5% !important; /* 位置の高さ調整 */
+}
+
+/* 鹿児島の場合：結果画面（★新規追加） */
+#selected-pref-head[src*="kagoshima"] {
+width: 61% !important; 
+bottom: 62% !important; /* 位置の高さ調整 */
+left: -8% !important;
 }
 
 #result-button-container {

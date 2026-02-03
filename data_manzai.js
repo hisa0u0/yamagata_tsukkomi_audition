@@ -187,13 +187,13 @@ const manzaiData = {
             { type: 'dialogue', speaker: '岩手', text: 'はいどうも〜！<br>岩手県だ！' },
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
-            { type: 'dialogue', speaker: '岩手', text: '岩手といえばやっぱり「広さ」だんね<br>本州で一番面積が広いんだ' },
+            { type: 'dialogue', speaker: '岩手', text: '岩手といえばやっぱり「広さ」だな<br>本州で一番面積が広いンだ' },
             { type: 'dialogue', speaker: '岩手', text: '四国4県がすっぽり入るくらいの<br>スケール感が自慢だ' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>そんなに大きいんだ' },
             { type: 'dialogue', speaker: '山形', text: 'それなら<br>あの大規模イベントも余裕だね' },
             { type: 'dialogue', speaker: '岩手', text: '大規模イベント？<br>ロックフェスとか？' },
             { type: 'dialogue', speaker: '山形', text: 'いや<br>「人間将棋」だよ' },
-            { type: 'dialogue', speaker: '岩手', text: '・・・え？<br>人間将棋？んだそれ' },
+            { type: 'dialogue', speaker: '岩手', text: '・・・え？<br>人間将棋？ンだそれ' },
             { type: 'dialogue', speaker: '山形', text: '広い土地があるなら<br>将棋盤を巨大化できるんじゃない？' },
             { type: 'dialogue', speaker: '岩手', text: 'じぇじぇじぇ！<br>将棋盤を巨大化！？' },
             { type: 'dialogue', speaker: '山形', text: '甲冑を着た人間が<br>巨大な盤の上を駒として練り歩くんだ' },
@@ -203,19 +203,19 @@ const manzaiData = {
                 tsukkomi: [
                     { text: "巨大化させた<br>だけじゃん！", 
                         point: 3, type: ['t', 'p', 'v'], 
-                        reaction: '岩手「物理的にデカくして<br>どうすっぺ！」' },
+                        reaction: '岩手「物理的にデッケくして<br>どうすっぺ！」' },
                     { text: "土地の<br>無駄遣いだろ！", 
                         point: 1, type: ['t', 'p'], 
                         reaction: '岩手「もっと有効な<br>土地活用があるんじゃない！？」' },
                     { text: "めちゃくちゃ<br>時間かかりそう", 
                         point: 0, type: ['v'], 
-                        reaction: '岩手「大きすぎて<br>日が暮れちゃうよ」' }
+                        reaction: '岩手「デッケすぎて<br>日が暮れンべ」' }
                 ]
             },
             { type: 'dialogue', speaker: '岩手', text: 'はぁ…デカければいいってもんじゃないよ' },
-            { type: 'dialogue', speaker: '岩手', text: '岩手は大きさだけじゃなくて<br>食のバリエーションも豊富なんだ' },
+            { type: 'dialogue', speaker: '岩手', text: '岩手は大きさだけじゃなくて<br>食のバリエーションも豊富なンだ' },
             { type: 'dialogue', speaker: '岩手', text: '「わんこそば」「盛岡冷麺」<br>「じゃじゃ麺」！' },
-            { type: 'dialogue', speaker: '岩手', text: 'いわゆる「盛岡三大麺」だね' },
+            { type: 'dialogue', speaker: '岩手', text: 'いわゆる「盛岡三大麺」だな' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>3種類もあるんだ' },
             { type: 'dialogue', speaker: '岩手', text: '山形さんも<br>ラーメン大好きって聞いてるけど' },
             { type: 'dialogue', speaker: '山形', text: '山形はラーメンと<br>そばがたくさんあるよ' },
@@ -232,38 +232,38 @@ const manzaiData = {
                         reaction: '岩手「住所どうなってんの！？<br>行政区分がめちゃくちゃすぎる！」' },
                     { text: "そこまで来たら<br>うどんも欲しい", 
                         point: 0, type: ['p','v'], 
-                        reaction: '岩手「うどんにも力入れてみてよ」' }
+                        reaction: '岩手「うどんにも力入れてやってよ」' }
                 ]
             },
-            { type: 'dialogue', speaker: '岩手', text: '岩手はもっとこう<br>ミステリアスな民話の世界が自慢だよ' },
+            { type: 'dialogue', speaker: '岩手', text: '岩手はもっとこう<br>ミステリアスな民話の世界が自慢だ' },
             { type: 'dialogue', speaker: '岩手', text: '遠野市の「カッパ伝説」とかね' },
-            { type: 'dialogue', speaker: '岩手', text: '観光協会に行くと<br>「カッパ捕獲許可証」がもらえるんだ' },
+            { type: 'dialogue', speaker: '岩手', text: '観光協会に行くと<br>「カッパ捕獲許可証」がもらえンだ' },
             { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>本格的だね' },
-            { type: 'dialogue', speaker: '岩手', text: 'まあ<br>実際に捕まえた人はいないけど' },
-            { type: 'dialogue', speaker: '岩手', text: 'でもその「本気度」が<br>ロマンチックでしょ？' },
+            { type: 'dialogue', speaker: '岩手', text: 'まあ<br>実際に捕まえた人はいねげど' },
+            { type: 'dialogue', speaker: '岩手', text: 'でもその「本気度」が<br>ロマンチックだべ？' },
             { type: 'dialogue', speaker: '山形', text: '確かに' },
             { type: 'dialogue', speaker: '山形', text: '山形には“ケサランパサラン”っていう<br>謎の生物がいるよ' },
-            { type: 'dialogue', speaker: '岩手', text: 'あ、聞いたことある！<br>白い毛玉みたいなやつだよね？' },
+            { type: 'dialogue', speaker: '岩手', text: 'あ、聞いたことある！<br>白い毛玉みてーなやつだな？' },
             { type: 'dialogue', speaker: '山形', text: 'そうそう' },
             { type: 'dialogue', speaker: '山形', text: '動物か植物かも分からない<br>未確認生物なんだけど' },
             {
                 type: 'prompt', speaker: '山形', text: 'コイツはよく捕獲されてて<br>水族館で普通に展示されてるよ',
                 tsukkomi: [
-                    { text: "どこに行けば<br>捕獲できるの？", 
+                    { text: "どこさ行けば<br>捕獲できるの？", 
                         point: 0, type: ['p'], 
                         reaction: '山形「特に庄内地域に<br>生息してるらしいよ」' },
-                    { text: "なんで水族館で<br>展示してるんだよ！", 
+                    { text: "なして水族館で<br>展示してンだよ！", 
                         point: 1, type: ['t','v'], 
                         reaction: '岩手「あの毛玉<br>海の生き物なの！？」' },
                     { text: "未確認生物<br>確認済みじゃん！", 
                         point: 3, type: ['t', 'p', 'v'],
-                        reaction: '岩手「未確認生物リスト<br>更新しなきゃ！」' }
+                        reaction: '岩手「未確認生物リスト<br>更新せねば！」' }
                     ]
             },
 
             { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
             { type: 'dialogue', speaker: '岩手', text: 'う〜ん<br>とりあえず・・・' },
-            { type: 'dialogue', speaker: '岩手', text: 'ツッコミどころが多いってことは<br>わかった' },
+            { type: 'dialogue', speaker: '岩手', text: 'ツッコミどころが多いってことは<br>わがった' },
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '岩手', text: '・・・・・・' },
             { type: 'dialogue', speaker: '岩手', text: 'それでいいのかよ！' },
@@ -2971,7 +2971,7 @@ const manzaiData = {
     // -------- 福岡 --------------------------------------------------------------------------------------------------------
     'fukuoka': {
         scenario: [
-            { type: 'dialogue', speaker: '福岡', text: 'はいどーもー！<br>福岡県ばい！' }, 
+            { type: 'dialogue', speaker: '福岡', text: 'はいどーもー！<br>福岡県たい！' }, 
             { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
             { type: 'dialogue', speaker: '福岡', text: 'いやぁ、福岡といやあやっぱ<br>グルメが最強やろ！' },
             { type: 'dialogue', speaker: '福岡', text: '豚骨ラーメンに、ぷりっぷりんもつ鍋！<br>水炊きに、白飯が進む明太子！' },
@@ -3014,7 +3014,7 @@ const manzaiData = {
                     { text: "異物感<br>強すぎるばい！", 
                         point: 3, type: ['t', 'p', 'v'], 
                         reaction: '福岡「異世界転生してきた建物か！<br>違和感が仕事しすぎばい！」' },
-                    { text: "景色は良さそう", 
+                    { text: "景色はいいっちゃろうね〜", 
                         point: 0, type: ['v'], 
                         reaction: '福岡「まあ、見渡す限り緑やろうけど<br>夜は真っ暗やなか？」' },
                     { text: "なしてそげんとこに<br>建てたと！？", 
@@ -3407,6 +3407,93 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '宮崎', text: '・・・・・・' },
             { type: 'dialogue', speaker: '宮崎', text: 'それでいいと！？' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 鹿児島 -----------------------------------------------------------------------------------------------------
+    'kagoshima': {
+        scenario: [
+            { type: 'dialogue', speaker: '鹿児島', text: 'はいどうも〜！<br>鹿児島県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '鹿児島', text: '鹿児島といえば、やっぱ桜島！<br>迫力が違うもんね' },
+            { type: 'dialogue', speaker: '鹿児島', text: '夏は南国特有の暑さに加えて<br>火山灰も降ってくるから、もう大変よ' },
+            { type: 'dialogue', speaker: '山形', text: '暑くて灰が降るのは<br>大変だねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '山形も夏は相当暑いから<br>いろいろ対策してるよ' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'ほう、山形なりの<br>暑さ対策があるわけね？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」とか' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'まあ、それは全国どこでも<br>やっとるスタンダードなやつやね' },
+            { type: 'dialogue', speaker: '山形', text: 'あと・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '冷やしラーメンとか<br>冷やしシャンプーも始まるよ',
+                tsukkomi: [
+                    { text: "暑がりすぎだろ！", 
+                        point: 1, type: ['v'], 
+                        reaction: '鹿児島「もうちょい耐えろよ！」' },
+                    { text: "なんでもかんでも<br>冷やせばいいと思ってんのか！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '鹿児島「シャンプーまで冷やさんでよか！<br>頭キーンてなるわ！」' },
+                    { text: "南国鹿児島でも<br>流行りそう", 
+                        point: 0, type: ['p'], 
+                        reaction: '鹿児島「ひんやりして気持ちよさそうやね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '鹿児島', text: 'まあ<br>暑さをしのぐ工夫は大事やけどね' },
+            { type: 'dialogue', speaker: '鹿児島', text: '鹿児島は食文化のブランド化にも<br>気合が入っとるんよ' },
+            { type: 'dialogue', speaker: '鹿児島', text: '「かごしま黒豚」に「鹿児島黒牛」！<br>“黒”を冠したブランドは全国区やからね' },
+            { type: 'dialogue', speaker: '山形', text: 'お〜<br>かっこいいね' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'そうやろ！ブランドは名前が命よ！<br>山形はなんか、そういうの無いの？' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンが美味しいよ<br>ラーメン消費額日本一だし' },
+            { type: 'dialogue', speaker: '鹿児島', text: '消費額日本一！？<br>それはすごかね！' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンが好きすぎて<br>県の名前にラーメンがついたんだ' },
+            { type: 'dialogue', speaker: '鹿児島', text: '県の名前に・・・！？' },
+            { type: 'dialogue', speaker: '鹿児島', text: '・・・ラーメンに県の名前を<br>つけるんじゃなくて？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "どっちも食べられて<br>お得やね", 
+                        point: 0, type: ['v'], 
+                        reaction: '鹿児島「食いしん坊にはたまらん名前やね」' },
+                        { text: "情報が<br>渋滞しとるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '鹿児島「ラーメンなのかそばなのか<br>はっきりしてよ！」' },
+                    { text: "県の中に国作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '鹿児島「せめて逆やろ！<br>独立宣言でもしたんか！」' }
+                    
+                    
+                ]
+            },
+            { type: 'dialogue', speaker: '鹿児島', text: '名前のスケールが大きすぎて困惑するわ・・・' },
+            { type: 'dialogue', speaker: '鹿児島', text: '鹿児島には世界遺産の屋久島もあるし<br>手つかずの豊かな自然が自慢なんよ' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'あの神秘的な空気は<br>行ってみんと分からん' },
+            { type: 'dialogue', speaker: '鹿児島', text: '本当に自然に感謝したくなるレベルよ' },
+            { type: 'dialogue', speaker: '山形', text: '自然に感謝、わかるよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形は空気が綺麗だから<br>感謝しようと思って' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」を建てたんだ' },
+            { type: 'dialogue', speaker: '鹿児島', text: '・・・空気神社？' },
+            {
+                type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>有志によってつくられた神社だよ',
+                tsukkomi: [
+                    { text: "感謝の仕方<br>独特すぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '鹿児島「わざわざ社殿まで建てたの！？<br>屋久島でもそこまではせんよ！」' },
+                    { text: "目に見えないものを<br>拝むんか？", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '鹿児島「それ、何も無いとこに向かって<br>手ぇ合わせとるだけじゃない？」' },
+                    { text: "エコで<br>よろしいな", 
+                        point: 0, type: ['v'], 
+                        reaction: '鹿児島「究極の環境保護やね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'ツッコミどころが多いってことは<br>わかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '鹿児島', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'それでいいのかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
