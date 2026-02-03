@@ -2438,106 +2438,88 @@ const manzaiData = {
     // -------- 岡山 -----------------------------------------------------------------------------------------------------
     'okayama': {
     scenario: [
-    { type: 'dialogue', speaker: '岡山', text: 'はいどうも〜！<br>岡山県と〜' },
-    { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
-    { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰くださ〜い' },
-    { type: 'dialogue', speaker: '岡山', text: '岡山といえば<br>なんと言っても「晴れの国」じゃな' },
-    { type: 'dialogue', speaker: '岡山', text: '雨が少なくて<br>お天道様がいつも見守ってくれとんよ' },
-    { type: 'dialogue', speaker: '岡山', text: '夏はそりゃあ暑いけど<br>この日差しこそが自慢なんじゃ' },
-    { type: 'dialogue', speaker: '山形', text: '晴れの日が多いのはいいよね' },
-    { type: 'dialogue', speaker: '山形', text: '山形は盆地で夏はすごく暑いから<br>暑さ対策には力を入れてるよ' },
-    { type: 'dialogue', speaker: '岡山', text: 'ほう、どんな対策しよん？<br>やっぱり打ち水とかか？' },
-    { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」とか' },
-    { type: 'dialogue', speaker: '岡山', text: 'やっぱ夏は冷やし中華じゃわな' },
-    { type: 'dialogue', speaker: '山形', text: 'あと<br>「冷やしラーメンはじめました」とか' },
-    { type: 'dialogue', speaker: '岡山', text: 'ん・・・？<br>ラーメンか？' },
-    {
-        type: 'prompt', speaker: '山形', text: '「冷やしシャンプーはじめました」<br>とかね',
-        promptText: '「冷やしラーメン」とか<br>「冷やしシャンプー」とかね',
-        tsukkomi: [
+            { type: 'dialogue', speaker: '岡山', text: 'はいどうも〜！<br>岡山県と〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '岡山', text: '岡山といえば<br>なんと言っても「晴れの国」じゃな' },
+            { type: 'dialogue', speaker: '岡山', text: '雨が少なくて<br>お天道様がいつも見守ってくれとんよ' },
+            { type: 'dialogue', speaker: '岡山', text: '夏はそりゃあ暑いけど<br>この日差しこそが自慢なんじゃ' },
+            { type: 'dialogue', speaker: '山形', text: '晴れの日が多いのはいいよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形は盆地で夏はすごく暑いから<br>暑さ対策には力を入れてるよ' },
+            { type: 'dialogue', speaker: '岡山', text: 'ほう、どんな対策しとん？<br>やっぱり打ち水とかか？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」とか' },
+            { type: 'dialogue', speaker: '岡山', text: 'やっぱ夏は冷やし中華だよな' },
+            { type: 'dialogue', speaker: '山形', text: 'あと<br>「冷やしラーメンはじめました」とか' },
+            { type: 'dialogue', speaker: '岡山', text: 'ん・・・？<br>ラーメン？' },
             {
-                text: "冷やしラーメンと<br>冷やし中華は一緒じゃろ！",
-                point: 1, type: ['p', 't'],
-                reaction: '岡山「冷やし中華だけで<br>十分じゃろ！」'
+             type: 'prompt', speaker: '山形',text: '「冷やしシャンプーはじめました」<br>とかね',
+             promptText: '「冷やしラーメン」とか<br>「冷やしシャンプー」とかね',
+                tsukkomi: [
+                { text: "冷やしラーメンと<br>冷やし中華は一緒だろ！", 
+                    point: 1, type: ['p','t'],
+                  reaction: '岡山「冷やし中華だけで<br>十分じゃない！？」' },
+                  { text: "なんでもかんでも<br>冷やせばいいと思ってるのかよ！", 
+                    point: 3, type: ['t','p','v'],
+                  reaction: '岡山「涼の取り方が<br>原始的だな！」' },
+                { text: "風邪ひかないように<br>気をつけてな", 
+                    point: 0, type: ['v'],
+                  reaction: '岡山「健康第一じゃからな」' }
+                ]
             },
+            { type: 'dialogue', speaker: '岡山', text: 'まあ、<br>極端な暑さ対策じゃな・・・' },
+            { type: 'dialogue', speaker: '岡山', text: '岡山といえば、日本中の子供が知っとる<br>最強のヒーロー「桃太郎」がおるんよ' },
+            { type: 'dialogue', speaker: '岡山', text: '桃から生まれた桃太郎！<br>この桃色のアイコンは唯一無二じゃろ' },
+            { type: 'dialogue', speaker: '山形', text: '桃色のキャラクターなら<br>山形にもいるよ' },
+            { type: 'dialogue', speaker: '岡山', text: 'ほう！桃太郎みたいに<br>凛々しくて正義感あふれるキャラか？' },
+            { type: 'dialogue', speaker: '山形', text: '朝日町のキャラクター<br>「桃色ウサヒ」っていうんだけど' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
+            { type: 'dialogue', speaker: '岡山', text: '圧倒的無個性・・・？' },
             {
-                text: "なんでもかんでも<br>冷やせばええ思っとんか！",
-                point: 3, type: ['t', 'p', 'v'],
-                reaction: '岡山「涼の取り方が<br>極端すぎんか！」'
+                type: 'prompt',speaker: '山形',text: '無個性・無軌道・無表情が売りで<br>特徴がないことが特徴なんだ',
+                tsukkomi: [
+                    { text: "PRする気<br>あんのか！？",
+                        point: 3, type: ['t','p','v'],
+                        reaction: '岡山「もっとこうビシッとしてくれ！」'},
+                    { text: "謙虚なキャラで<br>好感持てるわ",
+                        point: 0, type: ['v'],
+                        reaction: '岡山「岡山も見習うところが<br>あるかもしれんな」'},
+                        { text: "ただの着ぐるみ<br>じゃねえか！",
+                        point: 1, type: ['t','p'],
+                        reaction: '岡山「中の人が透けて見えそうな<br>設定じゃな・・・」'}
+                ]
             },
+            { type: 'dialogue', speaker: '岡山', text: '・・・個性が死んどるがな' },
+            { type: 'dialogue', speaker: '岡山', text: '岡山のお土産いうたら<br>やっぱり「きびだんご」じゃな' },
+            { type: 'dialogue', speaker: '岡山', text: '昔からずっと愛されとる<br>岡山県民の誇りなんじゃ' },
+            { type: 'dialogue', speaker: '山形', text: 'あぁ、きびだんご<br>キャッチーで良いよね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも、県民がこよなく愛する<br>ソウルフードがあるよ' },
+            { type: 'dialogue', speaker: '山形', text: '通称「山形のタピオカ」' },
+            { type: 'dialogue', speaker: '岡山', text: '山形のタピオカ？<br>山形にそんなもんがあるんか？' },
+            { type: 'dialogue', speaker: '山形', text: '大鍋でじっくり煮込んであって<br>茶色くて、丸くて、弾力がすごいんだ' },
+            { type: 'dialogue', speaker: '岡山', text: 'へぇ〜、黒糖で煮込んどんかな？<br>やっぱりミルクティーに入れて飲むんか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや、割り箸に刺して<br>からしを塗って食べるよ' },
             {
-                text: "風邪ひかんように<br>気をつけてな",
-                point: 0, type: ['v'],
-                reaction: '岡山「健康第一じゃけえな」'
-            }
-        ]
-    },
-    { type: 'dialogue', speaker: '岡山', text: 'まあ、<br>えらい思い切った暑さ対策じゃな・・・' },
-    { type: 'dialogue', speaker: '岡山', text: '岡山といえば、日本中の子供が知っとる<br>最強のヒーロー「桃太郎」がおるんよ' },
-    { type: 'dialogue', speaker: '岡山', text: '桃から生まれた桃太郎！<br>この桃色のアイコンは唯一無二じゃろ' },
-    { type: 'dialogue', speaker: '山形', text: '桃色のキャラクターなら<br>山形にもいるよ' },
-    { type: 'dialogue', speaker: '岡山', text: 'ほう！桃太郎みたいに<br>凛々しくて正義感あふれるキャラか？' },
-    { type: 'dialogue', speaker: '山形', text: '朝日町のキャラクター<br>「桃色ウサヒ」っていうんだけど' },
-    { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
-    { type: 'dialogue', speaker: '岡山', text: '圧倒的無個性・・・？' },
-    {
-        type: 'prompt', speaker: '山形', text: '無個性・無軌道・無表情が売りで<br>特徴がないことが特徴なんだ',
-        tsukkomi: [
-            {
-                text: "PRする気<br>あんのか！？",
-                point: 3, type: ['t', 'p', 'v'],
-                reaction: '岡山「もっとこう、ヒーローらしく<br>ビシッとしてくれんとおえんわ！」'
+                type: 'prompt', speaker: '山形', text: 'それが山形県民のソウルフード<br>「山形のタピオカ」だよ',
+                tsukkomi: [
+                    { text: "確かに原材料も<br>見た目も似てるけど！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '岡山「キャッサバとコンニャク芋は<br>全然別もんじゃろ！」' },
+                    { text: "タピオカブーム<br>もう終わっとるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '岡山「乗っかるのが数年遅いんよ！」' },
+                    { text: "ヘルシーな<br>タピオカじゃな", 
+                        point: 0, type: ['v'], 
+                        reaction: '岡山「女子高生に<br>行列作ってほしいな」' }
+                ]
             },
-            {
-                text: "謙虚なキャラで<br>好感持てるわぁ",
-                point: 0, type: ['v'],
-                reaction: '岡山「岡山も見習うところが<br>あるかもしれんな」'
-            },
-            {
-                text: "ただの着ぐるみ<br>じゃねえか！",
-                point: 1, type: ['t', 'p'],
-                reaction: '岡山「中の人が透けて見えそうな<br>設定じゃな・・・」'
-            }
-        ]
-    },
-    { type: 'dialogue', speaker: '岡山', text: '・・・個性が死んどるがな' },
-    { type: 'dialogue', speaker: '岡山', text: '岡山のお土産いうたら<br>やっぱり「きびだんご」じゃな' },
-    { type: 'dialogue', speaker: '岡山', text: '昔からずっと愛されとる<br>岡山県民の誇りなんじゃ' },
-    { type: 'dialogue', speaker: '山形', text: 'あぁ、きびだんご<br>キャッチーで良いよね' },
-    { type: 'dialogue', speaker: '山形', text: '山形にも、県民がこよなく愛する<br>ソウルフードがあるよ' },
-    { type: 'dialogue', speaker: '山形', text: '通称「山形のタピオカ」' },
-    { type: 'dialogue', speaker: '岡山', text: '山形のタピオカ？<br>山形にそんなもんがあるんか？' },
-    { type: 'dialogue', speaker: '山形', text: '大鍋でじっくり煮込んであって<br>茶色くて、丸くて、弾力がすごいんだ' },
-    { type: 'dialogue', speaker: '岡山', text: 'へぇ〜、黒糖で煮込んどんかな？<br>やっぱミルクティーに入れて飲むんか？' },
-    { type: 'dialogue', speaker: '山形', text: 'いや、割り箸に刺して<br>からしを塗って食べるよ' },
-    {
-        type: 'prompt', speaker: '山形', text: 'それが山形県民のソウルフード<br>「山形のタピオカ」だよ',
-        tsukkomi: [
-            {
-                text: "それ「玉こんにゃく」<br>じゃねえか！",
-                point: 3, type: ['t', 'p', 'v'],
-                reaction: '岡山「どこがタピオカやねん！<br>ただの醤油味のコンニャクじゃろ！」'
-            },
-            {
-                text: "タピオカブーム<br>もう終わっとるわ！",
-                point: 1, type: ['t', 'p'],
-                reaction: '岡山「乗っかるのが数年遅いんよ！」'
-            },
-            {
-                text: "ヘルシーな<br>タピオカじゃな",
-                point: 0, type: ['v'],
-                reaction: '岡山「女子高生に<br>行列作ってほしいわぁ」'
-            }
-        ]
-    },
-    { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
-    { type: 'dialogue', speaker: '岡山', text: 'う〜ん<br>とりあえず・・・' },
-    { type: 'dialogue', speaker: '岡山', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
-    { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
-    { type: 'dialogue', speaker: '岡山', text: '・・・・・・' },
-    { type: 'dialogue', speaker: '岡山', text: 'それでええんか！' },
-    { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
-]
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '岡山', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '岡山', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '岡山', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '岡山', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+    ]
     },
 
     // -------- 広島 ---------------------------------------------------------------------------------------------------------
