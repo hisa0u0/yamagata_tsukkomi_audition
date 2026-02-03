@@ -1815,6 +1815,95 @@ const manzaiData = {
         ]
     },
 
+    // -------- 静岡 --------------------------------------------------------------------------------------------------------
+    'shizuoka': {
+        scenario: [
+            { type: 'dialogue', speaker: '静岡', text: 'はいどうも〜！<br>静岡県です！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '静岡', text: '静岡といえば、やっぱ富士山だら！<br>日本一の高さと美しさが自慢だね' },
+            { type: 'dialogue', speaker: '静岡', text: '他にも駿河湾の深さとか<br>茶の生産量とかさ' },
+            { type: 'dialogue', speaker: '静岡', text: '静岡は何でも<br>「日本一のスケール」が売りなんだわ' },
+            { type: 'dialogue', speaker: '静岡', text: '山形さんも、日本一って呼べるような<br>壮大なものってあるだか？' },
+            { type: 'dialogue', speaker: '山形', text: '日本一大きいものなら<br>山形にもあるよ' },
+            { type: 'dialogue', speaker: '静岡', text: 'おっ、いいじゃん！' },
+            { type: 'dialogue', speaker: '山形', text: '「日本一の芋煮会フェスティバル」<br>っていうんだけど' },
+            { type: 'dialogue', speaker: '静岡', text: '芋煮会！いいねぇ<br>みんなで鍋を囲むもんでしょ？' },
+            { type: 'dialogue', speaker: '静岡', text: 'でも<br>「日本一大きい」ってどういうことだ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そのままだよ' },
+            {
+                type: 'prompt', speaker: '山形', text: '直径6.5メートルの大鍋と<br>バックホーで芋煮を作るんだ',
+                promptText: '直径6.5メートルの大鍋と<br>バックホーを使って作る芋煮会だよ',
+                tsukkomi: [
+                    { text: "調理器具ごと<br>デカくしてんの！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '静岡「発想が極端すぎるだら！<br>他にこだわるところあったでしょ！」' },
+                    { text: "富士山で<br>作りたいね", 
+                        point: 0, type: ['p', 'v'], 
+                        reaction: '静岡「山頂まで鍋を運ぶのが<br>一番の試練だねぇ」' },
+                    { text: "重機を調理器具に<br>するなよ！", 
+                        point: 1, type: ['v'], 
+                        reaction: '静岡「工事現場じゃん！<br>もっと繊細に作ってよ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '静岡', text: 'パワープレイすぎるら・・・' },
+            { type: 'dialogue', speaker: '静岡', text: '静岡はもっと<br>「ブランド」を大事にするもんでさ' },
+            { type: 'dialogue', speaker: '静岡', text: '静岡茶なんて品質管理が<br>めちゃくちゃ厳しいんだから' },
+            { type: 'dialogue', speaker: '静岡', text: '名前一つで価値が決まる世界だもんでね' },
+            { type: 'dialogue', speaker: '静岡', text: '山形さんも<br>何か誇れるブランドはあるだか？' },
+            { type: 'dialogue', speaker: '山形', text: '山形はラーメンへの愛が凄いよ<br>ラーメン消費額は日本一だし' },
+            { type: 'dialogue', speaker: '静岡', text: 'へぇ！日本一の消費額！<br>それは立派なブランドだねぇ' },
+            { type: 'dialogue', speaker: '山形', text: 'だからその愛を形にするために<br>新しい名前を名乗ることにしたんだ' },
+            { type: 'dialogue', speaker: '静岡', text: 'おっ、ついに「ラーメン県」として<br>売り出すわけだね？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "どっちがメインだよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '静岡「どっちも主役にしたがるじゃん！<br>ネーミングが渋滞してるって！」' },
+                    { text: "なんで県の中に<br>国があるんだよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '静岡「設定が矛盾してるら！<br>せめて逆だもんで！」' },
+                    { text: "お茶も混ぜて<br>ほしいな", 
+                        point: 0, type: ['v'], 
+                        reaction: '静岡「ラーメン県そば王国お茶村…<br>もう住所がパニックだね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '静岡', text: '欲張りすぎだもんで' },
+            { type: 'dialogue', speaker: '静岡', text: 'やっぱ静岡みたいに、気候も人も<br>穏やかに「ちょうどいい」のが一番だよ' },
+            { type: 'dialogue', speaker: '静岡', text: '冬は雪も降らないし、あたたかくてさ' },
+            { type: 'dialogue', speaker: '静岡', text: '正直<br>厳しい環境対策なんて必要ないもんでね' },
+            { type: 'dialogue', speaker: '山形', text: '羨ましいなぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形は夏が本当に暑いから<br>とにかく冷やすことに命をかけてるよ' },
+            { type: 'dialogue', speaker: '静岡', text: 'まぁ、キンキンに冷えたビールとか？<br>それくらいはどこでもやるら' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やしラーメンはじめました」とか' },
+            { type: 'dialogue', speaker: '静岡', text: '・・・<br>冷やし中華的なやつ？' },
+            {
+                type: 'prompt', speaker: '山形', text: '「冷やしシャンプーはじめました」<br>とかね',
+                promptText: '「冷やしラーメンはじめました」とか<br>「冷やしシャンプーはじめました」とかね',
+                tsukkomi: [
+                    { text: "シャンプーは常温で<br>いいだろ！", 
+                        point: 1, type: ['p', 't'], 
+                        reaction: '静岡「シャンプーは最初から<br>そこそこ冷えてるじゃん！」' },
+                    { text: "静岡でも<br>流行りそう", 
+                        point: 0, type: ['v'], 
+                        reaction: '静岡「新茶を冷やしシャンプーにしたら<br>香りは良さそうだねぇ」' },
+                    { text: "なんでもかんでも<br>冷やしすぎだら！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '静岡「涼の取り方が脳筋じゃん！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '静岡', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '静岡', text: 'ツッコミどころが多すぎて<br>こっちの体力持たないってことはわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '静岡', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '静岡', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 愛知 -----------------------------------------------------------------------------------------------------
     'aichi': {
         scenario: [
@@ -2461,9 +2550,9 @@ const manzaiData = {
                   { text: "なんでもかんでも<br>冷やせばいいと思ってるのかよ！", 
                     point: 3, type: ['t','p','v'],
                   reaction: '岡山「涼の取り方が<br>原始的だな！」' },
-                { text: "風邪ひかないように<br>気をつけてな", 
+                { text: "風邪ひかないように<br>気ぃつけーな", 
                     point: 0, type: ['v'],
-                  reaction: '岡山「健康第一じゃからな」' }
+                  reaction: '岡山「健康が第一じゃけぇ」' }
                 ]
             },
             { type: 'dialogue', speaker: '岡山', text: 'まあ、<br>極端な暑さ対策じゃな・・・' },
