@@ -369,45 +369,57 @@ display: none !important;
    ========================================= */
 
 /* 右上のポーズボタン */
-/* 右上のポーズボタン（CSSでアイコン描画版） */
 #pause-btn {
     position: absolute;
     top: 15px;
     right: 15px;
     z-index: 9999;
-    
+
     width: 44px;
     height: 44px;
-    border-radius: 10px; /* 角丸正方形 */
+    border-radius: 10px; /* 角丸 */
+
+    /* ★ここがポイント：背景を透明（少しだけ暗くして白を目立たせる） */
+    background-color: rgba(0, 0, 0, 0.2); 
     
-    background: #00b300; 
-    border: 2px solid #ffffff; /* 白枠 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* ★白の枠線 */
+    border: 2px solid #ffffff; 
+
+    /* ★影をつけて浮き上がらせる */
+    /* 0 4px 8px は「下に4px、ぼかし8px」の影 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
     cursor: pointer;
 
-    /* ▼ ここからが図形を描くための設定 ▼ */
-    
-    /* 中の線を中央揃えにする */
+    /* 中の「||」を中央揃え */
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* 2本の線の間隔を設定 */
-    gap: 6px; /* 線の間隔（お好みで調整） */
+    gap: 6px;
+
+    /* 押した時のアニメーション用 */
+    transition: all 0.1s ease-out;
+}
+
+/* 押した時に少し凹んで影が小さくなる演出 */
+#pause-btn:active {
+    transform: scale(0.95); /* 少し縮む */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* 影も小さく */
+    background-color: rgba(0, 0, 0, 0.4); /* 背景を少し濃くして「押した感」を出す */
 }
 
 /* ▼ 2本の線を「疑似要素」で作る設定 ▼ */
 #pause-btn::before,
 #pause-btn::after {
-    content: ""; /* おまじない（必須） */
+    content: "";
     display: block;
+    width: 6px;
+    height: 18px;
     
-    /* ▼ 太さと長さはここで調整します！ ▼ */
-    width: 6px;   /* 線の太さ（太くした） */
-    height: 18px; /* 線の縦の長さ（短めにした） */
+    /* 棒の色は白 */
+    background-color: #ffffff;
     
-    background-color: #ffffff; /* 線の色（白） */
-    border-radius: 2px; /* 線の角を少しだけ丸くして柔らかく */
+    border-radius: 2px;
 }
 
 /* メニュー画面背景 */

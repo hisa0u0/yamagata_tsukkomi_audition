@@ -509,11 +509,17 @@ tsukkomiButtons.forEach(button => {
 // 1. ポーズボタン（右上）を押した時
 if(pauseBtn && pauseModal) {
     pauseBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // 親へのクリック伝播を止める
+        e.stopPropagation(); 
         isPaused = true;
         pauseModal.style.display = 'flex';
-        // BGMを一時停止したければ以下をコメントアウト解除
-        // if(bgmAudio && !bgmAudio.paused) bgmAudio.pause();
+
+        // ★追加：メニューを開いた瞬間にログを一番下へスクロール
+        if (logContainer) {
+            // 表示されるまでわずかに待機してからスクロール（確実性を高めるため）
+            setTimeout(() => {
+                logContainer.scrollTop = logContainer.scrollHeight;
+            }, 10);
+        }
     });
 }
 
