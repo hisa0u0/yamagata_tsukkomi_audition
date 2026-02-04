@@ -171,6 +171,11 @@ document.getElementById('wp-date').innerText = `${now.getFullYear()}.${now.getMo
             headImg.style.left = '20px';   
             headImg.style.width = '325px';
         }
+        else if (pref.includes('kochi')) {
+            headImg.style.top = '70px';    
+            headImg.style.left = '80px';   
+            headImg.style.width = '290px';
+        }
 
         // 2. グラフ描画
         const ctx = document.getElementById('cardRadarChart');

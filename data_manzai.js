@@ -3326,6 +3326,88 @@ const manzaiData = {
         ]
     },
 
+    // -------- 高知 -----------------------------------------------------------------------------------------------------
+    // -------- 高知 -----------------------------------------------------------------------------------------------------
+    'kochi': {
+        scenario: [
+            { type: 'dialogue', speaker: '高知', text: 'はいどうも〜！<br>高知県やき！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '高知', text: '高知といえば<br>やっぱ坂本龍馬やね！' },
+            { type: 'dialogue', speaker: '高知', text: '桂浜にそびえ立つ龍馬像は<br>まっことデカくて迫力あるがよ' },
+            { type: 'dialogue', speaker: '高知', text: 'ああいうカリスマ性のある<br>偉人がいるのは自慢やね' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>カリスマ性かぁ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも圧倒的な存在感を放つ<br>超重要キャラクターがいるよ' },
+            { type: 'dialogue', speaker: '高知', text: 'ほう！龍馬みたいに<br>志の高い、熱い御仁なが？' },
+            { type: 'dialogue', speaker: '山形', text: '「桃色ウサヒ」っていう<br>ピンク色のウサギなんだけど' },
+            { type: 'dialogue', speaker: '山形', text: '特徴は<br>無個性・無軌道・無表情' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形県朝日町の<br>非公式キャラクターだよ',
+                tsukkomi: [
+                    { text: "やる気<br>あんのかよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '高知「日本の夜明けを<br>託せるわけないろう！」' },
+                    { text: "逆に大物<br>かもしれん", 
+                        point: 0, type: ['p','t'], 
+                        reaction: '高知「悟りを開いた<br>仙人みたいな顔しちゅうね」' },
+                    { text: "超重要キャラ<br>じゃないが！", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '高知「ただの無表情な<br>着ぐるみやないか！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '高知', text: 'まっこと、脱力系の極みやね…' },
+            { type: 'dialogue', speaker: '高知', text: '高知は食文化も豪快やき！<br>飲んだ後の締めは「屋台餃子」！' },
+            { type: 'dialogue', speaker: '高知', text: '小ぶりでカリカリの餃子を<br>お酒と一緒に流し込むのが最高ながよ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>締めが餃子なんだ' },
+            { type: 'dialogue', speaker: '山形', text: '山形はとにかくラーメンが好きで<br>ラーメン消費額も日本一なんだよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それを全国にPRするために<br>最近、県の呼び名を変えたんだ' },
+            { type: 'dialogue', speaker: '高知', text: '呼び名を変えた？<br>「麺の里」とかそんな感じなが？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "詰め込み<br>すぎやき！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '高知「一気に名前が<br>ややこしくなっちゅう！」' },
+                    { text: "なんで県の中に<br>王国があるんだよ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '高知「どっちが上か分からん！<br>行政区分がめちゃくちゃやき！」' },
+                    { text: "うどんもあれば<br>完璧やった", 
+                        point: 0, type: ['v'], 
+                        reaction: '高知「四国のうどんにも<br>負けん勢いやね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '高知', text: '王国まで作るとは、恐ろしい執念やね' },
+            { type: 'dialogue', speaker: '高知', text: '高知は宴会も賑やかやき！<br>「べく杯」や「献杯・返杯」！' },
+            { type: 'dialogue', speaker: '高知', text: 'どんどん酒を酌み交わして<br>客人もみんな家族みたいに迎えるがよ' },
+            { type: 'dialogue', speaker: '山形', text: 'おもてなしの精神だね' },
+            { type: 'dialogue', speaker: '山形', text: '山形でも、大事なお客さんが来たら<br>必ず“あのご馳走”でおもてなしするよ' },
+            { type: 'dialogue', speaker: '高知', text: 'おっ！なんや？<br>山形牛のステーキとか？' },
+            {
+                type: 'prompt', speaker: '山形', text: 'ラーメンの出前を取るよ',
+                tsukkomi: [
+                    { text: "カツオのたたき<br>出しちゃりたい！", 
+                        point: 0, type: ['v'], 
+                        reaction: '高知「うちの自慢を<br>代わりに振る舞いたいがやけど！」' },
+                    { text: "ラーメン<br>好きすぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '高知「来客にまでラーメン！？<br>頭の中、全部麺になっちゅう！」' },
+                    { text: "出前が<br>最高のご馳走か！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '高知「自分で料理せんのかい！<br>楽をしすぎやき！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '高知', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '高知', text: 'ツッコミどころが多いってことは<br>ようわかったがよ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '高知', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '高知', text: 'それでええのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 福岡 --------------------------------------------------------------------------------------------------------
     'fukuoka': {
         scenario: [
@@ -3677,6 +3759,98 @@ const manzaiData = {
         ]
     },
 
+    // -------- 大分 -----------------------------------------------------------------------------------------------------
+    'oita': {
+        scenario: [
+            { type: 'dialogue', speaker: '大分', text: 'はいどうも〜！<br>大分県やに！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '大分', text: '形のＰＲもええけど<br>大分といえばやっぱり「おんせん県」やな！' },
+            { type: 'dialogue', speaker: '大分', text: '源泉数も湧出量も日本一！' },
+            { type: 'dialogue', speaker: '大分', text: '街のいたるところから<br>湯けむりがモクモク出ちょんのよ' },
+            { type: 'dialogue', speaker: '大分', text: '「おんせん県おおいた」っち<br>商標登録までしちょる' },
+            { type: 'dialogue', speaker: '大分', text: '名実ともに日本一のブランドやけん！' },
+            { type: 'dialogue', speaker: '山形', text: '日本一はすごいね' },
+            { type: 'dialogue', speaker: '山形', text: '山形は、ラーメンの消費額が<br>日本一なんだよ' },
+            { type: 'dialogue', speaker: '大分', text: 'おっ、ラーメンか！<br>大分も「別府冷麺」とかあるけど' },
+            { type: 'dialogue', speaker: '大分', text: '消費額日本一は凄まじいな' },
+            { type: 'dialogue', speaker: '山形', text: 'それで最近<br>山形県にも新しい名前がついたよ' },
+            { type: 'dialogue', speaker: '大分', text: '新しい名前？<br>「ラーメン県」とかそんな感じかえ？' },
+            { type: 'dialogue', speaker: '山形', text: '山形県、改め・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "情報量が<br>多すぎるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '大分「どっちかに絞らんかえ！」' },
+                    { text: "県の中に<br>王国作んな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '大分「行政区分がめちゃくちゃやん！<br>せめて『ラーメン王国そば県』やろ！」' },
+                    { text: "炭水化物<br>祭りやな！", 
+                        point: 0, type: ['v'], 
+                        reaction: '大分「どっちも食べに行きたくなるわぁ」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '大分', text: '名前の勢いがすごすぎて<br>こっちの温泉が冷めそうやわ…' },
+            { type: 'dialogue', speaker: '大分', text: '大分といえば「別府温泉」！' },
+            { type: 'dialogue', speaker: '大分', text: '日本一の温泉に浸かって<br>ポカポカして癒やされるのが最高なんよ' },
+            { type: 'dialogue', speaker: '大分', text: '山形さんも温泉多いけど<br>やっぱお風呂は温まってナンボやろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'そうだね<br>雪国だから冬は寒いし' },
+            { type: 'dialogue', speaker: '山形', text: 'でも夏はすごく暑いから<br>温泉よりも「冷やしシャンプー」かな' },
+            { type: 'dialogue', speaker: '大分', text: '冷やしシャンプー・・・？<br>なんねそれ？聞いたことねえわ' },
+            { type: 'dialogue', speaker: '山形', text: '床屋さんでキンキンに冷えた<br>シャンプーで洗ってもらうんだ' },
+            { type: 'dialogue', speaker: '大分', text: 'うわぁ、頭が凍りそうやなぁ・・・<br>お風呂っち普通温まるとこやろ？' },
+            { type: 'dialogue', speaker: '山形', text: '暑い夏には最高だよ' },
+            { type: 'dialogue', speaker: '山形', text: 'あと、ラーメン屋さんが<br>冷やしラーメンを始めたり' },
+            { type: 'dialogue', speaker: '大分', text: 'はあ？<br>冷やしラーメン・・・？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華始めました」<br>みたいな感じで' },
+            {
+                type: 'prompt', speaker: '山形', text: '山形の夏は<br>いろんなものが冷えてるよ',
+                promptText: '冷やし中華始めましたみたいな感じで<br>山形の夏はいろんなものが冷えてるよ',
+                tsukkomi: [
+                    { text: "どんだけ暑さに<br>弱いんよ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '大分「大分の夏も暑いけど<br>そこまではせんぞ・・・」' },
+                    { text: "お腹壊さんように<br>しなよ", 
+                        point: 0, type: ['v'], 
+                        reaction: '大分「冷え冷えすぎるのも<br>体に毒やで」' },
+                    { text: "なんでもかんでも<br>冷やせばいいと思うな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '大分「そのうち県ごと<br>冷蔵庫に入れるんじゃねえか？」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '大分', text: '冷やすことに命かけちょんな…' },
+            { type: 'dialogue', speaker: '大分', text: '大分にはもっとこう<br>厳かな場所もあるんよ' },
+            { type: 'dialogue', speaker: '大分', text: '例えば「臼杵石仏」な' },
+            { type: 'dialogue', speaker: '大分', text: '岩壁に彫られた国宝の仏様がずらっと並んで<br>心が洗われるような神聖な場所なんよ' },
+            { type: 'dialogue', speaker: '山形', text: '神聖な場所なら<br>山形には「空気神社」があるよ' },
+            { type: 'dialogue', speaker: '大分', text: '空気神社…？<br>なんか由緒正しい偉い人でも祀っちょんのか？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん、偉い人じゃなくて<br>“空気”そのものだよ' },
+            { type: 'dialogue', speaker: '大分', text: 'は？<br>空気そのもの？' },
+            {
+                type: 'prompt', speaker: '山形', text: '綺麗な空気の恩恵に感謝して<br>有志によって建てられた神社だよ',
+                tsukkomi: [
+                    { text: "感謝の仕方<br>独特すぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '大分「普通は仏様とか神様やろ！<br>空気を拝むんか！？」' },
+                    { text: "大分の空気も<br>負けてねえぞ！", 
+                        point: 0, type: ['v'], 
+                        reaction: '大分「大分も山が多いけん<br>空気はうまいんやけどな」' },
+                    { text: "賽銭箱のなか<br>空っぽじゃね！？", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '大分「空気だけにお金もスルーか？」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '大分', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '大分', text: 'ツッコミどころが多いっちことは<br>よーくわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '大分', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '大分', text: 'それでいいのかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+    
     // -------- 宮崎 -----------------------------------------------------------------------------------------------------
     'miyazaki': {
         scenario: [
