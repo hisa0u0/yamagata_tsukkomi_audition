@@ -573,9 +573,9 @@ const manzaiData = {
                         reaction: '新潟「へぎそばも美味いけど<br>ラーメンもいいな...」' }
                 ]
             },
-            { type: 'dialogue', speaker: '新潟', text: '体冷やしてばっかりじゃダメだって' },
-            { type: 'dialogue', speaker: '新潟', text: '秋になると<br>温かいご飯が恋しくなるだろ？' },
-            { type: 'dialogue', speaker: '新潟', text: '新潟は魚沼産コシヒカリの<br>新米シーズン！' },
+            { type: 'dialogue', speaker: '新潟', text: '体冷やしてばっかじゃダメだって' },
+            { type: 'dialogue', speaker: '新潟', text: '秋になると<br>あったけぇご飯が恋しくなるだろ？' },
+            { type: 'dialogue', speaker: '新潟', text: '新潟は魚沼産コシヒカリの<br>新米シーズンだっけさ！' },
             { type: 'dialogue', speaker: '新潟', text: 'コシヒカリの塩むすび<br>最高のご馳走だぞ' },
             { type: 'dialogue', speaker: '新潟', text: '山形は秋、何食べるの？<br>つや姫？ 雪若丸？' },
             { type: 'dialogue', speaker: '山形', text: '秋か〜' },
@@ -2525,6 +2525,94 @@ const manzaiData = {
         ]
     },
 
+    // -------- 和歌山 -----------------------------------------------------------------------------------------------------
+    'wakayama': {
+        scenario: [
+            { type: 'dialogue', speaker: '和歌山', text: 'はいどうも〜！<br>和歌山県です〜！' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '和歌山', text: '和歌山いうたら、みかん！<br>収穫量は不動の日本一よ' },
+            { type: 'dialogue', speaker: '和歌山', text: '「有田むき」いうてな' },
+            { type: 'dialogue', speaker: '和歌山', text: '皮ごとパカッと割る<br>効率的な剥き方まであるんや' },
+            { type: 'dialogue', speaker: '和歌山', text: 'それぐらい、県民のみかん愛は<br>どこにも負けへんで！' },
+            { type: 'dialogue', speaker: '山形', text: '愛されてるねぇ' },
+            { type: 'dialogue', speaker: '山形', text: '愛の深さなら、山形も負けてないよ<br>特に「麺」への愛がすごいんだ' },
+            { type: 'dialogue', speaker: '和歌山', text: 'あぁ、和歌山ラーメンも有名やけど<br>山形もラーメン好きなんやろ？' },
+            { type: 'dialogue', speaker: '山形', text: 'うん、ラーメン消費額日本一だし<br>そば屋さんの数もすごいよ' },
+            { type: 'dialogue', speaker: '山形', text: 'その愛が行き過ぎて<br>最近、県の名前が変わったんだ' },
+            { type: 'dialogue', speaker: '和歌山', text: '名前？<br>「ラーメンの聖地」とかそんなんか？' },
+            { type: 'dialogue', speaker: '山形', text: 'いや・・・' },
+            {
+                type: 'prompt', speaker: '山形', text: '「ラーメン県そば王国やまがた」だよ',
+                tsukkomi: [
+                    { text: "県の中に国作るな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '和歌山「せめて逆やろ！<br>行政区分がムチャクチャや！」' },
+                        { text: "みかん王国も<br>名乗ろうかな", 
+                        point: 0, type: ['v'], 
+                        reaction: '和歌山「和歌山県みかん王国・・・<br>ちょっと強そうやな」' },
+                    { text: "名前が<br>大渋滞しとるわ！", 
+                        point: 1, type: ['t', 'p'], 
+                        reaction: '和歌山「どっちをメインにしたいんか<br>ハッキリせえ！」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '和歌山', text: 'まあ<br>食いもんへのこだわりはええわ' },
+            { type: 'dialogue', speaker: '和歌山', text: '和歌山の夏いうたら「梅干し」や！' },
+            { type: 'dialogue', speaker: '和歌山', text: '南高梅でクエン酸と塩分補給してな<br>これが最強の熱中症対策なんよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形も夏はすごく暑いんだ' },
+            { type: 'dialogue', speaker: '和歌山', text: 'へえ、山形は夏<br>なんか対策してんの？' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やし中華はじめました」とか' },
+            { type: 'dialogue', speaker: '和歌山', text: 'まあ<br>冷やし中華は王道やな' },
+            { type: 'dialogue', speaker: '山形', text: '「冷やしラーメンはじめました」とか' },
+            { type: 'dialogue', speaker: '和歌山', text: '・・・<br>ん・・・？' },
+            {
+                type: 'prompt', speaker: '山形', text: '「冷やしシャンプーはじめました」<br>とかね',
+                promptText: '「冷やしラーメン」とか<br>「冷やしシャンプー」とかね',
+                tsukkomi: [
+                    { text: "冷やし梅干しも<br>作ろうかな", 
+                        point: 0, type: ['v'], 
+                        reaction: '和歌山「普通においしそうやな」' },
+                    { text: "なんでもかんでも<br>冷やしすぎやろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '和歌山「そのうち「冷やし山形」とか<br>言い出すんちゃうか！？」' },
+                    { text: "冷やしシャンプー！？<br>風邪引くわ！", 
+                        point: 1, type: ['p', 'v'], 
+                        reaction: '和歌山「頭キーンなるわ！<br>やりすぎやろ！」' }
+                    
+                ]
+            },
+            { type: 'dialogue', speaker: '和歌山', text: '冷やすことに命かけすぎやろ・・・' },
+            { type: 'dialogue', speaker: '和歌山', text: '和歌山には、窮地を救った立役者がおるんよ<br>猫の「たま駅長」や！' },
+            { type: 'dialogue', speaker: '和歌山', text: '廃線の危機を救った伝説の駅長として<br>今でも世界中で愛されとるんや' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>奇跡の逆転劇だね' },
+            { type: 'dialogue', speaker: '山形', text: '山形でも、閉館の危機から<br>世界一になって復活した場所があるよ' },
+            { type: 'dialogue', speaker: '和歌山', text: 'ほう！<br>そんなすごい場所あるんか？' },
+            { type: 'dialogue', speaker: '山形', text: '「加茂水族館」だよ<br>クラゲの展示数でギネス世界記録なんだ' },
+            { type: 'dialogue', speaker: '和歌山', text: 'クラゲ！<br>幻想的でええやんか' },
+            {
+                type: 'prompt', speaker: '山形', text: 'クラゲをじっくり眺めた後は売店で<br>「クラゲアイス」が食べられるよ',
+                tsukkomi: [
+                { text: "眺めたあと<br>食うんか！", 
+                    point: 3, type: ['t', 'p', 'v'], 
+                    reaction: '和歌山「さっきまで感動しとったのに！<br>情が移る前に食うてまう気か！」' },
+                { text: "なんでアイスに<br>入れたんや！", 
+                    point: 1, type: ['t', 'v'], 
+                    reaction: '和歌山「スイーツにコリコリ食感は<br>求めてへんねん！」' },
+                { text: "復活の仕方が<br>極端やな！", 
+                    point: 0, type: ['v'], 
+                    reaction: '和歌山「まあ、無駄がないのは<br>ええことやけど・・・」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '和歌山', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '和歌山', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '和歌山', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '和歌山', text: 'それでええんかよ！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
     // -------- 鳥取 --------------------------------------------------------------------------------------------------------
     'tottori': {
         scenario: [
@@ -2609,6 +2697,92 @@ const manzaiData = {
             { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
             { type: 'dialogue', speaker: '鳥取', text: '・・・・・・' },
             { type: 'dialogue', speaker: '鳥取', text: 'それでええんか！' },
+            { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
+        ]
+    },
+
+    // -------- 島根 --------------------------------------------------------------------------------------------------------
+    'shimane': {
+        scenario: [
+            { type: 'dialogue', speaker: '島根', text: 'はいどうも〜！<br>島根県だわね〜' },
+            { type: 'dialogue', speaker: '山形', text: '山形県で〜す' },
+            { type: 'dialogue', speaker: '山形', text: '今日は県の形だけでも<br>覚えて帰ってくださ〜い' },
+            { type: 'dialogue', speaker: '島根', text: '島根といえば<br>やっぱり「出雲大社」だわね！' },
+            { type: 'dialogue', speaker: '島根', text: '日本中の神様が集まる聖地だじ' },
+            { type: 'dialogue', speaker: '島根', text: '旧暦の10月は全国的には「神無月」だけど<br>島根だけは神様がおられるがね' },
+            { type: 'dialogue', speaker: '島根', text: '「神在月」って言うんだわ' },
+            { type: 'dialogue', speaker: '山形', text: 'へぇ〜<br>神様にも出張があるんだね' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>すごく神聖な神社があるよ' },
+            { type: 'dialogue', speaker: '島根', text: 'ほう？<br>出雲大社に負けんくらい由緒あるのがね？' },
+            { type: 'dialogue', speaker: '山形', text: 'ううん、最近できたんだけど' },
+            { type: 'dialogue', speaker: '山形', text: '「空気神社」って言って<br>世界で唯一「空気」を祀ってるんだ' },
+            { type: 'dialogue', speaker: '島根', text: '空気を祀る・・・？' },
+            {
+                type: 'prompt', speaker: '山形', text: '空気の恩恵に感謝して<br>建立された神社だよ',
+                tsukkomi: [  
+                    { text: "変な神社だな！", 
+                        point: 1, type: ['v'], 
+                        reaction: '島根「空気を拝むって<br>どうやるんだよ！？」' },
+                    { text: "出雲大社の<br>ライバル出現だね", 
+                        point: 0, type: ['p'], 
+                        reaction: '島根「空気が綺麗なら<br>体にも良さそうだわね」' },
+                    { text: "感謝の仕方<br>独特すぎだろ！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '島根「空気がありがたいのはわかるけど！<br>神社建立までする！？」' },
+                ]
+            },
+            { type: 'dialogue', speaker: '島根', text: 'まあ<br>信心の形は人それぞれだけどさ・・・' },
+            { type: 'dialogue', speaker: '島根', text: '島根にはもっとミステリアスな<br>UMAの「ムッシー」っていうのもおるだじ' },
+            { type: 'dialogue', speaker: '島根', text: '目撃情報はあっても、正体は謎のまま<br>そういう「未確認」なのがロマンだわね？' },
+            { type: 'dialogue', speaker: '山形', text: 'わかるよ' },
+            { type: 'dialogue', speaker: '山形', text: '山形にも<br>「ケサランパサラン」がいるし' },
+            { type: 'dialogue', speaker: '島根', text: 'あ！それもUMAだわね！<br>見つけると幸せになれるっていう白い毛玉！' },
+            { type: 'dialogue', speaker: '山形', text: 'そうそう' },
+            {
+                type: 'prompt', speaker: '山形', text: 'でも山形では<br>普通に水族館に展示されてるよ',
+                promptText: '「ケサランパサラン」<br>普通に水族館に展示されてるよ',
+                tsukkomi: [
+                    { text: "未確認生物を<br>展示すんな！", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '島根「展示しちょったら<br>もう『確認済み生物』だわね！」' },
+                    { text: "展示場所<br>そこでいいの！？", 
+                        point: 1, type: ['v', 'p'], 
+                        reaction: '島根「魚じゃないよね！？<br>毛玉だよね！？」' },
+                    { text: "幸せになれそう！", 
+                        point: 0, type: ['p'], 
+                        reaction: '島根「水族館に行けば<br>確実に幸せになれるんだわね」' }
+                ]
+            },
+            { type: 'dialogue', speaker: '島根', text: 'なんでもオープンに<br>しすぎだわ・・・' },
+            { type: 'dialogue', speaker: '島根', text: '島根はもっと謙虚というか<br>控えめなんだじ' },
+            { type: 'dialogue', speaker: '島根', text: '「日本で47番目に有名な県」って<br>自虐しちょるくらいだし' },
+            { type: 'dialogue', speaker: '島根', text: 'とにかく地味で<br>特徴がないのが悩みだわね' },
+            { type: 'dialogue', speaker: '山形', text: 'それなら山形にも、<br>圧倒的に特徴がないキャラがいるよ' },
+            { type: 'dialogue', speaker: '島根', text: 'え、そんな子が山形におるのがね？' },
+            { type: 'dialogue', speaker: '山形', text: '朝日町の<br>「桃色ウサヒ」っていうんだけど・・・' },
+            { type: 'dialogue', speaker: '島根', text: '桃色ウサヒ？<br>可愛らしいウサギさんかなにかだね？' },
+            { type: 'dialogue', speaker: '山形', text: 'キャッチコピーは<br>「朝日が育んだ圧倒的無個性」' },
+            { type: 'dialogue', speaker: '島根', text: '圧倒的無個性・・・？' },
+            {
+                type: 'prompt', speaker: '山形', text: '無個性・無軌道・無表情なのが特徴で、<br>いつも虚無みたいな顔をしてるよ',
+                tsukkomi: [
+                    { text: "無個性という個性!?<br>逆に気になるわ", 
+                        point: 0, type: ['v'], 
+                        reaction: '島根「そういうキャラが<br>いてもいい時代だわね」' },
+                    { text: "PRする気<br>あんのか！？", 
+                        point: 3, type: ['t', 'p', 'v'], 
+                        reaction: '島根「やる気がないことを<br>売りにしちゃだめでしょ！」' },
+                    { text: "島根の地味さと<br>いい勝負だわね", 
+                        point: 1, type: ['p'], 
+                        reaction: '島根「ひっそりやっとる感じは<br>親近感がわくだわね」' }
+                ]
+            },  
+            { type: 'dialogue', speaker: '山形', text: 'どう？<br>山形のこと、だいたいわかった？' },
+            { type: 'dialogue', speaker: '島根', text: 'う〜ん<br>とりあえず・・・' },
+            { type: 'dialogue', speaker: '島根', text: 'ツッコミどころが多いってことは<br>ようわかったわ' },
+            { type: 'dialogue', speaker: '山形', text: 'それが山形の魅力だ！' },
+            { type: 'dialogue', speaker: '島根', text: '・・・・・・' },
+            { type: 'dialogue', speaker: '島根', text: 'それでいいのかよ！' },
             { type: 'ending', speaker: 'both', text: 'どうも<br>ありがとうございました〜！' },
         ]
     },
@@ -3621,9 +3795,9 @@ const manzaiData = {
             { type: 'dialogue', speaker: '鹿児島', text: '鹿児島は食文化のブランド化にも<br>気合が入っとるんよ' },
             { type: 'dialogue', speaker: '鹿児島', text: '「かごしま黒豚」に「鹿児島黒牛」！<br>“黒”を冠したブランドは全国区やからね' },
             { type: 'dialogue', speaker: '山形', text: 'お〜<br>かっこいいね' },
-            { type: 'dialogue', speaker: '鹿児島', text: 'そうやろ！ブランドは名前が命よ！<br>山形はなんか、そういうの無いの？' },
+            { type: 'dialogue', speaker: '鹿児島', text: 'そうやろ！ブランドは名前が命よ！<br>山形はなんか、そういうの無いのけ？' },
             { type: 'dialogue', speaker: '山形', text: '山形はラーメンが美味しいよ<br>ラーメン消費額日本一だし' },
-            { type: 'dialogue', speaker: '鹿児島', text: '消費額日本一！？<br>それはすごかね！' },
+            { type: 'dialogue', speaker: '鹿児島', text: '消費額日本一！？<br>そいはすごかね！' },
             { type: 'dialogue', speaker: '山形', text: '山形はラーメンが好きすぎて<br>県の名前にラーメンがついたんだ' },
             { type: 'dialogue', speaker: '鹿児島', text: '県の名前に・・・！？' },
             { type: 'dialogue', speaker: '鹿児島', text: '・・・ラーメンに県の名前を<br>つけるんじゃなくて？' },
