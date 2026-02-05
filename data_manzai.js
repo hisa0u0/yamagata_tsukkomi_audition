@@ -2181,6 +2181,7 @@ const manzaiData = {
             { type: 'dialogue', speaker: '京都', text: 'なんせ「<ruby>千<rt>せん</rt></ruby>の<ruby>都<rt>みやこ</rt></ruby>」やから<br>石ころ一つでも観光名所になるんえ' },
             { type: 'dialogue', speaker: '京都', text: '野菜でもお菓子でも<br>「京都」って書いとけば高級に見えるもんや' },
             { type: 'dialogue', speaker: '京都', text: 'これが「<ruby>都<rt>みやこ</rt></ruby>」の品格やね' },
+            { type: 'dialogue', speaker: '京都', text: '・・・知らんけど' },
             { type: 'dialogue', speaker: '山形', text: 'そのブランド力は羨ましいなぁ' },
             { type: 'dialogue', speaker: '山形', text: '山形も負けないように<br>最強の武器をアピールすることにしたんだ' },
             { type: 'dialogue', speaker: '京都', text: 'へえ、京都に対抗できる武器なんか<br>なんかあるんか？' },
@@ -3326,7 +3327,6 @@ const manzaiData = {
         ]
     },
 
-    // -------- 高知 -----------------------------------------------------------------------------------------------------
     // -------- 高知 -----------------------------------------------------------------------------------------------------
     'kochi': {
         scenario: [
