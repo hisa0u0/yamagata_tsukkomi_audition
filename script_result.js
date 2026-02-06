@@ -246,5 +246,35 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
     } else {
         showFinalResult();
     }
+
+    // ==========================================
+    // 7. スプレッドシート送信機能 (追加)
+    // ==========================================
+    function sendDataToSheet(resultData) {
+        // 先ほど取得したGoogle Apps ScriptのURLをここに貼り付けてください
+        const gasUrl = "https://script.google.com/macros/s/AKfycbwgWrIQpR1NMuJzkj1AIGn3SpMP8X0CRkrMzkxw2zJnpzrNIHpraeRLjOt4G9xHfAh6SA/exec"; 
+
+        fetch(gasUrl, {
+            method: "POST",
+            mode: "no-cors", 
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(resultData)
+        })
+        .then(() => console.log("Data sent to Google Sheet!"))
+        .catch(err => console.error("GAS Error:", err));
+    }
+
+    // データを整理して送信実行
+    const myResult = {
+        pref: selectedPref,
+        point: point,
+        rank: simpleRank,
+        p: graphP,
+        t: graphT,
+        v: graphV
+    };
+    
+    sendDataToSheet(myResult);
+
 });
 
