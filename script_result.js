@@ -248,11 +248,10 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
     }
 
     // ==========================================
-    // 7. スプレッドシート送信機能 (追加)
+    // 7. スプレッドシート送信機能 (5項目対応版)
     // ==========================================
     function sendDataToSheet(resultData) {
-        // 先ほど取得したGoogle Apps ScriptのURLをここに貼り付けてください
-        const gasUrl = "https://script.google.com/macros/s/AKfycbwgWrIQpR1NMuJzkj1AIGn3SpMP8X0CRkrMzkxw2zJnpzrNIHpraeRLjOt4G9xHfAh6SA/exec"; 
+        const gasUrl = "新しいデプロイURLをここに貼る"; 
 
         fetch(gasUrl, {
             method: "POST",
@@ -260,20 +259,23 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(resultData)
         })
-        .then(() => console.log("Data sent to Google Sheet!"))
+        .then(() => console.log("Radar data sent!"))
         .catch(err => console.error("GAS Error:", err));
     }
 
-    // データを整理して送信実行
+    // 送信用のオブジェクトを作成
     const myResult = {
         pref: selectedPref,
         point: point,
         rank: simpleRank,
-        p: graphP,
-        t: graphT,
-        v: graphV
+        p: graphP,        // 爆発力
+        t: graphT,        // 阿吽の呼吸
+        v: graphV,        // 包容力
+        bond: bondScore,  // ガチの絆
+        destiny: destinyScore // 運命
     };
     
+    // 実行！
     sendDataToSheet(myResult);
 
 });
