@@ -6,8 +6,6 @@
     <title>全国ツッコミランキング - 山形ツッコミオーディション</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ======== ランキング専用の追加スタイル ======== */
-        
         .ranking-container {
             padding: 20px;
             color: #fff;
@@ -15,55 +13,53 @@
         }
 
         .ranking-title {
-    /* フォント指定をトップページのストーリー部分と完全に統一 */
-    font-family: "Yu Mincho", "YuMincho", serif;
-    font-size: 24px;
-    font-weight: bold;
-    
-    /* 白文字に変更 */
-    color: #ffffff; 
-    
-    /* トップページの text-shadow 設定を移植（二重の発光で奥行きを出す） */
-    text-shadow: 0 0 10px #04FF00, 0 0 20px rgba(4, 255, 0, 0.5);
-    
-    margin-top: 30px;
-    margin-bottom: 20px;
-    letter-spacing: 0.1em; /* 少し文字間を広げるとより雰囲気が増します */
-}
+            font-family: "Yu Mincho", "YuMincho", serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #ffffff; 
+            text-shadow: 0 0 10px #04FF00, 0 0 20px rgba(4, 255, 0, 0.5);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+        }
 
-        /* テーブルの外枠（analysis-containerのスタイルを流用） */
         .ranking-board {
             background: linear-gradient(135deg, rgba(0, 30, 0, 0.9), rgba(0, 10, 0, 0.95));
             border: 1px solid rgba(4, 255, 0, 0.5);
             border-radius: 15px;
-            padding: 10px;
+            padding: 20px 10px;
             box-shadow: 0 0 20px rgba(4, 255, 0, 0.4);
-            margin-bottom: 30px;
+            margin: 0 auto 30px auto;
+            max-width: 400px; /* 横幅を絞って中央に寄せる */
         }
 
         .ranking-table {
             width: 100%;
             border-collapse: collapse;
             font-family: "Zen Maru Gothic", sans-serif;
-            font-size: 14px;
         }
 
-        .ranking-table th {
-            border-bottom: 2px solid #04FF00;
-            padding: 10px;
-            color: #04FF00;
-        }
-
+        /* 見出しを消したので、データ行の装飾 */
         .ranking-table td {
-            padding: 12px 5px;
-            border-bottom: 1px solid rgba(4, 255, 0, 0.2);
+            padding: 15px 10px;
+            border-bottom: 1px solid rgba(4, 255, 0, 0.1);
+            font-size: 18px;
         }
 
-        /* 順位ごとの装飾 */
-        .rank-num { font-weight: bold; font-size: 16px; }
-        .rank-1 { color: #FFD700; text-shadow: 0 0 10px #FFD700; font-size: 20px; } /* 金 */
-        .rank-2 { color: #C0C0C0; text-shadow: 0 0 10px #C0C0C0; } /* 銀 */
-        .rank-3 { color: #CD7F32; text-shadow: 0 0 10px #CD7F32; } /* 銅 */
+        .rank-num { 
+            width: 30%;
+            font-weight: bold; 
+        }
+        .pref-name {
+            width: 70%;
+            text-align: left;
+            padding-left: 20px !important;
+        }
+
+        /* 1〜3位の特別装飾 */
+        .rank-1 { color: #FFD700; text-shadow: 0 0 10px #FFD700; font-size: 24px !important; }
+        .rank-2 { color: #C0C0C0; text-shadow: 0 0 10px #C0C0C0; font-size: 22px !important; }
+        .rank-3 { color: #CD7F32; text-shadow: 0 0 10px #CD7F32; font-size: 20px !important; }
 
         .back-btn {
             display: inline-block;
@@ -77,34 +73,22 @@
             font-size: 14px;
         }
 
-        /* ローディングアニメ */
         .loading-text {
             color: #04FF00;
             animation: pulse 1.5s infinite;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-
     <div class="scrolling-bg"></div>
-
     <div class="game-wrapper">
         <div class="ranking-container">
-            <h1 class="ranking-title">山形県ツッコミランキング</h1>
+            <h1 class="ranking-title">全国ツッコミランキング</h1>
             
             <div class="ranking-board">
                 <div id="loading" class="loading-text">データを照合中...</div>
                 <table class="ranking-table" id="rank-table" style="display:none;">
-                    <thead>
-                        <tr>
-                            <thead>
-    <tr>
-        <th>順位</th>
-        <th>都道府県</th>
-        <th>Sランク率</th> <th>輩出数</th>   </tr>
-</thead>
-                        </tr>
-                    </thead>
                     <tbody id="ranking-body">
                         </tbody>
                 </table>
@@ -115,94 +99,73 @@
     </div>
 
     <script>
-      // 都道府県の変換マップ
-const prefMap = {
-    "hokkaido": "北海道", "aomori": "青森県", "iwate": "岩手県", "miyagi": "宮城県", "akita": "秋田県",
-    "yamagata": "山形県", "fukushima": "福島県", "ibaraki": "茨城県", "tochigi": "栃木県", "gunma": "群馬県",
-    "saitama": "埼玉県", "chiba": "千葉県", "tokyo": "東京都", "kanagawa": "神奈川県", "niigata": "新潟県",
-    "toyama": "富山県", "ishikawa": "石川県", "fukui": "福井県", "yamanashi": "山梨県", "nagano": "長野県",
-    "gifu": "岐阜県", "shizuoka": "静岡県", "aichi": "愛知県", "mie": "三重県", "shiga": "滋賀県",
-    "kyoto": "京都府", "osaka": "大阪府", "hyogo": "兵庫県", "nara": "奈良県", "wakayama": "和歌山県",
-    "tottori": "鳥取県", "shimane": "島根県", "okayama": "岡山県", "hiroshima": "広島県", "yamaguchi": "山口県",
-    "tokushima": "徳島県", "kagawa": "香川県", "ehime": "愛媛県", "kochi": "高知県", "fukuoka": "福岡県",
-    "saga": "佐賀県", "nagasaki": "長崎県", "kumamoto": "熊本県", "oita": "大分県", "miyazaki": "宮崎県",
-    "kagoshima": "鹿児島県", "okinawa": "沖縄県"
-};
+        const prefMap = {
+            "hokkaido": "北海道", "aomori": "青森県", "iwate": "岩手県", "miyagi": "宮城県", "akita": "秋田県",
+            "yamagata": "山形県", "fukushima": "福島県", "ibaraki": "茨城県", "tochigi": "栃木県", "gunma": "群馬県",
+            "saitama": "埼玉県", "chiba": "千葉県", "tokyo": "東京都", "kanagawa": "神奈川県", "niigata": "新潟県",
+            "toyama": "富山県", "ishikawa": "石川県", "fukui": "福井県", "yamanashi": "山梨県", "nagano": "長野県",
+            "gifu": "岐阜県", "shizuoka": "静岡県", "aichi": "愛知県", "mie": "三重県", "shiga": "滋賀県",
+            "kyoto": "京都府", "osaka": "大阪府", "hyogo": "兵庫県", "nara": "奈良県", "wakayama": "和歌山県",
+            "tottori": "鳥取県", "shimane": "島根県", "okayama": "岡山県", "hiroshima": "広島県", "yamaguchi": "山口県",
+            "tokushima": "徳島県", "kagawa": "香川県", "ehime": "愛媛県", "kochi": "高知県", "fukuoka": "福岡県",
+            "saga": "佐賀県", "nagasaki": "長崎県", "kumamoto": "熊本県", "oita": "大分県", "miyazaki": "宮崎県",
+            "kagoshima": "鹿児島県", "okinawa": "沖縄県"
+        };
 
-const gasUrl = "https://script.google.com/macros/s/AKfycbypFbVnsbkjXL6YxqmePAEGTMQ934HHMGVO1-gfdyIzOpKsFw6OcR7YNr8ij-qHN2FZvg/exec";
+        const gasUrl = "https://script.google.com/macros/s/AKfycbypFbVnsbkjXL6YxqmePAEGTMQ934HHMGVO1-gfdyIzOpKsFw6OcR7YNr8ij-qHN2FZvg/exec";
 
-async function fetchRanking() {
-    try {
-        const response = await fetch(gasUrl);
-        if (!response.ok) throw new Error('通信失敗');
-        const rawData = await response.json();
+        async function fetchRanking() {
+            try {
+                const response = await fetch(gasUrl);
+                const rawData = await response.json();
 
-        // --- 都道府県ごとに集計 ---
-        const stats = {};
-        rawData.forEach(item => {
-            const pref = item.pref;
-            const point = parseFloat(item.point);
-            if (!stats[pref]) {
-                stats[pref] = { sCount: 0, totalCount: 0 };
+                const stats = {};
+                rawData.forEach(item => {
+                    if (!item.pref) return;
+                    const pref = item.pref;
+                    const point = parseFloat(item.point);
+                    if (!stats[pref]) stats[pref] = { sCount: 0, totalCount: 0 };
+                    if (point >= 8) stats[pref].sCount += 1;
+                    stats[pref].totalCount += 1;
+                });
+
+                const rankingData = Object.keys(stats).map(pref => {
+                    return {
+                        pref: pref,
+                        sRate: (stats[pref].sCount / stats[pref].totalCount) * 100,
+                        count: stats[pref].totalCount
+                    };
+                });
+
+                rankingData.sort((a, b) => b.sRate - a.sRate || b.count - a.count);
+
+                const loader = document.getElementById('loading');
+                const table = document.getElementById('rank-table');
+                const body = document.getElementById('ranking-body');
+
+                loader.style.display = 'none';
+                table.style.display = 'table';
+                body.innerHTML = "";
+
+                // 上位5位まで表示
+                rankingData.slice(0, 5).forEach((item, index) => {
+                    const displayPref = prefMap[item.pref] || item.pref;
+                    const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
+                    
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="rank-num ${rankClass}">${index + 1}位</td>
+                        <td class="pref-name">${displayPref}</td>
+                    `;
+                    body.appendChild(row);
+                });
+
+            } catch (error) {
+                document.getElementById('loading').innerText = "通信エラーが発生しました";
             }
-            
-            // 8点以上を「精鋭（Sランク相当）」としてカウント
-            if (point >= 8) {
-                stats[pref].sCount += 1;
-            }
-            stats[pref].totalCount += 1;
-        });
+        }
 
-        // 「Sランク輩出率」を計算して配列に変換
-        const rankingData = Object.keys(stats).map(pref => {
-            const sRate = (stats[pref].sCount / stats[pref].totalCount) * 100;
-            return {
-                pref: pref,
-                sRate: sRate.toFixed(1), // 輩出率（％）
-                count: stats[pref].totalCount,
-                sCount: stats[pref].sCount
-            };
-        });
-
-        // 輩出率が高い順にソート（率が同じなら母数が多い方を上に）
-        rankingData.sort((a, b) => b.sRate - a.sRate || b.count - a.count);
-
-        // --- 表示処理 ---
-        const loader = document.getElementById('loading');
-        const table = document.getElementById('rank-table');
-        const body = document.getElementById('ranking-body');
-
-        loader.style.display = 'none';
-        table.style.display = 'table';
-        body.innerHTML = "";
-
-        // ヘッダーのテキストを「スコア」から「Sランク率」に変更（任意）
-        document.querySelectorAll('th')[2].innerText = "Sランク率";
-        document.querySelectorAll('th')[3].innerText = "輩出数";
-
-        const top5 = rankingData.slice(0, 5);
-
-        top5.forEach((item, index) => {
-            const displayPref = prefMap[item.pref] || item.pref;
-            const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
-            
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td class="rank-num ${rankClass}">${index + 1}</td>
-                <td>${displayPref}</td>
-                <td style="font-weight:bold; color:#04FF00;">${item.sRate}<span style="font-size:10px;">%</span></td>
-                <td style="font-size:12px;">${item.sCount} <span style="color:#aaa;">/ ${item.count}件</span></td>
-            `;
-            body.appendChild(row);
-        });
-
-    } catch (error) {
-        console.error(error);
-        document.getElementById('loading').innerText = "通信エラーが発生しました";
-    }
-}
-
-fetchRanking();
+        fetchRanking();
     </script>
 </body>
 </html>
