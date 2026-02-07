@@ -113,47 +113,62 @@
     </div>
 
     <script>
-      // あなたのGAS URL
+      // 都道府県変換マップ
+const prefMap = {
+    "hokkaido": "北海道", "aomori": "青森県", "iwate": "岩手県", "miyagi": "宮城県", "akita": "秋田県",
+    "yamagata": "山形県", "fukushima": "福島県", "ibaraki": "茨城県", "tochigi": "栃木県", "gunma": "群馬県",
+    "saitama": "埼玉県", "chiba": "千葉県", "tokyo": "東京都", "kanagawa": "神奈川県", "niigata": "新潟県",
+    "toyama": "富山県", "ishikawa": "石川県", "fukui": "福井県", "yamanashi": "山梨県", "nagano": "長野県",
+    "gifu": "岐阜県", "shizuoka": "静岡県", "aichi": "愛知県", "mie": "三重県", "shiga": "滋賀県",
+    "kyoto": "京都府", "osaka": "大阪府", "hyogo": "兵庫県", "nara": "奈良県", "wakayama": "和歌山県",
+    "tottori": "鳥取県", "shimane": "島根県", "okayama": "岡山県", "hiroshima": "広島県", "yamaguchi": "山口県",
+    "tokushima": "徳島県", "kagawa": "香川県", "ehime": "愛媛県", "kochi": "高知県", "fukuoka": "福岡県",
+    "saga": "佐賀県", "nagasaki": "長崎県", "kumamoto": "熊本県", "oita": "大分県", "miyazaki": "宮崎県",
+    "kagoshima": "鹿児島県", "okinawa": "沖縄県"
+};
+
 const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
 
 async function fetchRanking() {
     try {
-        console.log("フェッチ開始...");
+        console.log("フェッチ開始");
         const response = await fetch(gasUrl);
-        if (!response.ok) throw new Error('通信失敗');
+        if (!response.ok) throw new Error(`HTTPエラー! ステータス: ${response.status}`);
+        
         const rawData = await response.json();
-        console.log("データ受信成功:", rawData);
+        console.log("生データ受信:", rawData);
 
-        // --- 都道府県ごとに平均点を集計 ---
         const stats = {};
         rawData.forEach(item => {
+            // prefやpointが存在するかチェック（不正データ対策）
+            if (!item.pref || item.point === undefined) return;
+
             const pref = item.pref;
-            // item.pointが文字列の場合でも数値に変換
-            const point = parseFloat(item.point) || 0; 
+            const point = parseFloat(item.point);
             
-            if (pref) { // prefが存在する場合のみ集計
-                if (!stats[pref]) {
-                    stats[pref] = { totalPoint: 0, count: 0 };
-                }
-                stats[pref].totalPoint += point;
-                stats[pref].count += 1;
+            // 数値変換に失敗した場合はスキップ
+            if (isNaN(point)) return;
+
+            if (!stats[pref]) {
+                stats[pref] = { totalPoint: 0, count: 0 };
             }
+            stats[pref].totalPoint += point;
+            stats[pref].count += 1;
         });
 
-        // 平均を計算して配列に変換
+        // 平均を計算して配列化
         const rankingData = Object.keys(stats).map(pref => {
-            const avg = stats[pref].totalPoint / stats[pref].count;
             return {
                 pref: pref,
-                avgPoint: avg,
+                avgPoint: (stats[pref].totalPoint / stats[pref].count).toFixed(2),
                 count: stats[pref].count
             };
         });
 
-        // 平均点が高い順にソート（数値として比較）
+        // 平均点順にソート
         rankingData.sort((a, b) => b.avgPoint - a.avgPoint);
 
-        // --- 表示処理 ---
+        // 表示処理
         const loader = document.getElementById('loading');
         const table = document.getElementById('rank-table');
         const body = document.getElementById('ranking-body');
@@ -162,8 +177,14 @@ async function fetchRanking() {
         table.style.display = 'table';
         body.innerHTML = "";
 
-        // 上位5位までを表示
+        // TOP 5まで表示
         const top5 = rankingData.slice(0, 5);
+
+        if (top5.length === 0) {
+            loader.style.display = 'block';
+            loader.innerText = "有効なデータがありません";
+            return;
+        }
 
         top5.forEach((item, index) => {
             const displayPref = prefMap[item.pref] || item.pref;
@@ -173,17 +194,19 @@ async function fetchRanking() {
             row.innerHTML = `
                 <td class="rank-num ${rankClass}">${index + 1}</td>
                 <td>${displayPref}</td>
-                <td style="font-weight:bold;">${item.avgPoint.toFixed(1)} <span style="font-size:10px; font-weight:normal;">点</span></td>
+                <td style="font-weight:bold;">${item.avgPoint} <span style="font-size:10px; font-weight:normal;">点</span></td>
                 <td style="font-size:12px; color:#aaa;">${item.count}件</td>
             `;
             body.appendChild(row);
         });
 
     } catch (error) {
-        console.error("詳細エラー:", error);
-        document.getElementById('loading').innerHTML = `通信エラーが発生しました<br><span style="font-size:10px; color:#ff3f3f;">${error.message}</span>`;
+        console.error("エラー詳細:", error);
+        document.getElementById('loading').innerText = `通信エラー: ${error.message}`;
     }
 }
+
+fetchRanking();
     </script>
 </body>
 </html>
