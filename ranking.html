@@ -113,8 +113,7 @@
     </div>
 
     <script>
-        // 先ほど設定したGASのURL（doGet側）
-        // 都道府県の英語名→日本語名 変換マップ
+       // 都道府県の変換マップ
 const prefMap = {
     "hokkaido": "北海道", "aomori": "青森県", "iwate": "岩手県", "miyagi": "宮城県", "akita": "秋田県",
     "yamagata": "山形県", "fukushima": "福島県", "ibaraki": "茨城県", "tochigi": "栃木県", "gunma": "群馬県",
@@ -128,29 +127,51 @@ const prefMap = {
     "kagoshima": "鹿児島県", "okinawa": "沖縄県"
 };
 
-// あなたのGAS URLをここに貼り付け
 const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
 
 async function fetchRanking() {
     try {
-        console.log("データ取得開始...");
         const response = await fetch(gasUrl);
-        
-        if (!response.ok) throw new Error('ネットワーク応答が正常ではありません');
-        
-        const data = await response.json();
-        console.log("受信データ:", data);
+        if (!response.ok) throw new Error('通信失敗');
+        const rawData = await response.json();
 
+        // --- 都道府県ごとに平均点を集計 ---
+        const stats = {};
+        rawData.forEach(item => {
+            const pref = item.pref;
+            const point = parseFloat(item.point);
+            if (!stats[pref]) {
+                stats[pref] = { totalPoint: 0, count: 0 };
+            }
+            stats[pref].totalPoint += point;
+            stats[pref].count += 1;
+        });
+
+        // 平均を計算して配列に変換
+        const rankingData = Object.keys(stats).map(pref => {
+            return {
+                pref: pref,
+                avgPoint: (stats[pref].totalPoint / stats[pref].count).toFixed(2), // 小数点2位まで
+                count: stats[pref].count
+            };
+        });
+
+        // 平均点が高い順にソート
+        rankingData.sort((a, b) => b.avgPoint - a.avgPoint);
+
+        // --- 表示処理 ---
         const loader = document.getElementById('loading');
         const table = document.getElementById('rank-table');
         const body = document.getElementById('ranking-body');
 
         loader.style.display = 'none';
         table.style.display = 'table';
-        body.innerHTML = ""; // 中身をリセット
+        body.innerHTML = "";
 
-        data.forEach((item, index) => {
-            // 都道府県名を日本語に変換（見つからなければそのまま）
+        // 上位5位までを表示
+        const top5 = rankingData.slice(0, 5);
+
+        top5.forEach((item, index) => {
             const displayPref = prefMap[item.pref] || item.pref;
             const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
             
@@ -158,15 +179,15 @@ async function fetchRanking() {
             row.innerHTML = `
                 <td class="rank-num ${rankClass}">${index + 1}</td>
                 <td>${displayPref}</td>
-                <td style="font-weight:bold;">${item.point}</td>
-                <td style="color:#04FF00; font-weight:bold;">${item.rank}</td>
+                <td style="font-weight:bold;">${item.avgPoint} <span style="font-size:10px; font-weight:normal;">点</span></td>
+                <td style="font-size:12px; color:#aaa;">${item.count}件</td>
             `;
             body.appendChild(row);
         });
+
     } catch (error) {
-        console.error("エラー詳細:", error);
-        document.getElementById('loading').innerHTML = 
-            `通信エラーが発生しました<br><span style="font-size:10px; color:#ff3f3f;">${error.message}</span>`;
+        console.error(error);
+        document.getElementById('loading').innerText = "通信エラーが発生しました";
     }
 }
 
