@@ -247,30 +247,34 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
         showFinalResult();
     }
 
-    // --- 修正版：送信処理 ---
-    function sendDataToSheet(resultData) {
+    
+    // ==========================================
+    // 7. スプレッドシート送信（この位置で実行）
+    // ==========================================
+    const sendDataToSheet = (resultData) => {
         const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
 
         fetch(gasUrl, {
             method: "POST",
-            mode: "no-cors", 
+            mode: "no-cors",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(resultData)
         })
-        .then(() => console.log("データ送信完了！"))
-        .catch(err => console.error("送信エラー:", err));
-    }
-
-    // 正しい変数名でデータを作成
-    const myResult = {
-        pref: selectedPref, // currentPrefKey ではなく selectedPref
-        point: point,       // totalPoint ではなく point
-        rank: simpleRank,   // "S" 固定ではなく simpleRank
-        p: graphP,          // scorePassion ではなく graphP
-        t: graphT,          // scoreTechnique ではなく graphT
-        v: graphV           // scoreVibe ではなく graphV
+        .then(() => console.log("送信成功:", resultData))
+        .catch(err => console.error("送信失敗:", err));
     };
 
+    // ここで変数を使うので、上の変数の色が「濃い水色」に変わります
+    const myResult = {
+        pref: selectedPref,
+        point: point,
+        rank: simpleRank,
+        p: graphP,
+        t: graphT,
+        v: graphV
+    };
+
+    // 実際に関数を呼び出す
     sendDataToSheet(myResult);
 });
 
