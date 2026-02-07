@@ -135,29 +135,35 @@ async function fetchRanking() {
         if (!response.ok) throw new Error('通信失敗');
         const rawData = await response.json();
 
-        // --- 都道府県ごとに平均点を集計 ---
+        // --- 都道府県ごとに集計 ---
         const stats = {};
         rawData.forEach(item => {
             const pref = item.pref;
             const point = parseFloat(item.point);
             if (!stats[pref]) {
-                stats[pref] = { totalPoint: 0, count: 0 };
+                stats[pref] = { sCount: 0, totalCount: 0 };
             }
-            stats[pref].totalPoint += point;
-            stats[pref].count += 1;
+            
+            // 8点以上を「精鋭（Sランク相当）」としてカウント
+            if (point >= 8) {
+                stats[pref].sCount += 1;
+            }
+            stats[pref].totalCount += 1;
         });
 
-        // 平均を計算して配列に変換
+        // 「Sランク輩出率」を計算して配列に変換
         const rankingData = Object.keys(stats).map(pref => {
+            const sRate = (stats[pref].sCount / stats[pref].totalCount) * 100;
             return {
                 pref: pref,
-                avgPoint: (stats[pref].totalPoint / stats[pref].count).toFixed(2), // 小数点2位まで
-                count: stats[pref].count
+                sRate: sRate.toFixed(1), // 輩出率（％）
+                count: stats[pref].totalCount,
+                sCount: stats[pref].sCount
             };
         });
 
-        // 平均点が高い順にソート
-        rankingData.sort((a, b) => b.avgPoint - a.avgPoint);
+        // 輩出率が高い順にソート（率が同じなら母数が多い方を上に）
+        rankingData.sort((a, b) => b.sRate - a.sRate || b.count - a.count);
 
         // --- 表示処理 ---
         const loader = document.getElementById('loading');
@@ -168,7 +174,10 @@ async function fetchRanking() {
         table.style.display = 'table';
         body.innerHTML = "";
 
-        // 上位5位までを表示
+        // ヘッダーのテキストを「スコア」から「Sランク率」に変更（任意）
+        document.querySelectorAll('th')[2].innerText = "Sランク率";
+        document.querySelectorAll('th')[3].innerText = "輩出数";
+
         const top5 = rankingData.slice(0, 5);
 
         top5.forEach((item, index) => {
@@ -179,8 +188,8 @@ async function fetchRanking() {
             row.innerHTML = `
                 <td class="rank-num ${rankClass}">${index + 1}</td>
                 <td>${displayPref}</td>
-                <td style="font-weight:bold;">${item.avgPoint} <span style="font-size:10px; font-weight:normal;">点</span></td>
-                <td style="font-size:12px; color:#aaa;">${item.count}件</td>
+                <td style="font-weight:bold; color:#04FF00;">${item.sRate}<span style="font-size:10px;">%</span></td>
+                <td style="font-size:12px;">${item.sCount} <span style="color:#aaa;">/ ${item.count}件</span></td>
             `;
             body.appendChild(row);
         });
@@ -190,8 +199,6 @@ async function fetchRanking() {
         document.getElementById('loading').innerText = "通信エラーが発生しました";
     }
 }
-
-fetchRanking();
     </script>
 </body>
 </html>
