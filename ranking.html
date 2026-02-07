@@ -113,7 +113,7 @@
     </div>
 
     <script>
-      // 都道府県変換マップ
+      // 都道府県の変換マップ
 const prefMap = {
     "hokkaido": "北海道", "aomori": "青森県", "iwate": "岩手県", "miyagi": "宮城県", "akita": "秋田県",
     "yamagata": "山形県", "fukushima": "福島県", "ibaraki": "茨城県", "tochigi": "栃木県", "gunma": "群馬県",
@@ -131,24 +131,15 @@ const gasUrl = "https://script.google.com/macros/s/AKfycbypFbVnsbkjXL6YxqmePAEGT
 
 async function fetchRanking() {
     try {
-        console.log("フェッチ開始");
         const response = await fetch(gasUrl);
-        if (!response.ok) throw new Error(`HTTPエラー! ステータス: ${response.status}`);
-        
+        if (!response.ok) throw new Error('通信失敗');
         const rawData = await response.json();
-        console.log("生データ受信:", rawData);
 
+        // --- 都道府県ごとに平均点を集計 ---
         const stats = {};
         rawData.forEach(item => {
-            // prefやpointが存在するかチェック（不正データ対策）
-            if (!item.pref || item.point === undefined) return;
-
             const pref = item.pref;
             const point = parseFloat(item.point);
-            
-            // 数値変換に失敗した場合はスキップ
-            if (isNaN(point)) return;
-
             if (!stats[pref]) {
                 stats[pref] = { totalPoint: 0, count: 0 };
             }
@@ -156,19 +147,19 @@ async function fetchRanking() {
             stats[pref].count += 1;
         });
 
-        // 平均を計算して配列化
+        // 平均を計算して配列に変換
         const rankingData = Object.keys(stats).map(pref => {
             return {
                 pref: pref,
-                avgPoint: (stats[pref].totalPoint / stats[pref].count).toFixed(2),
+                avgPoint: (stats[pref].totalPoint / stats[pref].count).toFixed(2), // 小数点2位まで
                 count: stats[pref].count
             };
         });
 
-        // 平均点順にソート
+        // 平均点が高い順にソート
         rankingData.sort((a, b) => b.avgPoint - a.avgPoint);
 
-        // 表示処理
+        // --- 表示処理 ---
         const loader = document.getElementById('loading');
         const table = document.getElementById('rank-table');
         const body = document.getElementById('ranking-body');
@@ -177,14 +168,8 @@ async function fetchRanking() {
         table.style.display = 'table';
         body.innerHTML = "";
 
-        // TOP 5まで表示
+        // 上位5位までを表示
         const top5 = rankingData.slice(0, 5);
-
-        if (top5.length === 0) {
-            loader.style.display = 'block';
-            loader.innerText = "有効なデータがありません";
-            return;
-        }
 
         top5.forEach((item, index) => {
             const displayPref = prefMap[item.pref] || item.pref;
@@ -201,8 +186,8 @@ async function fetchRanking() {
         });
 
     } catch (error) {
-        console.error("エラー詳細:", error);
-        document.getElementById('loading').innerText = `通信エラー: ${error.message}`;
+        console.error(error);
+        document.getElementById('loading').innerText = "通信エラーが発生しました";
     }
 }
 
