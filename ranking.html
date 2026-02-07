@@ -114,39 +114,63 @@
 
     <script>
         // 先ほど設定したGASのURL（doGet側）
-        const gasUrl = "https://script.google.com/macros/s/AKfycbypFbVnsbkjXL6YxqmePAEGTMQ934HHMGVO1-gfdyIzOpKsFw6OcR7YNr8ij-qHN2FZvg/exec";
+        // 都道府県の英語名→日本語名 変換マップ
+const prefMap = {
+    "hokkaido": "北海道", "aomori": "青森県", "iwate": "岩手県", "miyagi": "宮城県", "akita": "秋田県",
+    "yamagata": "山形県", "fukushima": "福島県", "ibaraki": "茨城県", "tochigi": "栃木県", "gunma": "群馬県",
+    "saitama": "埼玉県", "chiba": "千葉県", "tokyo": "東京都", "kanagawa": "神奈川県", "niigata": "新潟県",
+    "toyama": "富山県", "ishikawa": "石川県", "fukui": "福井県", "yamanashi": "山梨県", "nagano": "長野県",
+    "gifu": "岐阜県", "shizuoka": "静岡県", "aichi": "愛知県", "mie": "三重県", "shiga": "滋賀県",
+    "kyoto": "京都府", "osaka": "大阪府", "hyogo": "兵庫県", "nara": "奈良県", "wakayama": "和歌山県",
+    "tottori": "鳥取県", "shimane": "島根県", "okayama": "岡山県", "hiroshima": "広島県", "yamaguchi": "山口県",
+    "tokushima": "徳島県", "kagawa": "香川県", "ehime": "愛媛県", "kochi": "高知県", "fukuoka": "福岡県",
+    "saga": "佐賀県", "nagasaki": "長崎県", "kumamoto": "熊本県", "oita": "大分県", "miyazaki": "宮崎県",
+    "kagoshima": "鹿児島県", "okinawa": "沖縄県"
+};
 
-        async function fetchRanking() {
-            try {
-                const response = await fetch(gasUrl);
-                const data = await response.json();
-                
-                const loader = document.getElementById('loading');
-                const table = document.getElementById('rank-table');
-                const body = document.getElementById('ranking-body');
+// あなたのGAS URLをここに貼り付け
+const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
 
-                loader.style.display = 'none';
-                table.style.display = 'table';
+async function fetchRanking() {
+    try {
+        console.log("データ取得開始...");
+        const response = await fetch(gasUrl);
+        
+        if (!response.ok) throw new Error('ネットワーク応答が正常ではありません');
+        
+        const data = await response.json();
+        console.log("受信データ:", data);
 
-                data.forEach((item, index) => {
-                    const row = document.createElement('tr');
-                    const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
-                    
-                    row.innerHTML = `
-                        <td class="rank-num ${rankClass}">${index + 1}</td>
-                        <td>${item.pref}</td>
-                        <td style="font-weight:bold;">${item.point}</td>
-                        <td style="color:#04FF00;">${item.rank}</td>
-                    `;
-                    body.appendChild(row);
-                });
-            } catch (error) {
-                document.getElementById('loading').innerText = "通信エラーが発生しました";
-                console.error(error);
-            }
-        }
+        const loader = document.getElementById('loading');
+        const table = document.getElementById('rank-table');
+        const body = document.getElementById('ranking-body');
 
-        fetchRanking();
+        loader.style.display = 'none';
+        table.style.display = 'table';
+        body.innerHTML = ""; // 中身をリセット
+
+        data.forEach((item, index) => {
+            // 都道府県名を日本語に変換（見つからなければそのまま）
+            const displayPref = prefMap[item.pref] || item.pref;
+            const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
+            
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="rank-num ${rankClass}">${index + 1}</td>
+                <td>${displayPref}</td>
+                <td style="font-weight:bold;">${item.point}</td>
+                <td style="color:#04FF00; font-weight:bold;">${item.rank}</td>
+            `;
+            body.appendChild(row);
+        });
+    } catch (error) {
+        console.error("エラー詳細:", error);
+        document.getElementById('loading').innerHTML = 
+            `通信エラーが発生しました<br><span style="font-size:10px; color:#ff3f3f;">${error.message}</span>`;
+    }
+}
+
+fetchRanking();
     </script>
 </body>
 </html>
