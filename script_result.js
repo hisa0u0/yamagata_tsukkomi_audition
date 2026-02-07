@@ -247,12 +247,9 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
         showFinalResult();
     }
 
-    // ==========================================
-    // 7. シンプル集計送信
-    // ==========================================
     // 結果画面のスクリプト内に追記
 function sendDataToSheet(resultData) {
-    const gasUrl = "ここにコピーしたウェブアプリURLを貼る";
+    const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
 
     fetch(gasUrl, {
         method: "POST",
