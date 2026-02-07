@@ -250,30 +250,29 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
     // ==========================================
     // 7. シンプル集計送信
     // ==========================================
-    function sendDataToSheet(resultData) {
-        // さっきコピーした新しいURLをここに貼る！
-        const gasUrl = "https://script.google.com/macros/s/ここに新しいID/exec"; 
+    // 結果画面のスクリプト内に追記
+function sendDataToSheet(resultData) {
+    const gasUrl = "ここにコピーしたウェブアプリURLを貼る";
 
-        fetch(gasUrl, {
-            method: "POST",
-            mode: "no-cors", 
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(resultData)
-        })
-        .then(() => console.log("Data sent!"))
-        .catch(err => console.error("GAS Error:", err));
-    }
+    fetch(gasUrl, {
+        method: "POST",
+        mode: "no-cors", // これを指定するとエラーが出にくい
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(resultData)
+    })
+    .then(() => console.log("データ送信完了！"))
+    .catch(err => console.error("送信エラー:", err));
+}
 
-    // 送るデータを4つに絞る
-    const myResult = {
-        pref: selectedPref, // 都道府県
-        point: point,       // 点数
-        rank: simpleRank    // ランク
-        // 日時はGAS側で自動で入れるので送らなくてOK
-    };
-    
-    // 送信実行
-    sendDataToSheet(myResult);
-
+// 実行例（結果が決まったタイミングで呼ぶ）
+const myResult = {
+    pref: currentPrefKey,
+    point: totalPoint,
+    rank: "S", // 判定したランク
+    p: scorePassion,
+    t: scoreTechnique,
+    v: scoreVibe
+};
+sendDataToSheet(myResult);
 });
 
