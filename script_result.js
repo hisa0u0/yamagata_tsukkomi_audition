@@ -248,10 +248,11 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
     }
 
     // ==========================================
-    // 7. スプレッドシート送信機能 (5項目対応版)
+    // 7. シンプル集計送信
     // ==========================================
     function sendDataToSheet(resultData) {
-        const gasUrl = "新しいデプロイURLをここに貼る"; 
+        // さっきコピーした新しいURLをここに貼る！
+        const gasUrl = "https://script.google.com/macros/s/ここに新しいID/exec"; 
 
         fetch(gasUrl, {
             method: "POST",
@@ -259,23 +260,19 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(resultData)
         })
-        .then(() => console.log("Radar data sent!"))
+        .then(() => console.log("Data sent!"))
         .catch(err => console.error("GAS Error:", err));
     }
 
-    // 送信用のオブジェクトを作成
+    // 送るデータを4つに絞る
     const myResult = {
-        pref: selectedPref,
-        point: point,
-        rank: simpleRank,
-        p: graphP,        // 爆発力
-        t: graphT,        // 阿吽の呼吸
-        v: graphV,        // 包容力
-        bond: bondScore,  // ガチの絆
-        destiny: destinyScore // 運命
+        pref: selectedPref, // 都道府県
+        point: point,       // 点数
+        rank: simpleRank    // ランク
+        // 日時はGAS側で自動で入れるので送らなくてOK
     };
     
-    // 実行！
+    // 送信実行
     sendDataToSheet(myResult);
 
 });
