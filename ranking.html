@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全国ツッコミランキング - 山形ツッコミオーディション</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ======== ランキング専用の追加スタイル ======== */
+        
+        .ranking-container {
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .ranking-title {
+    /* フォント指定をトップページのストーリー部分と完全に統一 */
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-size: 24px;
+    font-weight: bold;
+    
+    /* 白文字に変更 */
+    color: #ffffff; 
+    
+    /* トップページの text-shadow 設定を移植（二重の発光で奥行きを出す） */
+    text-shadow: 0 0 10px #04FF00, 0 0 20px rgba(4, 255, 0, 0.5);
+    
+    margin-top: 30px;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em; /* 少し文字間を広げるとより雰囲気が増します */
+}
+
+        /* テーブルの外枠（analysis-containerのスタイルを流用） */
+        .ranking-board {
+            background: linear-gradient(135deg, rgba(0, 30, 0, 0.9), rgba(0, 10, 0, 0.95));
+            border: 1px solid rgba(4, 255, 0, 0.5);
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(4, 255, 0, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: "Zen Maru Gothic", sans-serif;
+            font-size: 14px;
+        }
+
+        .ranking-table th {
+            border-bottom: 2px solid #04FF00;
+            padding: 10px;
+            color: #04FF00;
+        }
+
+        .ranking-table td {
+            padding: 12px 5px;
+            border-bottom: 1px solid rgba(4, 255, 0, 0.2);
+        }
+
+        /* 順位ごとの装飾 */
+        .rank-num { font-weight: bold; font-size: 16px; }
+        .rank-1 { color: #FFD700; text-shadow: 0 0 10px #FFD700; font-size: 20px; } /* 金 */
+        .rank-2 { color: #C0C0C0; text-shadow: 0 0 10px #C0C0C0; } /* 銀 */
+        .rank-3 { color: #CD7F32; text-shadow: 0 0 10px #CD7F32; } /* 銅 */
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #FF3F3F;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* ローディングアニメ */
+        .loading-text {
+            color: #04FF00;
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scrolling-bg"></div>
+
+    <div class="game-wrapper">
+        <div class="ranking-container">
+            <h1 class="ranking-title">山形県ツッコミランキング</h1>
+            
+            <div class="ranking-board">
+                <div id="loading" class="loading-text">データを照合中...</div>
+                <table class="ranking-table" id="rank-table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>都道府県</th>
+                            <th>スコア</th>
+                            <th>ランク</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body">
+                        </tbody>
+                </table>
+            </div>
+
+            <a href="index.html" class="back-btn">トップに戻る</a>
+        </div>
+    </div>
+
+    <script>
+        // 先ほど設定したGASのURL（doGet側）
+        const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
+
+        async function fetchRanking() {
+            try {
+                const response = await fetch(gasUrl);
+                const data = await response.json();
+                
+                const loader = document.getElementById('loading');
+                const table = document.getElementById('rank-table');
+                const body = document.getElementById('ranking-body');
+
+                loader.style.display = 'none';
+                table.style.display = 'table';
+
+                data.forEach((item, index) => {
+                    const row = document.createElement('tr');
+                    const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : '';
+                    
+                    row.innerHTML = `
+                        <td class="rank-num ${rankClass}">${index + 1}</td>
+                        <td>${item.pref}</td>
+                        <td style="font-weight:bold;">${item.point}</td>
+                        <td style="color:#04FF00;">${item.rank}</td>
+                    `;
+                    body.appendChild(row);
+                });
+            } catch (error) {
+                document.getElementById('loading').innerText = "通信エラーが発生しました";
+                console.error(error);
+            }
+        }
+
+        fetchRanking();
+    </script>
+</body>
+</html>
