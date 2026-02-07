@@ -247,29 +247,30 @@ const twitterImageEl = document.getElementById('og-image-meta'); // Twitter用�
         showFinalResult();
     }
 
-    // 結果画面のスクリプト内に追記
-function sendDataToSheet(resultData) {
-    const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
+    // --- 修正版：送信処理 ---
+    function sendDataToSheet(resultData) {
+        const gasUrl = "https://script.google.com/macros/s/AKfycbzw1Ub699whC6l6Onp4S_JKPA6Y6rbCBkp-Y3ffDiiaB_EcAIONqF3oNJHYvXwi-meujQ/exec";
 
-    fetch(gasUrl, {
-        method: "POST",
-        mode: "no-cors", // これを指定するとエラーが出にくい
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(resultData)
-    })
-    .then(() => console.log("データ送信完了！"))
-    .catch(err => console.error("送信エラー:", err));
-}
+        fetch(gasUrl, {
+            method: "POST",
+            mode: "no-cors", 
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(resultData)
+        })
+        .then(() => console.log("データ送信完了！"))
+        .catch(err => console.error("送信エラー:", err));
+    }
 
-// 実行例（結果が決まったタイミングで呼ぶ）
-const myResult = {
-    pref: currentPrefKey,
-    point: totalPoint,
-    rank: "S", // 判定したランク
-    p: scorePassion,
-    t: scoreTechnique,
-    v: scoreVibe
-};
-sendDataToSheet(myResult);
+    // 正しい変数名でデータを作成
+    const myResult = {
+        pref: selectedPref, // currentPrefKey ではなく selectedPref
+        point: point,       // totalPoint ではなく point
+        rank: simpleRank,   // "S" 固定ではなく simpleRank
+        p: graphP,          // scorePassion ではなく graphP
+        t: graphT,          // scoreTechnique ではなく graphT
+        v: graphV           // scoreVibe ではなく graphV
+    };
+
+    sendDataToSheet(myResult);
 });
 
